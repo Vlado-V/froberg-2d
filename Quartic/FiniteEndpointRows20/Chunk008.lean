@@ -1,0 +1,792 @@
+import Quartic.FiniteEndpointInverseMemo20
+import Quartic.FiniteEndpointMetadata20Data
+
+/-! Kernel-checked rows of the actual quartic multiplication matrix. -/
+namespace Quartic.FiniteEndpointRows20
+open FiniteEndpointChecker
+set_option Elab.async false
+set_option maxRecDepth 1000000
+set_option maxHeartbeats 64000000
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8192 row_count 64
+
+theorem chunk_128 (i : Fin 64) (hi : 8192+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8192+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8192+i.val) := by
+  fin_cases i
+  · exact certificate.row_8192
+  · exact certificate.row_8193
+  · exact certificate.row_8194
+  · exact certificate.row_8195
+  · exact certificate.row_8196
+  · exact certificate.row_8197
+  · exact certificate.row_8198
+  · exact certificate.row_8199
+  · exact certificate.row_8200
+  · exact certificate.row_8201
+  · exact certificate.row_8202
+  · exact certificate.row_8203
+  · exact certificate.row_8204
+  · exact certificate.row_8205
+  · exact certificate.row_8206
+  · exact certificate.row_8207
+  · exact certificate.row_8208
+  · exact certificate.row_8209
+  · exact certificate.row_8210
+  · exact certificate.row_8211
+  · exact certificate.row_8212
+  · exact certificate.row_8213
+  · exact certificate.row_8214
+  · exact certificate.row_8215
+  · exact certificate.row_8216
+  · exact certificate.row_8217
+  · exact certificate.row_8218
+  · exact certificate.row_8219
+  · exact certificate.row_8220
+  · exact certificate.row_8221
+  · exact certificate.row_8222
+  · exact certificate.row_8223
+  · exact certificate.row_8224
+  · exact certificate.row_8225
+  · exact certificate.row_8226
+  · exact certificate.row_8227
+  · exact certificate.row_8228
+  · exact certificate.row_8229
+  · exact certificate.row_8230
+  · exact certificate.row_8231
+  · exact certificate.row_8232
+  · exact certificate.row_8233
+  · exact certificate.row_8234
+  · exact certificate.row_8235
+  · exact certificate.row_8236
+  · exact certificate.row_8237
+  · exact certificate.row_8238
+  · exact certificate.row_8239
+  · exact certificate.row_8240
+  · exact certificate.row_8241
+  · exact certificate.row_8242
+  · exact certificate.row_8243
+  · exact certificate.row_8244
+  · exact certificate.row_8245
+  · exact certificate.row_8246
+  · exact certificate.row_8247
+  · exact certificate.row_8248
+  · exact certificate.row_8249
+  · exact certificate.row_8250
+  · exact certificate.row_8251
+  · exact certificate.row_8252
+  · exact certificate.row_8253
+  · exact certificate.row_8254
+  · exact certificate.row_8255
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8256 row_count 64
+
+theorem chunk_129 (i : Fin 64) (hi : 8256+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8256+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8256+i.val) := by
+  fin_cases i
+  · exact certificate.row_8256
+  · exact certificate.row_8257
+  · exact certificate.row_8258
+  · exact certificate.row_8259
+  · exact certificate.row_8260
+  · exact certificate.row_8261
+  · exact certificate.row_8262
+  · exact certificate.row_8263
+  · exact certificate.row_8264
+  · exact certificate.row_8265
+  · exact certificate.row_8266
+  · exact certificate.row_8267
+  · exact certificate.row_8268
+  · exact certificate.row_8269
+  · exact certificate.row_8270
+  · exact certificate.row_8271
+  · exact certificate.row_8272
+  · exact certificate.row_8273
+  · exact certificate.row_8274
+  · exact certificate.row_8275
+  · exact certificate.row_8276
+  · exact certificate.row_8277
+  · exact certificate.row_8278
+  · exact certificate.row_8279
+  · exact certificate.row_8280
+  · exact certificate.row_8281
+  · exact certificate.row_8282
+  · exact certificate.row_8283
+  · exact certificate.row_8284
+  · exact certificate.row_8285
+  · exact certificate.row_8286
+  · exact certificate.row_8287
+  · exact certificate.row_8288
+  · exact certificate.row_8289
+  · exact certificate.row_8290
+  · exact certificate.row_8291
+  · exact certificate.row_8292
+  · exact certificate.row_8293
+  · exact certificate.row_8294
+  · exact certificate.row_8295
+  · exact certificate.row_8296
+  · exact certificate.row_8297
+  · exact certificate.row_8298
+  · exact certificate.row_8299
+  · exact certificate.row_8300
+  · exact certificate.row_8301
+  · exact certificate.row_8302
+  · exact certificate.row_8303
+  · exact certificate.row_8304
+  · exact certificate.row_8305
+  · exact certificate.row_8306
+  · exact certificate.row_8307
+  · exact certificate.row_8308
+  · exact certificate.row_8309
+  · exact certificate.row_8310
+  · exact certificate.row_8311
+  · exact certificate.row_8312
+  · exact certificate.row_8313
+  · exact certificate.row_8314
+  · exact certificate.row_8315
+  · exact certificate.row_8316
+  · exact certificate.row_8317
+  · exact certificate.row_8318
+  · exact certificate.row_8319
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8320 row_count 64
+
+theorem chunk_130 (i : Fin 64) (hi : 8320+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8320+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8320+i.val) := by
+  fin_cases i
+  · exact certificate.row_8320
+  · exact certificate.row_8321
+  · exact certificate.row_8322
+  · exact certificate.row_8323
+  · exact certificate.row_8324
+  · exact certificate.row_8325
+  · exact certificate.row_8326
+  · exact certificate.row_8327
+  · exact certificate.row_8328
+  · exact certificate.row_8329
+  · exact certificate.row_8330
+  · exact certificate.row_8331
+  · exact certificate.row_8332
+  · exact certificate.row_8333
+  · exact certificate.row_8334
+  · exact certificate.row_8335
+  · exact certificate.row_8336
+  · exact certificate.row_8337
+  · exact certificate.row_8338
+  · exact certificate.row_8339
+  · exact certificate.row_8340
+  · exact certificate.row_8341
+  · exact certificate.row_8342
+  · exact certificate.row_8343
+  · exact certificate.row_8344
+  · exact certificate.row_8345
+  · exact certificate.row_8346
+  · exact certificate.row_8347
+  · exact certificate.row_8348
+  · exact certificate.row_8349
+  · exact certificate.row_8350
+  · exact certificate.row_8351
+  · exact certificate.row_8352
+  · exact certificate.row_8353
+  · exact certificate.row_8354
+  · exact certificate.row_8355
+  · exact certificate.row_8356
+  · exact certificate.row_8357
+  · exact certificate.row_8358
+  · exact certificate.row_8359
+  · exact certificate.row_8360
+  · exact certificate.row_8361
+  · exact certificate.row_8362
+  · exact certificate.row_8363
+  · exact certificate.row_8364
+  · exact certificate.row_8365
+  · exact certificate.row_8366
+  · exact certificate.row_8367
+  · exact certificate.row_8368
+  · exact certificate.row_8369
+  · exact certificate.row_8370
+  · exact certificate.row_8371
+  · exact certificate.row_8372
+  · exact certificate.row_8373
+  · exact certificate.row_8374
+  · exact certificate.row_8375
+  · exact certificate.row_8376
+  · exact certificate.row_8377
+  · exact certificate.row_8378
+  · exact certificate.row_8379
+  · exact certificate.row_8380
+  · exact certificate.row_8381
+  · exact certificate.row_8382
+  · exact certificate.row_8383
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8384 row_count 64
+
+theorem chunk_131 (i : Fin 64) (hi : 8384+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8384+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8384+i.val) := by
+  fin_cases i
+  · exact certificate.row_8384
+  · exact certificate.row_8385
+  · exact certificate.row_8386
+  · exact certificate.row_8387
+  · exact certificate.row_8388
+  · exact certificate.row_8389
+  · exact certificate.row_8390
+  · exact certificate.row_8391
+  · exact certificate.row_8392
+  · exact certificate.row_8393
+  · exact certificate.row_8394
+  · exact certificate.row_8395
+  · exact certificate.row_8396
+  · exact certificate.row_8397
+  · exact certificate.row_8398
+  · exact certificate.row_8399
+  · exact certificate.row_8400
+  · exact certificate.row_8401
+  · exact certificate.row_8402
+  · exact certificate.row_8403
+  · exact certificate.row_8404
+  · exact certificate.row_8405
+  · exact certificate.row_8406
+  · exact certificate.row_8407
+  · exact certificate.row_8408
+  · exact certificate.row_8409
+  · exact certificate.row_8410
+  · exact certificate.row_8411
+  · exact certificate.row_8412
+  · exact certificate.row_8413
+  · exact certificate.row_8414
+  · exact certificate.row_8415
+  · exact certificate.row_8416
+  · exact certificate.row_8417
+  · exact certificate.row_8418
+  · exact certificate.row_8419
+  · exact certificate.row_8420
+  · exact certificate.row_8421
+  · exact certificate.row_8422
+  · exact certificate.row_8423
+  · exact certificate.row_8424
+  · exact certificate.row_8425
+  · exact certificate.row_8426
+  · exact certificate.row_8427
+  · exact certificate.row_8428
+  · exact certificate.row_8429
+  · exact certificate.row_8430
+  · exact certificate.row_8431
+  · exact certificate.row_8432
+  · exact certificate.row_8433
+  · exact certificate.row_8434
+  · exact certificate.row_8435
+  · exact certificate.row_8436
+  · exact certificate.row_8437
+  · exact certificate.row_8438
+  · exact certificate.row_8439
+  · exact certificate.row_8440
+  · exact certificate.row_8441
+  · exact certificate.row_8442
+  · exact certificate.row_8443
+  · exact certificate.row_8444
+  · exact certificate.row_8445
+  · exact certificate.row_8446
+  · exact certificate.row_8447
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8448 row_count 64
+
+theorem chunk_132 (i : Fin 64) (hi : 8448+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8448+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8448+i.val) := by
+  fin_cases i
+  · exact certificate.row_8448
+  · exact certificate.row_8449
+  · exact certificate.row_8450
+  · exact certificate.row_8451
+  · exact certificate.row_8452
+  · exact certificate.row_8453
+  · exact certificate.row_8454
+  · exact certificate.row_8455
+  · exact certificate.row_8456
+  · exact certificate.row_8457
+  · exact certificate.row_8458
+  · exact certificate.row_8459
+  · exact certificate.row_8460
+  · exact certificate.row_8461
+  · exact certificate.row_8462
+  · exact certificate.row_8463
+  · exact certificate.row_8464
+  · exact certificate.row_8465
+  · exact certificate.row_8466
+  · exact certificate.row_8467
+  · exact certificate.row_8468
+  · exact certificate.row_8469
+  · exact certificate.row_8470
+  · exact certificate.row_8471
+  · exact certificate.row_8472
+  · exact certificate.row_8473
+  · exact certificate.row_8474
+  · exact certificate.row_8475
+  · exact certificate.row_8476
+  · exact certificate.row_8477
+  · exact certificate.row_8478
+  · exact certificate.row_8479
+  · exact certificate.row_8480
+  · exact certificate.row_8481
+  · exact certificate.row_8482
+  · exact certificate.row_8483
+  · exact certificate.row_8484
+  · exact certificate.row_8485
+  · exact certificate.row_8486
+  · exact certificate.row_8487
+  · exact certificate.row_8488
+  · exact certificate.row_8489
+  · exact certificate.row_8490
+  · exact certificate.row_8491
+  · exact certificate.row_8492
+  · exact certificate.row_8493
+  · exact certificate.row_8494
+  · exact certificate.row_8495
+  · exact certificate.row_8496
+  · exact certificate.row_8497
+  · exact certificate.row_8498
+  · exact certificate.row_8499
+  · exact certificate.row_8500
+  · exact certificate.row_8501
+  · exact certificate.row_8502
+  · exact certificate.row_8503
+  · exact certificate.row_8504
+  · exact certificate.row_8505
+  · exact certificate.row_8506
+  · exact certificate.row_8507
+  · exact certificate.row_8508
+  · exact certificate.row_8509
+  · exact certificate.row_8510
+  · exact certificate.row_8511
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8512 row_count 64
+
+theorem chunk_133 (i : Fin 64) (hi : 8512+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8512+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8512+i.val) := by
+  fin_cases i
+  · exact certificate.row_8512
+  · exact certificate.row_8513
+  · exact certificate.row_8514
+  · exact certificate.row_8515
+  · exact certificate.row_8516
+  · exact certificate.row_8517
+  · exact certificate.row_8518
+  · exact certificate.row_8519
+  · exact certificate.row_8520
+  · exact certificate.row_8521
+  · exact certificate.row_8522
+  · exact certificate.row_8523
+  · exact certificate.row_8524
+  · exact certificate.row_8525
+  · exact certificate.row_8526
+  · exact certificate.row_8527
+  · exact certificate.row_8528
+  · exact certificate.row_8529
+  · exact certificate.row_8530
+  · exact certificate.row_8531
+  · exact certificate.row_8532
+  · exact certificate.row_8533
+  · exact certificate.row_8534
+  · exact certificate.row_8535
+  · exact certificate.row_8536
+  · exact certificate.row_8537
+  · exact certificate.row_8538
+  · exact certificate.row_8539
+  · exact certificate.row_8540
+  · exact certificate.row_8541
+  · exact certificate.row_8542
+  · exact certificate.row_8543
+  · exact certificate.row_8544
+  · exact certificate.row_8545
+  · exact certificate.row_8546
+  · exact certificate.row_8547
+  · exact certificate.row_8548
+  · exact certificate.row_8549
+  · exact certificate.row_8550
+  · exact certificate.row_8551
+  · exact certificate.row_8552
+  · exact certificate.row_8553
+  · exact certificate.row_8554
+  · exact certificate.row_8555
+  · exact certificate.row_8556
+  · exact certificate.row_8557
+  · exact certificate.row_8558
+  · exact certificate.row_8559
+  · exact certificate.row_8560
+  · exact certificate.row_8561
+  · exact certificate.row_8562
+  · exact certificate.row_8563
+  · exact certificate.row_8564
+  · exact certificate.row_8565
+  · exact certificate.row_8566
+  · exact certificate.row_8567
+  · exact certificate.row_8568
+  · exact certificate.row_8569
+  · exact certificate.row_8570
+  · exact certificate.row_8571
+  · exact certificate.row_8572
+  · exact certificate.row_8573
+  · exact certificate.row_8574
+  · exact certificate.row_8575
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8576 row_count 64
+
+theorem chunk_134 (i : Fin 64) (hi : 8576+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8576+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8576+i.val) := by
+  fin_cases i
+  · exact certificate.row_8576
+  · exact certificate.row_8577
+  · exact certificate.row_8578
+  · exact certificate.row_8579
+  · exact certificate.row_8580
+  · exact certificate.row_8581
+  · exact certificate.row_8582
+  · exact certificate.row_8583
+  · exact certificate.row_8584
+  · exact certificate.row_8585
+  · exact certificate.row_8586
+  · exact certificate.row_8587
+  · exact certificate.row_8588
+  · exact certificate.row_8589
+  · exact certificate.row_8590
+  · exact certificate.row_8591
+  · exact certificate.row_8592
+  · exact certificate.row_8593
+  · exact certificate.row_8594
+  · exact certificate.row_8595
+  · exact certificate.row_8596
+  · exact certificate.row_8597
+  · exact certificate.row_8598
+  · exact certificate.row_8599
+  · exact certificate.row_8600
+  · exact certificate.row_8601
+  · exact certificate.row_8602
+  · exact certificate.row_8603
+  · exact certificate.row_8604
+  · exact certificate.row_8605
+  · exact certificate.row_8606
+  · exact certificate.row_8607
+  · exact certificate.row_8608
+  · exact certificate.row_8609
+  · exact certificate.row_8610
+  · exact certificate.row_8611
+  · exact certificate.row_8612
+  · exact certificate.row_8613
+  · exact certificate.row_8614
+  · exact certificate.row_8615
+  · exact certificate.row_8616
+  · exact certificate.row_8617
+  · exact certificate.row_8618
+  · exact certificate.row_8619
+  · exact certificate.row_8620
+  · exact certificate.row_8621
+  · exact certificate.row_8622
+  · exact certificate.row_8623
+  · exact certificate.row_8624
+  · exact certificate.row_8625
+  · exact certificate.row_8626
+  · exact certificate.row_8627
+  · exact certificate.row_8628
+  · exact certificate.row_8629
+  · exact certificate.row_8630
+  · exact certificate.row_8631
+  · exact certificate.row_8632
+  · exact certificate.row_8633
+  · exact certificate.row_8634
+  · exact certificate.row_8635
+  · exact certificate.row_8636
+  · exact certificate.row_8637
+  · exact certificate.row_8638
+  · exact certificate.row_8639
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8640 row_count 64
+
+theorem chunk_135 (i : Fin 64) (hi : 8640+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8640+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8640+i.val) := by
+  fin_cases i
+  · exact certificate.row_8640
+  · exact certificate.row_8641
+  · exact certificate.row_8642
+  · exact certificate.row_8643
+  · exact certificate.row_8644
+  · exact certificate.row_8645
+  · exact certificate.row_8646
+  · exact certificate.row_8647
+  · exact certificate.row_8648
+  · exact certificate.row_8649
+  · exact certificate.row_8650
+  · exact certificate.row_8651
+  · exact certificate.row_8652
+  · exact certificate.row_8653
+  · exact certificate.row_8654
+  · exact certificate.row_8655
+  · exact certificate.row_8656
+  · exact certificate.row_8657
+  · exact certificate.row_8658
+  · exact certificate.row_8659
+  · exact certificate.row_8660
+  · exact certificate.row_8661
+  · exact certificate.row_8662
+  · exact certificate.row_8663
+  · exact certificate.row_8664
+  · exact certificate.row_8665
+  · exact certificate.row_8666
+  · exact certificate.row_8667
+  · exact certificate.row_8668
+  · exact certificate.row_8669
+  · exact certificate.row_8670
+  · exact certificate.row_8671
+  · exact certificate.row_8672
+  · exact certificate.row_8673
+  · exact certificate.row_8674
+  · exact certificate.row_8675
+  · exact certificate.row_8676
+  · exact certificate.row_8677
+  · exact certificate.row_8678
+  · exact certificate.row_8679
+  · exact certificate.row_8680
+  · exact certificate.row_8681
+  · exact certificate.row_8682
+  · exact certificate.row_8683
+  · exact certificate.row_8684
+  · exact certificate.row_8685
+  · exact certificate.row_8686
+  · exact certificate.row_8687
+  · exact certificate.row_8688
+  · exact certificate.row_8689
+  · exact certificate.row_8690
+  · exact certificate.row_8691
+  · exact certificate.row_8692
+  · exact certificate.row_8693
+  · exact certificate.row_8694
+  · exact certificate.row_8695
+  · exact certificate.row_8696
+  · exact certificate.row_8697
+  · exact certificate.row_8698
+  · exact certificate.row_8699
+  · exact certificate.row_8700
+  · exact certificate.row_8701
+  · exact certificate.row_8702
+  · exact certificate.row_8703
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8704 row_count 64
+
+theorem chunk_136 (i : Fin 64) (hi : 8704+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8704+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8704+i.val) := by
+  fin_cases i
+  · exact certificate.row_8704
+  · exact certificate.row_8705
+  · exact certificate.row_8706
+  · exact certificate.row_8707
+  · exact certificate.row_8708
+  · exact certificate.row_8709
+  · exact certificate.row_8710
+  · exact certificate.row_8711
+  · exact certificate.row_8712
+  · exact certificate.row_8713
+  · exact certificate.row_8714
+  · exact certificate.row_8715
+  · exact certificate.row_8716
+  · exact certificate.row_8717
+  · exact certificate.row_8718
+  · exact certificate.row_8719
+  · exact certificate.row_8720
+  · exact certificate.row_8721
+  · exact certificate.row_8722
+  · exact certificate.row_8723
+  · exact certificate.row_8724
+  · exact certificate.row_8725
+  · exact certificate.row_8726
+  · exact certificate.row_8727
+  · exact certificate.row_8728
+  · exact certificate.row_8729
+  · exact certificate.row_8730
+  · exact certificate.row_8731
+  · exact certificate.row_8732
+  · exact certificate.row_8733
+  · exact certificate.row_8734
+  · exact certificate.row_8735
+  · exact certificate.row_8736
+  · exact certificate.row_8737
+  · exact certificate.row_8738
+  · exact certificate.row_8739
+  · exact certificate.row_8740
+  · exact certificate.row_8741
+  · exact certificate.row_8742
+  · exact certificate.row_8743
+  · exact certificate.row_8744
+  · exact certificate.row_8745
+  · exact certificate.row_8746
+  · exact certificate.row_8747
+  · exact certificate.row_8748
+  · exact certificate.row_8749
+  · exact certificate.row_8750
+  · exact certificate.row_8751
+  · exact certificate.row_8752
+  · exact certificate.row_8753
+  · exact certificate.row_8754
+  · exact certificate.row_8755
+  · exact certificate.row_8756
+  · exact certificate.row_8757
+  · exact certificate.row_8758
+  · exact certificate.row_8759
+  · exact certificate.row_8760
+  · exact certificate.row_8761
+  · exact certificate.row_8762
+  · exact certificate.row_8763
+  · exact certificate.row_8764
+  · exact certificate.row_8765
+  · exact certificate.row_8766
+  · exact certificate.row_8767
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8768 row_count 64
+
+theorem chunk_137 (i : Fin 64) (hi : 8768+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8768+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8768+i.val) := by
+  fin_cases i
+  · exact certificate.row_8768
+  · exact certificate.row_8769
+  · exact certificate.row_8770
+  · exact certificate.row_8771
+  · exact certificate.row_8772
+  · exact certificate.row_8773
+  · exact certificate.row_8774
+  · exact certificate.row_8775
+  · exact certificate.row_8776
+  · exact certificate.row_8777
+  · exact certificate.row_8778
+  · exact certificate.row_8779
+  · exact certificate.row_8780
+  · exact certificate.row_8781
+  · exact certificate.row_8782
+  · exact certificate.row_8783
+  · exact certificate.row_8784
+  · exact certificate.row_8785
+  · exact certificate.row_8786
+  · exact certificate.row_8787
+  · exact certificate.row_8788
+  · exact certificate.row_8789
+  · exact certificate.row_8790
+  · exact certificate.row_8791
+  · exact certificate.row_8792
+  · exact certificate.row_8793
+  · exact certificate.row_8794
+  · exact certificate.row_8795
+  · exact certificate.row_8796
+  · exact certificate.row_8797
+  · exact certificate.row_8798
+  · exact certificate.row_8799
+  · exact certificate.row_8800
+  · exact certificate.row_8801
+  · exact certificate.row_8802
+  · exact certificate.row_8803
+  · exact certificate.row_8804
+  · exact certificate.row_8805
+  · exact certificate.row_8806
+  · exact certificate.row_8807
+  · exact certificate.row_8808
+  · exact certificate.row_8809
+  · exact certificate.row_8810
+  · exact certificate.row_8811
+  · exact certificate.row_8812
+  · exact certificate.row_8813
+  · exact certificate.row_8814
+  · exact certificate.row_8815
+  · exact certificate.row_8816
+  · exact certificate.row_8817
+  · exact certificate.row_8818
+  · exact certificate.row_8819
+  · exact certificate.row_8820
+  · exact certificate.row_8821
+  · exact certificate.row_8822
+  · exact certificate.row_8823
+  · exact certificate.row_8824
+  · exact certificate.row_8825
+  · exact certificate.row_8826
+  · exact certificate.row_8827
+  · exact certificate.row_8828
+  · exact certificate.row_8829
+  · exact certificate.row_8830
+  · exact certificate.row_8831
+
+certify_sparse_rows certificate from "certificates/finite/n20/sparse.bin" inverse_file "certificates/finite/n20/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse20.binaryInverse row_fn Quartic.FiniteEndpointMetadata20Data.naturalRow nwords 139 start_index 8832 row_count 23
+
+theorem chunk_138 (i : Fin 64) (hi : 8832+i.val < 8855) :
+    xorSum ((FiniteEndpointMetadata20Data.naturalRow (8832+i.val)).map
+      FiniteEndpointInverse20.binaryInverse) = 2^(8832+i.val) := by
+  fin_cases i
+  · exact certificate.row_8832
+  · exact certificate.row_8833
+  · exact certificate.row_8834
+  · exact certificate.row_8835
+  · exact certificate.row_8836
+  · exact certificate.row_8837
+  · exact certificate.row_8838
+  · exact certificate.row_8839
+  · exact certificate.row_8840
+  · exact certificate.row_8841
+  · exact certificate.row_8842
+  · exact certificate.row_8843
+  · exact certificate.row_8844
+  · exact certificate.row_8845
+  · exact certificate.row_8846
+  · exact certificate.row_8847
+  · exact certificate.row_8848
+  · exact certificate.row_8849
+  · exact certificate.row_8850
+  · exact certificate.row_8851
+  · exact certificate.row_8852
+  · exact certificate.row_8853
+  · exact certificate.row_8854
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+  · norm_num at hi
+
+end Quartic.FiniteEndpointRows20

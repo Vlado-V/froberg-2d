@@ -1,0 +1,18 @@
+name = "froberg"
+version = "0.1.0"
+defaultTargets = ["Froberg"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "8accc04827c389e678c3ef83e623b402e7480394"
+
+[[lean_lib]]
+name = "Froberg"
+globs = ["Froberg.*"]
+
+[[lean_lib]]
+name = "OAI"
+
+[[lean_lib]]
+name = "Quartic"

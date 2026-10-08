@@ -1,0 +1,19 @@
+These five Lean modules were copied from /Users/vlado/Downloads/math-main/lean.
+Original source toolchain: leanprover/lean4:v4.34.1.
+Target toolchain: leanprover/lean4:v4.35.0-rc3.
+
+OAI.Geometry.PeriodicTiling.ScalarAverage
+OAI.Geometry.PeriodicTiling.CircleWeylCriterion
+OAI.Geometry.PeriodicTiling.ScalarVanDerCorput
+OAI.Geometry.PeriodicTiling.PolynomialShiftDifference
+OAI.Geometry.PeriodicTiling.PolynomialWeyl
+
+Validation: All five files compile unchanged against cached mathlib commit 8accc04827c389e678c3ef83e623b402e7480394 with Lean v4.35.0-rc3.
+Axiom audit: denseRange_circlePolynomial_of_irrational_leadingCoeff and polynomial_phase_average_tendsto_zero depend only on propext, Classical.choice, Quot.sound.
+
+SHA-256 of imported source files:
+43a4fe088d346c1d0d49366ffa79aa215cd340e17a8fcca974e9821855aa8337  OAI/Geometry/PeriodicTiling/CircleWeylCriterion.lean
+94234e5d5fade07e25f29f44950466c5f9302dbb3cae4074bbdf516689556f71  OAI/Geometry/PeriodicTiling/PolynomialShiftDifference.lean
+8b8a7e6e80941e00d3f88081a0c45adc108f64e66a2cbc200145e9b1e835e2f1  OAI/Geometry/PeriodicTiling/PolynomialWeyl.lean
+77212d2ffc1c3d871a411a69ee614e8266cb7d031135babbe8f59567ac6064e4  OAI/Geometry/PeriodicTiling/ScalarAverage.lean
+3de62b3b9334b1c4ccbde029d3de34c078d2f9a85ab40f25593387839ea908ee  OAI/Geometry/PeriodicTiling/ScalarVanDerCorput.lean
