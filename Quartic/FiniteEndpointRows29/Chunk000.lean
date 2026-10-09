@@ -1,7 +1,7 @@
 module
 
 public import Quartic.FiniteEndpointInverseMemo29
-import Quartic.FiniteEndpointRows28.Chunk025
+import Quartic.FiniteEndpointRows28.Chunk029
 public import Quartic.FiniteEndpointMetadata29Data
 
 @[expose] public section

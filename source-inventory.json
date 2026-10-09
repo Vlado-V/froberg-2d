@@ -129,6 +129,7 @@
     "Quartic.HullCertificate.Rational",
     "Quartic.SharpCertificate.Arithmetic",
     "Quartic.SharpCertificate.Certificate",
+    "Quartic.ProfileCertificate.Data",
     "Quartic.SharpCertificate.Data.Initial",
     "Quartic.SharpCertificate.Data",
     "Quartic.SharpCertificate.Rational",
@@ -139,7 +140,6 @@
     "Quartic.SharpCertificate",
     "Quartic.SharpMinimization.Finite",
     "Quartic.SharpMinimization",
-    "Quartic.ProfileCertificate.Data",
     "Quartic.ProfileCertificate",
     "Quartic.ConvolutionFiniteImages",
     "Quartic.ProfileOuterFinite",
@@ -1749,7 +1749,7 @@
     "Froberg.IndependentStatementBridge",
     "Froberg.UniformMain"
   ],
-  "source_bytes": 13459335,
+  "source_bytes": 13559094,
   "certificate_references": [
     "certificates/finite/n28/coefficients.bin",
     "certificates/finite/n28/inverse.bin",

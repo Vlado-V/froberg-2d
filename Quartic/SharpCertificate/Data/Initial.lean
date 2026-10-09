@@ -1,6 +1,7 @@
 module
 
 public import Quartic.SharpCertificate.Certificate
+import Quartic.ProfileCertificate.Data
 
 @[expose] public section
 

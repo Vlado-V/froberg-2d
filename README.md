@@ -31,9 +31,11 @@ are reconstructed from the included generator coefficients and monomial
 metadata by Lean's elaboration-time code. The existing proof-producing checker
 then checks the inverse equations and their polynomial interpretation. No
 network access or separate certificate generator is needed during compilation.
-The row-check modules form six dependency chains, and start after the large
-profile checks, to limit peak memory during a fresh build. These import
-dependencies change build scheduling only; the checked proof bodies are unchanged.
+The row-check modules form two dependency chains and start after the large
+arithmetic checks, which run in sequence. Each compiler process uses one thread
+and elaborates theorem proofs sequentially. The profile check is divided into
+728 smaller kernel checks with the same 26 public conclusions. These choices
+limit memory use during a fresh build.
 If certificate inputs change, rebuild from a fresh project `.lake/build`
 directory because Lake does not track the elaborators' binary file reads.
 
@@ -57,10 +59,9 @@ The general-degree construction does not induct on generating degree.
 The characteristic-two quadratic case uses a three-variable induction from
 dimensions 28, 29, and 30.
 
-The complete packaged development passes `lake build` and the standard axiom
-audit in `Audit.lean`, including the submitted `FrobergPaper.main_result`.
-The audit checked 342,805 local theorem and axiom-interface declarations and
-reported only the three permitted Lean axioms. Palomar verification is pending.
+`Audit.lean` checks the axiom dependencies of the submitted
+`FrobergPaper.main_result` and the loaded local theorem interfaces, allowing only
+the three permitted Lean axioms. Palomar verification is pending.
 
 ## License and credit
 

@@ -1,6 +1,7 @@
 module
 
 public import Quartic.FiniteEndpointInverse28
+import Quartic.HullCertificate.Data
 public import Quartic.FiniteEndpointCheckerMemo
 
 -- Build order: finish the large profile checks before concurrent certificate row checks.

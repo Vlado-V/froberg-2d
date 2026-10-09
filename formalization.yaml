@@ -57,7 +57,7 @@ status:
     threshold for all infinite fields and all generator counts. The project
     does not assert Fröberg's conjecture in degrees above 2d, does not include
     finite coefficient fields, and does not advertise an explicit optimal
-    threshold. The complete packaged build and standard axiom audit passed;
+    threshold. Local proof checks and standard axiom audits passed;
     Palomar verification remains pending.
   # Deliberate holes in Challenge.lean are excluded from these counts.
   sorry_count: 0
@@ -111,22 +111,24 @@ fidelity:
     coprime moduli and prime-to-characteristic divisibility to obtain a common
     field-independent vanishing threshold. The registry statement is written
     independently using Mathlib definitions and is compared to the proved
-    solution. The final packaged build and standard axiom audit passed; Palomar
+    solution. Local proof checks and standard axiom audits passed; Palomar
     mechanical verification is pending;
     no assertion of line-by-line formalization of every manuscript sentence is made.
 
 review:
-  status: "agent-reviewed; packaged build and standard axiom audit passed; no independent human review recorded"
+  status: "agent-reviewed; local proof checks and standard axiom audits passed; no independent human review recorded"
   reviewers: []
   notes: >-
     Cooperating agents inspected statement scope, interfaces, source proofs,
     and standard cached axiom reports. The complete development theorem compiled
     and its standard axiom audit reported only the three listed axioms. The
     independently stated conclusion was reviewed against Theorem 1.1. The
-    complete packaged rebuild passed 10,727 Lake jobs. The standard audit
-    checked 342,805 local theorem and axiom-interface declarations, including
-    the submitted result, and found only the three listed axioms. Mandatory
-    Palomar full mechanical verification remains pending.
+    complete development was built and audited locally. The finite profile
+    checks were subsequently partitioned into 728 kernel-checked slices,
+    preserving all 26 configuration statements; all 754 declarations passed
+    a standard axiom audit. Build scheduling limits concurrent certificate
+    checks and uses sequential theorem elaboration. The resource-adjusted full
+    rebuild and mandatory Palomar mechanical verification remain pending.
     No independent human peer review is recorded.
 
 alignment:
@@ -135,7 +137,7 @@ alignment:
     - source: "Theorem 1.1 of the revised manuscript"
       lean: "FrobergPaper.main_result"
       module: "Solution"
-      status: "proved; packaged build and standard axiom audit passed"
+      status: "proved; local proof checks and standard axiom audits passed"
       note: >-
         The independent FrobergPaper.Statement puts the variable threshold
         before the field and generator-count quantifiers. Solution obtains it
@@ -143,7 +145,7 @@ alignment:
     - source: "Theorem 1.1, complete internal theorem"
       lean: "Froberg.uniformMainStatement"
       module: "Froberg.UniformMain"
-      status: "proved; packaged build and standard axiom audit passed"
+      status: "proved; local proof checks and standard axiom audits passed"
       note: "Uniform result for every d at least one, every infinite field, and every generator count."
 
 acknowledgements: >-

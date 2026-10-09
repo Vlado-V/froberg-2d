@@ -1,6 +1,8 @@
 name = "froberg"
 version = "0.2.0"
 defaultTargets = ["Froberg", "Solution", "Challenge"]
+# Bound per-process elaboration memory; these flags do not alter proof statements.
+weakLeanArgs = ["-j1", "-DElab.async=false"]
 
 [[require]]
 name = "mathlib"
