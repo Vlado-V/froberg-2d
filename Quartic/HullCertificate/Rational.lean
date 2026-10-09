@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Certificate
+module
+
+public import Quartic.HullCertificate.Certificate
+
+@[expose] public section
 
 /-! The integer certificate vertices and lines agree with the original rational formulas. -/
 

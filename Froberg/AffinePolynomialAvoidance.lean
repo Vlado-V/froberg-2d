@@ -1,4 +1,8 @@
-import Froberg.PolynomialLinearAvoidance
+module
+
+public import Froberg.PolynomialLinearAvoidance
+
+@[expose] public section
 
 /-! Affine shifts do not change the independent-equation budget. In
 particular, a common scalar family can be varied with all its fixed positive

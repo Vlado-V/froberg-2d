@@ -1,6 +1,10 @@
-import Froberg.SlackPolynomial
-import Froberg.CountPolynomials
-import Froberg.CountParameters
+module
+
+public import Froberg.SlackPolynomial
+public import Froberg.CountPolynomials
+public import Froberg.CountParameters
+
+@[expose] public section
 
 /-! The quadratic-in-`h` coefficient of the outer dimension margin is
 strictly positive for the prescribed generator-count interval. -/

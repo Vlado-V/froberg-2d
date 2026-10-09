@@ -1,7 +1,11 @@
-import Froberg.OutputSpaceExtension
-import Froberg.OutputConvolutionLimits
-import Froberg.EndpointSurjectivity
-import Froberg.QuadraticTargetCosts
+module
+
+public import Froberg.OutputSpaceExtension
+public import Froberg.OutputConvolutionLimits
+public import Froberg.EndpointSurjectivity
+public import Froberg.QuadraticTargetCosts
+
+@[expose] public section
 
 /-! Convolution at the upper endpoint, including the imposed quadratic
 output-space dimension in target row four. -/

@@ -1,5 +1,9 @@
-import Froberg.ConstrainedCrossPair
-import Froberg.ProductRowAssignments
+module
+
+public import Froberg.ConstrainedCrossPair
+public import Froberg.ProductRowAssignments
+
+@[expose] public section
 
 /-! A finite, constrained polynomial witness for the complete formal
 product row. All degree and output constraints hold for the same family. -/

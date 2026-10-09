@@ -1,5 +1,9 @@
-import Froberg.ConvolutionBlockLimits
-import Froberg.PrefixConvolution
+module
+
+public import Froberg.ConvolutionBlockLimits
+public import Froberg.PrefixConvolution
+
+@[expose] public section
 
 /-! Convolution applied to output counts with a known leading coefficient. -/
 noncomputable section

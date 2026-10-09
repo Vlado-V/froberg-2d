@@ -1,6 +1,10 @@
-import Froberg.BiformWitnesses
-import Froberg.QuadraticBlockSpace
-import Froberg.QuarticBlockSpace
+module
+
+public import Froberg.BiformWitnesses
+public import Froberg.QuadraticBlockSpace
+public import Froberg.QuarticBlockSpace
+
+@[expose] public section
 
 /-! The special diagonal witnesses in small degree use the full quadratic
 or quartic output space, without an artificial output-half restriction. -/

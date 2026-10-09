@@ -1,4 +1,8 @@
-import Froberg.BiformActions
+module
+
+public import Froberg.BiformActions
+
+@[expose] public section
 
 /-! The scalar slot in a biform action is the actual scalar form space:
 the degree-zero output factor is canonically one-dimensional. -/

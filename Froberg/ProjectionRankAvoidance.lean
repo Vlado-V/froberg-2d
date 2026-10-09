@@ -1,4 +1,8 @@
-import Froberg.ProjectionCharts
+module
+
+public import Froberg.ProjectionCharts
+
+@[expose] public section
 
 /-! Actual projections avoid rank failure on a polynomial family of image
 spaces when the Schubert equation count exceeds the parameter count. -/

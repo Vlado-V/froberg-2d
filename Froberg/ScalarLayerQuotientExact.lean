@@ -1,6 +1,10 @@
-import Froberg.BilinearKoszulRow
-import Froberg.BilinearScalarFamily
-import Quartic.QuotientBilinearImage
+module
+
+public import Froberg.BilinearKoszulRow
+public import Froberg.BilinearScalarFamily
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-! Injectivity of scalar multiplication on the true layer quotient,
 together with independent layer products, gives the literal constant

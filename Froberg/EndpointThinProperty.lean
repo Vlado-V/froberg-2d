@@ -1,4 +1,8 @@
-import Froberg.OddEndpointScalarSlices
+module
+
+public import Froberg.OddEndpointScalarSlices
+
+@[expose] public section
 
 /-! A fixed proposition in the three generator tuples. This presentation
 lets family equalities be applied without exposing dependent quotient

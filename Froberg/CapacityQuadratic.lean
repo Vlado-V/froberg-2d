@@ -1,4 +1,8 @@
-import Froberg.CapacityFactorials
+module
+
+public import Froberg.CapacityFactorials
+
+@[expose] public section
 
 /-! # The quadratic scalar-capacity ratio -/
 

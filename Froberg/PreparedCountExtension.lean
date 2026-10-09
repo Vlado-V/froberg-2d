@@ -1,4 +1,8 @@
-import Froberg.PreparedPureSlots
+module
+
+public import Froberg.PreparedPureSlots
+
+@[expose] public section
 
 /-! Enlarge a layer count by extending the coefficient tuple by zero.
 The unused tail slots can carry restored pure forms. -/

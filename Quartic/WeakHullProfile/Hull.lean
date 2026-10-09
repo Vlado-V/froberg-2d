@@ -1,4 +1,8 @@
-import Quartic.WeakHullProfile.Sharp
+module
+
+public import Quartic.WeakHullProfile.Sharp
+
+@[expose] public section
 
 /-! Every admissible sharp profile lies above an explicit point of one weak hull. -/
 namespace Quartic.WeakHullProfile

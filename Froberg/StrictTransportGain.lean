@@ -1,4 +1,8 @@
-import Froberg.CapacityGain
+module
+
+public import Froberg.CapacityGain
+
+@[expose] public section
 
 /-! The strict weighted growth estimate obtained by combining a decrease
 of fiber capacity with mixing of the divisor transport. -/

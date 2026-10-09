@@ -1,5 +1,9 @@
-import Quartic.ConvolutionScalarImages
-import Quartic.ConvolutionInitialImage
+module
+
+public import Quartic.ConvolutionScalarImages
+public import Quartic.ConvolutionInitialImage
+
+@[expose] public section
 
 /-!
 # Actual outer convolution multiplication and its coefficient ranks

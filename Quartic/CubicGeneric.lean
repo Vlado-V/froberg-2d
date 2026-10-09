@@ -1,5 +1,9 @@
-import Quartic.CubicProductDimension
-import Quartic.BilinearGeneric
+module
+
+public import Quartic.CubicProductDimension
+public import Quartic.BilinearGeneric
+
+@[expose] public section
 
 /-!
 # Generic independence of actual cubic products

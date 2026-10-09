@@ -1,4 +1,8 @@
-import Froberg.BiformTensorComponent
+module
+
+public import Froberg.BiformTensorComponent
+
+@[expose] public section
 
 /-! Literal homogeneous output weights are killed by every different
 tensor-component projection. -/

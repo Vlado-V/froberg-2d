@@ -1,4 +1,8 @@
-import Froberg.ScalarReserveCount
+module
+
+public import Froberg.ScalarReserveCount
+
+@[expose] public section
 
 /-! A common positive capacity for layered covector incidence. All nuisance
 counts are lower order, while both available capacities have positive density. -/

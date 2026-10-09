@@ -1,7 +1,11 @@
-import Froberg.PreparedPrivateWitnessOpen
-import Froberg.PreparedOutputEquiv
-import Froberg.RestorationRename
-import Froberg.ParameterPullbackOpen
+module
+
+public import Froberg.PreparedPrivateWitnessOpen
+public import Froberg.PreparedOutputEquiv
+public import Froberg.RestorationRename
+public import Froberg.ParameterPullbackOpen
+
+@[expose] public section
 
 /-! Reindexing the output variables transports the complete private
 reduction, including the restored pure tuple and the literal boundaries. -/

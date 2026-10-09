@@ -1,6 +1,10 @@
-import Froberg.ScalarOddInjection
-import Froberg.PreparedRestorationOpen
-import Froberg.PrefixInjectionOpen
+module
+
+public import Froberg.ScalarOddInjection
+public import Froberg.PreparedRestorationOpen
+public import Froberg.PrefixInjectionOpen
+
+@[expose] public section
 
 /-! The all-even restored family admits a nonempty open with no odd
 coefficient cycles. Its witness sets every positive component to zero and

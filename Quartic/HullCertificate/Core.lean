@@ -1,4 +1,8 @@
-import Quartic.ProfileCertificate.Core
+module
+
+public import Quartic.ProfileCertificate.Core
+
+@[expose] public section
 
 /-!
 # Exact arithmetic infrastructure for the weak-vertex hull certificates

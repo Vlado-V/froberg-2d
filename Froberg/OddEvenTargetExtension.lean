@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundProductCompatibility
-import Mathlib.LinearAlgebra.Isomorphisms
+module
+
+public import Froberg.OddBackgroundProductCompatibility
+public import Mathlib.LinearAlgebra.Isomorphisms
+
+@[expose] public section
 
 /-! Adding even generators gives exactly their relative multiplication
 image in the fixed odd source and target, with a canonical quotient

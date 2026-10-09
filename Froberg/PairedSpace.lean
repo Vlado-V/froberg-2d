@@ -1,6 +1,10 @@
-import Froberg.PairedAssembly
-import Froberg.PairedSurjection
-import Froberg.SymmetricProducts
+module
+
+public import Froberg.PairedAssembly
+public import Froberg.PairedSurjection
+public import Froberg.SymmetricProducts
+
+@[expose] public section
 
 /-! The independent symmetric-product space of Lemma 4.1. -/
 noncomputable section

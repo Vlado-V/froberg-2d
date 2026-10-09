@@ -1,7 +1,11 @@
-import Froberg.InitialSubspace
-import Froberg.MonomialExpansionBound
-import Froberg.PrefixIncidence
-import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+module
+
+public import Froberg.InitialSubspace
+public import Froberg.MonomialExpansionBound
+public import Froberg.PrefixIncidence
+public import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+
+@[expose] public section
 
 /-! Uniform homogeneous-subspace growth obtained by weighted monomial expansion.
 This supplies the coefficient-ideal estimate in prefix incidence without an

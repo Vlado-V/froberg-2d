@@ -1,4 +1,8 @@
-import Froberg.TransportVariance
+module
+
+public import Froberg.TransportVariance
+
+@[expose] public section
 
 /-! Conditional kernels of finite joint distributions and a direct
 minorization from a family of distinct common target monomials. -/

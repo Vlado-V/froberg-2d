@@ -1,6 +1,10 @@
-import Froberg.ScaledMonomialShadow
-import Froberg.ProfileCapacityTotals
-import Froberg.SourceFibers
+module
+
+public import Froberg.ScaledMonomialShadow
+public import Froberg.ProfileCapacityTotals
+public import Froberg.SourceFibers
+
+@[expose] public section
 
 /-! Transport growth expressed directly on polynomial exponents, with
 all target exponents included. -/

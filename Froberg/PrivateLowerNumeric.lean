@@ -1,5 +1,9 @@
-import Froberg.PrivateFiniteShadow
-import Froberg.OuterProfileDimensions
+module
+
+public import Froberg.PrivateFiniteShadow
+public import Froberg.OuterProfileDimensions
+
+@[expose] public section
 
 /-! The lower-half private-column shadow bound, expressed entirely in the
 actual source and target fiber dimensions. -/

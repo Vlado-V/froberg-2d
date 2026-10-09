@@ -1,4 +1,8 @@
-import Froberg.QuarticBlockData
+module
+
+public import Froberg.QuarticBlockData
+
+@[expose] public section
 
 /-! Every quartic product fiber can be relabeled so that its doubled indices
 come first, followed by its single indices. -/

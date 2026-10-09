@@ -1,4 +1,8 @@
-import Froberg.ProjectedHomologyCoefficients
+module
+
+public import Froberg.ProjectedHomologyCoefficients
+
+@[expose] public section
 
 /-! Canonical scalar multiplication from the degree-d generator quotient
 into the actual projected endpoint cokernel. -/
@@ -72,13 +76,13 @@ def projectedQuotientProduct (pi : Forms K n (2*d) →ₗ[K] Z)
 faithfully extracted coefficients. -/
 theorem projectedNormalMap_canonical_coefficient_formula
     [Infinite K] [FiniteDimensional K Z] {t : ℕ}
-    (htwo : (2 : K) ≠ 0) (pi : Forms K n (2*d) →ₗ[K] Z)
+    (pi : Forms K n (2*d) →ₗ[K] Z)
     (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K) (z : Fin t → Forms K n d) :
     projectedNormalMap pi q (relativeGeneratorMotion q dual z) =
       (coefficientResponse (Submodule.span K (Set.range q)) (projectedQuotientProduct pi q) z).comp
-        (projectedHomologyCoefficients htwo pi q hq (Submodule.span K (Set.range q)) dual) := by
-  have h := projectedNormalMap_coefficient_formula htwo pi q hq
+        (projectedHomologyCoefficients pi q hq (Submodule.span K (Set.range q)) dual) := by
+  have h := projectedNormalMap_coefficient_formula pi q hq
     (Submodule.span K (Set.range q)) (fun j => Submodule.subset_span ⟨j,rfl⟩)
     dual (projectedQuotientProduct pi q) (LinearMap.id : ProjectedEndpointCokernel pi q →ₗ[K] _)
     (fun _ _ => rfl) z

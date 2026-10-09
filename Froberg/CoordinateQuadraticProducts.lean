@@ -1,5 +1,9 @@
-import Froberg.SymmetricIndependence
-import Froberg.Graded
+module
+
+public import Froberg.SymmetricIndependence
+public import Froberg.Graded
+
+@[expose] public section
 
 /-! Literal quadratic products of coordinate linear forms are independent. -/
 noncomputable section

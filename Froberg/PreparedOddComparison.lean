@@ -1,10 +1,14 @@
-import Froberg.PreparedExtraColumn
-import Froberg.PreparedBackgroundIndependent
-import Froberg.PreparedPrivateCertificate
-import Froberg.PreparedOuterSeparation
-import Froberg.PreparedThinProperty
-import Froberg.BackgroundChildDeletion
-import Froberg.ConcreteBackgroundComparison
+module
+
+public import Froberg.PreparedExtraColumn
+public import Froberg.PreparedBackgroundIndependent
+public import Froberg.PreparedPrivateCertificate
+public import Froberg.PreparedOuterSeparation
+public import Froberg.PreparedThinProperty
+public import Froberg.BackgroundChildDeletion
+public import Froberg.ConcreteBackgroundComparison
+
+@[expose] public section
 
 /-! A finite prepared odd-degree point supplies the concrete critical
 comparison. The extra column belongs to the enlarged point, while the
@@ -22,7 +26,7 @@ variable [IsAlgClosed K]
 
 theorem exists_critical_comparison_of_prepared_odd
     {r : ℕ} {c c' : ℕ → ℕ}
-    (htwo : (2 : K)≠0) (hd : 1 < d) (ho : d%2=1) (hm : 0 < m) (upper : Bool)
+    (hd : 1 < d) (ho : d%2=1) (hm : 0 < m) (upper : Bool)
     (hO : ∀ j∈J,O j≤Forms K h j) (hJ : ∀ j∈J,j≤d) (heven : ∀ j∈J,j%2=0)
     (hmin : ∀ j∈J,2≤j) (hJlt : ∀ j∈J,0<c' j → j<d)
     (hc : ∀ j∈J,c j≤c' j) (extra : ProductRows.LayerLabel J c')
@@ -72,7 +76,7 @@ theorem exists_critical_comparison_of_prepared_odd
     extra hmiss (prepared_positive_background_scalar_independent hd ho hO hmin hJ hJlt heven
       U p.1 p.2 hp hP)
   have hspan := prepared_extra_background_span hd0 ho hO hJ heven hc p.2.1 U p.1 p.2.2 extra hcover
-  have hbackground := prepared_private_flag_formal_relations htwo hd0 ho hO hJ heven
+  have hbackground := prepared_private_flag_formal_relations hd0 ho hO hJ heven
     (fun j hj => lt_of_lt_of_le (by omega : 0<2) (hmin j hj)) idx U p hiFull hoddFull hreduce D hD
   rw [hspan,←sup_assoc] at hbackground
   have hseparation := hsep D hD
@@ -90,7 +94,7 @@ theorem exists_critical_comparison_of_prepared_odd
     (BilinearCovectorStrata.thinSlices (backgroundOddTargetDimension
       (Fin.append (preparedBaseBiform hO hJ heven (restrictCounts hc p.2.1)) E) F P) C) at hthin
   rw [hbase] at hthin
-  exact exists_critical_comparison_of_concrete_background htwo hm upper hcard D hD Q hQ E F P M
+  exact exists_critical_comparison_of_concrete_background hm upper hcard D hD Q hQ E F P M
     hpositive hbackground hseparation hi hex hup hcoverage C hC hthin hgeneric hinj hdeleted
 
 end Froberg.PreparedTarget

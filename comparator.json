@@ -1,0 +1,29 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FrobergPaper.main_result"
+  ],
+  "definition_names": [
+    "FrobergPaper.Poly",
+    "FrobergPaper.Forms",
+    "FrobergPaper.exponentEquiv",
+    "FrobergPaper.formsBasis",
+    "FrobergPaper.CoefficientIndex",
+    "FrobergPaper.coefficientForms",
+    "FrobergPaper.coefficientSpace",
+    "FrobergPaper.formToRingQuotient",
+    "FrobergPaper.hilbertFunction",
+    "FrobergPaper.predictionSeries",
+    "FrobergPaper.predictionCoefficient",
+    "FrobergPaper.positiveTruncation",
+    "FrobergPaper.predictedHilbertFunction",
+    "FrobergPaper.GenericHilbertThrough",
+    "FrobergPaper.Statement"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

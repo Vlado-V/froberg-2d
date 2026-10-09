@@ -1,5 +1,9 @@
-import Froberg.BiformVectorDetector
-import Mathlib.LinearAlgebra.TensorProduct.Pi
+module
+
+public import Froberg.BiformVectorDetector
+public import Mathlib.LinearAlgebra.TensorProduct.Pi
+
+@[expose] public section
 
 /-! Output tensor quotients agree with coordinatewise scalar quotients.
 Detected independence therefore removes the product coefficients from

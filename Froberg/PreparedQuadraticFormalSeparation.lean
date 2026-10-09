@@ -1,7 +1,11 @@
-import Froberg.PreparedQuadraticDenominator
-import Froberg.QuadraticRowFormalSeparation
-import Froberg.HomogeneousRename
-import Froberg.QuadraticQuotientSeparation
+module
+
+public import Froberg.PreparedQuadraticDenominator
+public import Froberg.QuadraticRowFormalSeparation
+public import Froberg.HomogeneousRename
+public import Froberg.QuadraticQuotientSeparation
+
+@[expose] public section
 
 /-! The actual low-component coefficient row supplies C.2 for the displayed
 homogeneous outer family and background, uniformly in every later supported

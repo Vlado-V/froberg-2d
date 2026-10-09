@@ -1,6 +1,10 @@
-import Froberg.BiformNormalized
-import Froberg.BilinearPostcompose
-import Froberg.TwoFamilyIntrinsicOpen
+module
+
+public import Froberg.BiformNormalized
+public import Froberg.BilinearPostcompose
+public import Froberg.TwoFamilyIntrinsicOpen
+
+@[expose] public section
 
 /-! Actual two-block homogeneous multiplication with explicit target-degree
 identifications. These maps feed the two-family odd-row incidence theorem. -/

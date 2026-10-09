@@ -1,6 +1,10 @@
-import Froberg.PreparedParameters
-import Mathlib.Logic.Equiv.Fin.Basic
-import Mathlib.Logic.Equiv.Sum
+module
+
+public import Froberg.PreparedParameters
+public import Mathlib.Logic.Equiv.Fin.Basic
+public import Mathlib.Logic.Equiv.Sum
+
+@[expose] public section
 
 /-! Appending the private columns to one positive layer is literal reindexing
 of the prepared generator family. This is used at the U=0 specialization. -/
@@ -13,7 +17,7 @@ def appendedCounts (counts : ℕ → ℕ) (u R j : ℕ) : ℕ :=
 
 variable {q u : ℕ} {J : Finset ℕ} {counts : ℕ → ℕ}
 
-private def addedSliceEquiv (R : J) :
+def addedSliceEquiv (R : J) :
     Fin u ≃ (Σ j : J,Fin (if j.val=R.val then u else 0)) := by
   classical
   apply Equiv.ofBijective (fun i => ⟨R,Fin.cast (by simp) i⟩)

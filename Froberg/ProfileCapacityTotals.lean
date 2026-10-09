@@ -1,5 +1,9 @@
-import Froberg.FiniteMonomialTransport
-import Froberg.MonomialFiberEquivalences
+module
+
+public import Froberg.FiniteMonomialTransport
+public import Froberg.MonomialFiberEquivalences
+
+@[expose] public section
 
 /-! Exact identities between total monomial capacities and the finite
 profile totals used to normalize the transport. -/

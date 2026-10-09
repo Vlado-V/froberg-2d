@@ -1,6 +1,10 @@
-import Froberg.PreparedCountRestriction
-import Froberg.PreparedBiformFamilies
-import Froberg.RestoredScalarCompatibility
+module
+
+public import Froberg.PreparedCountRestriction
+public import Froberg.PreparedBiformFamilies
+public import Froberg.RestoredScalarCompatibility
+
+@[expose] public section
 
 /-! Restricting the parameter family is literally restriction of its
 generators, including the restored pure parts in their retained slots. -/

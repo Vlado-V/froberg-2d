@@ -1,6 +1,10 @@
-import Froberg.IntrinsicProjectionOpen
-import Froberg.KernelCutoffOpen
-import Froberg.GenericDimensions
+module
+
+public import Froberg.IntrinsicProjectionOpen
+public import Froberg.KernelCutoffOpen
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! One projection has both normalized image growth and a prescribed
 surjective multiplication property of its kernel. The two conditions are

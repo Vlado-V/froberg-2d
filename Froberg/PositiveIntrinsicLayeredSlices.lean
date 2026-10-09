@@ -1,6 +1,10 @@
-import Froberg.IntrinsicQuotientSlices
-import Froberg.PositiveIntrinsicKernelAvoidance
-import Froberg.AffineKernelBudget
+module
+
+public import Froberg.IntrinsicQuotientSlices
+public import Froberg.PositiveIntrinsicKernelAvoidance
+public import Froberg.AffineKernelBudget
+
+@[expose] public section
 
 /-! The layered growth estimates and their exact finite budget yield
 closed kernel slices on the actual quotient, on one common scalar open. -/

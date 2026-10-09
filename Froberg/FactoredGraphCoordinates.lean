@@ -1,5 +1,9 @@
-import Froberg.GraphQuotientCoordinates
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.GraphQuotientCoordinates
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Graph elimination when the presentation of the graph has a kernel.
 The bottom map must vanish on precisely the relations already killed by

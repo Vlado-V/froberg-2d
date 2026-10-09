@@ -1,4 +1,8 @@
-import Froberg.SingleDiagonalRow
+module
+
+public import Froberg.SingleDiagonalRow
+
+@[expose] public section
 
 /-! The only nonempty cross block in the small-degree row six is 2+4. -/
 noncomputable section

@@ -1,4 +1,9 @@
-import Quartic.FiniteEndpointMetadata28Data
+module
+
+public import Quartic.FiniteEndpointMetadata28Data
+import all Mathlib.Data.List.Sort
+
+@[expose] public section
 open Quartic.FiniteEndpointMetadata28Data Quartic.FiniteEndpointCheckerPolynomial
 open Quartic.FiniteEndpointChunks
 set_option maxRecDepth 1000000

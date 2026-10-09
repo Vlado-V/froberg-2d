@@ -1,5 +1,9 @@
-import Froberg.CountedPrivateFrameOpen
-import Froberg.PrivatePreparedOpen
+module
+
+public import Froberg.CountedPrivateFrameOpen
+public import Froberg.PrivatePreparedOpen
+
+@[expose] public section
 
 /-! The counted private frame witness gives a nonempty principal open on
 the full fixed-pure parameter space, for every fixed pure private tuple. -/

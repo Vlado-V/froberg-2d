@@ -1,5 +1,9 @@
-import Quartic.ConvolutionFiniteImages
-import Quartic.WeakHullProfile
+module
+
+public import Quartic.ConvolutionFiniteImages
+public import Quartic.WeakHullProfile
+
+@[expose] public section
 
 /-!
 # Actual scalar image bounds throughout the infinite range m ≥ 41

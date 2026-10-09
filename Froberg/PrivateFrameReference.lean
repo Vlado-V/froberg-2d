@@ -1,5 +1,9 @@
-import Froberg.PrivateFrameConstraints
-import Froberg.QuadraticOutputDimension
+module
+
+public import Froberg.PrivateFrameConstraints
+public import Froberg.QuadraticOutputDimension
+
+@[expose] public section
 
 /-! One reference quadratic constraint suffices to choose scalar-size
 thresholds independently of the later successful frame. -/

@@ -1,6 +1,10 @@
-import Froberg.PreparedProductBiform
-import Froberg.PreparedPrivateRowOpen
-import Froberg.PrivateIntrinsicSeparation
+module
+
+public import Froberg.PreparedProductBiform
+public import Froberg.PreparedPrivateRowOpen
+public import Froberg.PrivateIntrinsicSeparation
+
+@[expose] public section
 
 /-! The literal sparse witness, after adjoining private variables, separates
 the private coefficient block in the common prepared parameter space. -/

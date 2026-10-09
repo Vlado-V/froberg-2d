@@ -1,8 +1,12 @@
-import Froberg.PreparedPrivateHigherWitness
-import Froberg.PreparedPrivateQuadraticWitness
-import Froberg.PreparedPrivateWitnessOpen
-import Froberg.PreparedFiniteProducts
-import Froberg.PrivateBiformFamily
+module
+
+public import Froberg.PreparedPrivateHigherWitness
+public import Froberg.PreparedPrivateQuadraticWitness
+public import Froberg.PreparedPrivateWitnessOpen
+public import Froberg.PreparedFiniteProducts
+public import Froberg.PrivateBiformFamily
+
+@[expose] public section
 
 /-! Finite numerical row capacities yield a common private prepared-family
 open for one prescribed private tuple and its actual quadratic detector. -/

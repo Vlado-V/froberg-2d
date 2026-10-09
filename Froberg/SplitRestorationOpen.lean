@@ -1,4 +1,8 @@
-import Froberg.PolynomialFamilyRestoration
+module
+
+public import Froberg.PolynomialFamilyRestoration
+
+@[expose] public section
 
 /-! A two-parity coefficient complex has an open exactness locus even
 when both alternating boundary maps have kernels. -/

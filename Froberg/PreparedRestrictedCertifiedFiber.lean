@@ -1,6 +1,10 @@
-import Froberg.PreparedCountScalarFiber
-import Froberg.PreparedJointSelection
-import Froberg.FiniteBasisPrincipalIntersection
+module
+
+public import Froberg.PreparedCountScalarFiber
+public import Froberg.PreparedJointSelection
+public import Froberg.FiniteBasisPrincipalIntersection
+
+@[expose] public section
 
 /-! Select enlarged prepared parameters while imposing the final
 certificates on their base restriction, then freeze all temporary slots. -/

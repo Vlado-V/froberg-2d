@@ -1,4 +1,8 @@
-import Froberg.RestoredQuadraticLowComponents
+module
+
+public import Froberg.RestoredQuadraticLowComponents
+
+@[expose] public section
 
 /-! The genuine coefficient-row open implies C.2 for every scalar-supported
 endpoint deletion and the literal restored background. -/

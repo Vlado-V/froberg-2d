@@ -1,4 +1,8 @@
-import Froberg.ProjectedDetection
+module
+
+public import Froberg.ProjectedDetection
+
+@[expose] public section
 
 /-! A separated outer-product block in the quadratic coefficient row gives
 the literal formal-square condition, uniformly under supported deletions. -/

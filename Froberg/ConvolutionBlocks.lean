@@ -1,4 +1,8 @@
-import Froberg.ConvolutionFamily
+module
+
+public import Froberg.ConvolutionFamily
+
+@[expose] public section
 
 /-! Finite convolution blocks inside a prescribed output space. -/
 noncomputable section

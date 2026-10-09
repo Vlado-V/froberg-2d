@@ -1,4 +1,8 @@
-import Quartic.RationalKernelExtension
+module
+
+public import Quartic.RationalKernelExtension
+
+@[expose] public section
 
 /-!
 # Generic avoidance of successive dependent kernel constraints

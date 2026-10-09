@@ -1,6 +1,10 @@
-import Froberg.BiformExtension
-import Mathlib.LinearAlgebra.TensorProduct.Submodule
-import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+module
+
+public import Froberg.BiformExtension
+public import Mathlib.LinearAlgebra.TensorProduct.Submodule
+public import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+
+@[expose] public section
 
 /-! Exact image and quotient operations for the row-two construction. -/
 noncomputable section

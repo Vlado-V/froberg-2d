@@ -1,6 +1,10 @@
-import Froberg.Generic
-import Mathlib.Algebra.MvPolynomial.Funext
-import Mathlib.RepresentationTheory.Basic
+module
+
+public import Froberg.Generic
+public import Mathlib.Algebra.MvPolynomial.Funext
+public import Mathlib.RepresentationTheory.Basic
+
+@[expose] public section
 
 /-! # Polynomial pullback by linear changes of coefficient coordinates -/
 

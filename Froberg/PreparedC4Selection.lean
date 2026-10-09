@@ -1,6 +1,10 @@
-import Froberg.PreparedRestrictedGrowthFiber
-import Froberg.PreparedScalarThinOpen
-import Froberg.BottomThinFlag
+module
+
+public import Froberg.PreparedRestrictedGrowthFiber
+public import Froberg.PreparedScalarThinOpen
+public import Froberg.BottomThinFlag
+
+@[expose] public section
 
 /-! Actual-count C.4 selection on the final prepared family, while every
 temporary added column and every supplied enlarged-family open is retained. -/

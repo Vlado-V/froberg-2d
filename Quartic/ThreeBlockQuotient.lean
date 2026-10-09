@@ -1,4 +1,8 @@
-import Quartic.ThreeBlockModel
+module
+
+public import Quartic.ThreeBlockModel
+
+@[expose] public section
 
 /-!
 # The actual pure quadratic quotient and its two coordinates
@@ -75,7 +79,7 @@ theorem reduction_ker : LinearMap.ker (reduction (K := K)) = pureSpace := by
   rw [pureSpace_finrank]
   omega
 
-private def quotientCoordinates {V W : Type*} [AddCommGroup V] [Module K V]
+def quotientCoordinates {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (B : Submodule K V)
     (hk : f.ker = B) (hs : Function.Surjective f) : (V ⧸ B) ≃ₗ[K] W :=
   (Submodule.quotEquivOfEq _ _ hk.symm).trans (f.quotKerEquivOfSurjective hs)

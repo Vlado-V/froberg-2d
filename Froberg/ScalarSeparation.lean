@@ -1,5 +1,9 @@
-import Froberg.RetainedPrefix
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.RetainedPrefix
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! The full generic scalar-family consequence of the deleted-bidegree estimate. -/
 noncomputable section

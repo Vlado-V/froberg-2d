@@ -1,4 +1,8 @@
-import Froberg.TargetCosts
+module
+
+public import Froberg.TargetCosts
+
+@[expose] public section
 
 /-! # The convolution dimension identity and coverage of target rows -/
 

@@ -1,5 +1,9 @@
-import Froberg.ProductRowPairs
-import Froberg.CoefficientRowFromPairs
+module
+
+public import Froberg.ProductRowPairs
+public import Froberg.CoefficientRowFromPairs
+
+@[expose] public section
 
 /-! Product-row columns remain independent after scalar labels and a common
 generator enumeration are added. -/

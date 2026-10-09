@@ -1,6 +1,10 @@
-import Quartic.ConvolutionInverse
-import Quartic.ConvolutionConstantSlot
-import Quartic.Counts
+module
+
+public import Quartic.ConvolutionInverse
+public import Quartic.ConvolutionConstantSlot
+public import Quartic.Counts
+
+@[expose] public section
 
 /-!
 # The actual convolution Hilbert function

@@ -1,4 +1,8 @@
-import Froberg.AffineKernelCharts
+module
+
+public import Froberg.AffineKernelCharts
+
+@[expose] public section
 
 /-! The first-stage chart equations vanish on the actual relation kernel. -/
 noncomputable section

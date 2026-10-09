@@ -1,5 +1,9 @@
-import Froberg.GraphQuotientCoordinates
-import Mathlib.LinearAlgebra.Pi
+module
+
+public import Froberg.GraphQuotientCoordinates
+public import Mathlib.LinearAlgebra.Pi
+
+@[expose] public section
 
 /-! Elementary quotient coordinates used to isolate the bottom odd row. -/
 noncomputable section

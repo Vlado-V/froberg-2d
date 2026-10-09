@@ -1,5 +1,9 @@
-import Froberg.OddSourcePureCoordinates
-import Froberg.CoordinateSubmodule
+module
+
+public import Froberg.OddSourcePureCoordinates
+public import Froberg.CoordinateSubmodule
+
+@[expose] public section
 
 /-! The higher part of the odd source splits by every odd degree. The
 private graph imposes relations only in the top source block. -/

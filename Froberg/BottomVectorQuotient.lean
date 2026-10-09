@@ -1,5 +1,9 @@
-import Froberg.BottomVectorRows
-import Froberg.OddSourceGraphCoordinates
+module
+
+public import Froberg.BottomVectorRows
+public import Froberg.OddSourceGraphCoordinates
+
+@[expose] public section
 
 /-! The B.3 vector source and its scalar quotient target identify with the
 actual bottom tensor source and target, with literal product compatibility. -/

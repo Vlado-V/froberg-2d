@@ -1,5 +1,9 @@
-import Quartic.HullCertificate.Data
-import Quartic.HullCertificate.Full
+module
+
+public import Quartic.HullCertificate.Data
+public import Quartic.HullCertificate.Full
+
+@[expose] public section
 
 /-!
 # Verified weak-vertex supporting bounds, dimensions 130 through 319

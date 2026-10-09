@@ -1,6 +1,10 @@
-import Quartic.MarkedCoefficient
-import Quartic.PolynomialRankOpen
-import Quartic.UniformEndpoint
+module
+
+public import Quartic.MarkedCoefficient
+public import Quartic.PolynomialRankOpen
+public import Quartic.UniformEndpoint
+
+@[expose] public section
 
 /-! One actual child flag, chosen on a common principal open. -/
 noncomputable section

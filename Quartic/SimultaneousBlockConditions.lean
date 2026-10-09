@@ -1,5 +1,9 @@
-import Quartic.SimultaneousMiddle
-import Quartic.TraceGeneric
+module
+
+public import Quartic.SimultaneousMiddle
+public import Quartic.TraceGeneric
+
+@[expose] public section
 
 /-!
 # Simultaneous middle, augmented, and trace conditions on the same coefficients

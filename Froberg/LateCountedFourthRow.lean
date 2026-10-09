@@ -1,9 +1,13 @@
-import Froberg.CountedFourthRow
-import Froberg.PreparedFourthRow
-import Froberg.ShiftedPreparedCapacities
-import Froberg.ShiftedSmallCapacities
-import Froberg.ShiftedSparseBudgets
-import Froberg.SingleProfileScalar
+module
+
+public import Froberg.CountedFourthRow
+public import Froberg.PreparedFourthRow
+public import Froberg.ShiftedPreparedCapacities
+public import Froberg.ShiftedSmallCapacities
+public import Froberg.ShiftedSparseBudgets
+public import Froberg.SingleProfileScalar
+
+@[expose] public section
 
 /-! Fourth-row capacity thresholds precede the choice of output constraints. -/
 noncomputable section

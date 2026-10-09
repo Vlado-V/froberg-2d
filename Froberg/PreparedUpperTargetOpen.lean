@@ -1,5 +1,9 @@
-import Froberg.PreparedTargetForms
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.PreparedTargetForms
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! The high-target rank open in exactly the full prepared parameter space,
 including arbitrary scalar shifts and the complete outer biform family. -/

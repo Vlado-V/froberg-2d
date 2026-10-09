@@ -1,6 +1,10 @@
-import Froberg.RestoredCountedOuterOdd
-import Froberg.ActualRestoredIndependence
-import Froberg.PreparedCountedRestoredOdd
+module
+
+public import Froberg.RestoredCountedOuterOdd
+public import Froberg.ActualRestoredIndependence
+public import Froberg.PreparedCountedRestoredOdd
+
+@[expose] public section
 
 /-! Full restored odd exactness at the actual all-even counts, with
 arbitrary additional fixed columns and a late choice of output space. -/

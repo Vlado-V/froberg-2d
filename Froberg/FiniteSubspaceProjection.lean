@@ -1,5 +1,9 @@
-import Quartic.PolynomialRankOpen
-import Mathlib.LinearAlgebra.Dimension.Free
+module
+
+public import Quartic.PolynomialRankOpen
+public import Mathlib.LinearAlgebra.Dimension.Free
+
+@[expose] public section
 
 /-! A single linear projection is injective on any finite family of subspaces
 whose dimensions fit in its target. The simultaneous condition is open. -/

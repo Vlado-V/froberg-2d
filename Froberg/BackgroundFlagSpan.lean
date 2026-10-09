@@ -1,8 +1,12 @@
-import Froberg.ReplacementEnumeration
-import Froberg.OddExactEnumeration
-import Froberg.FlagReplacement
-import Froberg.OddEndpointScalarSlices
-import Froberg.OddEvenExtension
+module
+
+public import Froberg.ReplacementEnumeration
+public import Froberg.OddExactEnumeration
+public import Froberg.FlagReplacement
+public import Froberg.OddEndpointScalarSlices
+public import Froberg.OddEvenExtension
+
+@[expose] public section
 
 /-! Literal canonical generator spans before and after the scalar flag
 replacement. The positive background uses exactly the even-layer and

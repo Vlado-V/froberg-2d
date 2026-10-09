@@ -1,5 +1,9 @@
-import Froberg.PreparedPositiveLeadingOpen
-import Froberg.PreparedParameterMaps
+module
+
+public import Froberg.PreparedPositiveLeadingOpen
+public import Froberg.PreparedParameterMaps
+
+@[expose] public section
 
 /-! Row witnesses provide precisely the leading independence needed for
 the scalar-quotient condition in the final comparison. -/

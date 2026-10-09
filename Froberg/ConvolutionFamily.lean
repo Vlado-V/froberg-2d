@@ -1,5 +1,9 @@
-import Froberg.SymmetricConvolution
-import Froberg.VectorFormFamily
+module
+
+public import Froberg.SymmetricConvolution
+public import Froberg.VectorFormFamily
+
+@[expose] public section
 
 /-! The actual finite family of vector-valued forms supplied by convolution. -/
 noncomputable section

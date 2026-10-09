@@ -1,5 +1,9 @@
-import Froberg.CoefficientRowElimination
-import Froberg.ScalarCycleReduction
+module
+
+public import Froberg.CoefficientRowElimination
+public import Froberg.ScalarCycleReduction
+
+@[expose] public section
 
 /-! Reconstruct actual coefficients from the solved rows and remove their
 positive part by one constant Koszul boundary. -/

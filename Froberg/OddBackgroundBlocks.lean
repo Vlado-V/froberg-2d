@@ -1,8 +1,12 @@
-import Froberg.OddBackgroundQuotient
-import Froberg.OddBiformDecomposition
-import Froberg.AllEvenBiformDecomposition
-import Froberg.WeightedTriangularProducts
-import Froberg.CoordinateSubmodule
+module
+
+public import Froberg.OddBackgroundQuotient
+public import Froberg.OddBiformDecomposition
+public import Froberg.AllEvenBiformDecomposition
+public import Froberg.WeightedTriangularProducts
+public import Froberg.CoordinateSubmodule
+
+@[expose] public section
 
 /-! Weighted components preserve the literal scalar/linear background
 relations. Consequently its complete odd target quotient splits into all

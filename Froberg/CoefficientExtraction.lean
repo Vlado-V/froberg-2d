@@ -1,4 +1,8 @@
-import Froberg.FormalHyperplane
+module
+
+public import Froberg.FormalHyperplane
+
+@[expose] public section
 
 /-! Coefficient extraction on actual symmetric relations.  Separation of the
 new symmetric products is precisely what makes the quotient by old relations

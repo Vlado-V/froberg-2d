@@ -1,5 +1,9 @@
-import Froberg.FiberwisePrincipal
-import Froberg.AffinePolynomialSubstitution
+module
+
+public import Froberg.FiberwisePrincipal
+public import Froberg.AffinePolynomialSubstitution
+
+@[expose] public section
 
 /-! Fiberwise nonempty opens meet arbitrary joint opens in finite-dimensional
 linear parameter spaces, using their actual chosen coordinates. -/

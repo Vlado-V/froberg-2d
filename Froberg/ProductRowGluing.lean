@@ -1,4 +1,8 @@
-import Froberg.ProductRows
+module
+
+public import Froberg.ProductRows
+
+@[expose] public section
 
 /-! Witnesses for distinct pairs in one fixed product row can be chosen
 independently and assembled into one common family of layer generators. -/

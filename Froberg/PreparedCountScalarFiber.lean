@@ -1,5 +1,9 @@
-import Froberg.PreparedCountRestriction
-import Froberg.PreparedScalarFiberAt
+module
+
+public import Froberg.PreparedCountRestriction
+public import Froberg.PreparedScalarFiberAt
+
+@[expose] public section
 
 /-! Vary only the old positive scalar slots of an enlarged prepared
 family. Every added scalar slot and every high term stays fixed. -/

@@ -1,8 +1,12 @@
-import Quartic.SmallCovectorMotion
-import Quartic.AmbientSliceMotion
-import Quartic.AuxiliaryMotionMatrix
-import Quartic.ActualTraceMotion
-import Quartic.ActualCorrectionMotion
+module
+
+public import Quartic.SmallCovectorMotion
+public import Quartic.AmbientSliceMotion
+public import Quartic.AuxiliaryMotionMatrix
+public import Quartic.ActualTraceMotion
+public import Quartic.ActualCorrectionMotion
+
+@[expose] public section
 
 /-! The actual two motion matrices exclude ambient covectors from supplied closed slices. -/
 noncomputable section

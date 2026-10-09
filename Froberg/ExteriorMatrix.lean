@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.ExteriorPower.Basis
-import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.ExteriorPower.Basis
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Polynomial matrices for exterior-power actions

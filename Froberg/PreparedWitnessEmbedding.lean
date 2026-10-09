@@ -1,5 +1,9 @@
-import Froberg.PreparedRowOpen
-import Froberg.ProductRowUpdate
+module
+
+public import Froberg.PreparedRowOpen
+public import Froberg.ProductRowUpdate
+
+@[expose] public section
 
 /-! Concrete sparse/product witnesses are points of the common prepared
 coefficient space. Their construction-specific coordinates disappear here. -/

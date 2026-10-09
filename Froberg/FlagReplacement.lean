@@ -1,6 +1,10 @@
-import Froberg.CriticalChildFlag
-import Froberg.PreparedHyperplane
-import Froberg.FormalHyperplane
+module
+
+public import Froberg.CriticalChildFlag
+public import Froberg.PreparedHyperplane
+public import Froberg.FormalHyperplane
+
+@[expose] public section
 
 /-! Exact replacement for an embedded scalar flag and literal independent
 positive columns. All subspace hypotheses of the hyperplane lemma are

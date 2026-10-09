@@ -1,6 +1,10 @@
-import Froberg.PreparedFiniteProducts
-import Froberg.FixedSlotCapacity
-import Froberg.PreparedCountIdentities
+module
+
+public import Froberg.PreparedFiniteProducts
+public import Froberg.FixedSlotCapacity
+public import Froberg.PreparedCountIdentities
+
+@[expose] public section
 
 /-! The Section 5 counts supply the finite product-row records used by the
 common-family construction. Fixed appended quadratic slots are included. -/

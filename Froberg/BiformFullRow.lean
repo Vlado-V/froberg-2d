@@ -1,4 +1,8 @@
-import Froberg.BiformRegrade
+module
+
+public import Froberg.BiformRegrade
+
+@[expose] public section
 
 /-! The restricted scalar multipliers in row two embed in the full biform
 coefficient space. Thus the witnesses are points of the full parameter space. -/

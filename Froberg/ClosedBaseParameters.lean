@@ -1,5 +1,9 @@
-import Froberg.Graded
-import Quartic.SliceMotionAvoidance
+module
+
+public import Froberg.Graded
+public import Quartic.SliceMotionAvoidance
+
+@[expose] public section
 
 /-! Freely adjoining profile-chart and higher-covector parameters to a
 closed sliced base. The dimension cost is exactly the number of new parameters. -/

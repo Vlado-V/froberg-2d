@@ -1,5 +1,9 @@
-import Froberg.ProjectedSparseInjection
-import Mathlib.LinearAlgebra.Projection
+module
+
+public import Froberg.ProjectedSparseInjection
+public import Mathlib.LinearAlgebra.Projection
+
+@[expose] public section
 
 /-! Sparse polynomial columns in an actual output subspace remain injective
 modulo each of finitely many fixed output relation spaces. -/

@@ -1,5 +1,9 @@
-import Froberg.GenericFieldDescent
-import Froberg.GenericMonotonicity
+module
+
+public import Froberg.GenericFieldDescent
+public import Froberg.GenericMonotonicity
+
+@[expose] public section
 
 /-! Field descent for the actual endpoint statement and its defect recurrence. -/
 noncomputable section
@@ -31,11 +35,11 @@ theorem eventual_endpoints_descend (f : K →+* L)
   obtain ⟨N,hN,h⟩ := h
   exact ⟨N,hN,fun n hn r hr => (genericEndpoint_baseChange f (by omega) hr).mpr (h n hn r hr)⟩
 
-theorem critical_child_defects_le (htwo : (2 : K) ≠ 0) (hn : 0 < n) :
+theorem critical_child_defects_le (hn : 0 < n) :
     genericHomology K n d (upperCount n d-1) ≤ criticalDefect K n d ∧
     genericCokernel K n d (upperCount n d) ≤ criticalDefect K n d := by
   have hcount := upperCount_le_lowerCount_add_one n d
-  exact ⟨(genericHomology_mono htwo hn (by omega) (lowerCount_le_monomial_count hn d)).trans
+  exact ⟨(genericHomology_mono hn (by omega) (lowerCount_le_monomial_count hn d)).trans
     (le_max_left _ _),le_max_right _ _⟩
 
 end Froberg

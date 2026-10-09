@@ -1,8 +1,12 @@
-import Froberg.EquivariantUnits
-import Froberg.PrimitiveVectors
-import Froberg.PolynomialScalarExtraction
-import Mathlib.RepresentationTheory.Basic
-import Mathlib.Algebra.MvPolynomial.Monad
+module
+
+public import Froberg.EquivariantUnits
+public import Froberg.PrimitiveVectors
+public import Froberg.PolynomialScalarExtraction
+public import Mathlib.RepresentationTheory.Basic
+public import Mathlib.Algebra.MvPolynomial.Monad
+
+@[expose] public section
 
 /-!
 # Polynomial actions on primitive rational lines

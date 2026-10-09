@@ -1,6 +1,10 @@
-import Froberg.PolynomialLinearAvoidance
-import Froberg.ProjectionCharts
-import Quartic.BilinearGeneric
+module
+
+public import Froberg.PolynomialLinearAvoidance
+public import Froberg.ProjectionCharts
+public import Quartic.BilinearGeneric
+
+@[expose] public section
 
 /-! Projective coefficient charts for two simultaneous generator families.
 Each nonzero family has its own coefficient span; one relative scalar joins

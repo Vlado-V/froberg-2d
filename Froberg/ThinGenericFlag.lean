@@ -1,5 +1,9 @@
-import Froberg.ThinQuotientStrata
-import Froberg.GenericFlagOpen
+module
+
+public import Froberg.ThinQuotientStrata
+public import Froberg.GenericFlagOpen
+
+@[expose] public section
 
 /-! The actual thin scalar quotient and both levels of a generic child flag
 hold on the same nonempty open of scalar coefficients. -/

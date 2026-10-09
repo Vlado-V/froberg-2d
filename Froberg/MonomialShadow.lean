@@ -1,4 +1,8 @@
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! Quantitative expansion of the shadow of any homogeneous monomial set. -/
 noncomputable section

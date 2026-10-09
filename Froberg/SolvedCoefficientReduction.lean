@@ -1,4 +1,8 @@
-import Froberg.DelayedPrivateElimination
+module
+
+public import Froberg.DelayedPrivateElimination
+
+@[expose] public section
 
 /-! The solved-row invariant directly reconstructs the literal boundary.
 This also applies to the induction with delayed private columns. -/

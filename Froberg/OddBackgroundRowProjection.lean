@@ -1,6 +1,10 @@
-import Froberg.OddBackgroundRow
-import Froberg.OddScalarLayers
-import Froberg.OddBackgroundProduct
+module
+
+public import Froberg.OddBackgroundRow
+public import Froberg.OddScalarLayers
+public import Froberg.OddBackgroundProduct
+
+@[expose] public section
 
 /-! Actual background target projections to the individual tensor
 quotients, and transfer of the checked scalar growth to literal products. -/

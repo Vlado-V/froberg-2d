@@ -1,4 +1,8 @@
-import Froberg.CommonMixedMinors
+module
+
+public import Froberg.CommonMixedMinors
+
+@[expose] public section
 
 /-! A single generic vector family satisfies all disjoint mixed-minor conditions. -/
 noncomputable section

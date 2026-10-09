@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundEndpoint
-import Froberg.ParitySourceQuotient
+module
+
+public import Froberg.OddBackgroundEndpoint
+public import Froberg.ParitySourceQuotient
+
+@[expose] public section
 
 /-! The actual odd coefficient space has precisely the constant F and U+P
 relations. Even scalar generators disappear under the parity projection. -/

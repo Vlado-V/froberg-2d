@@ -1,5 +1,9 @@
-import Froberg.TensorizedGrowth
-import Froberg.GradedNormalized
+module
+
+public import Froberg.TensorizedGrowth
+public import Froberg.GradedNormalized
+
+@[expose] public section
 
 /-! The ordinary normalized multiplication bound for two actual polynomial
 variable blocks, including degree-zero factors. -/

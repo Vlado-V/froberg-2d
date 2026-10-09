@@ -1,4 +1,8 @@
-import Froberg.GenericDimensions
+module
+
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! Generic nested child tuples on a single nonempty coefficient open. -/
 noncomputable section

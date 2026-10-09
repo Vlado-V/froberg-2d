@@ -1,6 +1,10 @@
-import Froberg.Koszul
-import Froberg.RootSigns
-import Mathlib.Algebra.Order.Floor.Semiring
+module
+
+public import Froberg.Koszul
+public import Froberg.RootSigns
+public import Mathlib.Algebra.Order.Floor.Semiring
+
+@[expose] public section
 
 /-! Concrete monomial bounds and the two critical generator counts. -/
 

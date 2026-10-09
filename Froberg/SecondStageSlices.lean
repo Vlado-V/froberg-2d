@@ -1,5 +1,9 @@
-import Quartic.SliceMotionAvoidance
-import Froberg.FiniteSecondStageAvoidance
+module
+
+public import Quartic.SliceMotionAvoidance
+public import Froberg.FiniteSecondStageAvoidance
+
+@[expose] public section
 
 /-! Closed homogeneous slice wrappers selecting only the second-stage
 motion. The first-stage vector remains universally quantified. -/

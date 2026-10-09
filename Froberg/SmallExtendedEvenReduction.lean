@@ -1,7 +1,11 @@
-import Froberg.PreparedSmallEvenReduction
-import Froberg.QuadraticExtendedRow
-import Froberg.ZeroEmptyExtendedRow
-import Froberg.PreparedPrivateFinite
+module
+
+public import Froberg.PreparedSmallEvenReduction
+public import Froberg.QuadraticExtendedRow
+public import Froberg.ZeroEmptyExtendedRow
+public import Froberg.PreparedPrivateFinite
+
+@[expose] public section
 
 /-! Concrete cubic and quartic witnesses give the full even reduction on
 one nonempty principal open, including every inactive even row. -/

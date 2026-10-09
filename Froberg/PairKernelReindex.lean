@@ -1,4 +1,8 @@
-import Froberg.OddSplitElimination
+module
+
+public import Froberg.OddSplitElimination
+
+@[expose] public section
 
 /-! Literal two-family relation statements are invariant under finite
 reindexing of either family. -/

@@ -1,4 +1,8 @@
-import Froberg.ShiftedProductCapacity
+module
+
+public import Froberg.ShiftedProductCapacity
+
+@[expose] public section
 
 /-! Uniform target-module quantification: the numerical thresholds are selected
 before choosing the module carrying the deleted-output detector. -/

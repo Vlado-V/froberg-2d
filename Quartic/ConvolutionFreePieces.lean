@@ -1,6 +1,10 @@
-import Quartic.FreePieces
-import Quartic.ConvolutionFree
-import Mathlib.LinearAlgebra.Quotient.Pi
+module
+
+public import Quartic.FreePieces
+public import Quartic.ConvolutionFree
+public import Mathlib.LinearAlgebra.Quotient.Pi
+
+@[expose] public section
 
 /-!
 # Decomposing the actual free polynomial extension of the convolution quotient

@@ -1,4 +1,8 @@
-import Froberg.MonomialExpansion
+module
+
+public import Froberg.MonomialExpansion
+
+@[expose] public section
 
 /-! Finite monomial incidence, including the bounded multiplicity of the
 three-factor map used to strengthen normalized shadow expansion. -/

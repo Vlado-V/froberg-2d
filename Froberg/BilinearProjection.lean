@@ -1,4 +1,8 @@
-import Froberg.ProjectionRankAvoidance
+module
+
+public import Froberg.ProjectionRankAvoidance
+
+@[expose] public section
 
 /-! The projection incidence argument applied to actual bilinear product
 images, with every source subspace covered by finite polynomial charts. -/

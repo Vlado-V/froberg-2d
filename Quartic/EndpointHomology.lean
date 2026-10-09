@@ -1,5 +1,9 @@
-import Quartic.Homology
-import Mathlib.Algebra.BigOperators.Fin
+module
+
+public import Quartic.Homology
+public import Mathlib.Algebra.BigOperators.Fin
+
+@[expose] public section
 
 /-!
 # Restricting first Koszul homology to a prefix of independent generators

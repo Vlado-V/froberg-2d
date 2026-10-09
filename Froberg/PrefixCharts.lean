@@ -1,4 +1,8 @@
-import Froberg.Graded
+module
+
+public import Froberg.Graded
+
+@[expose] public section
 
 /-!
 # Normalized last-row elimination for the prefix incidence charts

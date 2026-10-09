@@ -1,5 +1,9 @@
-import Froberg.PrivateColumns
-import Froberg.CommonMultipleCount
+module
+
+public import Froberg.PrivateColumns
+public import Froberg.CommonMultipleCount
+
+@[expose] public section
 
 /-! Only lower-order many discarded targets meet any regular source monomial. -/
 noncomputable section

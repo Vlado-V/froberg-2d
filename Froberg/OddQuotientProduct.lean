@@ -1,5 +1,9 @@
-import Froberg.ParityCoefficients
-import Froberg.ProjectedQuotientMultiplication
+module
+
+public import Froberg.ParityCoefficients
+public import Froberg.ProjectedQuotientMultiplication
+
+@[expose] public section
 
 /-! The odd source and target of scalar contraction as literal subspaces
 of the degree-d and degree-2d generator quotients. -/

@@ -1,5 +1,9 @@
-import Froberg.BiformPreparedRows
-import Froberg.TriangularSurjectivity
+module
+
+public import Froberg.BiformPreparedRows
+public import Froberg.TriangularSurjectivity
+
+@[expose] public section
 
 /-! Triangular elimination inside the actual homogeneous polynomial space.
 The conclusion is subtraction of an actual relation, with every positive

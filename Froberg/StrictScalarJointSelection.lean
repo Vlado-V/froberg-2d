@@ -1,5 +1,9 @@
-import Froberg.StrictScalarInjection
-import Froberg.LinearFiberwisePrincipal
+module
+
+public import Froberg.StrictScalarInjection
+public import Froberg.LinearFiberwisePrincipal
+
+@[expose] public section
 
 /-! A strict vector-model open and the scalar quotient injection can be
 chosen on any prescribed nonempty joint coefficient open. -/

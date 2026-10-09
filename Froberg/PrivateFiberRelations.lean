@@ -1,4 +1,8 @@
-import Froberg.PrivatePairTargets
+module
+
+public import Froberg.PrivatePairTargets
+
+@[expose] public section
 
 /-! Coefficientwise kernel calculation for the fixed private columns. Every
 relation is supported on pairwise private powers, with one equation per pair. -/

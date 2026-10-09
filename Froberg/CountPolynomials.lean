@@ -1,4 +1,8 @@
-import Froberg.PolynomialAsymptotics
+module
+
+public import Froberg.PolynomialAsymptotics
+
+@[expose] public section
 
 /-! Polynomial upper bounds for the rounded critical generator counts. -/
 noncomputable section
@@ -35,7 +39,7 @@ theorem outerCountBound_top {d : ℕ} (hd : 3 ≤ d) (P : Polynomial ℝ) (h α 
   simp only [outerCountBoundPolynomial, coeff_sub, coeff_add, coeff_C, coeff_monomial]
   rw [ite_eq_right (by omega : d - 1 ≠ 0), ite_eq_right (by omega : d - 2 ≠ d - 1),
     add_zero, sub_zero]
-  exact hdiff
+  simpa only [coeff_sub] using hdiff
 
 theorem outerCountBound_second {d : ℕ} (hd : 3 ≤ d) (P : Polynomial ℝ) (h α : ℝ)
     (hP : P.natDegree ≤ d) :
@@ -53,6 +57,6 @@ theorem outerCountBound_second {d : ℕ} (hd : 3 ≤ d) (P : Polynomial ℝ) (h 
   simp only [outerCountBoundPolynomial, coeff_sub, coeff_add, coeff_C, coeff_monomial]
   rw [ite_eq_right (by omega : d - 2 ≠ 0), ite_true, add_zero]
   rw [← hdiff]
-  rfl
+  simp only [coeff_sub]
 
 end Froberg

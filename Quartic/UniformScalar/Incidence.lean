@@ -1,4 +1,8 @@
-import Quartic.UniformScalar.RealCounts
+module
+
+public import Quartic.UniformScalar.RealCounts
+
+@[expose] public section
 
 /-! Exact scalar incidence consequences of a uniform image-surplus hypothesis. -/
 

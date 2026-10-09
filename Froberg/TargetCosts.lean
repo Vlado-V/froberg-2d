@@ -1,4 +1,8 @@
-import Froberg.CapacityProductIdentity
+module
+
+public import Froberg.CapacityProductIdentity
+
+@[expose] public section
 
 /-! # Exact convolution costs for the positive target rows -/
 

@@ -1,5 +1,9 @@
-import Froberg.RestoredQuadraticParameters
-import Froberg.DetectedBiformSeparation
+module
+
+public import Froberg.RestoredQuadraticParameters
+public import Froberg.DetectedBiformSeparation
+
+@[expose] public section
 
 /-! The scalar and detected outer-product row is injective on a genuine
 open of the complete restored parameter space. Every scalar tail is used. -/

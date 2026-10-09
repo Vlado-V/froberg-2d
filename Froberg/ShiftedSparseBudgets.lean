@@ -1,5 +1,9 @@
-import Froberg.ShiftedCountLimits
-import Froberg.SmallSparseLayerBudget
+module
+
+public import Froberg.ShiftedCountLimits
+public import Froberg.SmallSparseLayerBudget
+
+@[expose] public section
 
 /-! Active higher sparse layers use exactly the same output block count
 when the prescribed generator count includes fixed private variables. -/

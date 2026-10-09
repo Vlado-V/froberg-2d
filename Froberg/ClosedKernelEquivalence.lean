@@ -1,4 +1,8 @@
-import Froberg.ActualSliceVectors
+module
+
+public import Froberg.ActualSliceVectors
+
+@[expose] public section
 
 /-! Closed kernel slices transport under actual bilinear equivalences.
 The auxiliary cuts are transported as target vectors. -/

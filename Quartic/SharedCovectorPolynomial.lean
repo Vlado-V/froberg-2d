@@ -1,6 +1,10 @@
-import Quartic.SharedCovectorConstraints
-import Quartic.PolynomialBilinearCoordinates
-import Quartic.PolynomialKernelAvoidance
+module
+
+public import Quartic.SharedCovectorConstraints
+public import Quartic.PolynomialBilinearCoordinates
+public import Quartic.PolynomialKernelAvoidance
+
+@[expose] public section
 
 /-!
 # Polynomial shared-coefficient and auxiliary-slice constraints

@@ -1,6 +1,10 @@
-import Froberg.SLCharacters
-import Froberg.PrimitivePlucker
-import Froberg.SemilinearMatrices
+module
+
+public import Froberg.SLCharacters
+public import Froberg.PrimitivePlucker
+public import Froberg.SemilinearMatrices
+
+@[expose] public section
 
 /-! # Central-weight divisibility for actual invariant subspaces
 

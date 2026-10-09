@@ -1,7 +1,11 @@
-import Froberg.PreparedAllEvenProducts
-import Froberg.ActualQuadraticCapacity
-import Froberg.EmptyHigherCapacity
-import Froberg.OddOutputLimit
+module
+
+public import Froberg.PreparedAllEvenProducts
+public import Froberg.ActualQuadraticCapacity
+public import Froberg.EmptyHigherCapacity
+public import Froberg.OddOutputLimit
+
+@[expose] public section
 
 /-! Actual rounded Section 5 counts satisfy all finite even-row records on
 one common range of variable counts. No asymptotic capacity is left as an

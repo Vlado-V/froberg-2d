@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.Quotient.Pi
-import Mathlib.LinearAlgebra.Projection
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.Quotient.Pi
+public import Mathlib.LinearAlgebra.Projection
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! A relation space preserved by all coordinate projections is exactly
 the product of its coordinate relation spaces. The resulting quotient

@@ -1,5 +1,9 @@
-import Froberg.PreparedWitnessReduction
-import Froberg.PreparedEmptyProfileRow
+module
+
+public import Froberg.PreparedWitnessReduction
+public import Froberg.PreparedEmptyProfileRow
+
+@[expose] public section
 
 /-! Concrete cubic and quartic witnesses give the full even reduction on
 one nonempty principal open, including every inactive even row. -/

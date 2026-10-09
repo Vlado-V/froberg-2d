@@ -1,4 +1,8 @@
-import Froberg.OddPrivateRelations
+module
+
+public import Froberg.OddPrivateRelations
+
+@[expose] public section
 
 /-! The C.15 ambient and full odd quotients, with the actual Q, F, U+P
 product maps and all positive even coefficient relations. -/

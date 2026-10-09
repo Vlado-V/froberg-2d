@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Mathlib.Analysis.Real.Sqrt
-import Mathlib.Data.Nat.Choose.Cast
+module
+
+public import Froberg.Graded
+public import Mathlib.Analysis.Real.Sqrt
+public import Mathlib.Data.Nat.Choose.Cast
+
+@[expose] public section
 
 /-! The smaller real root and the sign change of the endpoint Euler polynomial. -/
 

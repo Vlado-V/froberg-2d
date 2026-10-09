@@ -1,6 +1,10 @@
-import Froberg.PreparedBiformCoordinates
-import Froberg.ConstrainedCrossPair
-import Froberg.BalancedScalarCoordinates
+module
+
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.ConstrainedCrossPair
+public import Froberg.BalancedScalarCoordinates
+
+@[expose] public section
 
 /-! Cross products remain independent with unequal output blocks. This
 supplies the two-fifths / three-fifths split of Appendix E. -/

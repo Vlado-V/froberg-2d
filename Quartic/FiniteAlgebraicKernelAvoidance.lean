@@ -1,5 +1,9 @@
-import Quartic.AlgebraicDomainDimension
-import Quartic.AlgebraicKernelAvoidance
+module
+
+public import Quartic.AlgebraicDomainDimension
+public import Quartic.AlgebraicKernelAvoidance
+
+@[expose] public section
 
 /-!
 # Avoidance from an actual finite-module slice certificate

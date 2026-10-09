@@ -1,5 +1,9 @@
-import Froberg.OuterLoss
-import Froberg.OuterInitialFibers
+module
+
+public import Froberg.OuterLoss
+public import Froberg.OuterInitialFibers
+
+@[expose] public section
 
 /-! Transfer from the finite ideal-shadow estimate to actual outer-module growth. -/
 noncomputable section

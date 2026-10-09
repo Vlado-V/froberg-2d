@@ -1,6 +1,10 @@
-import Froberg.UniformPrivateGrowth
-import Froberg.GenericVectorBaseChange
-import Froberg.OuterModelExistence
+module
+
+public import Froberg.UniformPrivateGrowth
+public import Froberg.GenericVectorBaseChange
+public import Froberg.OuterModelExistence
+
+@[expose] public section
 
 /-! A polynomial presentation realizing the uniform private-column estimate. -/
 noncomputable section

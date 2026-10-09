@@ -1,4 +1,8 @@
-import Froberg.DivertedTransport
+module
+
+public import Froberg.DivertedTransport
+
+@[expose] public section
 
 /-! Finite binomial weights and their polynomial generating functions.
 These supply exact, rather than asymptotic, profile identities. -/

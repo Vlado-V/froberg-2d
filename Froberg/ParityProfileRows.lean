@@ -1,6 +1,10 @@
-import Froberg.BalancedProfilePolynomial
-import Froberg.BinomialParityMargin
-import Froberg.SplitWeights
+module
+
+public import Froberg.BalancedProfilePolynomial
+public import Froberg.BinomialParityMargin
+public import Froberg.SplitWeights
+
+@[expose] public section
 
 /-! Uniform scalar row retention after removing one parity and one further
 bidegree. The estimate is the quarter-mass estimate in B.4. -/

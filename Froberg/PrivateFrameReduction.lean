@@ -1,6 +1,10 @@
-import Froberg.PreparedActualPrivateReduction
-import Froberg.PrivateFrameConstraints
-import Froberg.PrivateReductionRename
+module
+
+public import Froberg.PreparedActualPrivateReduction
+public import Froberg.PrivateFrameConstraints
+public import Froberg.PrivateReductionRename
+
+@[expose] public section
 
 /-! The counted private reduction is an open condition in the full family
 of coefficients associated with the actual quadratic output frame. -/

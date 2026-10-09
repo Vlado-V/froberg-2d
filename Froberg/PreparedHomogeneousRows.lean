@@ -1,5 +1,9 @@
-import Froberg.BiformPreparedRows
-import Froberg.PolynomialTriangular
+module
+
+public import Froberg.BiformPreparedRows
+public import Froberg.PolynomialTriangular
+
+@[expose] public section
 
 /-! Homogeneous codomain and ideal membership for the literal prepared
 multiplication rows. These supply the rows used in polynomial elimination. -/

@@ -1,7 +1,11 @@
-import Froberg.HigherOddVectorOpen
-import Froberg.OddSplitComplex
-import Froberg.OddSplitElimination
-import Froberg.StrictScalarJointSelection
+module
+
+public import Froberg.HigherOddVectorOpen
+public import Froberg.OddSplitComplex
+public import Froberg.OddSplitElimination
+public import Froberg.StrictScalarJointSelection
+
+@[expose] public section
 
 /-! The strict first row and the higher-row incidence opens give exactness
 of the complete odd polynomial coefficient complex at one common tuple. -/

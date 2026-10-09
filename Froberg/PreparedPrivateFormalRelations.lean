@@ -1,7 +1,11 @@
-import Froberg.PrivateFormalRelations
-import Froberg.PreparedBiformFamilies
-import Froberg.PreparedBiformCompatibility
-import Froberg.BackgroundFlagSpan
+module
+
+public import Froberg.PrivateFormalRelations
+public import Froberg.PreparedBiformFamilies
+public import Froberg.PreparedBiformCompatibility
+public import Froberg.BackgroundFlagSpan
+
+@[expose] public section
 
 /-! The actual prepared even/private-odd background has exactly the old
 scalar formal relations after any supported scalar target deletion. -/
@@ -41,7 +45,7 @@ theorem privateEndpointFamily_scalar (hd : 0<d) (ho : d%2=1)
     funext fun k => finSumFinEquiv_symm_apply_natAdd k]
   simp [generator,scalar,high]
 
-theorem prepared_private_formal_relations (htwo : (2 : K)≠0) (hd : 0<d) (ho : d%2=1)
+theorem prepared_private_formal_relations (hd : 0<d) (ho : d%2=1)
     (hO : ∀ j∈J,O j≤Forms K h j) (hJ : ∀ j∈J,j≤d) (heven : ∀ j∈J,j%2=0)
     (hpos : ∀ j∈J,0<j) (e : Fin r ≃ Label q J counts)
     (p : Space m d q J counts O) (P : Fin b → FullBiform K (Fin h) m 1 (d-1))
@@ -69,8 +73,7 @@ theorem prepared_private_formal_relations (htwo : (2 : K)≠0) (hd : 0<d) (ho : 
         formalProducts ((Submodule.span K (Set.range (fun j : Fin q => p.1 (Sum.inl j)))).map
           (renameForm (Fin.natAdd h)))
           (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
-  apply private_split_supported_relations htwo
-    (fun i => evenGenerator hO hJ heven p (e i)) (privateOddFamily hd ho P U)
+  apply private_split_supported_relations (fun i => evenGenerator hO hJ heven p (e i)) (privateOddFamily hd ho P U)
     hi D hD hodd (fun i => degree (e i)) _ _ _ hreduce
   · rw [Submodule.map_span]
     apply Submodule.span_le.mpr

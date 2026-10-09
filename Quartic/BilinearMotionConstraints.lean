@@ -1,4 +1,8 @@
-import Quartic.CoefficientConstraintRank
+module
+
+public import Quartic.CoefficientConstraintRank
+
+@[expose] public section
 
 /-!
 # Actual polynomial motion constraints and their ranks

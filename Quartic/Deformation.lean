@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.LinearAlgebra.Matrix.Rank
-import Mathlib.Tactic.Module
+module
+
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.LinearAlgebra.Matrix.Rank
+public import Mathlib.Tactic.Module
+
+@[expose] public section
 
 /-!
 # The algebraic core of the two-order deformation

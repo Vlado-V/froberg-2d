@@ -1,6 +1,10 @@
-import Froberg.PreparedRestoredRelations
-import Froberg.RestoredScalarCompatibility
-import Froberg.BackgroundFlagSpan
+module
+
+public import Froberg.PreparedRestoredRelations
+public import Froberg.RestoredScalarCompatibility
+public import Froberg.BackgroundFlagSpan
+
+@[expose] public section
 
 /-! The restored even endpoint spans precisely the embedded scalar family
 and its positive columns, in the literal ambient coordinates. -/

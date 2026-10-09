@@ -1,5 +1,9 @@
-import Quartic.ActualDeformationColumns
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.ActualDeformationColumns
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Independence of the actual split and perturbed quadratic families. -/
 noncomputable section

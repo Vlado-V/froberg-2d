@@ -1,4 +1,8 @@
-import Froberg.ProductRows
+module
+
+public import Froberg.ProductRows
+
+@[expose] public section
 
 /-! Polynomial product rows commute with every variable renaming. -/
 noncomputable section

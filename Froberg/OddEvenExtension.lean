@@ -1,4 +1,8 @@
-import Froberg.OddExtension
+module
+
+public import Froberg.OddExtension
+
+@[expose] public section
 
 /-! The source of odd scalar contraction is unchanged when any even
 homogeneous generator family is appended. The equivalence is the actual

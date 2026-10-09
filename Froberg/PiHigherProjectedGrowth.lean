@@ -1,5 +1,9 @@
-import Froberg.PiBilinearGrowth
-import Froberg.ProductCoordinateRank
+module
+
+public import Froberg.PiBilinearGrowth
+public import Froberg.ProductCoordinateRank
+
+@[expose] public section
 
 /-! Higher-layer growth in the actual bottom-times-higher source
 coordinates, with arbitrary finite labels on the higher blocks. -/

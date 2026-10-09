@@ -1,5 +1,9 @@
-import Quartic.ConvolutionPresentation
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import Quartic.ConvolutionPresentation
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+
+@[expose] public section
 
 /-!
 # The dual of the actual convolution cokernel

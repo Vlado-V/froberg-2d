@@ -1,5 +1,9 @@
-import Froberg.OddSourceBlockQuotients
-import Froberg.OddEndpointSourceCoordinates
+module
+
+public import Froberg.OddSourceBlockQuotients
+public import Froberg.OddEndpointSourceCoordinates
+
+@[expose] public section
 
 /-! Actual endpoint source coordinates, with every higher odd block
 retained and the bottom inclusion given by the literal linear biform. -/

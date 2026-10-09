@@ -1,6 +1,10 @@
-import Quartic.CubicGeneric
-import Quartic.ConvolutionOuterGeneric
-import Quartic.EndpointBlockConditions
+module
+
+public import Quartic.CubicGeneric
+public import Quartic.ConvolutionOuterGeneric
+public import Quartic.EndpointBlockConditions
+
+@[expose] public section
 
 /-!
 # One actual quadratic family for ordinary and outer cubic multiplication

@@ -1,5 +1,9 @@
-import Froberg.PreparedParameterMaps
-import Froberg.BiformOutputConstraint
+module
+
+public import Froberg.PreparedParameterMaps
+public import Froberg.BiformOutputConstraint
+
+@[expose] public section
 
 /-! Adjoining private scalar variables preserves the actual prepared
 coefficient space and every generator, with no new choices of coefficients. -/

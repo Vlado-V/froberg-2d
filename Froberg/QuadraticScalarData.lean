@@ -1,4 +1,8 @@
-import Froberg.ScalarCoefficientWitness
+module
+
+public import Froberg.ScalarCoefficientWitness
+
+@[expose] public section
 
 /-! Scalar C.2 data with a fixed number of variables reserved for private
 powers. The threshold is independent of all output-frame parameters. -/

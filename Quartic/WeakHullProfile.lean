@@ -1,6 +1,10 @@
-import Quartic.WeakHullProfile.Hull
-import Quartic.HullCertificate
-import Quartic.SharpMinimization.Finite
+module
+
+public import Quartic.WeakHullProfile.Hull
+public import Quartic.HullCertificate
+public import Quartic.SharpMinimization.Finite
+
+@[expose] public section
 
 /-!
 # Scalar inequalities for all sharp profiles in dimensions 130 through 319

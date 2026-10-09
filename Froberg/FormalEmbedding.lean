@@ -1,4 +1,8 @@
-import Froberg.FormalHomology
+module
+
+public import Froberg.FormalHomology
+
+@[expose] public section
 
 /-! Formal relations under an actual embedding of the old variables. The
 target map need only be injective on the old multiplication image. -/
@@ -67,8 +71,7 @@ theorem formal_old_product_image (q : Fin r → Forms K m d) :
       (endpointMultiplication q).range := by
   rw [← range_formalCoefficientMap q,← LinearMap.range_comp,formalPolynomialMultiplication_comp q]
 
-theorem embedded_old_homology_finrank (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K m d) (hq : LinearIndependent K q)
+theorem embedded_old_homology_finrank (q : Fin r → Forms K m d) (hq : LinearIndependent K q)
     (j : Forms K m d →ₗ[K] Forms K n d) (hj : Function.Injective j)
     (pi : Forms K n (2*d) →ₗ[K] Z) (J : Forms K m (2*d) →ₗ[K] Z)
     (hcomm : (pi.comp formalPolynomialMultiplication).comp (SymmetricFunctor.map j)=
@@ -79,7 +82,7 @@ theorem embedded_old_homology_finrank (htwo : (2 : K) ≠ 0)
         Submodule K (SymmetricSquare K (Forms K n d))) = finrank K (EndpointHomology q) := by
   have hJ' : Set.InjOn J ((formalMixed (Submodule.span K (Set.range q))).map
       formalPolynomialMultiplication) := by rwa [formal_old_product_image]
-  exact ((endpointHomologyEquivFormal htwo q hq).trans
+  exact ((endpointHomologyEquivFormal_anyChar q hq).trans
     (formalRelationEmbeddingEquiv j hj formalPolynomialMultiplication
       (pi.comp formalPolynomialMultiplication) J _ hcomm hJ')).finrank_eq.symm
 

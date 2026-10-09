@@ -1,4 +1,8 @@
-import Froberg.Prefix
+module
+
+public import Froberg.Prefix
+
+@[expose] public section
 
 /-! Before twice the generator degree, positive truncation is simply the
 nonnegative part of the two-term coefficient. -/
@@ -6,7 +10,7 @@ noncomputable section
 namespace Froberg
 open Finset
 
-private def countReal (n j : ℕ) : ℝ := (n + j - 1).choose j
+def countReal (n j : ℕ) : ℝ := (n + j - 1).choose j
 
 private theorem countReal_pos {n : ℕ} (hn : 0 < n) (j : ℕ) : 0 < countReal n j := by
   unfold countReal

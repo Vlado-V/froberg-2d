@@ -1,4 +1,8 @@
-import Quartic.ConvolutionInverse
+module
+
+public import Quartic.ConvolutionInverse
+
+@[expose] public section
 
 /-!
 # Actual multiplication and dual contraction in the convolution module

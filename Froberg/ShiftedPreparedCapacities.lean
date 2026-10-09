@@ -1,6 +1,10 @@
-import Froberg.ShiftedProductCapacity
-import Froberg.ShiftedQuadraticCapacity
-import Froberg.PreparedActualCapacities
+module
+
+public import Froberg.ShiftedProductCapacity
+public import Froberg.ShiftedQuadraticCapacity
+public import Froberg.PreparedActualCapacities
+
+@[expose] public section
 
 /-! The literal prepared counts at core size plus a fixed private-variable
 reserve satisfy the finite row records in the core itself. -/

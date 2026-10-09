@@ -1,4 +1,8 @@
-import Froberg.DeletedBidegree
+module
+
+public import Froberg.DeletedBidegree
+
+@[expose] public section
 
 /-! The coordinate-retention formulation of Appendix C.1 equals the dimension
 of the image in the quotient by the deleted homogeneous bidegree summand. -/

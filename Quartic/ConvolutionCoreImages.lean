@@ -1,6 +1,10 @@
-import Quartic.ConvolutionFreeMultiplication
-import Quartic.ConvolutionShadow
-import Quartic.ConvolutionOutputLinear
+module
+
+public import Quartic.ConvolutionFreeMultiplication
+public import Quartic.ConvolutionShadow
+public import Quartic.ConvolutionOutputLinear
+
+@[expose] public section
 
 /-!
 # Core multiplication bounds in the free-piece quotient model

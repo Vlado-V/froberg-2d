@@ -1,4 +1,8 @@
-import Froberg.QuotientSliceOpen
+module
+
+public import Froberg.QuotientSliceOpen
+
+@[expose] public section
 
 /-! Closed quotient slices for a polynomial family of actual linear maps,
 and in particular for an affine replacement pencil. -/

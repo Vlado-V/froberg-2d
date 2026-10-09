@@ -1,5 +1,9 @@
-import Froberg.PrefixConvolution
-import Quartic.SplitMiddle22
+module
+
+public import Froberg.PrefixConvolution
+public import Quartic.SplitMiddle22
+
+@[expose] public section
 
 /-! Successful output families can be placed inside a subspace of any larger
 permitted dimension; the convolution generators remain inside that subspace. -/

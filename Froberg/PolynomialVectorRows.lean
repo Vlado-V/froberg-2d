@@ -1,7 +1,11 @@
-import Froberg.SparsePolynomialFamily
-import Froberg.Prefix
-import Froberg.BiformOutputProjection
-import Froberg.SeparatedRowKernel
+module
+
+public import Froberg.SparsePolynomialFamily
+public import Froberg.Prefix
+public import Froberg.BiformOutputProjection
+public import Froberg.SeparatedRowKernel
+
+@[expose] public section
 
 /-! Actual scalar and new-layer polynomial row maps, with their coefficient
 space constraints made explicit. -/

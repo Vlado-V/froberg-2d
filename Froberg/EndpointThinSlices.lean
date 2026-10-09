@@ -1,5 +1,9 @@
-import Froberg.OddEndpointScalarSlices
-import Froberg.OddRelativeDimensions
+module
+
+public import Froberg.OddEndpointScalarSlices
+public import Froberg.OddRelativeDimensions
+
+@[expose] public section
 
 /-! The scalar slice index is the dimension of the actual enlarged odd
 endpoint target, using the proved relative injection. -/

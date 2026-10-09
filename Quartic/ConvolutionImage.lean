@@ -1,5 +1,9 @@
-import Quartic.ConvolutionBilinear
-import Quartic.ContractionBound
+module
+
+public import Quartic.ConvolutionBilinear
+public import Quartic.ContractionBound
+
+@[expose] public section
 
 /-!
 # The actual multiplication image and its annihilators

@@ -1,6 +1,10 @@
-import Froberg.PreparedTargetSurjectivity
-import Froberg.TargetLayerAssembly
-import Froberg.LowRowsCommonOpen
+module
+
+public import Froberg.PreparedTargetSurjectivity
+public import Froberg.TargetLayerAssembly
+public import Froberg.LowRowsCommonOpen
+
+@[expose] public section
 
 /-! One actual prepared-family witness, simultaneously for every high
 bidegree, from the common low-row and middle-row coefficients. -/

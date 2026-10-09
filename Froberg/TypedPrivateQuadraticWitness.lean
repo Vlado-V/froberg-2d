@@ -1,8 +1,12 @@
-import Froberg.PrivateQuadraticSeparation
-import Froberg.FirstPrivateIntrinsicRow
-import Froberg.QuadraticSeparationRow
-import Froberg.ScalarCoefficientWitness
-import Froberg.HomogeneousRename
+module
+
+public import Froberg.PrivateQuadraticSeparation
+public import Froberg.FirstPrivateIntrinsicRow
+public import Froberg.QuadraticSeparationRow
+public import Froberg.ScalarCoefficientWitness
+public import Froberg.HomogeneousRename
+
+@[expose] public section
 
 /-! The private-power quadratic witness in the actual biform coefficient
 space. Basis coordinates transfer the checked scalar/private separation and

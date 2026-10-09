@@ -1,4 +1,8 @@
-import Quartic.ConvolutionF13
+module
+
+public import Quartic.ConvolutionF13
+
+@[expose] public section
 
 /-!
 # The actual F₁₃ conclusion at all canonical endpoints with m≥41

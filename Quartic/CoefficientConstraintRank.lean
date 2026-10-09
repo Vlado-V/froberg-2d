@@ -1,4 +1,8 @@
-import Quartic.BilinearCoefficientKernel
+module
+
+public import Quartic.BilinearCoefficientKernel
+
+@[expose] public section
 
 /-!
 # Rank contributed by coefficient injections

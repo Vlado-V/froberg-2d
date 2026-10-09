@@ -1,4 +1,8 @@
-import Froberg.CountedOuterStrata
+module
+
+public import Froberg.CountedOuterStrata
+
+@[expose] public section
 
 /-! B.2 and the thin B.3 conclusion on the exact-count full coefficient open. -/
 noncomputable section

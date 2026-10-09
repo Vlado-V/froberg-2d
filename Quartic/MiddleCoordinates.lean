@@ -1,4 +1,8 @@
-import Quartic.MiddleGeneric
+module
+
+public import Quartic.MiddleGeneric
+
+@[expose] public section
 
 /-!
 # Generic middle multiplication on the actual `Fin m` child variables
@@ -52,7 +56,7 @@ def quotientMap (g : Fin c → Mixed K m) (Q : Submodule K (Forms K m 2)) :
     (Fin c → Mixed K m) →ₗ[K] (Forms K m 2 ⧸ Q) × (Forms K m 2 ⧸ Q) :=
   (Q.mkQ.prodMap Q.mkQ).comp (multiplication g)
 
-private def decodeWithBases {U V I J : Type*}
+def decodeWithBases {U V I J : Type*}
     [AddCommGroup U] [Module K U] [AddCommGroup V] [Module K V]
     (e₁ : U ≃ₗ[K] (I → K)) (e₂ : V ≃ₗ[K] (J → K)) :
     (((Fin c × Fin 3 × I) ⊕ (Fin q × J)) → K) ≃ₗ[K]

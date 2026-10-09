@@ -1,5 +1,9 @@
-import Froberg.AffineKernelChartZero
-import Froberg.AffineLayeredAvoidance
+module
+
+public import Froberg.AffineKernelChartZero
+public import Froberg.AffineLayeredAvoidance
+
+@[expose] public section
 
 /-! One normalized bottom slice and one actual kernel chart. -/
 noncomputable section

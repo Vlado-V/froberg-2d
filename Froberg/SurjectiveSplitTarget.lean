@@ -1,5 +1,9 @@
-import Froberg.SplitTargetDual
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.SplitTargetDual
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Covectors on the full target restrict to the split ambient target.
 Surjectivity supplies reconstruction on precisely those covectors, with

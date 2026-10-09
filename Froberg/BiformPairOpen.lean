@@ -1,4 +1,8 @@
-import Froberg.BiformFullRow
+module
+
+public import Froberg.BiformFullRow
+
+@[expose] public section
 
 /-! Rank certificates in the full two-layer biform parameter space. -/
 noncomputable section

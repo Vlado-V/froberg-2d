@@ -1,4 +1,8 @@
-import Froberg.OddBackgroundRow
+module
+
+public import Froberg.OddBackgroundRow
+
+@[expose] public section
 
 /-! Actual coordinate relation spaces are the literal two-family row ranges. -/
 noncomputable section

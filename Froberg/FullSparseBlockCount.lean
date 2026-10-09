@@ -1,4 +1,8 @@
-import Froberg.SparseBlockCount
+module
+
+public import Froberg.SparseBlockCount
+
+@[expose] public section
 
 /-! Sparse block counts normalized by the full output variable count. -/
 noncomputable section

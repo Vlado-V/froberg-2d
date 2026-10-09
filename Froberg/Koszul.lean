@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.Data.Fintype.Prod
+module
+
+public import Froberg.Graded
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.Data.Fintype.Prod
+
+@[expose] public section
 
 noncomputable section
 

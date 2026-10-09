@@ -1,5 +1,9 @@
-import Froberg.AttachedFibers
-import Quartic.QuotientBilinearImage
+module
+
+public import Froberg.AttachedFibers
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-! Genuine polynomial multiplication on the attached outer-module quotients. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Quartic.SubspaceCharts
-import Mathlib.LinearAlgebra.Matrix.Adjugate
-import Mathlib.LinearAlgebra.Matrix.Rank
+module
+
+public import Quartic.SubspaceCharts
+public import Mathlib.LinearAlgebra.Matrix.Adjugate
+public import Mathlib.LinearAlgebra.Matrix.Rank
+
+@[expose] public section
 
 /-!
 # Finite homogeneous projective coordinates for subspaces

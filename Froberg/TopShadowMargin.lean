@@ -1,5 +1,9 @@
-import Froberg.CapacityReserve
-import Froberg.TopCountInequalities
+module
+
+public import Froberg.CapacityReserve
+public import Froberg.TopCountInequalities
+
+@[expose] public section
 
 /-! The strict top-layer scalar reserve margin, including all small degrees. -/
 noncomputable section

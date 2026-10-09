@@ -1,5 +1,9 @@
-import Froberg.ShiftedCountLimits
-import Froberg.PreparedAllEvenProducts
+module
+
+public import Froberg.ShiftedCountLimits
+public import Froberg.PreparedAllEvenProducts
+
+@[expose] public section
 
 /-! Fixed private variables do not consume the strict product capacity margin
 in the remaining core variables. The output size is chosen before the shift. -/

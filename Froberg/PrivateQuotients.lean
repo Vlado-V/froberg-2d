@@ -1,7 +1,11 @@
-import Froberg.PrivateInjection
-import Froberg.OuterGeneric
-import Froberg.OuterMultiplication
-import Froberg.SurjectiveImage
+module
+
+public import Froberg.PrivateInjection
+public import Froberg.OuterGeneric
+public import Froberg.OuterMultiplication
+public import Froberg.SurjectiveImage
+
+@[expose] public section
 
 /-! The actual quotient maps from the core presentation to its extension
 by private columns commute with polynomial multiplication. -/

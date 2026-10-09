@@ -1,5 +1,9 @@
-import Froberg.ProfileMarginals
-import Froberg.NormalizedLimits
+module
+
+public import Froberg.ProfileMarginals
+public import Froberg.NormalizedLimits
+
+@[expose] public section
 
 /-! Raw source and coarse target profile weights, and their limiting
 normalizations in the explicit transport. -/

@@ -1,6 +1,10 @@
-import Froberg.SlicedCoefficientMotion
-import Quartic.ExpansionClosedSlices
-import Quartic.AmbientCovectorSpreading
+module
+
+public import Froberg.SlicedCoefficientMotion
+public import Quartic.ExpansionClosedSlices
+public import Quartic.AmbientCovectorSpreading
+
+@[expose] public section
 
 /-! Constructing the closed determinantal slices required by the final
 coefficient-motion theorem from explicit Grassmannian incidence budgets. -/

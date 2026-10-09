@@ -1,7 +1,11 @@
-import Froberg.PrivateUniformGrowth
-import Froberg.PrivateDimensionLimits
-import Froberg.PrivateAbsorption
-import Froberg.PrivateMultiplierBound
+module
+
+public import Froberg.PrivateUniformGrowth
+public import Froberg.PrivateDimensionLimits
+public import Froberg.PrivateAbsorption
+public import Froberg.PrivateMultiplierBound
+
+@[expose] public section
 
 /-! Uniform strict expansion of the actual core presentation extended by any
 fixed number of private columns. -/

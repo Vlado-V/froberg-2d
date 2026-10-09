@@ -1,4 +1,8 @@
-import Froberg.LinearPolynomialActions
+module
+
+public import Froberg.LinearPolynomialActions
+
+@[expose] public section
 
 /-! # Changes of the ordered generating family
 

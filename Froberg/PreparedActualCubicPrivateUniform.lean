@@ -1,7 +1,11 @@
-import Froberg.PrivateFiniteProducts
-import Froberg.PreparedActualSmallReduction
-import Froberg.SmallRenamedProducts
-import Froberg.LatePreparedQuadraticCapacity
+module
+
+public import Froberg.PrivateFiniteProducts
+public import Froberg.PreparedActualSmallReduction
+public import Froberg.SmallRenamedProducts
+public import Froberg.LatePreparedQuadraticCapacity
+
+@[expose] public section
 
 /-! Actual cubic counts produce the private reduction open with the detector
 and private model chosen after the scalar threshold. -/

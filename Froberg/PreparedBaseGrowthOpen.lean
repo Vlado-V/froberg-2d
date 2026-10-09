@@ -1,6 +1,10 @@
-import Froberg.CountedBaseC4Growth
-import Froberg.PreparedBaseProjection
-import Froberg.RestoredBaseProjection
+module
+
+public import Froberg.CountedBaseC4Growth
+public import Froberg.PreparedBaseProjection
+public import Froberg.RestoredBaseProjection
+
+@[expose] public section
 
 /-! Base quotient growth is imposed on the complete parameter space,
 leaving all positive-row and private parameters free. -/

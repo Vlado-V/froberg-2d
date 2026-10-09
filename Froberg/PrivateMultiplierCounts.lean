@@ -1,4 +1,8 @@
-import Froberg.PrivateColumns
+module
+
+public import Froberg.PrivateColumns
+
+@[expose] public section
 
 /-! Exact finite counting of the multipliers reserved for private columns. -/
 noncomputable section

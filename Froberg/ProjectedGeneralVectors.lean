@@ -1,6 +1,10 @@
-import Froberg.GeneralPositionVectors
-import Quartic.PolynomialRankOpen
-import Quartic.PolynomialBilinearCoordinates
+module
+
+public import Froberg.GeneralPositionVectors
+public import Quartic.PolynomialRankOpen
+public import Quartic.PolynomialBilinearCoordinates
+
+@[expose] public section
 
 /-! A common generic vector family stays in general position after any
 fixed finite list of linear quotients. These are opens in the original,

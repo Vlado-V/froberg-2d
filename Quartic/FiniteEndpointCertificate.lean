@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCheckerPolynomial
+module
+
+public import Quartic.FiniteEndpointCheckerPolynomial
+
+@[expose] public section
 
 /-! One mathematical soundness theorem for every finite endpoint certificate.
 All remaining work per dimension is checking finite data against these fields. -/

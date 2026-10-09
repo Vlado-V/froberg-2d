@@ -1,6 +1,10 @@
-import Froberg.AffineGraphConstraints
-import Froberg.ProjectionCharts
-import Quartic.HomogeneousEmptyFiberOpen
+module
+
+public import Froberg.AffineGraphConstraints
+public import Froberg.ProjectionCharts
+public import Quartic.HomogeneousEmptyFiberOpen
+
+@[expose] public section
 
 /-! Full Grassmannian charts for the actual relation kernel, and the
 literal affine equations for its higher covector coordinates. -/

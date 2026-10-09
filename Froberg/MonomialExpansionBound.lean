@@ -1,5 +1,9 @@
-import Froberg.MonomialShadow
-import Froberg.WeightedExpansion
+module
+
+public import Froberg.MonomialShadow
+public import Froberg.WeightedExpansion
+
+@[expose] public section
 
 /-! An explicit eventual expansion bound, uniform over all monomial sets. -/
 noncomputable section

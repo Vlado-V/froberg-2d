@@ -1,6 +1,10 @@
-import Froberg.OddBackgroundRowProjection
-import Froberg.OddAmbientProduct
-import Froberg.MixedPureComponents
+module
+
+public import Froberg.OddBackgroundRowProjection
+public import Froberg.OddAmbientProduct
+public import Froberg.MixedPureComponents
+
+@[expose] public section
 
 /-! The mixed pure scalar relations couple only the bottom and top target
 rows. Every intermediate odd row therefore retains its actual Q/F

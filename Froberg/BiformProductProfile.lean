@@ -1,5 +1,9 @@
-import Froberg.BiformOutputConstraint
-import Froberg.ProductRowProfiles
+module
+
+public import Froberg.BiformOutputConstraint
+public import Froberg.ProductRowProfiles
+
+@[expose] public section
 
 /-! Scalar profiles survive arbitrary linear combinations in the complete
 product image of a biform subspace. -/

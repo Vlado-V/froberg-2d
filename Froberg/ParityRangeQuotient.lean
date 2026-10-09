@@ -1,5 +1,9 @@
-import Froberg.OddQuotientProduct
-import Froberg.WeightedRename
+module
+
+public import Froberg.OddQuotientProduct
+public import Froberg.WeightedRename
+
+@[expose] public section
 
 /-! The actual odd part of an endpoint quotient is the quotient of the
 odd homogeneous polynomial space by its actual product relations. -/

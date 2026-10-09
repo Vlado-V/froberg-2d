@@ -1,5 +1,9 @@
-import Froberg.ConvolutionBlockLimits
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.ConvolutionBlockLimits
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! Strict output densities absorb both output rounding and block rounding. -/
 noncomputable section

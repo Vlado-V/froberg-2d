@@ -1,5 +1,9 @@
-import Froberg.BiformParitySpaces
-import Froberg.OddHomogeneousComponents
+module
+
+public import Froberg.BiformParitySpaces
+public import Froberg.OddHomogeneousComponents
+
+@[expose] public section
 
 /-! Linear odd-parity biform coordinates, with the actual weighted
 component formula in each degree. This applies also to degree 2*d. -/

@@ -1,6 +1,10 @@
-import Froberg.TypedPrivateQuadraticWitness
-import Froberg.DetectedBiformSeparation
-import Froberg.PreparedCoreExtension
+module
+
+public import Froberg.TypedPrivateQuadraticWitness
+public import Froberg.DetectedBiformSeparation
+public import Froberg.PreparedCoreExtension
+
+@[expose] public section
 
 /-! Extending the detected outer family across private scalar variables gives
 an actual finite C.2 witness with fixed private columns. -/

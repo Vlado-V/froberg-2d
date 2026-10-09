@@ -1,4 +1,8 @@
-import Froberg.TransportVariance
+module
+
+public import Froberg.TransportVariance
+
+@[expose] public section
 
 /-! The strict gain from a decrease of fiber capacity, and its relation
 to conditional variance. -/

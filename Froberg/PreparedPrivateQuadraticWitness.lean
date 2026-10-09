@@ -1,7 +1,11 @@
-import Froberg.PreparedQuadraticRow
-import Froberg.SparseFullOutputDegrees
-import Froberg.PreparedExtendedWitness
-import Froberg.PreparedPrivateFirstRow
+module
+
+public import Froberg.PreparedQuadraticRow
+public import Froberg.SparseFullOutputDegrees
+public import Froberg.PreparedExtendedWitness
+public import Froberg.PreparedPrivateFirstRow
+
+@[expose] public section
 
 /-! The quadratic sparse witness and a single fixed private detector give
 the literal first-row exactness needed by the common private-family open. -/

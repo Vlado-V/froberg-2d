@@ -1,5 +1,9 @@
-import Quartic.HomologyCoordinates
-import Quartic.MiddleCoordinates
+module
+
+public import Quartic.HomologyCoordinates
+public import Quartic.MiddleCoordinates
+
+@[expose] public section
 
 /-!
 # An actual augmented middle-multiplication witness

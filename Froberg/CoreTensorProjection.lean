@@ -1,5 +1,9 @@
-import Froberg.TensorProductDenominator
-import Quartic.ConvolutionFreeMultiplication
+module
+
+public import Froberg.TensorProductDenominator
+public import Quartic.ConvolutionFreeMultiplication
+
+@[expose] public section
 
 /-! Compatibility of the exact X-degree projection with the split polynomial
 tensor algebra and with the output detector used in C.2. -/

@@ -1,7 +1,11 @@
-import Froberg.IntrinsicBiformRow
-import Froberg.PureScalarCoordinates
-import Froberg.CoefficientRowFromPairs
-import Froberg.EvenCoefficientElimination
+module
+
+public import Froberg.IntrinsicBiformRow
+public import Froberg.PureScalarCoordinates
+public import Froberg.CoefficientRowFromPairs
+public import Froberg.EvenCoefficientElimination
+
+@[expose] public section
 
 /-! Intrinsic exact row kernels imply the literal coefficient equations used
 by the polynomial elimination, without any sparse form assumption. -/

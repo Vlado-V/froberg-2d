@@ -1,6 +1,10 @@
-import Quartic.SplitBlock40
-import Quartic.SplitBlock22FullBoundaries
-import Quartic.GeneralF13
+module
+
+public import Quartic.SplitBlock40
+public import Quartic.SplitBlock22FullBoundaries
+public import Quartic.GeneralF13
+
+@[expose] public section
 
 
 /-!
@@ -495,7 +499,7 @@ theorem fullImage_eq_comap (g : Fin c → MiddleCoordinates.Mixed K m)
     have hmem := (LinearMap.range _).add_mem (kernel_projection13_le_range g h h22 h04 hker) hz
     simpa only [sub_add_cancel] using hmem
 
-private def quotientTransport {V W : Type*} [AddCommGroup V] [Module K V]
+def quotientTransport {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (A : Submodule K V) (B : Submodule K W)
     (hA : A = B.comap f) (hs : Function.Surjective f) : (V ⧸ A) ≃ₗ[K] (W ⧸ B) :=
   (Submodule.quotEquivOfEq _ _ (by rw [LinearMap.ker_comp, Submodule.ker_mkQ]; exact hA)).trans

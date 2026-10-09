@@ -1,6 +1,10 @@
-import Froberg.PrivateOutputMatrices
-import Froberg.PrivateAvoidance
-import Froberg.ExtendedMixedRow
+module
+
+public import Froberg.PrivateOutputMatrices
+public import Froberg.PrivateAvoidance
+public import Froberg.ExtendedMixedRow
+
+@[expose] public section
 
 /-! The actual scalar-plus-existing-product residual automatically avoids
 private powers in every later coefficient row. -/

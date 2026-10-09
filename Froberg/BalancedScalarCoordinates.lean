@@ -1,6 +1,10 @@
-import Froberg.OddOutputSpace
-import Froberg.ProductRowProfiles
-import Mathlib.Logic.Equiv.Fin.Basic
+module
+
+public import Froberg.OddOutputSpace
+public import Froberg.ProductRowProfiles
+public import Mathlib.Logic.Equiv.Fin.Basic
+
+@[expose] public section
 
 /-! Exact coordinates for passing between the paired-variable witnesses and
 the balanced finite-variable scalar projection. -/

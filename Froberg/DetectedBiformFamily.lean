@@ -1,6 +1,10 @@
-import Froberg.DetectedTensorProducts
-import Froberg.IntrinsicBiformRow
-import Froberg.BiformOutputConstraint
+module
+
+public import Froberg.DetectedTensorProducts
+public import Froberg.IntrinsicBiformRow
+public import Froberg.BiformOutputConstraint
+
+@[expose] public section
 
 /-! Detected tensor products give actual biforms of the prescribed output
 and scalar degrees, retaining both gradings in the separation witness. -/

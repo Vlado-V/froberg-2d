@@ -1,7 +1,11 @@
-import Froberg.RetainedMonomials
-import Froberg.WeightedRetention
-import Froberg.MonomialExpansionBound
-import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+module
+
+public import Froberg.RetainedMonomials
+public import Froberg.WeightedRetention
+public import Froberg.MonomialExpansionBound
+public import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+
+@[expose] public section
 
 /-! Weighted retained-row estimates pass from monomials to arbitrary homogeneous
 subspaces by taking initial monomials. -/

@@ -1,8 +1,12 @@
-import Froberg.OddBottomDetection
-import Froberg.OddBackgroundBottomDetection
-import Froberg.PureScalarCoordinates
-import Froberg.PreparedLayerTargets
-import Froberg.SupportedTargetDeletion
+module
+
+public import Froberg.OddBottomDetection
+public import Froberg.OddBackgroundBottomDetection
+public import Froberg.PureScalarCoordinates
+public import Froberg.PreparedLayerTargets
+public import Froberg.SupportedTargetDeletion
+
+@[expose] public section
 
 /-! The upper-target condition fills the even endpoint after deleting
 only a complementary subspace of the old pure-scalar target. -/

@@ -1,9 +1,13 @@
-import Mathlib.Combinatorics.Hall.Finite
-import Mathlib.Combinatorics.Enumerative.DoubleCounting
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Algebra.MvPolynomial.Variables
-import Mathlib.Tactic
+module
+
+public import Mathlib.Combinatorics.Hall.Finite
+public import Mathlib.Combinatorics.Enumerative.DoubleCounting
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Algebra.MvPolynomial.Variables
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Finite matching and polynomial minor tools for the independent-product construction. -/
 noncomputable section

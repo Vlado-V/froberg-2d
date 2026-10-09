@@ -1,7 +1,11 @@
-import Froberg.PreparedSmallExtendedReduction
-import Froberg.PreparedLateMiddleSmallReduction
-import Froberg.PrivateBiformFamily
-import Froberg.NaturalEventualParity
+module
+
+public import Froberg.PreparedSmallExtendedReduction
+public import Froberg.PreparedLateMiddleSmallReduction
+public import Froberg.PrivateBiformFamily
+public import Froberg.NaturalEventualParity
+
+@[expose] public section
 
 /-! Exact small-degree counts yield the prepared reduction for every
 sufficiently large scalar dimension, with output data chosen afterwards. -/

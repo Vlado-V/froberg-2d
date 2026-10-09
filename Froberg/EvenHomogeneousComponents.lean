@@ -1,4 +1,8 @@
-import Froberg.OddSplitElimination
+module
+
+public import Froberg.OddSplitElimination
+
+@[expose] public section
 
 /-! Exact finite even-weight decomposition in odd ordinary degree. -/
 noncomputable section

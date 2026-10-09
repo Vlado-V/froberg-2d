@@ -1,5 +1,9 @@
-import Quartic.BilinearImage
-import Quartic.ProjectiveKernelCharts
+module
+
+public import Quartic.BilinearImage
+public import Quartic.ProjectiveKernelCharts
+
+@[expose] public section
 
 /-!
 # Actual polynomial covector equations on subspace charts

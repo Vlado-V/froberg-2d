@@ -1,5 +1,9 @@
-import Quartic.PolynomialSubspaceCovectorCharts
-import Quartic.ProfileChartBound
+module
+
+public import Quartic.PolynomialSubspaceCovectorCharts
+public import Quartic.ProfileChartBound
+
+@[expose] public section
 
 /-!
 # Actual iterated profile charts as covector-incidence inputs

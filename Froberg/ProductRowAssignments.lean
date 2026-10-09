@@ -1,4 +1,8 @@
-import Froberg.ProductRowProfiles
+module
+
+public import Froberg.ProductRowProfiles
+
+@[expose] public section
 
 /-! Common-family assembly while retaining every imposed layer constraint. -/
 noncomputable section

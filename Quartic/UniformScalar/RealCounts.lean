@@ -1,4 +1,8 @@
-import Quartic.UniformScalar.EndpointBounds
+module
+
+public import Quartic.UniformScalar.EndpointBounds
+
+@[expose] public section
 
 /-! Real polynomial estimates for the infinite-range scalar counts. -/
 

@@ -1,4 +1,8 @@
-import Froberg.FiniteMonomialTransport
+module
+
+public import Froberg.FiniteMonomialTransport
+
+@[expose] public section
 
 /-! Uniform lower bounds for the individual divisor pairs in the lifted
 monomial transport. -/

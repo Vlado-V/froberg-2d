@@ -1,8 +1,12 @@
-import Froberg.PreparedQuadraticRow
-import Froberg.QuadraticSparseBudget
-import Froberg.FixedSlotCapacity
-import Froberg.PrefixInjectionOpen
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.PreparedQuadraticRow
+public import Froberg.QuadraticSparseBudget
+public import Froberg.FixedSlotCapacity
+public import Froberg.PrefixInjectionOpen
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! Actual quadratic finite-capacity records, including any fixed appended
 private slots, follow from the established asymptotic count estimates. -/

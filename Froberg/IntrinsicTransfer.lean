@@ -1,4 +1,8 @@
-import Froberg.Transfer
+module
+
+public import Froberg.Transfer
+
+@[expose] public section
 
 /-! The transfer theorem directly in terms of the actual deleted target and
 the actual coefficient kernel, without separately supplied dimension identities. -/

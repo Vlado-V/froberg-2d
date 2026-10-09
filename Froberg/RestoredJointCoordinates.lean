@@ -1,6 +1,10 @@
-import Froberg.RestoredScalarFiber
-import Froberg.VectorModelCoordinates
-import Froberg.CountedJointSelection
+module
+
+public import Froberg.RestoredScalarFiber
+public import Froberg.VectorModelCoordinates
+public import Froberg.CountedJointSelection
+
+@[expose] public section
 
 /-! Independent coordinates for the outer family, base scalar family,
 and remaining restored parameters. -/

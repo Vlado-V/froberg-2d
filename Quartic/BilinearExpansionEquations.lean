@@ -1,6 +1,10 @@
-import Quartic.BilinearImageMinors
-import Quartic.BilinearScalarExtension
-import Quartic.SubspaceMinorCoordinates
+module
+
+public import Quartic.BilinearImageMinors
+public import Quartic.BilinearScalarExtension
+public import Quartic.SubspaceMinorCoordinates
+
+@[expose] public section
 
 /-! # Actual homogeneous equations for failure of a bilinear expansion bound -/
 noncomputable section

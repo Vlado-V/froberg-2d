@@ -1,7 +1,11 @@
-import Quartic.HomogeneousCoefficientCoordinates
-import Quartic.BilinearScalarExtension
-import Quartic.ConvolutionAmbientImage
-import Quartic.PolynomialBilinearCoordinates
+module
+
+public import Quartic.HomogeneousCoefficientCoordinates
+public import Quartic.BilinearScalarExtension
+public import Quartic.ConvolutionAmbientImage
+public import Quartic.PolynomialBilinearCoordinates
+
+@[expose] public section
 
 /-!
 # Field-compatible coordinates for actual row multiplication

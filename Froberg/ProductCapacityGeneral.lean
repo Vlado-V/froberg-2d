@@ -1,5 +1,9 @@
-import Froberg.ProductCapacityLimits
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.ProductCapacityLimits
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! Exact product capacities from two strictly separated leading coefficients. -/
 noncomputable section

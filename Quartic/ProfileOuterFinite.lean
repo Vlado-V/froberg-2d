@@ -1,4 +1,8 @@
-import Quartic.ProfileCertificate
+module
+
+public import Quartic.ProfileCertificate
+
+@[expose] public section
 
 /-! # The finite outer profile budget, including the full source profile -/
 set_option maxRecDepth 10000

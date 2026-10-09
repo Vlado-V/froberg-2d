@@ -1,5 +1,9 @@
-import Froberg.OddSplitComplex
-import Froberg.PairKernelReindex
+module
+
+public import Froberg.OddSplitComplex
+public import Froberg.PairKernelReindex
+
+@[expose] public section
 
 /-! Removing an initial block of odd generators preserves odd exactness
 when the even generators are independent. -/

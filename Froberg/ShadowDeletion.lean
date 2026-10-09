@@ -1,4 +1,8 @@
-import Froberg.ExceptionBudget
+module
+
+public import Froberg.ExceptionBudget
+
+@[expose] public section
 
 /-! Finite shadow bookkeeping after deleting a fixed collection of target
 monomials. The loss is charged only to active source fibers. -/

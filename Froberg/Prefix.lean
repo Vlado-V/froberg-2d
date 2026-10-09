@@ -1,4 +1,8 @@
-import Froberg.Statement
+module
+
+public import Froberg.Statement
+
+@[expose] public section
 
 /-!
 # Multiplication and incidence fibers before the endpoint

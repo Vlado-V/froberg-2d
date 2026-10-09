@@ -1,5 +1,9 @@
-import Froberg.CriticalRatioBounds
-import Froberg.PrefixPolynomial
+module
+
+public import Froberg.CriticalRatioBounds
+public import Froberg.PrefixPolynomial
+
+@[expose] public section
 
 /-! The strict asymptotic numerical surplus used by scalar separation. -/
 noncomputable section

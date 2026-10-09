@@ -1,5 +1,9 @@
-import Froberg.TopShadowMargin
-import Froberg.ScalarReserveCount
+module
+
+public import Froberg.TopShadowMargin
+public import Froberg.ScalarReserveCount
+
+@[expose] public section
 
 /-! Exact finite incidence budgets for the augmented top-degree map. -/
 noncomputable section

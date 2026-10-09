@@ -1,5 +1,9 @@
-import Froberg.BilinearScalarFamily
-import Froberg.TwoFamilyBudget
+module
+
+public import Froberg.BilinearScalarFamily
+public import Froberg.TwoFamilyBudget
+
+@[expose] public section
 
 /-! Coordinate transport for two literal bilinear multiplication families. -/
 noncomputable section

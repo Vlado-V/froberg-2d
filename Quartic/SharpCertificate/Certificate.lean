@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Arithmetic
+module
+
+public import Quartic.SharpCertificate.Arithmetic
+
+@[expose] public section
 
 /-! A small, fully checked certificate for all integer dimensions on one sharp edge. -/
 

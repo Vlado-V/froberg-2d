@@ -1,5 +1,9 @@
-import Froberg.RestoredUpperWitness
-import Froberg.PreparedTargetOpen
+module
+
+public import Froberg.RestoredUpperWitness
+public import Froberg.PreparedTargetOpen
+
+@[expose] public section
 
 /-! The simultaneous high-target witness gives a nonempty open on the
 actual even restored coefficient space. -/
@@ -23,7 +27,7 @@ end Froberg.PreparedParameters
 
 namespace Froberg.PreparedTarget
 open Froberg Module MvPolynomial PreparedParameters
-variable {K : Type} [Field K] [CharZero K] {h m d q r f H e : ℕ}
+variable {K : Type} [Field K] [Infinite K] {h m d q r f H e : ℕ}
 
 theorem HasUpperWitness.restored_upper_open (hd : 3≤d) (he : d%2=0)
     (frame : Fin H → Forms K h 2)

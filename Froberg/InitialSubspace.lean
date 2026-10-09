@@ -1,5 +1,9 @@
-import Froberg.Graded
-import Mathlib.RingTheory.MvPolynomial.MonomialOrder
+module
+
+public import Froberg.Graded
+public import Mathlib.RingTheory.MvPolynomial.MonomialOrder
+
+@[expose] public section
 
 /-! Initial monomials of finite homogeneous subspaces. These are extracted
 from the actual polynomial subspace, with their cardinality proved by linear algebra. -/

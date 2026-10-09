@@ -1,6 +1,10 @@
-import Froberg.PreparedScalarFiberProperties
-import Froberg.OddEndpointScalarSlices
-import Froberg.BottomVectorQuotient
+module
+
+public import Froberg.PreparedScalarFiberProperties
+public import Froberg.OddEndpointScalarSlices
+public import Froberg.BottomVectorQuotient
+
+@[expose] public section
 
 /-! The thin-slice conclusion attached to the literal prepared family. -/
 noncomputable section

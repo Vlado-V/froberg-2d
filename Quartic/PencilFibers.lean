@@ -1,4 +1,8 @@
-import Quartic.SymmetricEvaluation
+module
+
+public import Quartic.SymmetricEvaluation
+
+@[expose] public section
 
 /-!
 # Fibers of a two-dimensional tensor factor

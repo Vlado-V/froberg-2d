@@ -1,4 +1,8 @@
-import Quartic.MiddleCoordinates
+module
+
+public import Quartic.MiddleCoordinates
+
+@[expose] public section
 
 /-! Pulling a principal open back along an affine parameter map. -/
 noncomputable section

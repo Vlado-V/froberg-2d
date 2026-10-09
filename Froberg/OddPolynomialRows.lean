@@ -1,6 +1,10 @@
-import Froberg.BiformActionPolynomial
-import Froberg.BiformOddRows
-import Froberg.EvenCoefficientElimination
+module
+
+public import Froberg.BiformActionPolynomial
+public import Froberg.BiformOddRows
+public import Froberg.EvenCoefficientElimination
+
+@[expose] public section
 
 /-! Actual polynomial coefficient-row consequences of the homogeneous
 tensor incidence opens. -/

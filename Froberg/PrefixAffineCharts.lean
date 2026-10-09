@@ -1,4 +1,8 @@
-import Quartic.SubspaceCharts
+module
+
+public import Quartic.SubspaceCharts
+
+@[expose] public section
 
 /-! Affine polynomial charts for fixed-rank row tuples. These retain all row
 coordinates because the partial-last-row chart is already normalized elsewhere.

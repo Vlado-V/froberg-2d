@@ -1,4 +1,8 @@
-import Froberg.PrivateSparseSeparation
+module
+
+public import Froberg.PrivateSparseSeparation
+
+@[expose] public section
 
 /-! Private-power avoidance for the actual core-supported lower-row
 terms. Arbitrary private-variable coefficients are allowed below the

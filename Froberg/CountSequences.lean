@@ -1,4 +1,8 @@
-import Froberg.ExactOuterLimit
+module
+
+public import Froberg.ExactOuterLimit
+
+@[expose] public section
 
 /-! Simultaneous actual count sequences for the two adjacent critical counts. -/
 noncomputable section

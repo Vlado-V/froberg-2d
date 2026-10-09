@@ -1,4 +1,8 @@
-import Quartic.BilinearContainingEquations
+module
+
+public import Quartic.BilinearContainingEquations
+
+@[expose] public section
 
 /-!
 # Principal opens preserving all-subspaces bilinear expansion

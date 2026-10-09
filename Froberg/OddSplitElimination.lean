@@ -1,5 +1,9 @@
-import Froberg.BoundedWeightedComponents
-import Froberg.EvenCoefficientElimination
+module
+
+public import Froberg.BoundedWeightedComponents
+public import Froberg.EvenCoefficientElimination
+
+@[expose] public section
 
 /-! Odd-cycle exactness for the scalar-plus-linear polynomial specialization.
 Only the degree-one constant kernel and higher-row injectivity are used. -/

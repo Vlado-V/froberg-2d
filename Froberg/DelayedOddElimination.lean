@@ -1,4 +1,8 @@
-import Froberg.WeightedParitySpace
+module
+
+public import Froberg.WeightedParitySpace
+
+@[expose] public section
 
 /-! The odd triangular elimination remains valid after adjoining arbitrary
 fixed top-output terms. Its induction only uses lower coefficient rows. -/

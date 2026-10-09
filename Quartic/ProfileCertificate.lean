@@ -1,4 +1,8 @@
-import Quartic.ProfileCertificate.Data
+module
+
+public import Quartic.ProfileCertificate.Data
+
+@[expose] public section
 
 /-!
 # Verified integral profile inequalities

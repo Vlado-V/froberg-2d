@@ -1,7 +1,11 @@
-import Froberg.CoordinateQuadraticProducts
-import Froberg.FrameDisjointOpen
-import Froberg.PrivateFrameNonzero
-import Froberg.PrivateFrameDetector
+module
+
+public import Froberg.CoordinateQuadraticProducts
+public import Froberg.FrameDisjointOpen
+public import Froberg.PrivateFrameNonzero
+public import Froberg.PrivateFrameDetector
+
+@[expose] public section
 
 /-! The same quadratic output frame detects all outer symmetric products
 and the complete private-power kernel. Both conditions hold on one

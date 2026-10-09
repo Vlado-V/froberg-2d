@@ -1,4 +1,8 @@
-import Quartic.Counts
+module
+
+public import Quartic.Counts
+
+@[expose] public section
 
 /-! The exact binomial shadow and its linear relaxation, in integer arithmetic. -/
 

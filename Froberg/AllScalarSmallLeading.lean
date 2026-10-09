@@ -1,7 +1,11 @@
-import Froberg.ExtendedLeadingWitnesses
-import Froberg.LateQuadraticCapacity
-import Froberg.PreparedActualSmallReduction
-import Froberg.NaturalEventualParity
+module
+
+public import Froberg.ExtendedLeadingWitnesses
+public import Froberg.LateQuadraticCapacity
+public import Froberg.PreparedActualSmallReduction
+public import Froberg.NaturalEventualParity
+
+@[expose] public section
 
 /-! All leading-row witnesses for degrees three and four, uniformly in
 late output constraints and in the parity of the scalar dimension. -/

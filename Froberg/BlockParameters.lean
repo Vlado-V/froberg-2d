@@ -1,5 +1,9 @@
-import Froberg.AsymptoticCounts
-import Froberg.CountParameters
+module
+
+public import Froberg.AsymptoticCounts
+public import Froberg.CountParameters
+
+@[expose] public section
 
 /-! Eventual bounds for the fixed outer block and the deleted target
 codimension, including the small-codimension inequality for degrees at least nine. -/

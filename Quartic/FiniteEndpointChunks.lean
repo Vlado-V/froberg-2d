@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointNatural
+module
+
+public import Quartic.FiniteEndpointNatural
+
+@[expose] public section
 
 /-! Assemble independently checked finite row chunks without reevaluating the
 whole inverse in one Boolean expression. -/

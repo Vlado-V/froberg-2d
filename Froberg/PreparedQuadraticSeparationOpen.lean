@@ -1,5 +1,9 @@
-import Froberg.QuadraticSeparationRow
-import Froberg.FullPreparedProjections
+module
+
+public import Froberg.QuadraticSeparationRow
+public import Froberg.FullPreparedProjections
+
+@[expose] public section
 
 /-! The quadratic coefficient row is polynomial on the full prepared
 parameter space. Its scalar, private, and outer inputs are independent

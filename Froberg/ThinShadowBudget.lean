@@ -1,4 +1,8 @@
-import Froberg.ScalarShadowBudgets
+module
+
+public import Froberg.ScalarShadowBudgets
+
+@[expose] public section
 
 /-! The integer incidence budget in the thin, injective range. -/
 noncomputable section

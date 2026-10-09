@@ -1,4 +1,8 @@
-import Froberg.SymmetricProducts
+module
+
+public import Froberg.SymmetricProducts
+
+@[expose] public section
 
 /-! Independent vectors have independent formal unordered products.  This
 allows symmetric-product injectivity of a subspace to be used on every

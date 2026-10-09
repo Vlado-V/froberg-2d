@@ -1,4 +1,8 @@
-import Froberg.PairedMonomials
+module
+
+public import Froberg.PairedMonomials
+
+@[expose] public section
 
 /-! Five finite monomial certificates for two unrestricted multilinear quartics
 per four-element support.  The assignments are data; every property below is

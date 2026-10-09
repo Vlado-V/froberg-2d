@@ -1,5 +1,9 @@
-import Froberg.CoreLimit
-import Froberg.ConcreteCounts
+module
+
+public import Froberg.CoreLimit
+public import Froberg.ConcreteCounts
+
+@[expose] public section
 
 /-! The exact count identity supplies the outer-family density. -/
 noncomputable section

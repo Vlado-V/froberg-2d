@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointMetadata30Checks
+module
+
+public import Quartic.FiniteEndpointMetadata30Checks
+
+@[expose] public section
 open Quartic.FiniteEndpointMetadata30Data Quartic.FiniteEndpointCheckerPolynomial
 set_option maxHeartbeats 2000000
 namespace Quartic.FiniteEndpointMetadata30

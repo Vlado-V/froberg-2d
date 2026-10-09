@@ -1,5 +1,9 @@
-import Froberg.ComplementMixed
-import Froberg.ProductMinors
+module
+
+public import Froberg.ComplementMixed
+public import Froberg.ProductMinors
+
+@[expose] public section
 
 /-! Polynomial mixed-minor certificates for disjoint sets of added vectors. -/
 noncomputable section

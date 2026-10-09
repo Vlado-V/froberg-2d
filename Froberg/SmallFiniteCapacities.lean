@@ -1,6 +1,10 @@
-import Froberg.SmallCapacityLimits
-import Froberg.SmallDegreeCapacities
-import Froberg.QuadraticOutputDimension
+module
+
+public import Froberg.SmallCapacityLimits
+public import Froberg.SmallDegreeCapacities
+public import Froberg.QuadraticOutputDimension
+
+@[expose] public section
 
 /-! The exact integer product capacities of Appendix E, including its
 special quadratic/quartic witnesses and its unequal cross split. -/

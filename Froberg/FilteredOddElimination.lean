@@ -1,4 +1,8 @@
-import Froberg.WeightedFilteredProducts
+module
+
+public import Froberg.WeightedFilteredProducts
+
+@[expose] public section
 
 /-! Odd triangular elimination for arbitrary even high parts with zero scalar
 component. In particular this permits pure restoration in positive even slots. -/

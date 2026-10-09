@@ -1,6 +1,10 @@
-import Quartic.CubicCoordinateProducts
-import Quartic.CubicInequality
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Quartic.CubicCoordinateProducts
+public import Quartic.CubicInequality
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-!
 # Exact dimension of cubic products of arbitrary linear forms

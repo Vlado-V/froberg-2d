@@ -1,4 +1,8 @@
-import Froberg.IntermediateKoszul
+module
+
+public import Froberg.IntermediateKoszul
+
+@[expose] public section
 
 /-! Comparing the two endpoint relations obtained by multiplying a lower
 relation by independent linear forms. The comparison is made in the actual

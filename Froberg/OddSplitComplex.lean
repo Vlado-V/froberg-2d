@@ -1,6 +1,10 @@
-import Froberg.BilinearKoszulRow
-import Froberg.BiformParitySpaces
-import Froberg.PolynomialComplexOpen
+module
+
+public import Froberg.BilinearKoszulRow
+public import Froberg.BiformParitySpaces
+public import Froberg.PolynomialComplexOpen
+
+@[expose] public section
 
 /-! The complete odd coefficient complex for any even/odd generator split.
 Its exactness is a polynomial open condition on the actual two families. -/

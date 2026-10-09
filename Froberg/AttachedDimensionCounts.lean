@@ -1,5 +1,9 @@
-import Froberg.AttachedReindex
-import Froberg.VectorQuotientDimensions
+module
+
+public import Froberg.AttachedReindex
+public import Froberg.VectorQuotientDimensions
+
+@[expose] public section
 
 /-! Field-independent monomial counts for the actual attached quotients. -/
 noncomputable section

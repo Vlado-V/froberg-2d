@@ -1,4 +1,8 @@
-import Froberg.BiformRegrade
+module
+
+public import Froberg.BiformRegrade
+
+@[expose] public section
 
 /-! Row two is filled by a linear-layer kernel and a quadratic-layer quotient.
 All maps are the literal homogeneous polynomial multiplication maps. -/

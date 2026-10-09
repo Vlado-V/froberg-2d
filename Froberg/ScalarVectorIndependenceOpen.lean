@@ -1,5 +1,9 @@
-import Froberg.PreparedOddParameterProjection
-import Froberg.GenericDimensions
+module
+
+public import Froberg.PreparedOddParameterProjection
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! Independent scalar and vector leading families form a nonempty
 principal open whenever both elementary dimension bounds hold. -/

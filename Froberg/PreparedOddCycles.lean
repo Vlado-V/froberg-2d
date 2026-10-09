@@ -1,7 +1,11 @@
-import Froberg.FullPreparedFibers
-import Froberg.PreparedEvenReduction
-import Froberg.DelayedOddElimination
-import Froberg.BiformParitySpaces
+module
+
+public import Froberg.FullPreparedFibers
+public import Froberg.PreparedEvenReduction
+public import Froberg.DelayedOddElimination
+public import Froberg.BiformParitySpaces
+
+@[expose] public section
 
 /-! The full odd source, including outer vectors and mixed pure generators,
 has only cross-parity constant cycles once its first and higher linear

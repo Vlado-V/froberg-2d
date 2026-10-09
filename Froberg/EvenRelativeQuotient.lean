@@ -1,5 +1,9 @@
-import Froberg.EvenRelativeFamilies
-import Froberg.OddEndpointScalarSlices
+module
+
+public import Froberg.EvenRelativeFamilies
+public import Froberg.OddEndpointScalarSlices
+
+@[expose] public section
 
 /-! The actual relative quotient in even-background coordinates. -/
 noncomputable section

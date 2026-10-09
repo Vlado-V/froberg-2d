@@ -1,4 +1,8 @@
-import Froberg.FiniteProfileTransport
+module
+
+public import Froberg.FiniteProfileTransport
+
+@[expose] public section
 
 /-! Leading terms of the exact source and coarse target dimensions. -/
 noncomputable section

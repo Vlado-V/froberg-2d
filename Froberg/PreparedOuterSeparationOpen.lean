@@ -1,7 +1,11 @@
-import Froberg.PreparedQuadraticSeparationOpen
-import Froberg.PreparedQuadraticFormalSeparation
-import Froberg.PreparedLowComponentInstances
-import Froberg.PreparedOuterSeparation
+module
+
+public import Froberg.PreparedQuadraticSeparationOpen
+public import Froberg.PreparedQuadraticFormalSeparation
+public import Froberg.PreparedLowComponentInstances
+public import Froberg.PreparedOuterSeparation
+
+@[expose] public section
 
 /-! The actual low components identify the polynomial quadratic row
 certificate with C.2 on the full prepared parameter space. -/

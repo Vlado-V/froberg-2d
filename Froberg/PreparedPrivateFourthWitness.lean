@@ -1,7 +1,11 @@
-import Froberg.PreparedFourthRow
-import Froberg.PreparedExtendedWitness
-import Froberg.PreparedPrivateSeparation
-import Froberg.FiniteFourthProjectedRow
+module
+
+public import Froberg.PreparedFourthRow
+public import Froberg.PreparedExtendedWitness
+public import Froberg.PreparedPrivateSeparation
+public import Froberg.FiniteFourthProjectedRow
+
+@[expose] public section
 
 /-! A finite higher-row capacity constructs a successful augmented row for
 the same prescribed private tuple. Its coefficients belong to the actual

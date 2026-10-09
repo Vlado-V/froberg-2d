@@ -1,6 +1,10 @@
-import Quartic.AmbientCovectorSpreading
-import Quartic.AmbientCovectorTransport
-import Quartic.SliceMotionAvoidance
+module
+
+public import Quartic.AmbientCovectorSpreading
+public import Quartic.AmbientCovectorTransport
+public import Quartic.SliceMotionAvoidance
+
+@[expose] public section
 
 /-! Actual ambient closed slices with arbitrary threshold slice counts. -/
 noncomputable section

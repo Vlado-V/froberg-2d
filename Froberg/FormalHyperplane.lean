@@ -1,5 +1,9 @@
-import Froberg.Hyperplane
-import Froberg.FormalHomology
+module
+
+public import Froberg.Hyperplane
+public import Froberg.FormalHomology
+
+@[expose] public section
 
 /-! The exact hyperplane replacement, including its actual endpoint homology interpretation. -/
 noncomputable section
@@ -61,8 +65,7 @@ theorem formal_hyperplane_replacement (R : Submodule K (SymmetricSquare K V))
 
 /-- Section 3's replacement interpreted as an equivalence for the actual polynomial
 Koszul homology, rather than only an equality of formal subspaces. -/
-def endpointHyperplaneReplacement {n d r : ℕ} (htwo : (2 : K) ≠ 0)
-    (W A Q Qminus W₀ : Submodule K (Forms K n d))
+def endpointHyperplaneReplacement {n d r : ℕ} (W A Q Qminus W₀ : Submodule K (Forms K n d))
     {f M : Forms K n d} {ε : K}
     (hWA : W ⊓ A = Q) (hQ : Q = Qminus ⊔ Submodule.span K {f})
     (hW : W = W₀ ⊔ Submodule.span K {f}) (hQ₀ : Qminus ≤ W₀)
@@ -82,6 +85,6 @@ def endpointHyperplaneReplacement {n d r : ℕ} (htwo : (2 : K) ≠ 0)
         formalPolynomialMultiplication.ker ⊓ formalProducts Qminus A := by
     rw [hspan]
     exact formal_hyperplane_replacement _ W A Q Qminus W₀ hWA hQ hW hQ₀ hf₀ hM hε hrelations
-  exact (endpointHomologyEquivFormal htwo q hq).trans (LinearEquiv.ofEq _ _ heq)
+  exact (endpointHomologyEquivFormal_anyChar q hq).trans (LinearEquiv.ofEq _ _ heq)
 
 end Froberg

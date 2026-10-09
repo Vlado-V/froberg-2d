@@ -1,5 +1,9 @@
-import Froberg.RowTwoFinite
-import Froberg.RowTwoLinearSpace
+module
+
+public import Froberg.RowTwoFinite
+public import Froberg.RowTwoLinearSpace
+
+@[expose] public section
 
 /-! The exact row-two target witness at the Section 5 generator densities.
 The construction uses direct convolution and no preceding-degree endpoint. -/

@@ -1,5 +1,9 @@
-import Froberg.ThinQuotientStrata
-import Froberg.ThinShadowLimits
+module
+
+public import Froberg.ThinQuotientStrata
+public import Froberg.ThinShadowLimits
+
+@[expose] public section
 
 /-! Uniform thin-case covector strata from the strict vector-model estimates. -/
 noncomputable section

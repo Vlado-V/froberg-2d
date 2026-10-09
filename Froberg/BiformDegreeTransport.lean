@@ -1,5 +1,9 @@
-import Froberg.ScalarBiformParameter
-import Froberg.BiformActionPolynomial
+module
+
+public import Froberg.ScalarBiformParameter
+public import Froberg.BiformActionPolynomial
+
+@[expose] public section
 
 /-! Degree transports and the right-hand degree-zero tensor unit preserve
 literal polynomial embeddings. -/

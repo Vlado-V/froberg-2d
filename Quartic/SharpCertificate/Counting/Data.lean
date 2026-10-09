@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Counting.Core
+module
+
+public import Quartic.SharpCertificate.Counting.Core
+
+@[expose] public section
 
 /-! Bounded kernel checks of the actual counts in each configuration. -/
 

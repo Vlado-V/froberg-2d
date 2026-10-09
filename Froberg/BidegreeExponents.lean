@@ -1,4 +1,8 @@
-import Froberg.CoreDivisors
+module
+
+public import Froberg.CoreDivisors
+
+@[expose] public section
 
 /-! Exact coordinates for monomials of a fixed degree in two variable blocks. -/
 noncomputable section

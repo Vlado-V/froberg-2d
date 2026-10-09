@@ -1,4 +1,8 @@
-import Froberg.ParityRangeQuotient
+module
+
+public import Froberg.ParityRangeQuotient
+
+@[expose] public section
 
 /-! The odd part of the full endpoint product relation space is exactly
 the image obtained using coefficient parity opposite to each generator. -/

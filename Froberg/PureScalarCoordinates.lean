@@ -1,4 +1,8 @@
-import Froberg.BiformCoordinates
+module
+
+public import Froberg.BiformCoordinates
+
+@[expose] public section
 
 /-! Output-weight zero is precisely the embedded scalar polynomial space. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.PrivateBiformRow
-import Froberg.IntrinsicBiformRow
+module
+
+public import Froberg.PrivateBiformRow
+public import Froberg.IntrinsicBiformRow
+
+@[expose] public section
 
 /-! Private-row separation in the fixed intrinsic coefficient spaces used
 by the combined prepared-row matrix. -/

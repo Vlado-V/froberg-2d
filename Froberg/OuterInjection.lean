@@ -1,4 +1,8 @@
-import Froberg.AttachedMultiplication
+module
+
+public import Froberg.AttachedMultiplication
+
+@[expose] public section
 
 /-! Polynomial injectivity for the monomial-attached outer module of Appendix B.2. -/
 noncomputable section

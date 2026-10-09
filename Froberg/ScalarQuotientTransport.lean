@@ -1,6 +1,10 @@
-import Froberg.ComponentQuotientIndependence
-import Froberg.PreparedFamilyIndependence
-import Froberg.HomogeneousRename
+module
+
+public import Froberg.ComponentQuotientIndependence
+public import Froberg.PreparedFamilyIndependence
+public import Froberg.HomogeneousRename
+
+@[expose] public section
 
 /-! Independence modulo weight-zero polynomials implies the exact
 independence modulo the scalar form space used by replacement. -/

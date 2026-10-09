@@ -1,5 +1,9 @@
-import Quartic.ThreeBlockModel
-import Quartic.CorrectionSpace
+module
+
+public import Quartic.ThreeBlockModel
+public import Quartic.CorrectionSpace
+
+@[expose] public section
 
 /-!
 # The explicit uniform (2,2) middle-block specialization

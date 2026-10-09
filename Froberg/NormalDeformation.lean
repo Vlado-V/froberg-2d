@@ -1,5 +1,9 @@
-import Froberg.GenericDimensions
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.GenericDimensions
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! First-order rank gain for an actual linear pencil.  The construction
 uses image lifts and cycle lifts, so no matrix-factorization premise remains. -/

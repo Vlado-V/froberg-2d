@@ -1,4 +1,8 @@
-import Froberg.SparseOutputQuotients
+module
+
+public import Froberg.SparseOutputQuotients
+
+@[expose] public section
 
 /-! Projected sparse conditions in the very same unrestricted vector
 coordinates used by the intermediate-row incidence construction. -/

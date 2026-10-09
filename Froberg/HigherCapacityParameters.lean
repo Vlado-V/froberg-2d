@@ -1,7 +1,11 @@
-import Froberg.ProductCapacityParameters
-import Froberg.PreparedFiniteRows
-import Froberg.SmallSparseLayerBudget
-import Froberg.ParityProfileScalar
+module
+
+public import Froberg.ProductCapacityParameters
+public import Froberg.PreparedFiniteRows
+public import Froberg.SmallSparseLayerBudget
+public import Froberg.ParityProfileScalar
+
+@[expose] public section
 
 /-! Instantiation of the higher B.4 capacity records with the literal
 Section 5 counts and the complete scalar list of the prepared family. -/

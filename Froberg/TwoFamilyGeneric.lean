@@ -1,4 +1,8 @@
-import Froberg.TwoFamilyCharts
+module
+
+public import Froberg.TwoFamilyCharts
+
+@[expose] public section
 
 /-! Simultaneous incidence for two coefficient families, with their exact
 separate span costs and one common projective scaling. -/

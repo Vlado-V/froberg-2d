@@ -1,5 +1,9 @@
-import Froberg.ShadowErrorAbsorption
-import Froberg.AsymptoticCounts
+module
+
+public import Froberg.ShadowErrorAbsorption
+public import Froberg.AsymptoticCounts
+
+@[expose] public section
 
 /-! # Eventual absorption of the finite B.2 errors -/
 

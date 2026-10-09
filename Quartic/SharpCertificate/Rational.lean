@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Certificate
+module
+
+public import Quartic.SharpCertificate.Certificate
+
+@[expose] public section
 
 /-! The certificates cover exactly the manuscript's rational prefix-edge points. -/
 

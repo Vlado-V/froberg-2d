@@ -1,4 +1,8 @@
-import Quartic.SplitBlock22Homology
+module
+
+public import Quartic.SplitBlock22Homology
+
+@[expose] public section
 
 /-!
 # The mixed–mixed quotient of actual (2,2) cycles
@@ -124,7 +128,7 @@ theorem blockBoundary_comap (g : Fin c → MiddleCoordinates.Mixed K m)
   change a.val ∈ blockBoundarySpace g h ↔ (cycleProjection g h a).val ∈ mixedKoszulSpace g
   exact boundary_iff_mixed_mem g h hh a
 
-private def quotientTransport {V W : Type*} [AddCommGroup V] [Module K V]
+def quotientTransport {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (A : Submodule K V) (B : Submodule K W)
     (hA : A = B.comap f) (hs : Function.Surjective f) : (V ⧸ A) ≃ₗ[K] (W ⧸ B) :=
   (Submodule.quotEquivOfEq _ _ (by rw [LinearMap.ker_comp, Submodule.ker_mkQ]; exact hA)).trans

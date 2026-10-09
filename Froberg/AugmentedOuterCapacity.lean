@@ -1,4 +1,8 @@
-import Froberg.CountedOuterStrata
+module
+
+public import Froberg.CountedOuterStrata
+
+@[expose] public section
 
 /-! The exact dimension reserve absorbs every additional scalar count of
 order smaller than n^(d-1), including all prepared even scalar shifts. -/

@@ -1,4 +1,8 @@
-import Quartic.KernelPolynomialCharts
+module
+
+public import Quartic.KernelPolynomialCharts
+
+@[expose] public section
 
 /-!
 # Generic avoidance of polynomial families of high-codimension kernels

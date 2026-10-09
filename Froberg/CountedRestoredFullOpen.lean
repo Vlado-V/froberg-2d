@@ -1,6 +1,10 @@
-import Froberg.CountedRestoredCertificates
-import Froberg.RestoredCertificateOpen
-import Froberg.FrameEvenData
+module
+
+public import Froberg.CountedRestoredCertificates
+public import Froberg.RestoredCertificateOpen
+public import Froberg.FrameEvenData
+
+@[expose] public section
 
 /-! Full restored certificates at the prescribed all-even counts. All
 output frames and pure slots are selected after the scalar threshold. -/

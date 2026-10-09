@@ -1,4 +1,8 @@
-import Froberg.BilinearCovectorStrata
+module
+
+public import Froberg.BilinearCovectorStrata
+
+@[expose] public section
 
 /-! The strict-shadow inequality implies every scalar-surjectivity incidence
 budget, including the zero and full kernel strata. -/

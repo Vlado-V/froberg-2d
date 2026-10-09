@@ -1,5 +1,9 @@
-import Quartic.PolynomialRank
-import Quartic.PencilFibers
+module
+
+public import Quartic.PolynomialRank
+public import Quartic.PencilFibers
+
+@[expose] public section
 
 /-!
 # The symmetric contraction bound for the convolution inverse system

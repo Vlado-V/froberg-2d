@@ -1,5 +1,9 @@
-import Froberg.BiformRestoredRelations
-import Froberg.PreparedRestorationOpen
+module
+
+public import Froberg.BiformRestoredRelations
+public import Froberg.PreparedRestorationOpen
+
+@[expose] public section
 
 /-! The restored common prepared family retains exactly the original
 scalar relation space after the supported endpoint deletion. -/
@@ -46,7 +50,7 @@ theorem restoredEndpointFamily_scalar (hd : d%2=0)
   rw [heq,rename_rename]
   rfl
 
-theorem prepared_restored_formal_relations (htwo : (2 : K)≠0) (hd : d%2=0)
+theorem prepared_restored_formal_relations (hd : d%2=0)
     (hO : ∀ j∈J,O j≤Forms K h j) (hJ : ∀ j∈J,j≤d) (heven : ∀ j∈J,j%2=0)
     (hpos : ∀ j∈J,0<j) (idx : Fin r ≃ Label q J counts)
     (slot : Fin (finrank K (Forms K h d)) → Fin r)
@@ -69,8 +73,7 @@ theorem prepared_restored_formal_relations (htwo : (2 : K)≠0) (hd : d%2=0)
       (D.mkQ.comp formalPolynomialMultiplication).ker ⊓
         formalProducts ((Submodule.span K (Set.range (fun j : Fin q => p.1.1 (Sum.inl j)))).map
           (renameForm (Fin.natAdd h))) (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
-  apply biform_restored_supported_relations htwo
-    (restoredFamilyLinear hd hO hJ heven idx slot p) hi D hD hodd
+  apply biform_restored_supported_relations (restoredFamilyLinear hd hO hJ heven idx slot p) hi D hD hodd
     (fun i => degree (idx i)) _ _ _ hreduce
   · rw [Submodule.map_span]
     apply Submodule.span_le.mpr

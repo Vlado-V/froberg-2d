@@ -1,6 +1,10 @@
-import Froberg.TensorFamilyQuotient
-import Froberg.TensorScalarGrowth
-import Froberg.AdditionalScalarGrowth
+module
+
+public import Froberg.TensorFamilyQuotient
+public import Froberg.TensorScalarGrowth
+public import Froberg.AdditionalScalarGrowth
+
+@[expose] public section
 
 /-! Transport of the actual scalar-growth bound through family identities,
 without expanding dependent quotient casts in downstream proofs. -/

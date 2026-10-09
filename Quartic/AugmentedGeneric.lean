@@ -1,5 +1,9 @@
-import Quartic.AugmentedMiddle
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.AugmentedMiddle
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-!
 # Polynomial opens for actual augmented middle multiplication

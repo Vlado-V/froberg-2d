@@ -1,6 +1,10 @@
-import Froberg.MonomialCouplingBounds
-import Froberg.CommonMonomialTargets
-import Froberg.JointConditionals
+module
+
+public import Froberg.MonomialCouplingBounds
+public import Froberg.CommonMonomialTargets
+public import Froberg.JointConditionals
+
+@[expose] public section
 
 /-! A direct quantitative mixing estimate for the lifted monomial
 transport, using a full family of common free-variable targets. -/

@@ -1,5 +1,9 @@
-import Froberg.QuadraticOutputDimension
-import Froberg.BiformExtension
+module
+
+public import Froberg.QuadraticOutputDimension
+public import Froberg.BiformExtension
+
+@[expose] public section
 
 /-! Exact-count witnesses for the two low target rows, with the actual
 quadratic output dimension imposed. -/

@@ -1,5 +1,9 @@
-import Quartic.SplitBigrading
-import Quartic.SplitMiddle31
+module
+
+public import Quartic.SplitBigrading
+public import Quartic.SplitMiddle31
+
+@[expose] public section
 
 /-!
 # The (3,1) map inside the full polynomial multiplication map

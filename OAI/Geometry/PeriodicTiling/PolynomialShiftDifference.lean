@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Polynomial.Taylor
-import Mathlib.NumberTheory.Real.Irrational
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
-import Lean.Elab.Tactic.Omega
+module
+
+public import Mathlib.Algebra.Polynomial.Taylor
+public import Mathlib.NumberTheory.Real.Irrational
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+public import Lean.Elab.Tactic.Omega
+
+@[expose] public section
 
 namespace OAI
 

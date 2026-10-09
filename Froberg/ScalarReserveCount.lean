@@ -1,6 +1,10 @@
-import Froberg.RoundingLimits
-import Froberg.CapacityReserve
-import Froberg.AsymptoticCounts
+module
+
+public import Froberg.RoundingLimits
+public import Froberg.CapacityReserve
+public import Froberg.AsymptoticCounts
+
+@[expose] public section
 
 /-! The exact floor count used to augment the scalar family. -/
 noncomputable section

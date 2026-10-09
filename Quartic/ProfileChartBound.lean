@@ -1,7 +1,11 @@
-import Quartic.IteratedBlockCharts
-import Quartic.LayerRankCounts
-import Mathlib.Algebra.Order.Group.Int.Sum
-import Mathlib.Order.Interval.Finset.Fin
+module
+
+public import Quartic.IteratedBlockCharts
+public import Quartic.LayerRankCounts
+public import Mathlib.Algebra.Order.Group.Int.Sum
+public import Mathlib.Order.Interval.Finset.Fin
+
+@[expose] public section
 
 /-!
 # The compressed profile expression bounds genuine chart parameters

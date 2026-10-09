@@ -1,5 +1,9 @@
-import Quartic.SplitBlock22Coordinates
-import Quartic.SimultaneousBlockConditions
+module
+
+public import Quartic.SplitBlock22Coordinates
+public import Quartic.SimultaneousBlockConditions
+
+@[expose] public section
 noncomputable section
 namespace Quartic.TraceTranspose
 open Module MvPolynomial

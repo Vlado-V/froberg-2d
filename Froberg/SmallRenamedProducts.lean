@@ -1,5 +1,9 @@
-import Froberg.SmallCrossParameters
-import Froberg.PreparedProductOutputRename
+module
+
+public import Froberg.SmallCrossParameters
+public import Froberg.PreparedProductOutputRename
+
+@[expose] public section
 
 /-! The exceptional small-degree product rows in any fixed finite output
 coordinates. All witnesses remain points of the same prepared space. -/

@@ -1,4 +1,8 @@
-import Froberg.RestoredBaseProjection
+module
+
+public import Froberg.RestoredBaseProjection
+
+@[expose] public section
 
 /-! All scalar tails and the true biform outer columns are independent
 coordinates of the full restored parameter space. -/

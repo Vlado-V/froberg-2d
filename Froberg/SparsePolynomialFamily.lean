@@ -1,5 +1,9 @@
-import Froberg.PolynomialIntermediateRow
-import Froberg.SparseExactIntermediate
+module
+
+public import Froberg.PolynomialIntermediateRow
+public import Froberg.SparseExactIntermediate
+
+@[expose] public section
 
 /-! Sparse attached vector families are literal homogeneous polynomial
 families after selecting their output directions. -/

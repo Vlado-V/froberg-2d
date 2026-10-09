@@ -1,5 +1,9 @@
-import Froberg.OddTargetBaseCoordinates
-import Froberg.BiformTensorComponent
+module
+
+public import Froberg.OddTargetBaseCoordinates
+public import Froberg.BiformTensorComponent
+
+@[expose] public section
 
 /-! Vanishing of an actual higher quotient coordinate gives literal
 membership in the corresponding component of the background relations. -/

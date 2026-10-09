@@ -1,5 +1,9 @@
-import Quartic.Generic
-import Quartic.Counts
+module
+
+public import Quartic.Generic
+public import Quartic.Counts
+
+@[expose] public section
 
 noncomputable section
 

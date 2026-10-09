@@ -1,6 +1,10 @@
-import Froberg.BiformOutputProjection
-import Froberg.ProductScalarSeparation
-import Froberg.SeparatedRowKernel
+module
+
+public import Froberg.BiformOutputProjection
+public import Froberg.ProductScalarSeparation
+public import Froberg.SeparatedRowKernel
+
+@[expose] public section
 
 /-! The scalar-profile and output-parity projections remove the entire formal
 product block from an actual polynomial relation. -/

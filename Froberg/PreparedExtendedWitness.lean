@@ -1,6 +1,10 @@
-import Froberg.SparseWitnessParameter
-import Froberg.ExtendedIntrinsicRow
-import Froberg.PreparedProductBiform
+module
+
+public import Froberg.SparseWitnessParameter
+public import Froberg.ExtendedIntrinsicRow
+public import Froberg.PreparedProductBiform
+
+@[expose] public section
 
 /-! The sparse witness is an exact point of the actual prepared parameter
 space after adjoining the fixed private variables. -/

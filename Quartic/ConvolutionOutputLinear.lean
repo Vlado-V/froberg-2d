@@ -1,5 +1,9 @@
-import Quartic.ConvolutionOutput
-import Quartic.ConvolutionLinearFactor
+module
+
+public import Quartic.ConvolutionOutput
+public import Quartic.ConvolutionLinearFactor
+
+@[expose] public section
 
 /-!
 # Linear images of the actual output space

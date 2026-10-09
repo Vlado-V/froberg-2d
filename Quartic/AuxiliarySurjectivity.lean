@@ -1,8 +1,12 @@
-import Mathlib.LinearAlgebra.Dual.Lemmas
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
-import Mathlib.LinearAlgebra.Prod
-import Mathlib.LinearAlgebra.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+public import Mathlib.LinearAlgebra.Prod
+public import Mathlib.LinearAlgebra.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Maximal rank by adjoining auxiliary target vectors

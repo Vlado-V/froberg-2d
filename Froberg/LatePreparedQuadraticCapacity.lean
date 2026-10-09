@@ -1,5 +1,9 @@
-import Froberg.UniformPreparedQuadraticCapacity
-import Froberg.LateQuadraticCapacity
+module
+
+public import Froberg.UniformPreparedQuadraticCapacity
+public import Froberg.LateQuadraticCapacity
+
+@[expose] public section
 
 /-! The actual quadratic capacity holds uniformly for detectors selected
 after the scalar dimension has been chosen. -/

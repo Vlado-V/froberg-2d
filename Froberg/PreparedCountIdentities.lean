@@ -1,6 +1,10 @@
-import Froberg.TargetLayerAssembly
-import Froberg.ConcreteCounts
-import Froberg.UpperEndpointConvolution
+module
+
+public import Froberg.TargetLayerAssembly
+public import Froberg.ConcreteCounts
+public import Froberg.UpperEndpointConvolution
+
+@[expose] public section
 
 /-! Literal label cardinalities and the critical scalar density of the
 prepared family, including any fixed number of appended private slots. -/

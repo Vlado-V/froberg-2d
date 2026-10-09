@@ -1,4 +1,8 @@
-import Froberg.OddAmbientRow
+module
+
+public import Froberg.OddAmbientRow
+
+@[expose] public section
 
 /-! Intermediate source coordinates descend through the actual F,U+P
 relations and commute with scalar multiplication in the ambient quotient. -/

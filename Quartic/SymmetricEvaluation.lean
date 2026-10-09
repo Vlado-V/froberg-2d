@@ -1,6 +1,10 @@
-import Quartic.Koszul
-import Mathlib.Order.Filter.Basic
-import Mathlib.Algebra.Polynomial.Roots
+module
+
+public import Quartic.Koszul
+public import Mathlib.Order.Filter.Basic
+public import Mathlib.Algebra.Polynomial.Roots
+
+@[expose] public section
 
 /-!
 # The linear algebra in the symmetric evaluation estimate

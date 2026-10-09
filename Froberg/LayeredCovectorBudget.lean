@@ -1,4 +1,8 @@
-import Mathlib.Tactic
+module
+
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The exact natural-number budget for the common scalar incidence step.
 All higher target dimensions and all graph coordinates are retained. -/

@@ -1,5 +1,9 @@
-import Froberg.CoveredEndpointReplacement
-import Froberg.BackgroundFlagMembership
+module
+
+public import Froberg.CoveredEndpointReplacement
+public import Froberg.BackgroundFlagMembership
+
+@[expose] public section
 
 /-! The covered replacement theorem applies to a scalar flag slot of
 the actual even family, with every positive generator retained. -/

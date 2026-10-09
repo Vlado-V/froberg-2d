@@ -1,4 +1,8 @@
-import Froberg.OddBackgroundProduct
+module
+
+public import Froberg.OddBackgroundProduct
+
+@[expose] public section
 
 /-! Scalar multiplication in the ambient odd quotient, before imposing
 positive-even private coefficients. Its projection to the full odd

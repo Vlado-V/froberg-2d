@@ -1,4 +1,8 @@
-import Froberg.ShadowAbsorptionLimits
+module
+
+public import Froberg.ShadowAbsorptionLimits
+
+@[expose] public section
 
 /-! The two uniform analytic margins for extending the core by private columns. -/
 noncomputable section

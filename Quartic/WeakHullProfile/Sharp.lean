@@ -1,5 +1,9 @@
-import Quartic.WeakHullProfile.Interpolation
-import Quartic.UniformSurplus.Rational
+module
+
+public import Quartic.WeakHullProfile.Interpolation
+public import Quartic.UniformSurplus.Rational
+
+@[expose] public section
 
 /-! The sharp rational profile dominates its explicit weak prefix mixture. -/
 namespace Quartic.WeakHullProfile

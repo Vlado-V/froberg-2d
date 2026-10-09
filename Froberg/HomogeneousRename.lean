@@ -1,5 +1,9 @@
-import Froberg.FormalEmbedding
-import Froberg.ComplementaryTargetDeletion
+module
+
+public import Froberg.FormalEmbedding
+public import Froberg.ComplementaryTargetDeletion
+
+@[expose] public section
 
 /-! Literal variable embeddings and deletion of the complementary old target. -/
 noncomputable section
@@ -54,14 +58,13 @@ theorem exists_old_target_deletion (f : Fin m ↪ Fin n) (q : Fin r → Forms K 
 
 variable {Z : Type*} [AddCommGroup Z] [Module K Z]
 
-theorem renamed_old_homology_finrank (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K m d) (hq : LinearIndependent K q) (f : Fin m ↪ Fin n)
+theorem renamed_old_homology_finrank (q : Fin r → Forms K m d) (hq : LinearIndependent K q) (f : Fin m ↪ Fin n)
     (pi : Forms K n (2*d) →ₗ[K] Z)
     (hinj : Set.InjOn (pi.comp (renameForm f)) (endpointMultiplication q).range) :
     finrank K ((pi.comp formalPolynomialMultiplication).ker ⊓
       formalProducts ((Submodule.span K (Set.range q)).map (renameForm f)) (renameForm f).range :
         Submodule K (SymmetricSquare K (Forms K n d))) = finrank K (EndpointHomology q) := by
-  apply embedded_old_homology_finrank htwo q hq (renameForm f) (renameForm_injective f)
+  apply embedded_old_homology_finrank q hq (renameForm f) (renameForm_injective f)
     pi (pi.comp (renameForm f))
   · rw [LinearMap.comp_assoc,renameForm_formal_multiplication,← LinearMap.comp_assoc]
   · exact hinj

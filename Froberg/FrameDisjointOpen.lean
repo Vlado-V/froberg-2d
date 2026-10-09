@@ -1,6 +1,10 @@
-import Froberg.GenericDimensions
-import Quartic.PolynomialRankOpen
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import Froberg.GenericDimensions
+public import Quartic.PolynomialRankOpen
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-! A generic frame is disjoint from any finite family of subspaces of
 complementary dimension. This lets one fix a single quadratic output space. -/

@@ -1,6 +1,10 @@
-import Froberg.EvenRestorationSpace
-import Froberg.ParityWeights
-import Froberg.WeightedRename
+module
+
+public import Froberg.EvenRestorationSpace
+public import Froberg.ParityWeights
+public import Froberg.WeightedRename
+
+@[expose] public section
 
 /-! Natural-weight restoration is independent of the finite names chosen
 for variables; the positive projection detects precisely weight zero. -/

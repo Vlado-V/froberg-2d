@@ -1,5 +1,9 @@
-import Froberg.RestoredBiformFamily
-import Froberg.ScalarVectorRowsOpen
+module
+
+public import Froberg.RestoredBiformFamily
+public import Froberg.ScalarVectorRowsOpen
+
+@[expose] public section
 
 /-! Full odd exactness for the restored even family together with its
 outer linear family, on one common parameter open. -/

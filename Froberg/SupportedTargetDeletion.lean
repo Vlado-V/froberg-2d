@@ -1,4 +1,8 @@
-import Froberg.HomogeneousRename
+module
+
+public import Froberg.HomogeneousRename
+
+@[expose] public section
 
 /-! Deleting precisely a complement of an embedded old multiplication
 image preserves that image and fills the embedded old target. -/

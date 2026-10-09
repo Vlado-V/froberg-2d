@@ -1,5 +1,9 @@
-import Froberg.HilbertSeries
-import Froberg.CriticalApproximation
+module
+
+public import Froberg.HilbertSeries
+public import Froberg.CriticalApproximation
+
+@[expose] public section
 
 /-! Positive truncation at the endpoint in sufficiently many variables. -/
 

@@ -1,6 +1,10 @@
-import Froberg.UniformOuterGrowth
-import Froberg.ProfileCriticalRatio
-import Froberg.CoreLimit
+module
+
+public import Froberg.UniformOuterGrowth
+public import Froberg.ProfileCriticalRatio
+public import Froberg.CoreLimit
+
+@[expose] public section
 
 /-! Dimensions and slope limits for the actual core quotient spaces. -/
 noncomputable section

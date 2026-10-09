@@ -1,7 +1,11 @@
-import Froberg.PrivateSmallFinite
-import Froberg.PreparedLateMiddleSmallReduction
-import Froberg.PreparedPrivateProjectedCapacity
-import Froberg.LatePreparedQuadraticCapacity
+module
+
+public import Froberg.PrivateSmallFinite
+public import Froberg.PreparedLateMiddleSmallReduction
+public import Froberg.PreparedPrivateProjectedCapacity
+public import Froberg.LatePreparedQuadraticCapacity
+
+@[expose] public section
 
 /-! Actual private opens in odd degrees five and seven, with the detector
 and private model chosen after the scalar threshold. -/

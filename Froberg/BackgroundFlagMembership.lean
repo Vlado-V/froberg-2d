@@ -1,4 +1,8 @@
-import Froberg.BackgroundFlagSpan
+module
+
+public import Froberg.BackgroundFlagSpan
+
+@[expose] public section
 
 /-! The even generators of the canonical replaced tuple belong to its
 literal retained background, as required by the local comparison. -/

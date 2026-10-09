@@ -1,4 +1,8 @@
-import Froberg.PairedFibers
+module
+
+public import Froberg.PairedFibers
+
+@[expose] public section
 
 /-! Every unordered pair of degree-s supports occurs in its doubled/single-index fiber. -/
 noncomputable section

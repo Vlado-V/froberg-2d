@@ -1,4 +1,8 @@
-import Froberg.ShadowDeletion
+module
+
+public import Froberg.ShadowDeletion
+
+@[expose] public section
 
 /-! Add independently retained regular and private target contributions. -/
 noncomputable section

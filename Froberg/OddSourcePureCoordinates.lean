@@ -1,5 +1,9 @@
-import Froberg.OddSourceGraphCoordinates
-import Froberg.MixedPureComponents
+module
+
+public import Froberg.OddSourceGraphCoordinates
+public import Froberg.MixedPureComponents
+
+@[expose] public section
 
 /-! Independence of the fixed pure tuple supplies the actual graph
 elimination needed for the odd source, for every private linear tuple P. -/

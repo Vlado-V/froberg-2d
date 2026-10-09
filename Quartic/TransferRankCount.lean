@@ -1,5 +1,9 @@
-import Quartic.EndpointReduction
-import Quartic.Counts
+module
+
+public import Quartic.EndpointReduction
+public import Quartic.Counts
+
+@[expose] public section
 
 /-! Convert actual split and response ranks into a parent quartic witness. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Quartic.ConvolutionFactor
-import Quartic.ConvolutionSymmetric
-import Mathlib.Algebra.MvPolynomial.Variables
+module
+
+public import Quartic.ConvolutionFactor
+public import Quartic.ConvolutionSymmetric
+public import Mathlib.Algebra.MvPolynomial.Variables
+
+@[expose] public section
 
 /-!
 # Erasing an absent distinguished variable

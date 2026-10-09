@@ -1,6 +1,10 @@
-import Froberg.ProjectedTopAugmentation
-import Froberg.ExactOuterLimit
-import Froberg.UpperEndpointConvolution
+module
+
+public import Froberg.ProjectedTopAugmentation
+public import Froberg.ExactOuterLimit
+public import Froberg.UpperEndpointConvolution
+
+@[expose] public section
 
 /-! The exact rounded generator counts satisfy the top-row open conditions. -/
 noncomputable section

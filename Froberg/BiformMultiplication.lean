@@ -1,4 +1,8 @@
-import Froberg.ConvolutionExactCount
+module
+
+public import Froberg.ConvolutionExactCount
+
+@[expose] public section
 
 /-! Actual multiplication of biform generators and transport of convolution
 surjectivity through an output multiplication map. -/

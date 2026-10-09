@@ -1,6 +1,10 @@
-import Froberg.PreparedScalarFiberAt
-import Froberg.VectorModelCoordinates
-import Froberg.CountedJointSelection
+module
+
+public import Froberg.PreparedScalarFiberAt
+public import Froberg.VectorModelCoordinates
+public import Froberg.CountedJointSelection
+
+@[expose] public section
 
 /-! Independent monomial coordinates for the outer F family, scalar Q
 family, and remaining actual prepared parameters. -/

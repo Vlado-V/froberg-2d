@@ -1,5 +1,9 @@
-import Froberg.EvenRowWitness
-import Froberg.PolynomialOutputImage
+module
+
+public import Froberg.EvenRowWitness
+public import Froberg.PolynomialOutputImage
+
+@[expose] public section
 
 /-! A new-layer witness in an arbitrary prescribed output subspace, with
 all ambient output coefficients allowed. This includes the quadratic row. -/

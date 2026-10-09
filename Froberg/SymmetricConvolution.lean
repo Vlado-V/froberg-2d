@@ -1,6 +1,10 @@
-import Froberg.ConvolutionSurjectivity
-import Froberg.FiniteImageEquivalence
-import Froberg.TargetCoverage
+module
+
+public import Froberg.ConvolutionSurjectivity
+public import Froberg.FiniteImageEquivalence
+public import Froberg.TargetCoverage
+
+@[expose] public section
 
 /-! # Symmetric-power convolution: the full isomorphism of Lemma B.6
 

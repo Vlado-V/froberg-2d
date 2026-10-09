@@ -1,6 +1,10 @@
-import Froberg.SparseLayerConstants
-import Froberg.SparseBlockCount
-import Froberg.IntermediateScalarBudget
+module
+
+public import Froberg.SparseLayerConstants
+public import Froberg.SparseBlockCount
+public import Froberg.IntermediateScalarBudget
+
+@[expose] public section
 
 /-! Exact finite sparse-layer budgets from the actual rounded counts,
 including the complete exceptional-shadow term. -/

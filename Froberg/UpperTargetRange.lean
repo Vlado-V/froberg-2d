@@ -1,4 +1,8 @@
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! The high-target conclusion depends only on the actual generator span. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Froberg.PreparedCountIdentities
-import Froberg.ExactOuterLimit
-import Froberg.OddScalarParameters
+module
+
+public import Froberg.PreparedCountIdentities
+public import Froberg.ExactOuterLimit
+public import Froberg.OddScalarParameters
+
+@[expose] public section
 
 /-! The actual complete scalar background has the prescribed density for
 all non-top odd quotient-growth estimates simultaneously. -/

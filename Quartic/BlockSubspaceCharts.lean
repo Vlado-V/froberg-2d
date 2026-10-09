@@ -1,8 +1,12 @@
-import Quartic.SubspaceCharts
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.Prod
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Tactic
+module
+
+public import Quartic.SubspaceCharts
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.Prod
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Explicit two-block charts for subspaces

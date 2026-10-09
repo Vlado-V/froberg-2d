@@ -1,5 +1,9 @@
-import Froberg.OddIntermediateSource
-import Froberg.OddSourceAllCoordinates
+module
+
+public import Froberg.OddIntermediateSource
+public import Froberg.OddSourceAllCoordinates
+
+@[expose] public section
 
 /-! The actual intermediate source projection is exactly the corresponding
 coordinate of the full source decomposition, for arbitrary graph correction. -/

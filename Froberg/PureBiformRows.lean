@@ -1,5 +1,9 @@
-import Froberg.PureCutoffPropagation
-import Froberg.BiformFullRow
+module
+
+public import Froberg.PureCutoffPropagation
+public import Froberg.BiformFullRow
+
+@[expose] public section
 
 /-! A basis of a full pure-X product supplies the actual biform rows used
 above the cutoff, in the same tuple multiplication API as lower rows. -/

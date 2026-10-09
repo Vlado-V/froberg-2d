@@ -1,7 +1,11 @@
-import Froberg.IntrinsicSecondStage
-import Froberg.AffineSharedPolynomial
-import Froberg.IntrinsicAffineNormalization
-import Froberg.FreezeParameters
+module
+
+public import Froberg.IntrinsicSecondStage
+public import Froberg.AffineSharedPolynomial
+public import Froberg.IntrinsicAffineNormalization
+public import Froberg.FreezeParameters
+
+@[expose] public section
 
 /-! The common-scalar second stage of the layered covector argument. Every
 fixed positive component is retained. Auxiliary cuts are fixed once, and

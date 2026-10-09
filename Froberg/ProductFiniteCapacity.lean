@@ -1,4 +1,8 @@
-import Froberg.ProductFiniteMargins
+module
+
+public import Froberg.ProductFiniteMargins
+
+@[expose] public section
 
 /-! Prescribed Section 5 counts satisfy the exact finite B.4 product
 capacities, uniformly for every active layer in degrees at least nine. -/

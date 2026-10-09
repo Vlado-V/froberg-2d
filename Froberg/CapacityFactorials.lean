@@ -1,4 +1,8 @@
-import Froberg.CapacityRatios
+module
+
+public import Froberg.CapacityRatios
+
+@[expose] public section
 
 /-! # Factorial cancellation in the capacity estimates -/
 

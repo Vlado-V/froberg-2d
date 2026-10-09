@@ -1,6 +1,10 @@
-import Froberg.HomogeneousVariableEquiv
-import Froberg.PrivateFrameDetector
-import Froberg.PrivateBiformFamily
+module
+
+public import Froberg.HomogeneousVariableEquiv
+public import Froberg.PrivateFrameDetector
+public import Froberg.PrivateBiformFamily
+
+@[expose] public section
 
 /-! The private quadratic detector and its exact kernel use the same finite
 coordinates after reindexing the output variables. -/

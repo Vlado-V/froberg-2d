@@ -1,5 +1,9 @@
-import Quartic.UniformScalar.Counts
-import Quartic.UniformScalar.Incidence
+module
+
+public import Quartic.UniformScalar.Counts
+public import Quartic.UniformScalar.Incidence
+
+@[expose] public section
 
 /-!
 # Uniform scalar transfer conditions for every child dimension at least 320

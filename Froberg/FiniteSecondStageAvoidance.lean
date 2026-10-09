@@ -1,5 +1,9 @@
-import Quartic.FiniteAlgebraicKernelAvoidance
-import Froberg.SecondStageAvoidance
+module
+
+public import Quartic.FiniteAlgebraicKernelAvoidance
+public import Froberg.SecondStageAvoidance
+
+@[expose] public section
 
 /-! A finite-module slice certificate gives an open set of second-stage
 parameters which works for every first-stage kernel vector. -/

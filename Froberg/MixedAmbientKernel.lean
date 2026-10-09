@@ -1,8 +1,12 @@
-import Froberg.OddAmbientGraph
-import Froberg.OddTargetHigherKernel
-import Froberg.TopRowComparison
-import Froberg.TensorIndependentCoefficients
-import Froberg.ScalarBackgroundRelations
+module
+
+public import Froberg.OddAmbientGraph
+public import Froberg.OddTargetHigherKernel
+public import Froberg.TopRowComparison
+public import Froberg.TensorIndependentCoefficients
+public import Froberg.ScalarBackgroundRelations
+
+@[expose] public section
 
 /-! The top separation condition forces every relation with zero higher
 coordinates to be an existing Q relation, so it cannot kill the bottom. -/

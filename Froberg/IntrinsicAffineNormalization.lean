@@ -1,4 +1,8 @@
-import Froberg.PrincipalAffineNormalization
+module
+
+public import Froberg.PrincipalAffineNormalization
+
+@[expose] public section
 
 /-! Affine normalization without imposing a special basis on the parameter space. -/
 noncomputable section

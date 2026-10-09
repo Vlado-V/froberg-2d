@@ -1,4 +1,8 @@
-import Froberg.GenericDimensions
+module
+
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! Combining a nonempty joint open with nonempty opens chosen in each fiber.
 No uniform polynomial certificate for the fiber property is assumed. -/

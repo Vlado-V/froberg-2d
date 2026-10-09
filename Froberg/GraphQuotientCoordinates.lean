@@ -1,4 +1,8 @@
-import Froberg.CoupledCoordinates
+module
+
+public import Froberg.CoupledCoordinates
+
+@[expose] public section
 
 /-! Explicit source coordinates for the odd mixed quotient. A graph
 relation with injective top coordinate can be eliminated while preserving

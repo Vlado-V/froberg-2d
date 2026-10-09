@@ -1,5 +1,9 @@
-import Froberg.OutputFrameFamily
-import Froberg.PolynomialProperties
+module
+
+public import Froberg.OutputFrameFamily
+public import Froberg.PolynomialProperties
+
+@[expose] public section
 
 /-! Common output-plane and coefficient opens for several target rows. -/
 noncomputable section

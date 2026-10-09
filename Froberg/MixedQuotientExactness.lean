@@ -1,5 +1,9 @@
-import Froberg.Graded
-import Mathlib.LinearAlgebra.Quotient.Basic
+module
+
+public import Froberg.Graded
+public import Mathlib.LinearAlgebra.Quotient.Basic
+
+@[expose] public section
 
 /-! The exact mixed-row quotient sequence after an independent projected
 family is adjoined. All terms are actual subspace quotients. -/

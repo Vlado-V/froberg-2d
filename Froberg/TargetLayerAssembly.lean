@@ -1,5 +1,9 @@
-import Froberg.PreparedTensorRealization
-import Froberg.MiddleRowsCommonOpen
+module
+
+public import Froberg.PreparedTensorRealization
+public import Froberg.MiddleRowsCommonOpen
+
+@[expose] public section
 
 /-! Splicing the quadratic frame and all higher-layer tensors into the
 single literal prepared coefficient space. -/

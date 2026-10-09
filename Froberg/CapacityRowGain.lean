@@ -1,4 +1,8 @@
-import Froberg.StrictTransportGain
+module
+
+public import Froberg.StrictTransportGain
+
+@[expose] public section
 
 /-! Converting actual fiber-image bounds into the hypotheses of the strict
 transport inequality. -/

@@ -1,4 +1,8 @@
-import Froberg.TopSourceProjection
+module
+
+public import Froberg.TopSourceProjection
+
+@[expose] public section
 
 /-! The top component of the actual source coordinates is precisely the
 pure coefficient used by the ambient target-growth projection. -/

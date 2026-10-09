@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! Lifting a finite profile transport through uniform couplings of its
 fibers.  This is the exact normalization step in the monomial transport. -/

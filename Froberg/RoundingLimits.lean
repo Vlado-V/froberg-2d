@@ -1,4 +1,8 @@
-import Froberg.CriticalLimits
+module
+
+public import Froberg.CriticalLimits
+
+@[expose] public section
 
 /-! Rounding and finite lower-order auxiliary counts do not change the
 leading normalized generator budget. -/

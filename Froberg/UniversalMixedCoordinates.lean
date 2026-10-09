@@ -1,7 +1,11 @@
-import Froberg.UniversalMixedOpen
-import Froberg.AffinePolynomialSubstitution
-import Froberg.GenericDimensions
-import Quartic.PolynomialBilinearCoordinates
+module
+
+public import Froberg.UniversalMixedOpen
+public import Froberg.AffinePolynomialSubstitution
+public import Froberg.GenericDimensions
+public import Quartic.PolynomialBilinearCoordinates
+
+@[expose] public section
 
 /-! Uniform mixed position can be imposed together with an arbitrary
 nonempty open in the same actual vector coordinates. -/

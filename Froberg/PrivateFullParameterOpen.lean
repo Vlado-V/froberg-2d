@@ -1,5 +1,9 @@
-import Froberg.PrivateTypedRestoration
-import Froberg.SplitLinearOpen
+module
+
+public import Froberg.PrivateTypedRestoration
+public import Froberg.SplitLinearOpen
+
+@[expose] public section
 
 /-! The private-family B5 exactness condition is a genuine principal open
 in all prepared and private-linear coefficients. The pure tuple is fixed

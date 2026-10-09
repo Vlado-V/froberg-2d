@@ -1,5 +1,9 @@
-import Froberg.TensorWeightTransport
-import Froberg.GradedProductAssembly
+module
+
+public import Froberg.TensorWeightTransport
+public import Froberg.GradedProductAssembly
+
+@[expose] public section
 
 /-! A common four-block variable model for the cross and diagonal witnesses
 in a fixed product row. -/

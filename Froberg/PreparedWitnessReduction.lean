@@ -1,4 +1,8 @@
-import Froberg.PreparedActualReduction
+module
+
+public import Froberg.PreparedActualReduction
+
+@[expose] public section
 
 /-! Actual row and product witnesses, of any construction, produce the
 same positive even-relation reduction on the full parameter space. -/

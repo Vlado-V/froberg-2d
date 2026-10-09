@@ -1,6 +1,10 @@
-import Froberg.ClosedKernelSlices
-import Froberg.BilinearScalarSurjection
-import Quartic.AmbientCovectorTransport
+module
+
+public import Froberg.ClosedKernelSlices
+public import Froberg.BilinearScalarSurjection
+public import Quartic.AmbientCovectorTransport
+
+@[expose] public section
 
 /-! Closed kernel thresholds in coordinates of arbitrary actual vector spaces. -/
 noncomputable section

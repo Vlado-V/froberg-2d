@@ -1,5 +1,9 @@
-import Froberg.OddActualRowGrowth
-import Froberg.MixedAmbientCorrection
+module
+
+public import Froberg.OddActualRowGrowth
+public import Froberg.MixedAmbientCorrection
+
+@[expose] public section
 
 /-! Literal scalar multiplication modulo the Q,F background, before the
 remaining even generators are added. -/

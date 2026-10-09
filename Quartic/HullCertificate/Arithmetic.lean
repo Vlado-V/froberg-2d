@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Core
+module
+
+public import Quartic.HullCertificate.Core
+
+@[expose] public section
 
 /-! Supporting-line certificates and their connection to the two incidence tests. -/
 

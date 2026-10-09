@@ -1,5 +1,9 @@
-import Froberg.PairedCapacity
-import Froberg.CapacityProduct
+module
+
+public import Froberg.PairedCapacity
+public import Froberg.CapacityProduct
+
+@[expose] public section
 
 /-! The exact finite product capacities converge to the B.9 coefficients.
 Both the output subtraction and the scalar division are natural operations. -/

@@ -1,5 +1,9 @@
-import Froberg.ProductRows
-import Froberg.ProductRowAssignments
+module
+
+public import Froberg.ProductRows
+public import Froberg.ProductRowAssignments
+
+@[expose] public section
 
 /-! When only one layer has nonzero size, its symmetric products are the
 entire product source, including after zero-size layers are added. -/

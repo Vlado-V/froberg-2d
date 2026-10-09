@@ -1,4 +1,8 @@
-import Froberg.MonomialProfileTransport
+module
+
+public import Froberg.MonomialProfileTransport
+
+@[expose] public section
 
 /-! Distinct common targets connecting every source monomial to every
 all-free source monomial. No variable needs to be outside the supports. -/

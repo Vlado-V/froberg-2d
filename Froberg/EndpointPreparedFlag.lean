@@ -1,7 +1,11 @@
-import Froberg.FlagReplacement
-import Froberg.EndpointSliceLocalComparison
-import Froberg.SupportedDeletionProjection
-import Froberg.CriticalComparisonCounts
+module
+
+public import Froberg.FlagReplacement
+public import Froberg.EndpointSliceLocalComparison
+public import Froberg.SupportedDeletionProjection
+public import Froberg.CriticalComparisonCounts
+
+@[expose] public section
 
 /-! The prepared flag comparison using literal endpoint slices. Both the
 retained relation after replacement and the projected odd-target coordinates
@@ -15,7 +19,7 @@ variable {F I : Type*}
 variable {h m d r t : ℕ}
 
 theorem exists_critical_comparison_of_endpoint_flag
-    (htwo : (2 : K)≠0) (hm : 0 < m) (upper : Bool)
+    (hm : 0 < m) (upper : Bool)
     (hr : r=adjacentCriticalCount upper (h+m) d)
     (D : Submodule K (Forms K (h+m) (2*d)))
     (hD : D≤(renameForm (K := K) (d := 2*d) (Fin.natAdd h : Fin m → Fin (h+m))).range)
@@ -70,7 +74,7 @@ theorem exists_critical_comparison_of_endpoint_flag
     Q hQ (upperCount_pos hm d) b M hpositive
     (D.mkQ.comp (formalPolynomialMultiplication (K := K) (n := h+m) (d := d))).ker
     hbackground ε hε
-  apply exists_local_comparison_of_endpoint_slices htwo hm D (coreParity h m) parity q hq hqparity
+  apply exists_local_comparison_of_endpoint_slices hm D (coreParity h m) parity q hq hqparity
     (fun z hz => supported_deletion_odd_zero D hD z ((Submodule.Quotient.mk_eq_zero D).mpr hz))
     hcoverage hodd
     (replacedFlagBackground (renameForm emb) Q (upperCount_pos hm d) b M ε)

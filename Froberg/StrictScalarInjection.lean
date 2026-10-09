@@ -1,4 +1,8 @@
-import Froberg.StrictVectorModel
+module
+
+public import Froberg.StrictVectorModel
+
+@[expose] public section
 
 /-! The precise dimension inequality turns a strict vector model into a
 nonempty open of injective scalar actions. -/

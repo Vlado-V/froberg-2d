@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateFirstRow
-import Froberg.GeneralLinearColumns
+module
+
+public import Froberg.PreparedPrivateFirstRow
+public import Froberg.GeneralLinearColumns
+
+@[expose] public section
 
 /-! Literal private powers as homogeneous biforms, and the two independent
 core linear forms used in the extension argument. -/

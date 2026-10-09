@@ -1,5 +1,9 @@
-import Quartic.PolynomialChartGeneric
-import Quartic.IteratedCovectorCharts
+module
+
+public import Quartic.PolynomialChartGeneric
+public import Quartic.IteratedCovectorCharts
+
+@[expose] public section
 
 /-!
 # Generic injectivity from the actual prefix-profile charts

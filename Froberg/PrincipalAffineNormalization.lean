@@ -1,5 +1,9 @@
-import Froberg.AffinePolynomialSubstitution
-import Froberg.PolynomialLinearAvoidance
+module
+
+public import Froberg.AffinePolynomialSubstitution
+public import Froberg.PolynomialLinearAvoidance
+
+@[expose] public section
 
 /-! A nonempty homogeneous-parameter open can be normalized to an affine
 parameter open. The last coordinate is fixed at one only after selecting a

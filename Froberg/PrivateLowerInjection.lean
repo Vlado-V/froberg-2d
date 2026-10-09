@@ -1,4 +1,8 @@
-import Froberg.PrivatePolynomialMap
+module
+
+public import Froberg.PrivatePolynomialMap
+
+@[expose] public section
 
 /-! Below the first pair overlap, distinct private powers give an actual
 injective polynomial multiplication map, with arbitrary injective output maps. -/

@@ -1,6 +1,10 @@
-import Froberg.ExteriorMatrix
-import Froberg.PrimitiveVectors
-import Mathlib.RepresentationTheory.Basic
+module
+
+public import Froberg.ExteriorMatrix
+public import Froberg.PrimitiveVectors
+public import Mathlib.RepresentationTheory.Basic
+
+@[expose] public section
 
 /-!
 # Semilinear matrix actions and their exterior powers

@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Rational
+module
+
+public import Quartic.HullCertificate.Rational
+
+@[expose] public section
 
 /-! The full source dimension in the outer scalar inequality. -/
 

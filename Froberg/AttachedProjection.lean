@@ -1,6 +1,10 @@
-import Froberg.ExceptionalTargetCount
-import Froberg.BlockProjection
-import Froberg.AttachedFibers
+module
+
+public import Froberg.ExceptionalTargetCount
+public import Froberg.BlockProjection
+public import Froberg.AttachedFibers
+
+@[expose] public section
 
 /-! Uniform exceptional projection bounds in the genuine monomial quotient fibers. -/
 noncomputable section

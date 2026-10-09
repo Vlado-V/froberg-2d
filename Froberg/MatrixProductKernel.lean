@@ -1,4 +1,8 @@
-import Froberg.SymmetricIndependence
+module
+
+public import Froberg.SymmetricIndependence
+
+@[expose] public section
 
 /-! Independence of unordered products detects exactly the alternating
 constant matrices, including the diagonal condition in characteristic two. -/

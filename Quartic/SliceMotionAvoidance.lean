@@ -1,6 +1,10 @@
-import Quartic.SliceFiniteModule
-import Quartic.FiniteAlgebraicKernelAvoidance
-import Quartic.HomogeneousSliceNormalization
+module
+
+public import Quartic.SliceFiniteModule
+public import Quartic.FiniteAlgebraicKernelAvoidance
+public import Quartic.HomogeneousSliceNormalization
+
+@[expose] public section
 
 /-! The empty-section to dependent-motion bridge on actual affine slice charts. -/
 noncomputable section

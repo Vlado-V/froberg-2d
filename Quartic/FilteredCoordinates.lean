@@ -1,4 +1,8 @@
-import Quartic.FilteredImage
+module
+
+public import Quartic.FilteredImage
+
+@[expose] public section
 
 /-! # Prefix initial pieces under ordered blockwise coordinate equivalences -/
 noncomputable section

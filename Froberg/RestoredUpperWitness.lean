@@ -1,7 +1,11 @@
-import Froberg.RestoredEndpointPolynomial
-import Froberg.PreparedCountExtension
-import Froberg.PreparedPureRestoration
-import Froberg.UpperTargetSpan
+module
+
+public import Froberg.RestoredEndpointPolynomial
+public import Froberg.PreparedCountExtension
+public import Froberg.PreparedPureRestoration
+public import Froberg.UpperTargetSpan
+
+@[expose] public section
 
 /-! A prepared high-target witness with separate pure generators embeds
 in the actual restored even family by putting those pure forms in the

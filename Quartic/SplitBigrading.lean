@@ -1,4 +1,8 @@
-import Quartic.FreeCoefficientProducts
+module
+
+public import Quartic.FreeCoefficientProducts
+
+@[expose] public section
 
 /-!
 # Actual homogeneous bidegree decomposition

@@ -1,6 +1,10 @@
-import Froberg.OuterFiberAction
-import Mathlib.Data.Finsupp.MonomialOrder
-import Mathlib.Data.Fintype.Sort
+module
+
+public import Froberg.OuterFiberAction
+public import Mathlib.Data.Finsupp.MonomialOrder
+public import Mathlib.Data.Fintype.Sort
+
+@[expose] public section
 
 /-! Increasing monomial enumeration for block-valued initial subspaces. -/
 noncomputable section

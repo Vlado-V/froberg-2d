@@ -1,5 +1,9 @@
-import Froberg.PreparedBiformFamilies
-import Froberg.OddEvenAffineRelations
+module
+
+public import Froberg.PreparedBiformFamilies
+public import Froberg.OddEvenAffineRelations
+
+@[expose] public section
 
 /-! The prepared biform families are exactly the scalar, linear, mixed
 pure, and affine higher families used in the C.4 quotient construction. -/

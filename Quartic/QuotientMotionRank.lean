@@ -1,5 +1,9 @@
-import Quartic.QuotientCovectorKernel
-import Quartic.BilinearMotionConstraints
+module
+
+public import Quartic.QuotientCovectorKernel
+public import Quartic.BilinearMotionConstraints
+
+@[expose] public section
 
 /-!
 # Quotient-aware ranks of actual motion constraints

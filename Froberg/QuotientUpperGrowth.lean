@@ -1,5 +1,9 @@
-import Froberg.SurjectiveImage
-import Mathlib.Tactic
+module
+
+public import Froberg.SurjectiveImage
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Passing an expansion estimate to a quotient, for subspaces in the
 upper half of the quotient source dimension. -/

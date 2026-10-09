@@ -1,5 +1,9 @@
-import Froberg.RowTwoRange
-import Froberg.QuotientConvolution
+module
+
+public import Froberg.RowTwoRange
+public import Froberg.QuotientConvolution
+
+@[expose] public section
 
 /-! A finite row-two witness from two actual convolution constructions.
 No preceding-degree endpoint assertion is used. -/

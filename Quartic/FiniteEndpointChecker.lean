@@ -1,7 +1,11 @@
-import Mathlib.Data.Nat.Bitwise
-import Mathlib.Data.ZMod.Basic
-import Mathlib.LinearAlgebra.Matrix.Rank
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Nat.Bitwise
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.LinearAlgebra.Matrix.Rank
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 A kernel-checkable packed binary inverse certificate primitive. This module

@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateRowOpen
-import Froberg.PrivateBoundaryRemoval
+module
+
+public import Froberg.PreparedPrivateRowOpen
+public import Froberg.PrivateBoundaryRemoval
+
+@[expose] public section
 
 /-! Constant private-private boundaries in the actual intrinsic coefficient
 space, with an explicit finite matrix parameterization in every characteristic. -/

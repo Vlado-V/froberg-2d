@@ -1,4 +1,8 @@
-import Froberg.PreparedBackgroundUpper
+module
+
+public import Froberg.PreparedBackgroundUpper
+
+@[expose] public section
 
 /-! The canonical Q/E/F/G enumeration inherits independence from the
 literal prepared endpoint family. -/

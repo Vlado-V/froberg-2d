@@ -1,4 +1,8 @@
-import Froberg.ProductMinors
+module
+
+public import Froberg.ProductMinors
+
+@[expose] public section
 
 /-! Coefficient support and assembly of independent polynomial product fibers. -/
 noncomputable section

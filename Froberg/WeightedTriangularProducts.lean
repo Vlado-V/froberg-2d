@@ -1,4 +1,8 @@
-import Froberg.LowHomogeneousProduct
+module
+
+public import Froberg.LowHomogeneousProduct
+
+@[expose] public section
 
 /-! Actual homogeneous components of products with prepared generators.
 Lower output-degree terms contribute only below the homogeneous target row. -/

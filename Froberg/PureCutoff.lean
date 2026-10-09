@@ -1,6 +1,10 @@
-import Froberg.PrefixTheorem
-import Froberg.SurjectiveParameterOpen
-import Quartic.BilinearImage
+module
+
+public import Froberg.PrefixTheorem
+public import Froberg.SurjectiveParameterOpen
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! The strict-prefix construction gives an independent pure family of the
 prescribed dimension that fills the next degree. -/

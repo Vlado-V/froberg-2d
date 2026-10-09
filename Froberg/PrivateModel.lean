@@ -1,4 +1,8 @@
-import Froberg.PrivateQuotients
+module
+
+public import Froberg.PrivateQuotients
+
+@[expose] public section
 
 /-! A common private-column model has full spark, mixed position, and all
 polynomial injection bounds required through the endpoint degree. -/

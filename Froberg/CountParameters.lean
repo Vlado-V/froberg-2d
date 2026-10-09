@@ -1,4 +1,8 @@
-import Froberg.CriticalRatioBounds
+module
+
+public import Froberg.CriticalRatioBounds
+
+@[expose] public section
 
 /-! The strict numerical margins in the generator-count construction. -/
 noncomputable section

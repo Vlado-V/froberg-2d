@@ -1,6 +1,10 @@
-import Froberg.ThinCovectorSlices
-import Froberg.BilinearScalarSurjection
-import Quartic.AmbientCovectorTransport
+module
+
+public import Froberg.ThinCovectorSlices
+public import Froberg.BilinearScalarSurjection
+public import Quartic.AmbientCovectorTransport
+
+@[expose] public section
 
 /-! Thin covector bounds for actual vector spaces and scalar families. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Quartic.FreeCoefficients
-import Quartic.ConvolutionHilbert
+module
+
+public import Quartic.FreeCoefficients
+public import Quartic.ConvolutionHilbert
+
+@[expose] public section
 
 /-!
 # Adjoining arbitrarily many free variables to the actual convolution module

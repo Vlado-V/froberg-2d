@@ -1,4 +1,8 @@
-import Froberg.SparseFullOutput
+module
+
+public import Froberg.SparseFullOutput
+
+@[expose] public section
 
 /-! A new-layer witness in an arbitrary prescribed output subspace, with
 all ambient output coefficients allowed. This includes the quadratic row. -/

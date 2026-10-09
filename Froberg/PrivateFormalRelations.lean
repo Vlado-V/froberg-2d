@@ -1,7 +1,11 @@
-import Froberg.PrivateTypedRestoration
-import Froberg.EvenFormalRelations
-import Froberg.BiformSplitEndpoint
-import Froberg.SupportedDeletionProjection
+module
+
+public import Froberg.PrivateTypedRestoration
+public import Froberg.EvenFormalRelations
+public import Froberg.BiformSplitEndpoint
+public import Froberg.SupportedDeletionProjection
+
+@[expose] public section
 
 /-! The even and private-odd reductions combine into a literal full
 coefficient boundary, leaving precisely the scalar background relations. -/
@@ -65,8 +69,7 @@ theorem privateSplitEndpoint_back
       Sum.elim (fun j => (g j).val) (fun j => (p j).val) i :=
   biformSplitEndpoint_back _ _ i
 
-theorem private_split_supported_relations (htwo : (2 : K)≠0)
-    (g : Fin r → evenRestorationSpace (K := K) (blockWeight h m) d)
+theorem private_split_supported_relations (g : Fin r → evenRestorationSpace (K := K) (blockWeight h m) d)
     (p : Fin b → oddRestorationSpace (K := K) (blockWeight h m) d)
     (hi : LinearIndependent K (privateSplitEndpoint g p))
     (D : Submodule K (Forms K (h+m) (2*d)))
@@ -91,7 +94,7 @@ theorem private_split_supported_relations (htwo : (2 : K)≠0)
       (D.mkQ.comp formalPolynomialMultiplication).ker ⊓
         formalProducts Q (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
   classical
-  apply projected_formal_relations_of_even_reduction htwo (coreParity h m)
+  apply projected_formal_relations_of_even_reduction (coreParity h m)
     (biformSplitEndpointParity (q := r) (f := b)) (privateSplitEndpoint g p) hi
     (biformSplitEndpoint_parity _ _) D.mkQ (supported_deletion_odd_zero D hD)
     hodd Q _ hQ

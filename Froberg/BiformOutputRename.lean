@@ -1,5 +1,9 @@
-import Froberg.PreparedBiformCoordinates
-import Froberg.BiformProductProfile
+module
+
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.BiformProductProfile
+
+@[expose] public section
 
 /-! Output-variable equivalences preserve both prescribed biform spaces and
 scalar half-degree profiles. -/

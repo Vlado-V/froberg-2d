@@ -1,7 +1,11 @@
-import Froberg.UnequalCrossPair
-import Froberg.SingleCrossRow
-import Froberg.SmallFourthParameters
-import Froberg.PreparedEmptyProfileRow
+module
+
+public import Froberg.UnequalCrossPair
+public import Froberg.SingleCrossRow
+public import Froberg.SmallFourthParameters
+public import Froberg.PreparedEmptyProfileRow
+
+@[expose] public section
 
 /-! The literal row-six cross witness, on the same full prepared parameter
 space as the scalar, sparse and diagonal witnesses. -/

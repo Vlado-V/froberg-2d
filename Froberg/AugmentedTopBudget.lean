@@ -1,5 +1,9 @@
-import Froberg.TopIncidenceLimit
-import Froberg.TopFactorialGap
+module
+
+public import Froberg.TopIncidenceLimit
+public import Froberg.TopFactorialGap
+
+@[expose] public section
 
 /-! The rounded scalar reserve fits the actual projected top-row map. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.Prefix
-import Mathlib.LinearAlgebra.TensorProduct.Basic
+module
+
+public import Froberg.Prefix
+public import Mathlib.LinearAlgebra.TensorProduct.Basic
+
+@[expose] public section
 
 /-! Actual multiplication of finitely many vector-valued forms. -/
 noncomputable section

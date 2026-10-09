@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis
-import Mathlib.Algebra.MvPolynomial.Funext
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis
+public import Mathlib.Algebra.MvPolynomial.Funext
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Avoiding polynomial images of smaller parameter dimension

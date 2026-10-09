@@ -1,4 +1,8 @@
-import Quartic.UniformSurplus.Counts
+module
+
+public import Quartic.UniformSurplus.Counts
+
+@[expose] public section
 
 /-! Agreement with the rational sharp expression used by the finite exact
 certificates. This fixes the meaning of the real polynomial extension. -/

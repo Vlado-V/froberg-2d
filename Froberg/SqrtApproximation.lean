@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Polynomial.Basic
-import Mathlib.Analysis.Real.Sqrt
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Polynomial.Basic
+public import Mathlib.Analysis.Real.Sqrt
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Polynomial approximation to a square root at positive infinity. -/
 

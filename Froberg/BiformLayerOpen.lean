@@ -1,5 +1,9 @@
-import Froberg.BiformTensorFamily
-import Froberg.SurjectiveParameterOpen
+module
+
+public import Froberg.BiformTensorFamily
+public import Froberg.SurjectiveParameterOpen
+
+@[expose] public section
 
 /-! A finite collection of target rows is simultaneously filled by one
 family in each generator layer. Rows may reuse the same layer. -/

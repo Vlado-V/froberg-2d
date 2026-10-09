@@ -1,5 +1,9 @@
-import Froberg.BiformMultiplication
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.BiformMultiplication
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Polynomial rank certificates for the actual biform target maps. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Froberg.PreparedPrivateCoefficientProperty
-import Froberg.PreparedPrivateKernels
-import Froberg.PreparedEvenReduction
+module
+
+public import Froberg.PreparedPrivateCoefficientProperty
+public import Froberg.PreparedPrivateKernels
+public import Froberg.PreparedEvenReduction
+
+@[expose] public section
 
 /-! The exact augmented first row detects the literal private-private
 boundary in the first weighted component of an actual coefficient tuple. -/

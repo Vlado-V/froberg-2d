@@ -1,6 +1,10 @@
-import Froberg.PreparedPrivateSelectedOpen
-import Froberg.PreparedPrivateReduction
-import Froberg.PreparedProductOpen
+module
+
+public import Froberg.PreparedPrivateSelectedOpen
+public import Froberg.PreparedPrivateReduction
+public import Froberg.PreparedProductOpen
+
+@[expose] public section
 
 /-! A single open of actual prepared coefficients satisfies every private
 row condition. The pure output tuple is arbitrary and remains fixed. -/

@@ -1,5 +1,9 @@
-import Froberg.PrivateDetectorRename
-import Froberg.PreparedFiniteRows
+module
+
+public import Froberg.PrivateDetectorRename
+public import Froberg.PreparedFiniteRows
+
+@[expose] public section
 
 /-! A general quadratic frame determines exactly the constrained paired
 output spaces used by the finite private-row construction. -/

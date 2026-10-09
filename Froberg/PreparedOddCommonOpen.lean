@@ -1,7 +1,11 @@
-import Froberg.PreparedCountedOddCycles
-import Froberg.PreparedCountedIndependence
-import Froberg.FiniteBasisPrincipalIntersection
-import Froberg.FullPreparedTargetOpen
+module
+
+public import Froberg.PreparedCountedOddCycles
+public import Froberg.PreparedCountedIndependence
+public import Froberg.FiniteBasisPrincipalIntersection
+public import Froberg.FullPreparedTargetOpen
+
+@[expose] public section
 
 /-! Independence, full odd exactness, and any further nonempty open
 condition hold at one actual prepared parameter. -/

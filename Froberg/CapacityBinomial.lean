@@ -1,4 +1,8 @@
-import Froberg.CapacityRatios
+module
+
+public import Froberg.CapacityRatios
+
+@[expose] public section
 
 /-! # Binomial bounds for the scalar-source capacities -/
 

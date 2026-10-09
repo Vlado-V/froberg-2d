@@ -1,4 +1,8 @@
-import Quartic.ConvolutionAmbientImage
+module
+
+public import Quartic.ConvolutionAmbientImage
+
+@[expose] public section
 
 /-!
 # Geometric witness thresholds for all convolution subspaces

@@ -1,4 +1,8 @@
-import Froberg.ShiftedQuadraticCapacity
+module
+
+public import Froberg.ShiftedQuadraticCapacity
+
+@[expose] public section
 
 /-! The scalar threshold for a quadratic row precedes the choice of its
 output variable type and quadratic output subspace. -/

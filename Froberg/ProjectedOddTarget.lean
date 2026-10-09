@@ -1,5 +1,9 @@
-import Froberg.ActualParityCoefficientKernel
-import Froberg.OddBottomDetection
+module
+
+public import Froberg.ActualParityCoefficientKernel
+public import Froberg.OddBottomDetection
+
+@[expose] public section
 
 /-! The full target quotient after an even deletion is the actual odd
 endpoint quotient when the even target is generated modulo that deletion. -/

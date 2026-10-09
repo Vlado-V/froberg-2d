@@ -1,6 +1,10 @@
-import Froberg.SeparatedComplexOpen
-import Froberg.PolynomialFamilyRestoration
-import Froberg.BiformVectorDetector
+module
+
+public import Froberg.SeparatedComplexOpen
+public import Froberg.PolynomialFamilyRestoration
+public import Froberg.BiformVectorDetector
+
+@[expose] public section
 
 /-! The complete polynomial row for C.2 consists of scalar coefficients,
 private coefficients, and the outer symmetric products. Its only mandatory

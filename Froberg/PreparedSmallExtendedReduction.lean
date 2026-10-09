@@ -1,8 +1,12 @@
-import Froberg.PreparedFourthExtendedRow
-import Froberg.QuadraticExtendedRow
-import Froberg.EmptyPrivateRow
-import Froberg.ZeroEmptyExtendedRow
-import Froberg.PreparedWitnessReduction
+module
+
+public import Froberg.PreparedFourthExtendedRow
+public import Froberg.QuadraticExtendedRow
+public import Froberg.EmptyPrivateRow
+public import Froberg.ZeroEmptyExtendedRow
+public import Froberg.PreparedWitnessReduction
+
+@[expose] public section
 
 /-! The small-degree row witnesses extend to either parity of the number
 of scalar variables. All counts remain the counts of the final space. -/

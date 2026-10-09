@@ -1,4 +1,8 @@
-import Quartic.ConvolutionF13Square
+module
+
+public import Quartic.ConvolutionF13Square
+
+@[expose] public section
 
 /-!
 # The actual convolution presentation modulo a quadratic family

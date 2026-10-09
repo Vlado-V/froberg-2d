@@ -1,6 +1,10 @@
-import Froberg.DetectedBiformFamily
-import Froberg.BiformVectorQuotient
-import Froberg.QuadraticSeparationRow
+module
+
+public import Froberg.DetectedBiformFamily
+public import Froberg.BiformVectorQuotient
+public import Froberg.QuadraticSeparationRow
+
+@[expose] public section
 
 /-! The detected biform witness separates outer symmetric products from
 the full scalar coefficient row in the actual polynomial coordinates. -/

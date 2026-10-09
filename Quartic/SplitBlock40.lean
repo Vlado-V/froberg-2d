@@ -1,4 +1,8 @@
-import Quartic.SplitBlock31Projection
+module
+
+public import Quartic.SplitBlock31Projection
+
+@[expose] public section
 
 /-!
 # The actual pure (4,0) block of the full split complex
@@ -184,7 +188,7 @@ def cycleEmbedding (g : SplitMiddle31.Mixed K m c) (Q : Fin q → Forms K m 2) :
       rw [multiplication_commutes, show quadraticMultiplication blockQuadrics a.val = 0 from a.property,
         map_zero])
 
-private def mapCycleQuotients {V W V' W' : Type*}
+def mapCycleQuotients {V W V' W' : Type*}
     [AddCommGroup V] [Module K V] [AddCommGroup W] [Module K W]
     [AddCommGroup V'] [Module K V'] [AddCommGroup W'] [Module K W']
     (f : V →ₗ[K] W) (f' : V' →ₗ[K] W') (B : Submodule K V) (B' : Submodule K V')

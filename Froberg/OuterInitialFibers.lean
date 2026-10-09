@@ -1,5 +1,9 @@
-import Froberg.OuterInitial
-import Froberg.SeparatedSubspace
+module
+
+public import Froberg.OuterInitial
+public import Froberg.SeparatedSubspace
+
+@[expose] public section
 
 /-! Initial outer-module subspaces indexed by the actual monomials. -/
 noncomputable section

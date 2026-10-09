@@ -1,5 +1,9 @@
-import Froberg.SparseLayerConstants
-import Froberg.QuadraticOutputDimension
+module
+
+public import Froberg.SparseLayerConstants
+public import Froberg.QuadraticOutputDimension
+
+@[expose] public section
 
 /-! The actual quadratic count, including the deleted output coordinates,
 satisfies the strict sparse capacity inequality in every degree at least three. -/

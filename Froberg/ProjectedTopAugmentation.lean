@@ -1,5 +1,9 @@
-import Froberg.ProjectedTopGeneric
-import Froberg.TwoFamilyAugmentedOpen
+module
+
+public import Froberg.ProjectedTopGeneric
+public import Froberg.TwoFamilyAugmentedOpen
+
+@[expose] public section
 
 /-! The actual top row admits, on one principal open in its original
 parameters, both injectivity and the scalar quotient-growth estimate. -/

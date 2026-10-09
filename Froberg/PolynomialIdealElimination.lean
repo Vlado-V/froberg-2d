@@ -1,4 +1,8 @@
-import Froberg.PolynomialTriangular
+module
+
+public import Froberg.PolynomialTriangular
+
+@[expose] public section
 
 /-! A common ideal suffices for triangular elimination. Individual target
 rows can be constructed using different generator blocks of that same ideal. -/

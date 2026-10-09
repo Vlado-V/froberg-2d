@@ -1,6 +1,10 @@
-import Froberg.ProductScalarSeparation
-import Froberg.PolynomialVectorRows
-import Froberg.ScalarVectorInjection
+module
+
+public import Froberg.ProductScalarSeparation
+public import Froberg.PolynomialVectorRows
+public import Froberg.ScalarVectorInjection
+
+@[expose] public section
 
 /-! Empty new layers need no output-half condition: scalar-profile
 separation alone proves the entire row injective. -/

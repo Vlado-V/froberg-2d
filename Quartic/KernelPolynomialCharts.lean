@@ -1,5 +1,9 @@
-import Quartic.KernelCharts
-import Quartic.RationalImageAvoidance
+module
+
+public import Quartic.KernelCharts
+public import Quartic.RationalImageAvoidance
+
+@[expose] public section
 
 /-!
 # Rational charts for kernels of polynomial matrix families

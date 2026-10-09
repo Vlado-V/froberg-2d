@@ -1,6 +1,10 @@
-import Froberg.OddScalarParameters
-import Froberg.AmbientTopGrowth
-import Froberg.FiniteBasisPrincipalIntersection
+module
+
+public import Froberg.OddScalarParameters
+public import Froberg.AmbientTopGrowth
+public import Froberg.FiniteBasisPrincipalIntersection
+
+@[expose] public section
 
 /-! One open in the actual F/Q coefficients supplies the top and every
 ordinary odd-row growth condition used by C.4. -/

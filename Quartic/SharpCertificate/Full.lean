@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Rational
+module
+
+public import Quartic.SharpCertificate.Rational
+
+@[expose] public section
 
 /-! The full source dimension in the sharp outer inequality. -/
 

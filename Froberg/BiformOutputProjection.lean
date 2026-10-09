@@ -1,5 +1,9 @@
-import Froberg.BiformScalarProjection
-import Froberg.BiformOutputConstraint
+module
+
+public import Froberg.BiformScalarProjection
+public import Froberg.BiformOutputConstraint
+
+@[expose] public section
 
 /-! Output coordinate projections preserve scalar coefficient spaces. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Froberg.PrivateCoreCoefficients
-import Froberg.SparseOutputQuotients
-import Froberg.PrivateLowerInjection
+module
+
+public import Froberg.PrivateCoreCoefficients
+public import Froberg.SparseOutputQuotients
+public import Froberg.PrivateLowerInjection
+
+@[expose] public section
 
 /-! Separation of the sparse new layer from fixed private powers. Projected
 linear-coefficient injectivity is used only where a private power can occur. -/

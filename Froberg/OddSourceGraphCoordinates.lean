@@ -1,5 +1,9 @@
-import Froberg.OddSourceBaseCoordinates
-import Froberg.ProjectedQuotientEquiv
+module
+
+public import Froberg.OddSourceBaseCoordinates
+public import Froberg.ProjectedQuotientEquiv
+
+@[expose] public section
 
 /-! The remaining private generators give their literal graph relations
 after the outer linear forms have been removed from the odd source. -/

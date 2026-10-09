@@ -1,5 +1,9 @@
-import Froberg.PreparedCoreExtension
-import Froberg.ProductRowRename
+module
+
+public import Froberg.PreparedCoreExtension
+public import Froberg.ProductRowRename
+
+@[expose] public section
 
 /-! Product columns lie in their literal homogeneous bidegree and commute
 with adjoining private variables. -/

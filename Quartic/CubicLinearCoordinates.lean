@@ -1,6 +1,10 @@
-import Quartic.Homogeneous
-import Mathlib.LinearAlgebra.SymmetricAlgebra.Basis
-import Mathlib.LinearAlgebra.Projection
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.LinearAlgebra.SymmetricAlgebra.Basis
+public import Mathlib.LinearAlgebra.Projection
+
+@[expose] public section
 
 /-!
 # Linear coordinates on actual homogeneous polynomial spaces

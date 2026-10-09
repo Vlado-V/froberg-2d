@@ -1,5 +1,9 @@
-import Froberg.MixedCovectorGrowth
-import Froberg.OddAffineSlices
+module
+
+public import Froberg.MixedCovectorGrowth
+public import Froberg.OddAffineSlices
+
+@[expose] public section
 
 /-! C.4 for the literal mixed U+P background: all higher contraction
 estimates are obtained from the actual graded multiplication maps. -/

@@ -1,5 +1,9 @@
-import Froberg.BiformActions
-import Froberg.BiformCoordinates
+module
+
+public import Froberg.BiformActions
+public import Froberg.BiformCoordinates
+
+@[expose] public section
 
 /-! The normalized tensor actions are literal multiplication in the same
 sum-variable polynomial ring as the prepared-family elimination. -/

@@ -1,5 +1,9 @@
-import Froberg.ComponentQuotientIndependence
-import Froberg.PreparedFamilyIndependence
+module
+
+public import Froberg.ComponentQuotientIndependence
+public import Froberg.PreparedFamilyIndependence
+
+@[expose] public section
 
 /-! Positive prepared generators remain independent modulo the entire
 scalar polynomial subspace. Pure top-degree perturbations are arbitrary. -/

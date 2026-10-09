@@ -1,7 +1,11 @@
-import Froberg.OrderedMonomials
-import Froberg.Prefix
-import Mathlib.LinearAlgebra.TensorProduct.Pi
-import Mathlib.LinearAlgebra.TensorProduct.Map
+module
+
+public import Froberg.OrderedMonomials
+public import Froberg.Prefix
+public import Mathlib.LinearAlgebra.TensorProduct.Pi
+public import Mathlib.LinearAlgebra.TensorProduct.Map
+
+@[expose] public section
 
 /-! Canonical monomial coordinates for a vector space tensored with forms.
 The ordered coordinates use the same multiplicative monomial order as the

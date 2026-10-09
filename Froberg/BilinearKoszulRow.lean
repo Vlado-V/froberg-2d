@@ -1,4 +1,8 @@
-import Froberg.ExactKernelGeneral
+module
+
+public import Froberg.ExactKernelGeneral
+
+@[expose] public section
 
 /-! Coordinate-free finite scalar/new-layer/product rows. The mandatory
 constant relations and all row entries vary polynomially in common parameters. -/

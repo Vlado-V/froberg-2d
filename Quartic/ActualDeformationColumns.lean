@@ -1,8 +1,12 @@
-import Quartic.ActualSplitCokernel
-import Quartic.MovingMiddleCorrection
-import Quartic.RowMultiplicationCoordinates
-import Quartic.Deformation
-import Quartic.ActualDeformationResponse
+module
+
+public import Quartic.ActualSplitCokernel
+public import Quartic.MovingMiddleCorrection
+public import Quartic.RowMultiplicationCoordinates
+public import Quartic.Deformation
+public import Quartic.ActualDeformationResponse
+
+@[expose] public section
 
 /-!
 # Actual deformation columns

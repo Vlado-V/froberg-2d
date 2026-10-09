@@ -1,4 +1,8 @@
-import Froberg.LayeredCovectorBudget
+module
+
+public import Froberg.LayeredCovectorBudget
+
+@[expose] public section
 
 /-! Exact finite arithmetic for the homogeneous bottom cuts and the one
 shared affine homogenization coordinate in the kernel-chart argument. -/

@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The higher projection of a subspace has dimension equal to its total
 dimension minus its intersection with the bottom coordinate space. -/

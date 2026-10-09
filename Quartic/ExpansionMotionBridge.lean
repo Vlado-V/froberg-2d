@@ -1,5 +1,9 @@
-import Quartic.ActualExpansionSlices
-import Quartic.ActualSlicedMotionAvoidance
+module
+
+public import Quartic.ActualExpansionSlices
+public import Quartic.ActualSlicedMotionAvoidance
+
+@[expose] public section
 
 /-! The literal large-range slices are the slices consumed by actual motions. -/
 noncomputable section

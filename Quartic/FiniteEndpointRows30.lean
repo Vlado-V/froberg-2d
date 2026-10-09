@@ -1,44 +1,48 @@
-import Quartic.FiniteEndpointRows30.Chunk000
-import Quartic.FiniteEndpointRows30.Chunk001
-import Quartic.FiniteEndpointRows30.Chunk002
-import Quartic.FiniteEndpointRows30.Chunk003
-import Quartic.FiniteEndpointRows30.Chunk004
-import Quartic.FiniteEndpointRows30.Chunk005
-import Quartic.FiniteEndpointRows30.Chunk006
-import Quartic.FiniteEndpointRows30.Chunk007
-import Quartic.FiniteEndpointRows30.Chunk008
-import Quartic.FiniteEndpointRows30.Chunk009
-import Quartic.FiniteEndpointRows30.Chunk010
-import Quartic.FiniteEndpointRows30.Chunk011
-import Quartic.FiniteEndpointRows30.Chunk012
-import Quartic.FiniteEndpointRows30.Chunk013
-import Quartic.FiniteEndpointRows30.Chunk014
-import Quartic.FiniteEndpointRows30.Chunk015
-import Quartic.FiniteEndpointRows30.Chunk016
-import Quartic.FiniteEndpointRows30.Chunk017
-import Quartic.FiniteEndpointRows30.Chunk018
-import Quartic.FiniteEndpointRows30.Chunk019
-import Quartic.FiniteEndpointRows30.Chunk020
-import Quartic.FiniteEndpointRows30.Chunk021
-import Quartic.FiniteEndpointRows30.Chunk022
-import Quartic.FiniteEndpointRows30.Chunk023
-import Quartic.FiniteEndpointRows30.Chunk024
-import Quartic.FiniteEndpointRows30.Chunk025
-import Quartic.FiniteEndpointRows30.Chunk026
-import Quartic.FiniteEndpointRows30.Chunk027
-import Quartic.FiniteEndpointRows30.Chunk028
-import Quartic.FiniteEndpointRows30.Chunk029
-import Quartic.FiniteEndpointRows30.Chunk030
-import Quartic.FiniteEndpointRows30.Chunk031
-import Quartic.FiniteEndpointRows30.Chunk032
-import Quartic.FiniteEndpointRows30.Chunk033
-import Quartic.FiniteEndpointRows30.Chunk034
-import Quartic.FiniteEndpointRows30.Chunk035
-import Quartic.FiniteEndpointRows30.Chunk036
-import Quartic.FiniteEndpointRows30.Chunk037
-import Quartic.FiniteEndpointRows30.Chunk038
-import Quartic.FiniteEndpointRows30.Chunk039
-import Quartic.FiniteEndpointChunks
+module
+
+public import Quartic.FiniteEndpointRows30.Chunk000
+public import Quartic.FiniteEndpointRows30.Chunk001
+public import Quartic.FiniteEndpointRows30.Chunk002
+public import Quartic.FiniteEndpointRows30.Chunk003
+public import Quartic.FiniteEndpointRows30.Chunk004
+public import Quartic.FiniteEndpointRows30.Chunk005
+public import Quartic.FiniteEndpointRows30.Chunk006
+public import Quartic.FiniteEndpointRows30.Chunk007
+public import Quartic.FiniteEndpointRows30.Chunk008
+public import Quartic.FiniteEndpointRows30.Chunk009
+public import Quartic.FiniteEndpointRows30.Chunk010
+public import Quartic.FiniteEndpointRows30.Chunk011
+public import Quartic.FiniteEndpointRows30.Chunk012
+public import Quartic.FiniteEndpointRows30.Chunk013
+public import Quartic.FiniteEndpointRows30.Chunk014
+public import Quartic.FiniteEndpointRows30.Chunk015
+public import Quartic.FiniteEndpointRows30.Chunk016
+public import Quartic.FiniteEndpointRows30.Chunk017
+public import Quartic.FiniteEndpointRows30.Chunk018
+public import Quartic.FiniteEndpointRows30.Chunk019
+public import Quartic.FiniteEndpointRows30.Chunk020
+public import Quartic.FiniteEndpointRows30.Chunk021
+public import Quartic.FiniteEndpointRows30.Chunk022
+public import Quartic.FiniteEndpointRows30.Chunk023
+public import Quartic.FiniteEndpointRows30.Chunk024
+public import Quartic.FiniteEndpointRows30.Chunk025
+public import Quartic.FiniteEndpointRows30.Chunk026
+public import Quartic.FiniteEndpointRows30.Chunk027
+public import Quartic.FiniteEndpointRows30.Chunk028
+public import Quartic.FiniteEndpointRows30.Chunk029
+public import Quartic.FiniteEndpointRows30.Chunk030
+public import Quartic.FiniteEndpointRows30.Chunk031
+public import Quartic.FiniteEndpointRows30.Chunk032
+public import Quartic.FiniteEndpointRows30.Chunk033
+public import Quartic.FiniteEndpointRows30.Chunk034
+public import Quartic.FiniteEndpointRows30.Chunk035
+public import Quartic.FiniteEndpointRows30.Chunk036
+public import Quartic.FiniteEndpointRows30.Chunk037
+public import Quartic.FiniteEndpointRows30.Chunk038
+public import Quartic.FiniteEndpointRows30.Chunk039
+public import Quartic.FiniteEndpointChunks
+
+@[expose] public section
 
 namespace Quartic.FiniteEndpointRows30
 open FiniteEndpointChecker

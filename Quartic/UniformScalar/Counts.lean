@@ -1,5 +1,9 @@
-import Quartic.UniformScalar.RealCounts
-import Quartic.ProfileCertificate.Core
+module
+
+public import Quartic.UniformScalar.RealCounts
+public import Quartic.ProfileCertificate.Core
+
+@[expose] public section
 
 /-! Infinite-range structural counts in the original integer/binomial notation. -/
 

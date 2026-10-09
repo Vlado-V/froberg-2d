@@ -1,5 +1,9 @@
-import Froberg.VectorExpansionOpen
-import Quartic.QuotientBilinearImage
+module
+
+public import Froberg.VectorExpansionOpen
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-! Relative openness for actual homogeneous polynomial quotient presentations. -/
 noncomputable section

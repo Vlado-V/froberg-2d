@@ -1,4 +1,8 @@
-import Froberg.PrivateAlternatingKernel
+module
+
+public import Froberg.PrivateAlternatingKernel
+
+@[expose] public section
 
 /-! The endpoint kernel of the private-power row is exactly its constant
 Koszul space, once the actual quadratic detector preserves pair overlaps. -/

@@ -1,4 +1,8 @@
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! Upper-target generation is preserved when the span of actual
 polynomial generators grows. -/

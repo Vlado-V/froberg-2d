@@ -1,4 +1,8 @@
-import Froberg.BlockBilinearGrowth
+module
+
+public import Froberg.BlockBilinearGrowth
+
+@[expose] public section
 
 /-! The common higher-layer rate only charges kernel directions outside
 the bottom initial piece. This includes arbitrary graph subspaces. -/

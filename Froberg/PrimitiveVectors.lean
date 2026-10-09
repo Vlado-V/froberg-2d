@@ -1,10 +1,14 @@
-import Mathlib.Algebra.Polynomial.OfFn
-import Mathlib.Algebra.MvPolynomial.Nilpotent
-import Mathlib.RingTheory.Polynomial.GaussLemma
-import Mathlib.RingTheory.Polynomial.UniqueFactorization
-import Mathlib.RingTheory.Localization.Integer
-import Mathlib.Data.Matrix.Mul
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Polynomial.OfFn
+public import Mathlib.Algebra.MvPolynomial.Nilpotent
+public import Mathlib.RingTheory.Polynomial.GaussLemma
+public import Mathlib.RingTheory.Polynomial.UniqueFactorization
+public import Mathlib.RingTheory.Localization.Integer
+public import Mathlib.Data.Matrix.Mul
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Primitive vectors and proportionality over a fraction field

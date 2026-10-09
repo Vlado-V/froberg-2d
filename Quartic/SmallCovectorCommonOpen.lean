@@ -1,6 +1,10 @@
-import Quartic.AmbientCovectorTransport
-import Quartic.AmbientCovectorSpreading
-import Quartic.EndpointF13AllRange
+module
+
+public import Quartic.AmbientCovectorTransport
+public import Quartic.AmbientCovectorSpreading
+public import Quartic.EndpointF13AllRange
+
+@[expose] public section
 
 /-! Common actual block coefficients for every small-range closed covector threshold. -/
 noncomputable section

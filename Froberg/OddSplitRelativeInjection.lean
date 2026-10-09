@@ -1,5 +1,9 @@
-import Froberg.OddSplitComplex
-import Froberg.OddEvenTargetExtension
+module
+
+public import Froberg.OddSplitComplex
+public import Froberg.OddEvenTargetExtension
+
+@[expose] public section
 
 /-! Exactness of the complete odd coefficient row forces injectivity of
 the literal relative multiplication map after adjoining even generators. -/

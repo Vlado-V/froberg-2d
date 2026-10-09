@@ -1,5 +1,9 @@
-import Quartic.EndpointBlockConditions
-import Quartic.CubicGeneric
+module
+
+public import Quartic.EndpointBlockConditions
+public import Quartic.CubicGeneric
+
+@[expose] public section
 
 /-!
 # Cubic independence on the same endpoint block coefficients

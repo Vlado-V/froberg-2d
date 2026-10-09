@@ -1,4 +1,8 @@
-import Quartic.UniformSurplus.Profiles
+module
+
+public import Quartic.UniformSurplus.Profiles
+
+@[expose] public section
 
 /-! Endpoint chords of the quadratic and cubic layer polynomials suffice for
 the uniform bound. This proves the numerical profile inequality directly. -/

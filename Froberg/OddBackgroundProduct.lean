@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundSource
-import Froberg.ScalarBiformParameter
+module
+
+public import Froberg.OddBackgroundSource
+public import Froberg.ScalarBiformParameter
+
+@[expose] public section
 
 /-! Literal multiplication on the odd source and target background
 quotients. Scalar multiplication is its restriction to pure Y forms. -/

@@ -1,5 +1,9 @@
-import Froberg.QuadraticOutputDimension
-import Froberg.PrivateMultiplierLimits
+module
+
+public import Froberg.QuadraticOutputDimension
+public import Froberg.PrivateMultiplierLimits
+
+@[expose] public section
 
 /-! Exact dimensions and strict convolution budgets for target row two. -/
 noncomputable section

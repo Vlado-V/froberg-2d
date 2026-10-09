@@ -1,6 +1,10 @@
-import Froberg.Matching
-import Mathlib.Logic.Equiv.Fintype
-import Mathlib.Data.Fintype.Quotient
+module
+
+public import Froberg.Matching
+public import Mathlib.Logic.Equiv.Fintype
+public import Mathlib.Data.Fintype.Quotient
+
+@[expose] public section
 
 /-! The actual finite subset graphs in the product fibers of Lemma 4.1. -/
 noncomputable section

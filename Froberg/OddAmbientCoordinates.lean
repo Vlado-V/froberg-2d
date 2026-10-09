@@ -1,4 +1,8 @@
-import Froberg.OddAmbientGraph
+module
+
+public import Froberg.OddAmbientGraph
+
+@[expose] public section
 
 /-! The actual ambient target quotient is a quotient by a graph after
 the scalar and outer-linear background relations have been removed. -/

@@ -1,6 +1,10 @@
-import Quartic.FreeCoefficientProducts
-import Quartic.OrderedFreeExponents
-import Quartic.WeightedInitialImage
+module
+
+public import Quartic.FreeCoefficientProducts
+public import Quartic.OrderedFreeExponents
+public import Quartic.WeightedInitialImage
+
+@[expose] public section
 
 /-!
 # Initial free-coefficient subspaces for actual quotient multiplication

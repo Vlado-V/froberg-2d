@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundQuotient
-import Froberg.WeightedRename
+module
+
+public import Froberg.OddBackgroundQuotient
+public import Froberg.WeightedRename
+
+@[expose] public section
 
 /-! Exact components of a mixed pure generator U+P. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.AttachedAmbientGrowth
-import Froberg.VectorMultiplicationCoordinates
+module
+
+public import Froberg.AttachedAmbientGrowth
+public import Froberg.VectorMultiplicationCoordinates
+
+@[expose] public section
 
 /-! Actual homogeneous generators of an attached presentation. -/
 noncomputable section

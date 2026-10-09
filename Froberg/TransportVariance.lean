@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! Finite weighted variance and the mixing estimate used for strict
 outer-module shadows. All identities concern explicit finite sums. -/

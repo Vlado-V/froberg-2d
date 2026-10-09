@@ -1,6 +1,10 @@
-import Froberg.QuarticBlockLocalization
-import Froberg.GenericProductSupport
-import Froberg.SymmetricProducts
+module
+
+public import Froberg.QuarticBlockLocalization
+public import Froberg.GenericProductSupport
+public import Froberg.SymmetricProducts
+
+@[expose] public section
 
 /-! Common specialization of all quartic block minors.  Each fiber is
 certified on at most eight blocks; its block degree separates it from the others. -/

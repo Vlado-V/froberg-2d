@@ -1,5 +1,9 @@
-import Froberg.TensorFormCoordinates
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import Froberg.TensorFormCoordinates
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+
+@[expose] public section
 
 /-! The exact loss from imposing the remaining mixed-pure equations.
 No extension or consistency assumption is made for these equations. -/

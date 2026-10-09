@@ -1,6 +1,10 @@
-import Froberg.OddEvenBottomDetection
-import Froberg.ClosedKernelEquivalence
-import Froberg.ScalarQuotientSlices
+module
+
+public import Froberg.OddEvenBottomDetection
+public import Froberg.ClosedKernelEquivalence
+public import Froberg.ScalarQuotientSlices
+
+@[expose] public section
 
 /-! Closed scalar-multiplication slices on the relative quotient are
 slices of the actual enlarged endpoint odd multiplication. -/

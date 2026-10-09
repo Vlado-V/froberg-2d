@@ -1,5 +1,9 @@
-import Froberg.ScalarSeparationAsymptotic
-import Froberg.AsymptoticCounts
+module
+
+public import Froberg.ScalarSeparationAsymptotic
+public import Froberg.AsymptoticCounts
+
+@[expose] public section
 
 /-! Any scalar family of critical leading size, including all prepared
 scalar shifts, fits the last strict-prefix multiplication budget. -/

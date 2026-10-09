@@ -1,4 +1,8 @@
-import Quartic.KernelPolynomialCharts
+module
+
+public import Quartic.KernelPolynomialCharts
+
+@[expose] public section
 
 /-!
 # One shared matrix family and several kernel vectors

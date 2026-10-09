@@ -1,4 +1,8 @@
-import Froberg.AmbientTopGrowth
+module
+
+public import Froberg.AmbientTopGrowth
+
+@[expose] public section
 
 /-! The C.10 separated tensor relation spaces are unchanged by the
 explicit degree equalities 1+(d-1)=d. -/

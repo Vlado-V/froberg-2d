@@ -1,4 +1,8 @@
-import Froberg.ParityRangeQuotient
+module
+
+public import Froberg.ParityRangeQuotient
+
+@[expose] public section
 
 /-! The coefficient quotient in each parity has exactly the projected
 constant-generator relations, rather than all ideal relations. -/

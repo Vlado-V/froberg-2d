@@ -1,5 +1,9 @@
-import Froberg.EvenRowWithVectorsOpen
-import Froberg.SparseEmbeddedRelations
+module
+
+public import Froberg.EvenRowWithVectorsOpen
+public import Froberg.SparseEmbeddedRelations
+
+@[expose] public section
 
 /-! The same finite even-row witness satisfies all prescribed private-output
 quotient injections. The vector tuple is chosen only once. -/

@@ -1,6 +1,10 @@
-import Froberg.CoefficientActions
-import Froberg.InvariantSubspaces
-import Froberg.SemilinearKernel
+module
+
+public import Froberg.CoefficientActions
+public import Froberg.InvariantSubspaces
+public import Froberg.SemilinearKernel
+
+@[expose] public section
 
 /-! # Covariance of the actual universal multiplication matrix -/
 

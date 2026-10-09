@@ -1,4 +1,8 @@
-import Froberg.PrivateFrameDetector
+module
+
+public import Froberg.PrivateFrameDetector
+
+@[expose] public section
 
 /-! The frame quotient detector only reads the quadratic component. -/
 noncomputable section

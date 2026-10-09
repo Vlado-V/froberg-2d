@@ -1,4 +1,8 @@
-import Froberg.ScalarMaximalRank
+module
+
+public import Froberg.ScalarMaximalRank
+
+@[expose] public section
 
 /-! The strict-shadow criterion gives an actual scalar family of maximal
 rank for every number of scalar forms. -/

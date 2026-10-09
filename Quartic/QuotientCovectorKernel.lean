@@ -1,4 +1,8 @@
-import Quartic.QuotientBilinearImage
+module
+
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-! Fixed ambient covectors for varying quotient multiplication. -/
 noncomputable section

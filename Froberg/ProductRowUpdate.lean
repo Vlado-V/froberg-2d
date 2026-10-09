@@ -1,4 +1,8 @@
-import Froberg.ProductRowRename
+module
+
+public import Froberg.ProductRowRename
+
+@[expose] public section
 
 /-! A product row of positive layers never uses the layer with its total degree.
 The new-layer columns can therefore be chosen independently of that row. -/

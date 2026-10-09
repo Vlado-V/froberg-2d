@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateTopRow
-import Froberg.PreparedCoefficientRows
+module
+
+public import Froberg.PreparedPrivateTopRow
+public import Froberg.PreparedCoefficientRows
+
+@[expose] public section
 
 /-! The stable top-row injectivity condition gives literal private
 coefficient separation at output degree d+1. -/

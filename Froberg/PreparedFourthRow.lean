@@ -1,7 +1,11 @@
-import Froberg.PreparedWitnessEmbedding
-import Froberg.FiniteFourthRow
-import Froberg.PreparedFiniteRows
-import Froberg.BiformKernelIntersection
+module
+
+public import Froberg.PreparedWitnessEmbedding
+public import Froberg.FiniteFourthRow
+public import Froberg.PreparedFiniteRows
+public import Froberg.BiformKernelIntersection
+
+@[expose] public section
 
 /-! Finite capacity hypotheses produce actual row witnesses inside one common
 prepared parameter space. No row-specific coefficient variables remain. -/

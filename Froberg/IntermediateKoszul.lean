@@ -1,5 +1,9 @@
-import Froberg.OuterMultiplication
-import Froberg.BilinearScalarFamily
+module
+
+public import Froberg.OuterMultiplication
+public import Froberg.BilinearScalarFamily
+
+@[expose] public section
 
 /-! Injectivity in the new-layer quotient is equivalent to the exact
 constant scalar-layer Koszul kernel before taking the quotient. -/

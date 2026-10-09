@@ -1,6 +1,10 @@
-import Quartic.WeightedInitialImage
-import Quartic.BilinearImage
-import Froberg.WeightedExpansion
+module
+
+public import Quartic.WeightedInitialImage
+public import Quartic.BilinearImage
+public import Froberg.WeightedExpansion
+
+@[expose] public section
 
 /-! A dimension inequality tensorizes over any ordered, biregular
 multiplication table. The proof uses actual initial subspaces and weighted

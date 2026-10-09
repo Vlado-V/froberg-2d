@@ -1,6 +1,10 @@
-import Froberg.HigherBlockGrowth
-import Froberg.BilinearPostcompose
-import Quartic.QuotientCovectorKernel
+module
+
+public import Froberg.HigherBlockGrowth
+public import Froberg.BilinearPostcompose
+public import Quartic.QuotientCovectorKernel
+
+@[expose] public section
 
 /-! Uniform higher-layer growth is preserved by an actual target
 projection and arbitrary coordinates on the coefficient source. -/

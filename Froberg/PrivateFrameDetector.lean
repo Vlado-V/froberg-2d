@@ -1,6 +1,10 @@
-import Froberg.PrivateFrameModel
-import Froberg.BiformVectorDetector
-import Froberg.FramedPreparedParameters
+module
+
+public import Froberg.PrivateFrameModel
+public import Froberg.BiformVectorDetector
+public import Froberg.FramedPreparedParameters
+
+@[expose] public section
 
 /-! The private-frame quotient detector acts on the literal polynomial ring.
 Its action on quadratic products agrees with the finite coordinate maps. -/

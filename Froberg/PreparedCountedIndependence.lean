@@ -1,6 +1,10 @@
-import Froberg.PreparedIndependenceOpen
-import Froberg.PreparedScalarReserve
-import Froberg.ExactOuterLimit
+module
+
+public import Froberg.PreparedIndependenceOpen
+public import Froberg.PreparedScalarReserve
+public import Froberg.ExactOuterLimit
+
+@[expose] public section
 
 /-! The manuscript's actual scalar and vector counts lie strictly below
 their ambient dimensions, giving independence on the same parameter space. -/

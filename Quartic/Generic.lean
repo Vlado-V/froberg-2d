@@ -1,4 +1,8 @@
-import Quartic.Homogeneous
+module
+
+public import Quartic.Homogeneous
+
+@[expose] public section
 
 /-!
 # Precise generic target on ordered quadratic coefficients

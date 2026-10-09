@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCertificate
+module
+
+public import Quartic.FiniteEndpointCertificate
+
+@[expose] public section
 
 /-! Coefficient minors read directly from the supplied bitsets. The selected
 column counts agree without checking a second expanded coefficient table. -/

@@ -1,5 +1,9 @@
-import Froberg.MatrixKoszul
-import Froberg.BoundedWeightedComponents
+module
+
+public import Froberg.MatrixKoszul
+public import Froberg.BoundedWeightedComponents
+
+@[expose] public section
 
 /-! Removing the private-private boundary in the first even output row uses
 the full U+P generator, so it preserves the actual cycle. -/

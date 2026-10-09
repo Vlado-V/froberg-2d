@@ -1,5 +1,9 @@
-import Mathlib.NumberTheory.Real.Irrational
-import Mathlib.Tactic
+module
+
+public import Mathlib.NumberTheory.Real.Irrational
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Irrationality of the leading coefficient of the critical generator count. -/
 

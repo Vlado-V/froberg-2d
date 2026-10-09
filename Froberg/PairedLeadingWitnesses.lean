@@ -1,4 +1,8 @@
-import Froberg.LeadingWitnessRename
+module
+
+public import Froberg.LeadingWitnessRename
+
+@[expose] public section
 
 /-! A paired-output construction yields independent leading layers on
 the usual finite set of variables, for every sufficiently large block

@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Algebra.MvPolynomial.CommRing
-import Mathlib.Algebra.MvPolynomial.NoZeroDivisors
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Algebra.MvPolynomial.CommRing
+public import Mathlib.Algebra.MvPolynomial.NoZeroDivisors
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Diagonal vanishing in the dehomogenized convolution slots

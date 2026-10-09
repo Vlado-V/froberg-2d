@@ -1,4 +1,8 @@
-import Froberg.PreparedTargetFamily
+module
+
+public import Froberg.PreparedTargetFamily
+
+@[expose] public section
 
 /-! The complete prepared family as a polynomially varying tuple of actual
 homogeneous forms, with an explicit finite enumeration of its labels. -/

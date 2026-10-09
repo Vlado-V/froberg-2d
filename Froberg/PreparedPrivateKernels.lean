@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateCommonOpen
-import Froberg.IntrinsicPrivateBoundary
+module
+
+public import Froberg.PreparedPrivateCommonOpen
+public import Froberg.IntrinsicPrivateBoundary
+
+@[expose] public section
 
 /-! The row-two private boundary and zero later boundaries are one fixed
 finite complex. Its exactness yields both ordinary row exactness and the

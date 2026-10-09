@@ -1,6 +1,10 @@
-import Quartic.SharpCertificate.Data
-import Quartic.SharpCertificate.Full
-import Quartic.SharpCertificate.Counting
+module
+
+public import Quartic.SharpCertificate.Data
+public import Quartic.SharpCertificate.Full
+public import Quartic.SharpCertificate.Counting
+
+@[expose] public section
 
 /-!
 # Verified sharp rational-edge inequalities, dimensions 41 through 129

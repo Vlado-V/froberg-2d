@@ -1,5 +1,9 @@
-import Froberg.FullPreparedRankOpen
-import Froberg.PreparedTargetOpen
+module
+
+public import Froberg.FullPreparedRankOpen
+public import Froberg.PreparedTargetOpen
+
+@[expose] public section
 
 /-! The B.7 witness supplies a rank-open condition in the same variable
 private-part family used by the odd exactness and outer-vector arguments. -/

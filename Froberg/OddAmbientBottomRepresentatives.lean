@@ -1,6 +1,10 @@
-import Froberg.OddAmbientBottom
-import Froberg.BiformComponentVanish
-import Froberg.SplitProjectionFactor
+module
+
+public import Froberg.OddAmbientBottom
+public import Froberg.BiformComponentVanish
+public import Froberg.SplitProjectionFactor
+
+@[expose] public section
 
 /-! Every vector in the bottom quotient has a literal weight-one
 representative. Thus projections killing that weight factor through the

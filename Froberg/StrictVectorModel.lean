@@ -1,5 +1,9 @@
-import Froberg.VectorQuotientDimensions
-import Froberg.ScalarMaximalRankOpen
+module
+
+public import Froberg.VectorQuotientDimensions
+public import Froberg.ScalarMaximalRankOpen
+
+@[expose] public section
 
 /-! The actual polynomial source, target, and strict expansion property. -/
 noncomputable section

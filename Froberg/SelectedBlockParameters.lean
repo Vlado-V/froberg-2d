@@ -1,5 +1,9 @@
-import Froberg.ConcreteCounts
-import Froberg.CountSequences
+module
+
+public import Froberg.ConcreteCounts
+public import Froberg.CountSequences
+
+@[expose] public section
 
 /-! Exact count sequences can be chosen with any eventual condition on
 the even block size. The divisibility built into the counts also provides

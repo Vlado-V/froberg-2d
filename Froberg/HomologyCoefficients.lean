@@ -1,4 +1,8 @@
-import Froberg.CoefficientExtraction
+module
+
+public import Froberg.CoefficientExtraction
+
+@[expose] public section
 
 /-! The coefficient injection (C.23), on the actual Koszul homology modulo
 its naturally retained old classes. -/
@@ -9,23 +13,20 @@ variable {K : Type} [Field K]
 variable {n d r t : ℕ}
 
 /-- The formal representative of an actual Koszul homology class. -/
-def homologyFormalRepresentative (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K n d) (hq : LinearIndependent K q) :
+def homologyFormalRepresentative (q : Fin r → Forms K n d) (hq : LinearIndependent K q) :
     EndpointHomology q →ₗ[K] SymmetricSquare K (Forms K n d) :=
   ((formalPolynomialMultiplication (K := K) (n := n) (d := d)).ker ⊓
     formalMixed (Submodule.span K (Set.range q))).subtype.comp
-      (endpointHomologyEquivFormal htwo q hq).toLinearMap
+      (endpointHomologyEquivFormal_anyChar q hq).toLinearMap
 
 /-- The naturally included homology supported on the old generator subspace. -/
-def retainedHomology (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+def retainedHomology (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (W : Submodule K (Forms K n d)) : Submodule K (EndpointHomology q) :=
-  (formalMixed W).comap (homologyFormalRepresentative htwo q hq)
+  (formalMixed W).comap (homologyFormalRepresentative q hq)
 
 /-- The kernel computation uses genuine polynomial multiplication and the
 separation of the new symmetric products from all old products. -/
-theorem homology_coefficient_kernel (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem homology_coefficient_kernel (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (W : Submodule K (Forms K n d)) (f : Fin t → Forms K n d)
     (hspan : Submodule.span K (Set.range q) = W ⊔ Submodule.span K (Set.range f))
     (dual : Fin t → Forms K n d →ₗ[K] K)
@@ -35,16 +36,16 @@ theorem homology_coefficient_kernel (htwo : (2 : K) ≠ 0)
       ((formalMixed W).map formalPolynomialMultiplication).comap
         (formalPolynomialMultiplication (K := K) (n := n) (d := d)) = ⊥) :
     ((relationCoefficientMap (W ⊔ Submodule.span K (Set.range f)) dual).comp
-      (homologyFormalRepresentative htwo q hq)).ker = retainedHomology htwo q hq W := by
+      (homologyFormalRepresentative q hq)).ker = retainedHomology q hq W := by
   ext x
-  have hx : homologyFormalRepresentative htwo q hq x ∈
+  have hx : homologyFormalRepresentative q hq x ∈
       (formalPolynomialMultiplication (K := K) (n := n) (d := d)).ker ⊓
         formalMixed (W ⊔ Submodule.span K (Set.range f)) := by
     rw [← hspan]
-    exact (endpointHomologyEquivFormal htwo q hq x).property
+    exact (endpointHomologyEquivFormal_anyChar q hq x).property
   constructor
   · intro h
-    have hmem : homologyFormalRepresentative htwo q hq x ∈
+    have hmem : homologyFormalRepresentative q hq x ∈
         (relationCoefficientMap (W ⊔ Submodule.span K (Set.range f)) dual).ker ⊓
           ((formalPolynomialMultiplication (K := K) (n := n) (d := d)).ker ⊓
             formalMixed (W ⊔ Submodule.span K (Set.range f))) := ⟨h, hx⟩
@@ -55,23 +56,22 @@ theorem homology_coefficient_kernel (htwo : (2 : K) ≠ 0)
 
 /-- Separation gives an injection of the new part of actual endpoint homology
 into the array of new-generator coefficients modulo all degree-`d` relations. -/
-theorem exists_injective_homology_coefficients (htwo : (2 : K) ≠ 0)
-    (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem exists_injective_homology_coefficients (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (W : Submodule K (Forms K n d)) (f : Fin t → Forms K n d)
     (hspan : Submodule.span K (Set.range q) = W ⊔ Submodule.span K (Set.range f))
     (hf : LinearIndependent K (fun i => W.mkQ (f i)))
     (hsep : formalSquare (Submodule.span K (Set.range f)) ⊓
       ((formalMixed W).map formalPolynomialMultiplication).comap
         (formalPolynomialMultiplication (K := K) (n := n) (d := d)) = ⊥) :
-    ∃ T : (EndpointHomology q ⧸ retainedHomology htwo q hq W) →ₗ[K]
+    ∃ T : (EndpointHomology q ⧸ retainedHomology q hq W) →ₗ[K]
       (Fin t → Forms K n d ⧸ (W ⊔ Submodule.span K (Set.range f))),
       Function.Injective T := by
   obtain ⟨dual, hdualW, hdualF⟩ := exists_relative_coordinate_functionals W f hf
   let c := (relationCoefficientMap (W ⊔ Submodule.span K (Set.range f)) dual).comp
-    (homologyFormalRepresentative htwo q hq)
-  have hc : c.ker = retainedHomology htwo q hq W :=
-    homology_coefficient_kernel htwo q hq W f hspan dual hdualW hdualF hsep
-  let T := (retainedHomology htwo q hq W).liftQ c hc.ge
+    (homologyFormalRepresentative q hq)
+  have hc : c.ker = retainedHomology q hq W :=
+    homology_coefficient_kernel q hq W f hspan dual hdualW hdualF hsep
+  let T := (retainedHomology q hq W).liftQ c hc.ge
   refine ⟨T, LinearMap.ker_eq_bot.mp ?_⟩
   exact Submodule.ker_liftQ_eq_bot _ _ _ hc.le
 

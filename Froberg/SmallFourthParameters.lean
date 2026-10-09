@@ -1,6 +1,10 @@
-import Froberg.StrongQuarticDiagonal
-import Froberg.SingleDiagonalRow
-import Froberg.SingleLayerProfiles
+module
+
+public import Froberg.StrongQuarticDiagonal
+public import Froberg.SingleDiagonalRow
+public import Froberg.SingleLayerProfiles
+
+@[expose] public section
 
 /-! The stronger quartic output space gives a literal row-eight witness
 in the common parameter space even when the quadratic layer is nonempty. -/

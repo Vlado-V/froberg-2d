@@ -1,8 +1,12 @@
-import Froberg.GeneralExceptionalCount
-import Froberg.WeightedProjectionGrowth
-import Froberg.ExponentWeights
-import Froberg.OuterInitialFibers
-import Froberg.OuterShadow
+module
+
+public import Froberg.GeneralExceptionalCount
+public import Froberg.WeightedProjectionGrowth
+public import Froberg.ExponentWeights
+public import Froberg.OuterInitialFibers
+public import Froberg.OuterShadow
+
+@[expose] public section
 
 /-! The uniform intermediate-layer shadow B.11 in actual attached polynomial
 quotients, for arbitrary source and multiplier degrees. -/

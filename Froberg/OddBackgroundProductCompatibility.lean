@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundProduct
-import Froberg.OddBackgroundBottomDetection
+module
+
+public import Froberg.OddBackgroundProduct
+public import Froberg.OddBackgroundBottomDetection
+
+@[expose] public section
 
 /-! The concrete polynomial quotient multiplication is the actual endpoint
 odd multiplication under the source and target quotient equivalences. -/

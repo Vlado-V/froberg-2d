@@ -1,5 +1,9 @@
-import Froberg.ProjectedOddTarget
-import Froberg.UpperTargetParity
+module
+
+public import Froberg.ProjectedOddTarget
+public import Froberg.UpperTargetParity
+
+@[expose] public section
 
 /-! B.7 and the exact old-target deletion identify the full projected
 cokernel with the odd quotient used for the scalar contraction argument. -/

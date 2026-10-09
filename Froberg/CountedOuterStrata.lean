@@ -1,6 +1,10 @@
-import Froberg.OuterPositiveDeficit
-import Froberg.ThinModelLimits
-import Froberg.CountedPrivateOpen
+module
+
+public import Froberg.OuterPositiveDeficit
+public import Froberg.ThinModelLimits
+public import Froberg.CountedPrivateOpen
+
+@[expose] public section
 
 /-! The thin covector statement for exactly the outer counts in the manuscript. -/
 noncomputable section

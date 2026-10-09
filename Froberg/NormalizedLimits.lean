@@ -1,4 +1,8 @@
-import Froberg.CoreLimit
+module
+
+public import Froberg.CoreLimit
+
+@[expose] public section
 
 /-! Normalizing a finite family of convergent positive-total weights. -/
 noncomputable section

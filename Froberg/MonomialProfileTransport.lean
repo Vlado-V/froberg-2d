@@ -1,7 +1,11 @@
-import Froberg.ProfileTransport
-import Froberg.DivisibilityCoupling
-import Froberg.FiberTransport
-import Froberg.BidegreeExponents
+module
+
+public import Froberg.ProfileTransport
+public import Froberg.DivisibilityCoupling
+public import Froberg.FiberTransport
+public import Froberg.BidegreeExponents
+
+@[expose] public section
 
 /-! The explicit profile transport lifted to the actual two-block monomials.
 No squarefreeness hypothesis is used. -/

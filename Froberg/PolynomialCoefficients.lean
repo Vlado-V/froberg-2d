@@ -1,5 +1,9 @@
-import Froberg.PolynomialAsymptotics
-import Froberg.BinomialPolynomial
+module
+
+public import Froberg.PolynomialAsymptotics
+public import Froberg.BinomialPolynomial
+
+@[expose] public section
 
 /-! The two highest coefficients of the counting polynomials and their products. -/
 noncomputable section

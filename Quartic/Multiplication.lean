@@ -1,6 +1,10 @@
-import Quartic.Koszul
-import Quartic.Generic
-import Quartic.QuotientModel
+module
+
+public import Quartic.Koszul
+public import Quartic.Generic
+public import Quartic.QuotientModel
+
+@[expose] public section
 
 /-!
 # Multiplication matrices and the actual quartic quotient

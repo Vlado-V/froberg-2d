@@ -1,6 +1,10 @@
-import Quartic.HomogeneousEmptyFiberOpen
-import Mathlib.LinearAlgebra.Matrix.Adjugate
-import Mathlib.LinearAlgebra.Matrix.ToLin
+module
+
+public import Quartic.HomogeneousEmptyFiberOpen
+public import Mathlib.LinearAlgebra.Matrix.Adjugate
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+
+@[expose] public section
 
 /-! Polynomial kernel vectors near a split surjection. The adjugate formula
 is defined on the entire parameter space, and recovers the prescribed kernel

@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Certificate
+module
+
+public import Quartic.SharpCertificate.Certificate
+
+@[expose] public section
 
 /-! Kernel-checked cubic certificates for every core dimension and prefix edge. -/
 

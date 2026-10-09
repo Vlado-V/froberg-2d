@@ -1,4 +1,8 @@
-import Froberg.PreparedTargetRestrictions
+module
+
+public import Froberg.PreparedTargetRestrictions
+
+@[expose] public section
 
 /-! The common affine parameter space lets the pure private forms, their
 linear biform parts, and all prepared rows vary together. Fixed-fiber

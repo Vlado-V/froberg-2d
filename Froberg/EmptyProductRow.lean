@@ -1,5 +1,9 @@
-import Froberg.ProductRows
-import Froberg.SeparatedRowKernel
+module
+
+public import Froberg.ProductRows
+public import Froberg.SeparatedRowKernel
+
+@[expose] public section
 
 /-! The first positive even row has no product columns. -/
 noncomputable section

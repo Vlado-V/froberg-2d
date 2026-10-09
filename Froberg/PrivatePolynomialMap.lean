@@ -1,5 +1,9 @@
-import Froberg.PrivateFiberRelations
-import Froberg.Graded
+module
+
+public import Froberg.PrivateFiberRelations
+public import Froberg.Graded
+
+@[expose] public section
 
 /-! Literal polynomial multiplication for the private-power columns and the
 exact connection with the coefficientwise pair-overlap calculation. -/

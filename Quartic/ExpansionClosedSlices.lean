@@ -1,6 +1,10 @@
-import Quartic.ConvolutionClosedSlices
-import Quartic.ConvolutionSharedSlices
-import Quartic.ScalarJointCount
+module
+
+public import Quartic.ConvolutionClosedSlices
+public import Quartic.ConvolutionSharedSlices
+public import Quartic.ScalarJointCount
+
+@[expose] public section
 
 /-! Closed sliced covector loci from actual ordinary Grassmann charts. -/
 noncomputable section

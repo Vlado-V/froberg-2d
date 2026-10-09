@@ -1,7 +1,11 @@
-import Froberg.QuadraticExtendedRow
-import Froberg.PreparedFiniteRows
-import Froberg.FiniteEvenProjectedRow
-import Froberg.ZeroPreparedExtendedWitness
+module
+
+public import Froberg.QuadraticExtendedRow
+public import Froberg.PreparedFiniteRows
+public import Froberg.FiniteEvenProjectedRow
+public import Froberg.ZeroPreparedExtendedWitness
+
+@[expose] public section
 
 noncomputable section
 set_option maxHeartbeats 2400000

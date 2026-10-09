@@ -1,5 +1,9 @@
-import Froberg.PreparedAllEvenCounts
-import Froberg.PreparedAppend
+module
+
+public import Froberg.PreparedAllEvenCounts
+public import Froberg.PreparedAppend
+
+@[expose] public section
 
 /-! The appended quadratic labels that carry the restored pure family in
 even degree. These are actual slots of the prepared coefficient space. -/

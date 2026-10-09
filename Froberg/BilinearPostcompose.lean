@@ -1,4 +1,8 @@
-import Quartic.BilinearImage
+module
+
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! Postcomposition of the actual image of a bilinear map. -/
 noncomputable section

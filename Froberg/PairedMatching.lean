@@ -1,4 +1,8 @@
-import Froberg.PairedFibers
+module
+
+public import Froberg.PairedFibers
+
+@[expose] public section
 
 /-! Matching targets and their concrete factorizations in each paired-variable fiber. -/
 noncomputable section

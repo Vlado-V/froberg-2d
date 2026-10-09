@@ -1,7 +1,11 @@
-import Froberg.SymmetricFunctor
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.Tactic
+module
+
+public import Froberg.SymmetricFunctor
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Formal symmetric products and the kernel of passage to a quotient. -/
 noncomputable section

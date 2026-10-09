@@ -1,5 +1,9 @@
-import Froberg.ActualSmallExtendedReduction
-import Froberg.NaturalEventualParity
+module
+
+public import Froberg.ActualSmallExtendedReduction
+public import Froberg.NaturalEventualParity
+
+@[expose] public section
 
 /-! Both scalar-dimension parity classes are covered by the actual cubic
 and quartic prepared-family opens. -/

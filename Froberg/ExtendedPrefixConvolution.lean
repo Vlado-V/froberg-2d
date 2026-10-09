@@ -1,6 +1,10 @@
-import Froberg.OutputSpaceExtension
-import Froberg.MiddleRowConvolution
-import Froberg.QuadraticTargetCosts
+module
+
+public import Froberg.OutputSpaceExtension
+public import Froberg.MiddleRowConvolution
+public import Froberg.QuadraticTargetCosts
+
+@[expose] public section
 
 /-! Middle-row witnesses with the required output-space dimension. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Quartic.Counts
+module
+
+public import Quartic.Counts
+
+@[expose] public section
 
 /-!
 # The strict numerical inequality in cubic independence

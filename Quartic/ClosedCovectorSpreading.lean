@@ -1,5 +1,9 @@
-import Quartic.ConvolutionClosedSlices
-import Quartic.HomogeneousEmptyFiberOpen
+module
+
+public import Quartic.ConvolutionClosedSlices
+public import Quartic.HomogeneousEmptyFiberOpen
+
+@[expose] public section
 
 /-!
 Polynomiality and empty-fiber spreading for the literal closed covector

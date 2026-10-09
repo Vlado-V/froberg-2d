@@ -1,5 +1,9 @@
-import Froberg.MiddleRowConvolution
-import Froberg.TargetCoverage
+module
+
+public import Froberg.MiddleRowConvolution
+public import Froberg.TargetCoverage
+
+@[expose] public section
 
 /-! Every required middle target row is filled at its actual prescribed
 higher-layer density. -/

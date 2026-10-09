@@ -1,6 +1,10 @@
-import Quartic.SubspaceCharts
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Tactic
+module
+
+public import Quartic.SubspaceCharts
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Polynomial charts for tuples up to a common nonzero scalar

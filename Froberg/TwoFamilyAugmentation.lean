@@ -1,5 +1,9 @@
-import Froberg.ScalarAugmentation
-import Froberg.TwoFamilyIntrinsic
+module
+
+public import Froberg.ScalarAugmentation
+public import Froberg.TwoFamilyIntrinsic
+
+@[expose] public section
 
 /-! Extracting an auxiliary scalar family from a successful augmented
 mixed multiplication map gives actual quotient growth. -/

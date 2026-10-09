@@ -1,4 +1,8 @@
-import Quartic.FiniteCounts
+module
+
+public import Quartic.FiniteCounts
+
+@[expose] public section
 
 /-!
 # Integral profile inequalities in dimensions 28 through 40

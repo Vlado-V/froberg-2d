@@ -1,5 +1,9 @@
-import Froberg.SlicedPolynomialOpen
-import Froberg.ClosedKernelSlices
+module
+
+public import Froberg.SlicedPolynomialOpen
+public import Froberg.ClosedKernelSlices
+
+@[expose] public section
 
 /-! Closed covector thresholds persist under an arbitrary polynomial change
 of the presentation, in one fixed ambient target. -/

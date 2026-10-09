@@ -1,4 +1,8 @@
-import Froberg.BinomialPolynomial
+module
+
+public import Froberg.BinomialPolynomial
+
+@[expose] public section
 
 /-! Exact integer selection for Section 5. These lemmas establish the count
 identity and the precise one-step rounding error used in Proposition 5.1. -/

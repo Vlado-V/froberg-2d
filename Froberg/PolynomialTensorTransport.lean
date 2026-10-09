@@ -1,5 +1,9 @@
-import Froberg.DetectedTensorProducts
-import Mathlib.RingTheory.TensorProduct.MvPolynomial
+module
+
+public import Froberg.DetectedTensorProducts
+public import Mathlib.RingTheory.TensorProduct.MvPolynomial
+
+@[expose] public section
 
 /-! Transport the tensor-algebra constructions to the actual polynomial ring
 in the disjoint union of two finite variable sets. -/

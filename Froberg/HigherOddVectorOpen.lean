@@ -1,7 +1,11 @@
-import Froberg.OddScalarParameters
-import Froberg.BottomPolynomialConstants
-import Froberg.OddPolynomialRows
-import Froberg.EmptyCoefficientRows
+module
+
+public import Froberg.OddScalarParameters
+public import Froberg.BottomPolynomialConstants
+public import Froberg.OddPolynomialRows
+public import Froberg.EmptyCoefficientRows
+
+@[expose] public section
 
 /-! A common open in actual vector/scalar parameters eliminates every
 higher odd coefficient row, including the final scalar-free row. -/

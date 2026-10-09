@@ -1,5 +1,9 @@
-import Froberg.OddSourceHigherBlocks
-import Froberg.BiformDegreeTransport
+module
+
+public import Froberg.OddSourceHigherBlocks
+public import Froberg.BiformDegreeTransport
+
+@[expose] public section
 
 /-! Every non-top higher source block is unchanged. The top block is
 exactly the pure degree-d space modulo the prescribed pure generators. -/

@@ -1,5 +1,9 @@
-import Quartic.BilinearGeneric
-import Quartic.BilinearImage
+module
+
+public import Quartic.BilinearGeneric
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! Scalar families for any actual bilinear multiplication, with an explicit
 strict-shadow criterion for generic injectivity. -/

@@ -1,6 +1,10 @@
-import Froberg.EvenBackgroundScalar
-import Froberg.MixedHigherGrowth
-import Froberg.OddAmbientBottomRepresentatives
+module
+
+public import Froberg.EvenBackgroundScalar
+public import Froberg.MixedHigherGrowth
+public import Froberg.OddAmbientBottomRepresentatives
+
+@[expose] public section
 
 /-! All higher source rows in the even case act independently on actual
 Q,F quotient target rows, while every unused target row is retained. -/

@@ -1,5 +1,9 @@
-import Froberg.ThinShadowBudget
-import Froberg.ClosedCoefficientStrata
+module
+
+public import Froberg.ThinShadowBudget
+public import Froberg.ClosedCoefficientStrata
+
+@[expose] public section
 
 /-! The exact natural-number slice budget that turns the C.4 thin-stratum
 estimate into the C.6 maximal-normal-rank criterion. -/

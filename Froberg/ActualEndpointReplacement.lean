@@ -1,7 +1,11 @@
-import Froberg.ActualReplacementRanks
-import Froberg.OddEndpointScalarSlices
-import Froberg.OddRelativeDimensions
-import Froberg.OddSplitRelativeInjection
+module
+
+public import Froberg.ActualReplacementRanks
+public import Froberg.OddEndpointScalarSlices
+public import Froberg.OddRelativeDimensions
+public import Froberg.OddSplitRelativeInjection
+
+@[expose] public section
 
 /-! The common nonzero replacement is expressed on the literal endpoint
 odd scalar action, with generator independence and B.7 surjectivity. -/

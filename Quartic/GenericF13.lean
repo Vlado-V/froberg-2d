@@ -1,5 +1,9 @@
-import Quartic.GeneralF13
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.GeneralF13
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! # Actual F₁₃ injectivity persists on a coefficient principal open -/
 noncomputable section

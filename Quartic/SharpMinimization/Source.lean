@@ -1,4 +1,8 @@
-import Quartic.SharpMinimization.Slices
+module
+
+public import Quartic.SharpMinimization.Slices
+
+@[expose] public section
 
 /-! The exact source sharp profile has a minimum on the six prefix edges. -/
 namespace Quartic.SharpMinimization

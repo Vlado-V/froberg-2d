@@ -1,5 +1,9 @@
-import Quartic.KernelPolynomialCharts
-import Mathlib.Algebra.MvPolynomial.Monad
+module
+
+public import Quartic.KernelPolynomialCharts
+public import Mathlib.Algebra.MvPolynomial.Monad
+
+@[expose] public section
 
 /-!
 # Projective charts for kernels of polynomial matrix families

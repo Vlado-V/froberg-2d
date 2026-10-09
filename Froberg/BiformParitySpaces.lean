@@ -1,5 +1,9 @@
-import Froberg.EvenBiformDecomposition
-import Froberg.ParityWeights
+module
+
+public import Froberg.EvenBiformDecomposition
+public import Froberg.ParityWeights
+
+@[expose] public section
 
 /-! Actual homogeneous polynomial parity spaces and the complete even
 coefficient decomposition used by the mixed pure generators. -/

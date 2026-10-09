@@ -1,6 +1,10 @@
-import Froberg.FiniteProductRow
-import Froberg.BalancedScalarCoordinates
-import Froberg.ProductRowRename
+module
+
+public import Froberg.FiniteProductRow
+public import Froberg.BalancedScalarCoordinates
+public import Froberg.ProductRowRename
+
+@[expose] public section
 
 /-! Product-row witnesses in the scalar coordinates used by the quotient estimates. -/
 noncomputable section

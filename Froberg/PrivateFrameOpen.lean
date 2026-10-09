@@ -1,5 +1,9 @@
-import Froberg.FrameDisjointOpen
-import Froberg.DetectedPrivateOutputs
+module
+
+public import Froberg.FrameDisjointOpen
+public import Froberg.DetectedPrivateOutputs
+
+@[expose] public section
 
 /-! The private detector requirement is a genuine nonempty open in the
 same quadratic frame used by the product and target-row constructions. -/

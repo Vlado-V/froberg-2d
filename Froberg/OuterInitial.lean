@@ -1,5 +1,9 @@
-import Froberg.OrderedMonomials
-import Quartic.WeightedInitialImage
+module
+
+public import Froberg.OrderedMonomials
+public import Quartic.WeightedInitialImage
+
+@[expose] public section
 
 /-! Block-valued initial subspaces of the actual attached outer quotient. -/
 noncomputable section

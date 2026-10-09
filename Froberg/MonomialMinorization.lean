@@ -1,6 +1,10 @@
-import Froberg.MonomialMixing
-import Froberg.EmbeddedMinorization
-import Froberg.ProfileTotalLimits
+module
+
+public import Froberg.MonomialMixing
+public import Froberg.EmbeddedMinorization
+public import Froberg.ProfileTotalLimits
+
+@[expose] public section
 
 /-! The common-target estimate yields a minorization by a probability
 measure on the actual all-free source monomials. -/

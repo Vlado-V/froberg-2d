@@ -1,5 +1,9 @@
-import Quartic.RowExpansionOpen
-import Quartic.ConvolutionAmbientBounds
+module
+
+public import Quartic.RowExpansionOpen
+public import Quartic.ConvolutionAmbientBounds
+
+@[expose] public section
 
 /-!
 # Simultaneous expansion for varying actual mixed columns

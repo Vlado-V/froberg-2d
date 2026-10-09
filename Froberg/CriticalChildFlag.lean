@@ -1,6 +1,10 @@
-import Froberg.GenericFlagOpen
-import Froberg.SupportedTargetDeletion
-import Froberg.MonomialCounts
+module
+
+public import Froberg.GenericFlagOpen
+public import Froberg.SupportedTargetDeletion
+public import Froberg.MonomialCounts
+
+@[expose] public section
 
 /-! The distinguished scalar slot and its codimension-one child flag are
 literal prefix tuples. Deletion uses the full upper-count tuple and remains

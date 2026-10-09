@@ -1,6 +1,10 @@
-import Froberg.ParameterPullbackOpen
-import Froberg.GenericDimensions
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.ParameterPullbackOpen
+public import Froberg.GenericDimensions
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Finitely many nonempty principal opens have a common actual vector. -/
 noncomputable section

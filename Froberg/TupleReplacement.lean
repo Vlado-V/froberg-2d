@@ -1,5 +1,9 @@
-import Froberg.CriticalChildFlag
-import Froberg.Hyperplane
+module
+
+public import Froberg.CriticalChildFlag
+public import Froberg.Hyperplane
+
+@[expose] public section
 
 /-! Literal one-slot replacement preserves the tuple's labels and is
 independent whenever the additional vector is transverse to its old span. -/

@@ -1,6 +1,10 @@
-import Froberg.RestoredCountedQuadraticSeparation
-import Froberg.ActualRestoredSlots
-import Froberg.ExactOuterLimit
+module
+
+public import Froberg.RestoredCountedQuadraticSeparation
+public import Froberg.ActualRestoredSlots
+public import Froberg.ExactOuterLimit
+
+@[expose] public section
 
 /-! The exact manuscript counts, including restored pure slots and any
 fixed extra columns, attain the genuine full-parameter C.2 row open. -/

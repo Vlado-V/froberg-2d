@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Froberg.GeneralPositionVectors
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.Graded
+public import Froberg.GeneralPositionVectors
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! Actual polynomial multiplication by monomial-attached vector generators. -/
 noncomputable section

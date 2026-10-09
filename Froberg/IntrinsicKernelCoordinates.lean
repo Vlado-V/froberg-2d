@@ -1,4 +1,8 @@
-import Froberg.ActualClosedKernelSlices
+module
+
+public import Froberg.ActualClosedKernelSlices
+
+@[expose] public section
 
 /-! Coordinate transport for the actual duals, relation kernels and higher
 product images used by the intrinsic layered avoidance theorem. -/

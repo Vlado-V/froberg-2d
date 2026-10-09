@@ -1,5 +1,9 @@
-import Quartic.ActualExpansionSlices
-import Quartic.SharedChildFlag
+module
+
+public import Quartic.ActualExpansionSlices
+public import Quartic.SharedChildFlag
+
+@[expose] public section
 
 /-!
 # Child flags and all block conditions with the mixed presentation fixed

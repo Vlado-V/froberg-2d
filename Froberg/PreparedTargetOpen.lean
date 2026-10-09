@@ -1,5 +1,9 @@
-import Froberg.PreparedTargetEventual
-import Froberg.PreparedTargetEnumeration
+module
+
+public import Froberg.PreparedTargetCore
+public import Froberg.PreparedTargetEnumeration
+
+@[expose] public section
 
 /-! Rank-open certificates in the actual full prepared parameter space,
 and in its odd-parity restriction with zero private scalar shifts. -/

@@ -1,5 +1,9 @@
-import Froberg.UniformOuterGrowth
-import Froberg.OuterGeneric
+module
+
+public import Froberg.UniformOuterGrowth
+public import Froberg.OuterGeneric
+
+@[expose] public section
 
 /-! Existence of actual core-attached presentations with uniform strict
 shadow, injective presentation maps, and enough surplus for incidence. -/

@@ -1,8 +1,12 @@
-import Froberg.PreparedOddCycles
-import Froberg.ScalarVectorOddCycles
-import Froberg.PairKernelReindex
-import Froberg.FramedPreparedParameters
-import Froberg.FirstPolynomialRow
+module
+
+public import Froberg.PreparedOddCycles
+public import Froberg.ScalarVectorOddCycles
+public import Froberg.PairKernelReindex
+public import Froberg.FramedPreparedParameters
+public import Froberg.FirstPolynomialRow
+
+@[expose] public section
 
 /-! Literal vector coordinates for the complete prepared odd source.
 The first and higher vector-row criteria imply exactness with the original

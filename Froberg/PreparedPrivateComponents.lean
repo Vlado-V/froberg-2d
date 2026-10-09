@@ -1,5 +1,9 @@
-import Froberg.PreparedLayerTargets
-import Froberg.PreparedTargetFamily
+module
+
+public import Froberg.PreparedLayerTargets
+public import Froberg.PreparedTargetFamily
+
+@[expose] public section
 
 /-! Literal components of the complete prepared polynomial tuple. The pure
 private rows retain their top part under all permitted lower perturbations. -/

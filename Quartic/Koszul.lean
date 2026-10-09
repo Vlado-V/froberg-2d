@@ -1,6 +1,10 @@
-import Quartic.Homogeneous
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.Data.Fintype.Prod
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.Data.Fintype.Prod
+
+@[expose] public section
 
 noncomputable section
 

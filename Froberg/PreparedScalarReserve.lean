@@ -1,4 +1,8 @@
-import Froberg.PreparedCountIdentities
+module
+
+public import Froberg.PreparedCountIdentities
+
+@[expose] public section
 
 /-! The additional scalar labels in the prepared family have degree at
 most d-2, so their cost is negligible against the second-order outer

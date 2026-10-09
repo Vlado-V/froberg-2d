@@ -1,6 +1,10 @@
-import Froberg.BiformOutputConstraint
-import Froberg.BinomialParityMargin
-import Froberg.NormalizedLimits
+module
+
+public import Froberg.BiformOutputConstraint
+public import Froberg.BinomialParityMargin
+public import Froberg.NormalizedLimits
+
+@[expose] public section
 
 /-! The actual odd-half-degree output space used for a new even layer. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.BiformOutputConstraint
-import Mathlib.RingTheory.Flat.Basic
+module
+
+public import Froberg.BiformOutputConstraint
+public import Mathlib.RingTheory.Flat.Basic
+
+@[expose] public section
 
 /-! Coefficientwise output constraints recover the exact constrained biform
 space, rather than only a containing kernel. -/

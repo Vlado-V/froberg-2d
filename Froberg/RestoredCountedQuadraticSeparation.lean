@@ -1,5 +1,9 @@
-import Froberg.RestoredQuadraticSeparationOpen
-import Froberg.ScalarCoefficientWitness
+module
+
+public import Froberg.RestoredQuadraticSeparationOpen
+public import Froberg.ScalarCoefficientWitness
+
+@[expose] public section
 
 /-! Actual scalar and outer counts supply a restored C.2 coefficient open.
 The variable threshold is chosen before the restored coefficient spaces and

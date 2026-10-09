@@ -1,5 +1,9 @@
-import Froberg.BiformOutputConstraint
-import Froberg.PrivateMixedRow
+module
+
+public import Froberg.BiformOutputConstraint
+public import Froberg.PrivateMixedRow
+
+@[expose] public section
 
 /-! A linear output detector applied coefficientwise to actual biforms. -/
 noncomputable section

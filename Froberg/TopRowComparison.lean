@@ -1,6 +1,10 @@
-import Froberg.OddBackgroundRow
-import Froberg.BiformDegreeTransport
-import Froberg.TopTensorExactness
+module
+
+public import Froberg.OddBackgroundRow
+public import Froberg.BiformDegreeTransport
+public import Froberg.TopTensorExactness
+
+@[expose] public section
 
 /-! The top biform row is the literal raw tensor family plus the scalar
 right-factor relations. All degree-zero factors are removed by explicit

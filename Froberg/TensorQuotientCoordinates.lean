@@ -1,4 +1,8 @@
-import Froberg.ProjectedQuotientEquiv
+module
+
+public import Froberg.ProjectedQuotientEquiv
+
+@[expose] public section
 
 /-! Actual tensor quotient coordinates after a surjective projection of
 the first factor. The additional relation space is arbitrary. -/

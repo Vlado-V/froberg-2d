@@ -1,4 +1,8 @@
-import Froberg.ProfileCapacityDrop
+module
+
+public import Froberg.ProfileCapacityDrop
+
+@[expose] public section
 
 /-! Positivity and exact sums for the finite capacity distributions. -/
 noncomputable section

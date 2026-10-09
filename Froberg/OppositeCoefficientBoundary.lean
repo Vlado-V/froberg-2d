@@ -1,5 +1,9 @@
-import Froberg.CycleReductionFormal
-import Froberg.ParityComplex
+module
+
+public import Froberg.CycleReductionFormal
+public import Froberg.ParityComplex
+
+@[expose] public section
 
 /-! Constant matrices supported across the two generator parities are
 literal elements of the opposite-parity Koszul span. -/

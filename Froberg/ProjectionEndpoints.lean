@@ -1,4 +1,8 @@
-import Froberg.AttachedProjection
+module
+
+public import Froberg.AttachedProjection
+
+@[expose] public section
 
 /-! Deficiency can occur only in a nonzero proper source subspace. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Froberg.HigherProjectedGrowth
+module
+
+public import Froberg.HigherProjectedGrowth
+
+@[expose] public section
 
 /-! Surjective scalar-coordinate changes preserve the actual full
 bilinear image; source isomorphisms preserve every uniform growth rate. -/

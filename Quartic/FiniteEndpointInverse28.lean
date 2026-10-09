@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCheckerLoad
+module
+
+public import Quartic.FiniteEndpointCheckerLoad
+
+@[expose] public section
 
 /-! Packed inverse data; rank assertions are separately kernel checked. -/
 noncomputable section

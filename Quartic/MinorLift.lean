@@ -1,5 +1,9 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.LinearAlgebra.Matrix.Rank
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.LinearAlgebra.Matrix.Rank
+
+@[expose] public section
 
 /-!
 # Lifting certified binary minors to characteristic zero

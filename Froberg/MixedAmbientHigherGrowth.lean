@@ -1,6 +1,10 @@
-import Froberg.MixedHigherCompatibility
-import Froberg.MixedHigherGrowth
-import Froberg.MixedAmbientCorrection
+module
+
+public import Froberg.MixedHigherCompatibility
+public import Froberg.MixedHigherGrowth
+public import Froberg.MixedAmbientCorrection
+
+@[expose] public section
 
 /-! Growth of the actual higher component of the corrected ambient odd
 target, simultaneously over all higher source blocks. -/

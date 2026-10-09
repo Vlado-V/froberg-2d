@@ -1,5 +1,9 @@
-import Quartic.ConvolutionInitialImage
-import Quartic.ConvolutionProfileDimension
+module
+
+public import Quartic.ConvolutionInitialImage
+public import Quartic.ConvolutionProfileDimension
+
+@[expose] public section
 
 /-!
 # Initial degree-one subspaces are split convolution sources

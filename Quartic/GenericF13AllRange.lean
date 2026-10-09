@@ -1,5 +1,9 @@
-import Quartic.GenericF13Endpoint
-import Quartic.ConvolutionAllRange
+module
+
+public import Quartic.GenericF13Endpoint
+public import Quartic.ConvolutionAllRange
+
+@[expose] public section
 
 /-! # A varying-presentation F₁₃ witness and coefficient open for all m≥28 -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.SecondStageParameters
-import Froberg.PolynomialLinearAvoidance
+module
+
+public import Froberg.SecondStageParameters
+public import Froberg.PolynomialLinearAvoidance
+
+@[expose] public section
 
 /-! Two-stage incidence in the actual finite-dimensional equation spaces.
 The first vector is universally quantified; only the final parameter is chosen. -/

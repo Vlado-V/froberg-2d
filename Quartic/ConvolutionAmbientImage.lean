@@ -1,5 +1,9 @@
-import Quartic.GenericF13Endpoint
-import Quartic.QuotientBilinearImage
+module
+
+public import Quartic.GenericF13Endpoint
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-!
 # Fixed ambient multiplication behind convolution quotient expansion

@@ -1,4 +1,8 @@
-import Froberg.PreparedEvenRestoration
+module
+
+public import Froberg.PreparedEvenRestoration
+
+@[expose] public section
 
 /-! Restoration exactness is open in the full common parameter space,
 including both the prepared coefficients and the pure output forms. -/

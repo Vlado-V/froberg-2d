@@ -1,5 +1,9 @@
-import Quartic.ConvolutionEvaluation
-import Quartic.ConvolutionConstantSlot
+module
+
+public import Quartic.ConvolutionEvaluation
+public import Quartic.ConvolutionConstantSlot
+
+@[expose] public section
 
 /-!
 # Two-component coordinates on the degree-one inverse factor

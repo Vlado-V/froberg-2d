@@ -1,6 +1,10 @@
-import Froberg.ScalarQuotientSlices
-import Quartic.QuotientBilinearImage
-import Mathlib.LinearAlgebra.Isomorphisms
+module
+
+public import Froberg.ScalarQuotientSlices
+public import Quartic.QuotientBilinearImage
+public import Mathlib.LinearAlgebra.Isomorphisms
+
+@[expose] public section
 
 /-! Taking a source-relation quotient and then scalar-family relations is
 exactly quotienting the original target by the sum of both relation spaces. -/
@@ -17,9 +21,6 @@ theorem quotientScalarFamily_mk (mu : P →ₗ[K] V →ₗ[K] W)
       (BilinearImage.image mu E).mkQ (multiplication mu Q v) := by
   simp [multiplication,tupleBilinear,BilinearImage.tupleMap,
     QuotientBilinearImage.quotientMap]
-  apply Finset.sum_congr rfl
-  intro i _
-  rfl
 
 theorem quotientScalarFamily_range (mu : P →ₗ[K] V →ₗ[K] W)
     (E : Submodule K V) (Q : Fin q → P) :

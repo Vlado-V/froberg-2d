@@ -1,5 +1,9 @@
-import Froberg.BiformTargetLift
-import Froberg.PolynomialIdealElimination
+module
+
+public import Froberg.BiformTargetLift
+public import Froberg.PolynomialIdealElimination
+
+@[expose] public section
 
 /-! Uniform target-row interfaces for the prepared-family assembly.  Every
 lift is an actual homogeneous polynomial in the specified ideal component. -/

@@ -1,5 +1,9 @@
-import Froberg.ParityComplex
-import Froberg.PreparedBackground
+module
+
+public import Froberg.ParityComplex
+public import Froberg.PreparedBackground
+
+@[expose] public section
 
 /-! The ZMod 2 monomial projection agrees exactly with natural-weight
 parity conditions used in the prepared-row elimination. -/

@@ -1,5 +1,11 @@
-import Lean
-import Quartic.FiniteEndpointChecker
+module
+
+public import Quartic.CertificateBinaryIO
+
+public import Lean
+public import Quartic.FiniteEndpointChecker
+
+@[expose] public section
 
 /-! Untrusted binary-data reification only. Generated declarations contain ordinary
 Nat literals. Inverse equations are proved separately by Lean's kernel. -/
@@ -15,7 +21,7 @@ def NatTree.get : NatTree → Nat → Nat
 
 meta section
 
-private def readU64 (buf : ByteArray) (offset : Nat) : UInt64 :=
+def readU64 (buf : ByteArray) (offset : Nat) : UInt64 :=
   (buf.get! (offset+7)).toUInt64 <<< 56 |||
   (buf.get! (offset+6)).toUInt64 <<< 48 |||
   (buf.get! (offset+5)).toUInt64 <<< 40 |||
@@ -25,15 +31,15 @@ private def readU64 (buf : ByteArray) (offset : Nat) : UInt64 :=
   (buf.get! (offset+1)).toUInt64 <<< 8 |||
   (buf.get! offset).toUInt64
 
-private def readU32 (buf : ByteArray) (offset : Nat) : Nat :=
+def readU32 (buf : ByteArray) (offset : Nat) : Nat :=
   (buf.get! offset).toNat + 256*(buf.get! (offset+1)).toNat +
     65536*(buf.get! (offset+2)).toNat + 16777216*(buf.get! (offset+3)).toNat
 
-private def addData (name : Name) (type value : Expr) : MetaM Unit := do
-  addDecl <| .defnDecl {name,levelParams := [],type,value,hints := .regular 0,safety := .safe}
+def addData (name : Name) (type value : Expr) : MetaM Unit := do
+  addDecl (forceExpose := true) <| .defnDecl {name,levelParams := [],type,value,hints := .regular 0,safety := .safe}
   modifyEnv (addNoncomputable · name)
 
-private partial def buildTree (xs : Array Expr) (lo hi : Nat) : Expr :=
+partial def buildTree (xs : Array Expr) (lo hi : Nat) : Expr :=
   if hi ≤ lo+1 then mkApp (mkConst ``NatTree.leaf) xs[lo]!
   else
     let mid := (lo+hi)/2
@@ -44,7 +50,7 @@ syntax (name := packedRows) "load_packed_rows " ident " from " str " nrows " num
 
 @[command_elab packedRows] def elabPackedRows : CommandElab := fun stx => do
   let `(load_packed_rows $name:ident from $path:str nrows $nr:num nwords $nw:num) := stx | throwUnsupportedSyntax
-  let buf ← IO.FS.readBinFile path.getString
+  let buf ← Quartic.CertificateBinaryIO.readBinaryOrPartsCached path.getString
   let rowCount := nr.getNat
   let wordCount := nw.getNat
   if rowCount*wordCount*8 > buf.size then throwError "packed file too short"
@@ -65,7 +71,7 @@ syntax (name := packedTree) "load_packed_tree " ident " from " str " nrows " num
 
 @[command_elab packedTree] def elabPackedTree : CommandElab := fun stx => do
   let `(load_packed_tree $name:ident from $path:str nrows $nr:num nwords $nw:num) := stx | throwUnsupportedSyntax
-  let buf ← IO.FS.readBinFile path.getString
+  let buf ← Quartic.CertificateBinaryIO.readBinaryOrPartsCached path.getString
   let rowCount := nr.getNat
   let wordCount := nw.getNat
   if rowCount == 0 || rowCount*wordCount*8 > buf.size then throwError "invalid packed file dimensions"
@@ -85,7 +91,7 @@ syntax (name := sparseRows) "load_sparse_rows " ident " from " str " nrows " num
 
 @[command_elab sparseRows] def elabSparseRows : CommandElab := fun stx => do
   let `(load_sparse_rows $name:ident from $path:str nrows $nr:num) := stx | throwUnsupportedSyntax
-  let buf ← IO.FS.readBinFile path.getString
+  let buf ← Quartic.CertificateBinaryIO.readSparseOrReconstructCached path.getString
   let mut offset := 0
   let mut rowLists : Array (List Expr) := #[]
   for _ in [:nr.getNat] do

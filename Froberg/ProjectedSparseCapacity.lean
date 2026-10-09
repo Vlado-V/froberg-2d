@@ -1,5 +1,9 @@
-import Froberg.QuadraticSparseBudget
-import Froberg.SmallSparseLayerBudget
+module
+
+public import Froberg.QuadraticSparseBudget
+public import Froberg.SmallSparseLayerBudget
+
+@[expose] public section
 
 /-! The same selected sparse blocks retain their capacity after quotienting
 by one output linear form. The loss has one lower polynomial degree. -/

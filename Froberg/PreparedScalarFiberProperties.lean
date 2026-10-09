@@ -1,6 +1,10 @@
-import Froberg.PreparedScalarFiberCompatibility
-import Froberg.PreparedBackgroundUpper
-import Froberg.PreparedScalarFiberAt
+module
+
+public import Froberg.PreparedScalarFiberCompatibility
+public import Froberg.PreparedBackgroundUpper
+public import Froberg.PreparedScalarFiberAt
+
+@[expose] public section
 
 /-! The last scalar fiber preserves the actual B.5 and B.7 conclusions. -/
 noncomputable section

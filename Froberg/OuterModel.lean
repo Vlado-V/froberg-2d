@@ -1,6 +1,10 @@
-import Froberg.OuterGeneric
-import Froberg.OuterDimensions
-import Froberg.AttachedProjection
+module
+
+public import Froberg.OuterGeneric
+public import Froberg.OuterDimensions
+public import Froberg.AttachedProjection
+
+@[expose] public section
 
 /-! One concrete outer model with exact dimensions and uniform projection control. -/
 noncomputable section

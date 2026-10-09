@@ -1,5 +1,9 @@
-import Froberg.GenericDimensions
-import Quartic.CubicCoordinateProducts
+module
+
+public import Froberg.GenericDimensions
+public import Quartic.CubicCoordinateProducts
+
+@[expose] public section
 
 /-! The linear-degree endpoint, by an actual polynomial change of coordinates.
 The coordinate calculation adapts the earlier cubic calculation to quadratics. -/

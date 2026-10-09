@@ -1,7 +1,11 @@
-import Froberg.PreparedPrivateFirstComponent
-import Froberg.PreparedPrivateCoefficientRows
-import Froberg.PreparedPrivateTopCoefficient
-import Froberg.PrivateCompleteElimination
+module
+
+public import Froberg.PreparedPrivateFirstComponent
+public import Froberg.PreparedPrivateCoefficientRows
+public import Froberg.PreparedPrivateTopCoefficient
+public import Froberg.PrivateCompleteElimination
+
+@[expose] public section
 
 /-! The checked row conditions on one actual prepared parameter yield the
 full odd-degree even-cycle reduction, uniformly in its fixed pure U tuple. -/

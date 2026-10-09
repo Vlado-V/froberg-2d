@@ -1,4 +1,8 @@
-import Froberg.ProjectionFailure
+module
+
+public import Froberg.ProjectionFailure
+
+@[expose] public section
 
 /-! A deficient prefix forces every padded mixed determinant to vanish. -/
 noncomputable section

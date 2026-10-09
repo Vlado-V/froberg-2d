@@ -1,4 +1,8 @@
-import Froberg.Hyperplane
+module
+
+public import Froberg.Hyperplane
+
+@[expose] public section
 
 /-! The subspace hypotheses of exact replacement follow from independent
 positive components modulo the scalar coefficient space. -/

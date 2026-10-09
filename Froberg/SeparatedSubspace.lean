@@ -1,5 +1,9 @@
-import Mathlib.LinearAlgebra.Pi
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+module
+
+public import Mathlib.LinearAlgebra.Pi
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+
+@[expose] public section
 
 /-! Coordinate-separated subspaces, independently of the chosen finite enumeration. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Froberg.GenericDimensions
+module
+
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-!
 # Reducing equivariant divisibility to the generic cokernel

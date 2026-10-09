@@ -1,5 +1,9 @@
-import Quartic.Multiplication
-import Mathlib.LinearAlgebra.Matrix.Rank
+module
+
+public import Quartic.Multiplication
+public import Mathlib.LinearAlgebra.Matrix.Rank
+
+@[expose] public section
 
 /-!
 # Polynomial multiplication matrices and a concrete generic-open criterion

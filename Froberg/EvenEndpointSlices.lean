@@ -1,6 +1,10 @@
-import Froberg.EvenActualSlices
-import Froberg.EndpointThinSlices
-import Froberg.PreparedLayeredBudget
+module
+
+public import Froberg.EvenActualSlices
+public import Froberg.EndpointThinSlices
+public import Froberg.PreparedLayeredBudget
+
+@[expose] public section
 
 /-! The even-background C.4 conclusion on the actual enlarged endpoint. -/
 noncomputable section

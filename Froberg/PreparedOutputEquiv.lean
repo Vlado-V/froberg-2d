@@ -1,4 +1,8 @@
-import Froberg.PreparedCoreExtension
+module
+
+public import Froberg.PreparedCoreExtension
+
+@[expose] public section
 
 /-! Bijective output renaming on the complete prepared coefficient space. -/
 noncomputable section

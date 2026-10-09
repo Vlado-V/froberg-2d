@@ -1,4 +1,8 @@
-import Froberg.RestoredQuadraticFormalProperty
+module
+
+public import Froberg.RestoredQuadraticFormalProperty
+
+@[expose] public section
 
 /-! Actual enlarged restored families satisfy C.2 on a nonempty open.
 The scalar threshold precedes every choice of the shared quadratic frame. -/

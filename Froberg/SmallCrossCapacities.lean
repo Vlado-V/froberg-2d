@@ -1,5 +1,9 @@
-import Froberg.SmallCapacityLimits
-import Froberg.SmallDegreeCapacities
+module
+
+public import Froberg.SmallCapacityLimits
+public import Froberg.SmallDegreeCapacities
+
+@[expose] public section
 
 /-! The exact paired diagonal capacity and unequal cross-product capacities
 for the intermediate E and G families in degrees five through eight. -/

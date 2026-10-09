@@ -1,6 +1,10 @@
-import Froberg.PrivateFrameConstraints
-import Froberg.TargetLayerAssembly
-import Froberg.QuadraticOutputDimension
+module
+
+public import Froberg.PrivateFrameConstraints
+public import Froberg.TargetLayerAssembly
+public import Froberg.QuadraticOutputDimension
+
+@[expose] public section
 
 /-! A quadratic frame is exactly the kernel constraint required by the
 actual even-row construction. This detector uses its ordinary quotient. -/

@@ -1,5 +1,9 @@
-import Froberg.OddTargetBaseCoordinates
-import Froberg.OddBackgroundProduct
+module
+
+public import Froberg.OddTargetBaseCoordinates
+public import Froberg.OddBackgroundProduct
+
+@[expose] public section
 
 /-! Literal weight-one target elements have no higher coordinates. -/
 noncomputable section

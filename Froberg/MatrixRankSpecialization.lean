@@ -1,8 +1,12 @@
-import Mathlib.LinearAlgebra.Matrix.Rank
-import Mathlib.Algebra.MvPolynomial.Funext
-import Mathlib.RingTheory.Localization.Integer
-import Mathlib.RingTheory.Localization.FractionRing
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.Matrix.Rank
+public import Mathlib.Algebra.MvPolynomial.Funext
+public import Mathlib.RingTheory.Localization.Integer
+public import Mathlib.RingTheory.Localization.FractionRing
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Matrix ranks over polynomial fraction fields and at specializations

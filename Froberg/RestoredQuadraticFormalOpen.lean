@@ -1,7 +1,11 @@
-import Froberg.ActualRestoredQuadraticSeparation
-import Froberg.RestoredQuadraticFormalSeparation
-import Froberg.QuadraticDetectorSupport
-import Froberg.RestoredQuadraticOpenProperty
+module
+
+public import Froberg.ActualRestoredQuadraticSeparation
+public import Froberg.RestoredQuadraticFormalSeparation
+public import Froberg.QuadraticDetectorSupport
+public import Froberg.RestoredQuadraticOpenProperty
+
+@[expose] public section
 
 /-! Actual enlarged restored families satisfy C.2 on a nonempty open.
 The scalar threshold precedes every choice of the shared quadratic frame. -/

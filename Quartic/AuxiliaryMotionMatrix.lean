@@ -1,4 +1,8 @@
-import Quartic.SharedCovectorPolynomial
+module
+
+public import Quartic.SharedCovectorPolynomial
+
+@[expose] public section
 
 /-! Adjoin freely chosen target columns to the second actual motion stage. -/
 noncomputable section

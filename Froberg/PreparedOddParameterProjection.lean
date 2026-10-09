@@ -1,4 +1,8 @@
-import Froberg.PreparedOddVectorCriteria
+module
+
+public import Froberg.PreparedOddVectorCriteria
+
+@[expose] public section
 
 /-! The full fixed-pure parameter space surjects onto the complete F+P
 vector family and all scalar parts. The remaining high coefficients are

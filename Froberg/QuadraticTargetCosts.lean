@@ -1,4 +1,8 @@
-import Froberg.TargetCosts
+module
+
+public import Froberg.TargetCosts
+
+@[expose] public section
 
 /-! # The three quadratic target costs fit the prescribed count -/
 

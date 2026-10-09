@@ -1,7 +1,11 @@
-import Froberg.SqrtApproximation
-import Froberg.CriticalRoot
-import Froberg.MonomialCounts
-import Froberg.BinomialPolynomial
+module
+
+public import Froberg.SqrtApproximation
+public import Froberg.CriticalRoot
+public import Froberg.MonomialCounts
+public import Froberg.BinomialPolynomial
+
+@[expose] public section
 
 /-! A genuine polynomial approximating the manuscript's critical generator
 count, with irrational leading coefficient and additive error tending to zero. -/

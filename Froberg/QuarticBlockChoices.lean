@@ -1,4 +1,8 @@
-import Froberg.QuarticBlockRelabeling
+module
+
+public import Froberg.QuarticBlockRelabeling
+
+@[expose] public section
 
 /-! The five concrete quartic certificates give consistent monomial choices
 on every normalized product fiber. -/

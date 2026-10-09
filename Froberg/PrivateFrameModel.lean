@@ -1,6 +1,10 @@
-import Froberg.PrivateFrameOpen
-import Froberg.GeneralLinearColumns
-import Froberg.PrivateKoszulKernel
+module
+
+public import Froberg.PrivateFrameOpen
+public import Froberg.GeneralLinearColumns
+public import Froberg.PrivateKoszulKernel
+
+@[expose] public section
 
 /-! The exact private-power kernel holds for a general quadratic frame.
 The detector has kernel precisely the span of that same frame. -/

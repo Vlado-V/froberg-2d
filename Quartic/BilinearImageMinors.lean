@@ -1,6 +1,10 @@
-import Quartic.BilinearImage
-import Quartic.KernelCharts
-import Quartic.HomogeneousEmptyFiberOpen
+module
+
+public import Quartic.BilinearImage
+public import Quartic.KernelCharts
+public import Quartic.HomogeneousEmptyFiberOpen
+
+@[expose] public section
 
 /-!
 # Homogeneous minors of actual bilinear image matrices

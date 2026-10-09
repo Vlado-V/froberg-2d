@@ -1,4 +1,8 @@
-import Quartic.IteratedBlockCharts.Selectors
+module
+
+public import Quartic.IteratedBlockCharts.Selectors
+
+@[expose] public section
 
 /-!
 # Finite triangular polynomial charts adapted to ordered blocks

@@ -1,7 +1,11 @@
-import Froberg.UpperTargetOpen
-import Froberg.OddQuotientProduct
-import Froberg.ParityWeights
-import Froberg.OddSplitElimination
+module
+
+public import Froberg.UpperTargetOpen
+public import Froberg.OddQuotientProduct
+public import Froberg.ParityWeights
+public import Froberg.OddSplitElimination
+
+@[expose] public section
 
 /-! B.7 excludes a nonzero odd endpoint covector with zero bottom row.
 The target here is the actual endpoint quotient, not a larger row model. -/

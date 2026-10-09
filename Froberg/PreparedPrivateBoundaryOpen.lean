@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateRowOpen
-import Froberg.GeneralComplexOpen
+module
+
+public import Froberg.PreparedPrivateRowOpen
+public import Froberg.GeneralComplexOpen
+
+@[expose] public section
 
 /-! The first private-private constants and later zero private boundaries
 are handled uniformly by exactness on the same prepared coefficient space. -/

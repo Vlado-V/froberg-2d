@@ -1,6 +1,10 @@
-import Froberg.Matching
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Algebra.MvPolynomial.Funext
+module
+
+public import Froberg.Matching
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Algebra.MvPolynomial.Funext
+
+@[expose] public section
 
 /-! Actual coefficient-polynomial minors for finite families of monomial-supported forms. -/
 noncomputable section

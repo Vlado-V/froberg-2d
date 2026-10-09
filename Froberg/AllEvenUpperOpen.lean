@@ -1,6 +1,10 @@
-import Froberg.PreparedOddCommonOpen
-import Froberg.PreparedAllEvenCounts
-import Froberg.PureCutoffPolynomial
+module
+
+public import Froberg.PreparedOddCommonOpen
+public import Froberg.PreparedAllEvenCounts
+public import Froberg.PureCutoffPolynomial
+
+@[expose] public section
 
 /-! The upper-target witness is transported to the same all-even parameter
 space used by the relation and comparison theorems. -/
@@ -9,7 +13,7 @@ set_option maxHeartbeats 500000
 set_option backward.isDefEq.respectTransparency false
 namespace Froberg.PreparedTarget
 open Froberg Module MvPolynomial PreparedParameters
-variable {K : Type} [Field K] [CharZero K] {h m d H f r q u : ℕ}
+variable {K : Type} [Field K] [Infinite K] {h m d H f r q u : ℕ}
 
 theorem HasUpperWitness.all_even_variable_private_open (hd : 3 ≤ d)
     (frame : Fin H → Forms K h 2) (U : Fin u → Forms K h d)

@@ -1,6 +1,10 @@
-import Froberg.MixedPureComponents
-import Froberg.BiformDegreeTransport
-import Froberg.BiformTensorComponent
+module
+
+public import Froberg.MixedPureComponents
+public import Froberg.BiformDegreeTransport
+public import Froberg.BiformTensorComponent
+
+@[expose] public section
 
 /-! Literal components of the scalar multiples of U+P. -/
 noncomputable section

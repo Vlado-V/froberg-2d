@@ -1,4 +1,8 @@
-import Froberg.BalancedWeightPolynomial
+module
+
+public import Froberg.BalancedWeightPolynomial
+
+@[expose] public section
 
 /-! A strict binomial-probability margin gives the corresponding eventual
 weighted row margin in two balanced variable blocks. -/

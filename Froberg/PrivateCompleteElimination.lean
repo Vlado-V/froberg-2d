@@ -1,6 +1,10 @@
-import Froberg.PrivatePolynomialElimination
-import Froberg.PrivateBoundaryRemoval
-import Froberg.WeightedParitySpace
+module
+
+public import Froberg.PrivatePolynomialElimination
+public import Froberg.PrivateBoundaryRemoval
+public import Froberg.WeightedParitySpace
+
+@[expose] public section
 
 /-! Removing the actual private-private boundary and performing delayed
 elimination yields the complete even coefficient reduction for U+P. -/

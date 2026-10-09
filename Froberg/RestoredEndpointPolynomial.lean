@@ -1,5 +1,9 @@
-import Froberg.RestoredOuterIndependence
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.RestoredOuterIndependence
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! The restored endpoint is a linear polynomial family on its full
 coefficient space, so successful upper-target generation is rank-open. -/

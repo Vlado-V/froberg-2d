@@ -1,5 +1,9 @@
-import Froberg.HomologyCoefficients
-import Froberg.NormalDeformation
+module
+
+public import Froberg.HomologyCoefficients
+public import Froberg.NormalDeformation
+
+@[expose] public section
 
 /-! Compatibility of the faithful coefficient map with actual scalar motions
 of the polynomial generators. This records the formula on actual homology,

@@ -1,5 +1,9 @@
-import Froberg.PreparedParameters
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.PreparedParameters
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! A common literal polynomial family for the prepared scalar/even rows,
 the outer linear biforms, and the private pure-X generators with fixed lower

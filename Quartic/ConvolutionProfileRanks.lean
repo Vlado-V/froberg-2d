@@ -1,5 +1,9 @@
-import Quartic.ConvolutionProfileImage
-import Quartic.LayerRankCounts
+module
+
+public import Quartic.ConvolutionProfileImage
+public import Quartic.LayerRankCounts
+
+@[expose] public section
 
 /-!
 # Actual ranks of the free-monomial image layers

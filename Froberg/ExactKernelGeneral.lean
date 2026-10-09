@@ -1,4 +1,8 @@
-import Froberg.ExactKernelOpen
+module
+
+public import Froberg.ExactKernelOpen
+
+@[expose] public section
 
 /-! Finite-domain rank openness does not require a finite-dimensional target.
 This permits row maps into the actual polynomial ring. -/

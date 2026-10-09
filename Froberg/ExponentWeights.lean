@@ -1,5 +1,9 @@
-import Froberg.DivisibilityCoupling
-import Quartic.HomogeneousCoefficientCoordinates
+module
+
+public import Froberg.DivisibilityCoupling
+public import Quartic.HomogeneousCoefficientCoordinates
+
+@[expose] public section
 
 /-! The weighted incidence identities on the homogeneous-coordinate index type. -/
 noncomputable section

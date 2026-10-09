@@ -1,5 +1,9 @@
-import Froberg.OddBackgroundProductCompatibility
-import Froberg.TupleReplacement
+module
+
+public import Froberg.OddBackgroundProductCompatibility
+public import Froberg.TupleReplacement
+
+@[expose] public section
 
 /-! The biform even-slot pencil is exactly a single-slot replacement of
 the enumerated homogeneous generator tuple. -/

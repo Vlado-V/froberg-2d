@@ -1,6 +1,10 @@
-import Froberg.TensorScalarGrowth
-import Froberg.BilinearScalarFamily
-import Quartic.SplitTensor
+module
+
+public import Froberg.TensorScalarGrowth
+public import Froberg.BilinearScalarFamily
+public import Quartic.SplitTensor
+
+@[expose] public section
 
 /-! Compatibility of the actual tensor products and family maps with a
 projection of the first tensor factor. -/

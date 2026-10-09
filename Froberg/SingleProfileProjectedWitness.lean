@@ -1,7 +1,11 @@
-import Froberg.SingleProfileProducts
-import Froberg.GenericDimensions
-import Froberg.SparseIntermediateOpen
-import Froberg.SparseEmbeddedRelations
+module
+
+public import Froberg.SingleProfileProducts
+public import Froberg.GenericDimensions
+public import Froberg.SparseIntermediateOpen
+public import Froberg.SparseEmbeddedRelations
+
+@[expose] public section
 
 /-! A complete finite B.4 witness from the proved sparse budget and retained
 scalar open. The scalar list is chosen once for both conditions. -/

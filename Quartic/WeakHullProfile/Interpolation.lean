@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Rational
+module
+
+public import Quartic.HullCertificate.Rational
+
+@[expose] public section
 
 /-! Explicit rational interpolation of the eight weak vertices in a knot cell. -/
 namespace Quartic.WeakHullProfile

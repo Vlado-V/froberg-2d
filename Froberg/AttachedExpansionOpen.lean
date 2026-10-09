@@ -1,5 +1,9 @@
-import Froberg.AttachedGenerators
-import Froberg.VectorQuotientOpen
+module
+
+public import Froberg.AttachedGenerators
+public import Froberg.VectorQuotientOpen
+
+@[expose] public section
 
 /-! Actual attached quotient witnesses imply relative open polynomial families. -/
 noncomputable section

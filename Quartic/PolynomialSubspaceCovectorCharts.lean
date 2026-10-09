@@ -1,6 +1,10 @@
-import Quartic.BilinearCoefficientKernel
-import Quartic.SharedKernelAvoidance
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.BilinearCoefficientKernel
+public import Quartic.SharedKernelAvoidance
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-!
 # Covector incidence from arbitrary polynomial subspace charts

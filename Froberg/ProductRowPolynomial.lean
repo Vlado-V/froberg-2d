@@ -1,4 +1,8 @@
-import Froberg.ProductRowOpen
+module
+
+public import Froberg.ProductRowOpen
+
+@[expose] public section
 
 /-! Polynomial dependence of the complete product-row linear map. -/
 noncomputable section

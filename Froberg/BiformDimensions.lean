@@ -1,4 +1,8 @@
-import Froberg.BiformActions
+module
+
+public import Froberg.BiformActions
+
+@[expose] public section
 
 noncomputable section
 namespace Froberg

@@ -1,6 +1,10 @@
-import Froberg.SpecialDiagonalBiform
-import Froberg.PreparedBiformCoordinates
-import Froberg.PairedScalarSeparation
+module
+
+public import Froberg.SpecialDiagonalBiform
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.PairedScalarSeparation
+
+@[expose] public section
 
 /-! The full quadratic block space can be used before imposing the output
 detector. Its larger dimension supplies the small-degree diagonal witnesses. -/

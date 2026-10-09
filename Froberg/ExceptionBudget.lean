@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Data.Finset.Card
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Data.Finset.Card
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Summing the uniform exceptional projection losses over all source fibers. -/
 namespace Froberg.ExceptionBudget

@@ -1,4 +1,8 @@
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Exactness with a fixed-dimensional mandatory kernel is a polynomial open
 condition. This applies directly to the row-wise constant Koszul kernels. -/

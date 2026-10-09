@@ -1,4 +1,8 @@
-import Froberg.OddScalarLayerGrowth
+module
+
+public import Froberg.OddScalarLayerGrowth
+
+@[expose] public section
 
 /-! One common scalar/linear parameter open gives the required growth in
 every non-top odd layer at once. Auxiliary scalar families are not added

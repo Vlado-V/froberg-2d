@@ -1,4 +1,8 @@
-import Froberg.WeightedParitySpace
+module
+
+public import Froberg.WeightedParitySpace
+
+@[expose] public section
 
 /-! Two successive linear projections detect independence of a family
 whose second block vanishes under the first projection. -/

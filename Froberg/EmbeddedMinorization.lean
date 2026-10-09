@@ -1,4 +1,8 @@
-import Froberg.TransportVariance
+module
+
+public import Froberg.TransportVariance
+
+@[expose] public section
 
 /-! A uniform distribution on an embedded family of source states, and
 conversion of a common-target lower bound to a mixing minorization. -/

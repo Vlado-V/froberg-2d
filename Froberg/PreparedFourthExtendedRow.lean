@@ -1,5 +1,9 @@
-import Froberg.PreparedFourthRow
-import Froberg.PreparedExtendedWitness
+module
+
+public import Froberg.PreparedFourthRow
+public import Froberg.PreparedExtendedWitness
+
+@[expose] public section
 
 /-! The small-degree fourth-row witness remains exact after adjoining any
 fixed number of scalar variables. -/

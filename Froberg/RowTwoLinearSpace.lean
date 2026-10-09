@@ -1,5 +1,9 @@
-import Froberg.LinearEndpoint
-import Froberg.RowTwoCounts
+module
+
+public import Froberg.LinearEndpoint
+public import Froberg.RowTwoCounts
+
+@[expose] public section
 
 /-! A concrete linear output space and its exact quadratic quotient. -/
 noncomputable section

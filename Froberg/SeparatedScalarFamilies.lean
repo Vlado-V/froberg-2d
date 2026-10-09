@@ -1,5 +1,9 @@
-import Froberg.SymmetricIndependence
-import Froberg.GeneralPositionVectors
+module
+
+public import Froberg.SymmetricIndependence
+public import Froberg.GeneralPositionVectors
+
+@[expose] public section
 
 /-! Scalar coefficient families with independent products separately for each
 unordered pair of output labels.  Joint independence of all scalar groups is

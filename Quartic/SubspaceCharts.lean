@@ -1,8 +1,12 @@
-import Mathlib.LinearAlgebra.Dual.Basis
-import Mathlib.LinearAlgebra.Dual.Lemmas
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
-import Mathlib.Data.Fintype.Card
+module
+
+public import Mathlib.LinearAlgebra.Dual.Basis
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
+public import Mathlib.Data.Fintype.Card
+
+@[expose] public section
 
 /-!
 # Finite coordinate charts for vector subspaces

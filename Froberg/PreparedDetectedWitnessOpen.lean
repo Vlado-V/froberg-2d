@@ -1,5 +1,9 @@
-import Froberg.PreparedOuterSeparationOpen
-import Froberg.SharedFrameQuadraticWitness
+module
+
+public import Froberg.PreparedOuterSeparationOpen
+public import Froberg.SharedFrameQuadraticWitness
+
+@[expose] public section
 
 /-! A shared quadratic detector and the separated scalar coefficient space
 supply the actual private/outer witness required by the full parameter open. -/

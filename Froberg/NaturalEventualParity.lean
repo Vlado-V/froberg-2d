@@ -1,5 +1,9 @@
-import Mathlib.Order.Filter.AtTopBot.Finite
-import Mathlib.Tactic
+module
+
+public import Mathlib.Order.Filter.AtTopBot.Finite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Adjacent shifted parity classes cover all sufficiently large natural
 numbers. This allows balanced core constructions to be assembled globally. -/

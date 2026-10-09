@@ -1,4 +1,8 @@
-import Froberg.OutputSpaceExtension
+module
+
+public import Froberg.OutputSpaceExtension
+
+@[expose] public section
 
 /-! Convolution in a quotient output space, lifted into a prescribed
 larger subspace of the actual output space. -/

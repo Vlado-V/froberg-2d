@@ -1,5 +1,9 @@
-import Froberg.ActualOddLocalComparison
-import Froberg.ProjectedOddTarget
+module
+
+public import Froberg.ActualOddLocalComparison
+public import Froberg.ProjectedOddTarget
+
+@[expose] public section
 
 /-! Literal endpoint odd slices supply the local-comparison contraction.
 The source coordinates and full projected-target identification are
@@ -12,7 +16,7 @@ variable {F : Type*} [AddCommGroup F] [Module K F] [FiniteDimensional K F]
 variable {m n d r t c : ℕ}
 
 theorem exists_local_comparison_of_endpoint_slices
-    (htwo : (2 : K)≠0) (hm : 0 < m)
+    (hm : 0 < m)
     (D : Submodule K (Forms K n (2*d)))
     (w : Fin n → ZMod 2) (parity : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
@@ -45,7 +49,7 @@ theorem exists_local_comparison_of_endpoint_slices
           (renameForm rename).range)
     (hdeleted : finrank K D=genericCokernel K m d (upperCount m d)) :
     Nonempty (LocalComparisonData K n d r (criticalDefect K m d)) := by
-  apply exists_local_comparison_of_odd_separation htwo hm D w parity q hq hqparity
+  apply exists_local_comparison_of_odd_separation hm D w parity q hq hqparity
     (fun z hz => hD ((Submodule.Quotient.mk_eq_zero D).mp hz)) hodd T f hf hspan heven hsep
     (LinearEquiv.refl K (oddCoefficientSpace w q))
     (projectedOddTargetEquiv D w parity q hqparity hD hcoverage)

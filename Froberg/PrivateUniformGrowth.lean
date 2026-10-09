@@ -1,5 +1,9 @@
-import Froberg.PrivateLowerGrowth
-import Froberg.PrivateUpperGrowth
+module
+
+public import Froberg.PrivateLowerGrowth
+public import Froberg.PrivateUpperGrowth
+
+@[expose] public section
 
 /-! Combining the two halves of the private-column expansion estimate. -/
 noncomputable section

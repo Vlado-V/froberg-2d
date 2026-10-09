@@ -1,5 +1,9 @@
-import Quartic.SplitMiddle31
-import Quartic.RankOpen
+module
+
+public import Quartic.SplitMiddle31
+public import Quartic.RankOpen
+
+@[expose] public section
 
 /-!
 # A nonempty coefficient open for the actual (3,1) trace

@@ -1,6 +1,10 @@
-import Froberg.TwoFamilyIntrinsicOpen
-import Froberg.TwoFamilyAugmentation
-import Froberg.FreezeParameters
+module
+
+public import Froberg.TwoFamilyIntrinsicOpen
+public import Froberg.TwoFamilyAugmentation
+public import Froberg.FreezeParameters
+
+@[expose] public section
 
 /-! Uniform scalar-quotient growth on a genuine open in the old parameter
 space, obtained by fixing a successful auxiliary scalar family. -/

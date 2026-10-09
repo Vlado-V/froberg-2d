@@ -1,6 +1,10 @@
-import Froberg.RestoredQuadraticNuisance
-import Froberg.RestoredQuadraticFormalProperty
-import Froberg.PreparedQuadraticFormalSeparation
+module
+
+public import Froberg.RestoredQuadraticNuisance
+public import Froberg.RestoredQuadraticFormalProperty
+public import Froberg.PreparedQuadraticFormalSeparation
+
+@[expose] public section
 
 /-! The genuine coefficient-row open implies C.2 for every scalar-supported
 endpoint deletion and the literal restored background. -/

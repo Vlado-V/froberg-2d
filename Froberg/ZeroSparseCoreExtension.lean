@@ -1,4 +1,8 @@
-import Froberg.SparseCoreExtension
+module
+
+public import Froberg.SparseCoreExtension
+
+@[expose] public section
 
 /-! The exact same sparse even-row witness remains exact after adjoining
 private variables: its lower injections and endpoint kernel supply every

@@ -1,5 +1,9 @@
-import Froberg.ConvolutionBlocks
-import Froberg.DimensionProjection
+module
+
+public import Froberg.ConvolutionBlocks
+public import Froberg.DimensionProjection
+
+@[expose] public section
 
 /-! A prescribed output space needs only the expected number of convolution blocks. -/
 noncomputable section

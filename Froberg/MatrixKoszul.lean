@@ -1,4 +1,8 @@
-import Froberg.GradedKoszulElimination
+module
+
+public import Froberg.GradedKoszulElimination
+
+@[expose] public section
 
 /-! Matrix boundaries are elements of the ordinary incoming Koszul span. -/
 noncomputable section

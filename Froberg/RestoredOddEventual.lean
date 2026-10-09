@@ -1,5 +1,9 @@
-import Froberg.RestoredOddOpen
-import Froberg.CriticalPrefixCapacity
+module
+
+public import Froberg.RestoredOddOpen
+public import Froberg.CriticalPrefixCapacity
+
+@[expose] public section
 
 /-! The actual restored all-even parameter family has an odd-cycle injection
 open for every sufficiently large scalar variable count at critical density. -/

@@ -1,5 +1,9 @@
-import Froberg.ProductCapacityGeneral
-import Froberg.NormalizedLimits
+module
+
+public import Froberg.ProductCapacityGeneral
+public import Froberg.NormalizedLimits
+
+@[expose] public section
 
 /-! Limits of the exact integer capacities used in Appendix E. -/
 noncomputable section

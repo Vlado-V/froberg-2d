@@ -1,5 +1,9 @@
-import Froberg.PreparedEvenRestoration
-import Froberg.PreparedPureSlots
+module
+
+public import Froberg.PreparedEvenRestoration
+public import Froberg.PreparedPureSlots
+
+@[expose] public section
 
 /-! Even-degree restoration in the actual appended quadratic slots. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Froberg.PrivateOutputTransport
-import Froberg.PrivateKoszulKernel
-import Froberg.PrivateBoundaryRemoval
+module
+
+public import Froberg.PrivateOutputTransport
+public import Froberg.PrivateKoszulKernel
+public import Froberg.PrivateBoundaryRemoval
+
+@[expose] public section
 
 /-! Coordinate private Koszul cycles become the literal polynomial
 boundaries subtracted in the first even output row. -/

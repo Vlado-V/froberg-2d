@@ -1,5 +1,9 @@
-import Froberg.BilinearProjection
-import Froberg.ProjectionCount
+module
+
+public import Froberg.BilinearProjection
+public import Froberg.ProjectionCount
+
+@[expose] public section
 
 /-! A general projection preserves normalized bilinear-image growth.
 This is the precise uniform projection observation used in C.3. -/

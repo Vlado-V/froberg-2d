@@ -1,5 +1,9 @@
-import Froberg.OddRowBinomialBudget
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.OddRowBinomialBudget
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! The literal two-family incidence inequalities for all higher odd rows. -/
 noncomputable section

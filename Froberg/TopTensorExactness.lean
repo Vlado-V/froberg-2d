@@ -1,6 +1,10 @@
-import Froberg.ProjectedTopOpen
-import Froberg.TensorPostcomposition
-import Froberg.ProjectedRelationSeparation
+module
+
+public import Froberg.ProjectedTopOpen
+public import Froberg.TensorPostcomposition
+public import Froberg.ProjectedRelationSeparation
+
+@[expose] public section
 
 /-! The polynomial top-row map satisfies the actual tensor separation
 hypothesis of the C.10 exact sequence. -/

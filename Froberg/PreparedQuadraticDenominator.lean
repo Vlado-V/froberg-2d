@@ -1,5 +1,9 @@
-import Froberg.PreparedQuadraticDetector
-import Froberg.QuadraticSeparationRow
+module
+
+public import Froberg.PreparedQuadraticDetector
+public import Froberg.QuadraticSeparationRow
+
+@[expose] public section
 
 /-! The low-degree prepared denominator maps into the literal scalar/private
 coefficient row. This keeps the C.2 certificate uniform in scalar deletions. -/

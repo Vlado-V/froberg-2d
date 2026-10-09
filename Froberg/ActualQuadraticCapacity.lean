@@ -1,5 +1,9 @@
-import Froberg.QuadraticCapacityParameters
-import Froberg.HigherCapacityParameters
+module
+
+public import Froberg.QuadraticCapacityParameters
+public import Froberg.HigherCapacityParameters
+
+@[expose] public section
 
 /-! The quadratic row capacity for the actual prepared scalar and layer
 counts; fixed appended columns use the same sparse block count. -/

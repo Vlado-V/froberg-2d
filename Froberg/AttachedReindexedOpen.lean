@@ -1,5 +1,9 @@
-import Froberg.AttachedExpansionOpen
-import Froberg.AttachedReindex
+module
+
+public import Froberg.AttachedExpansionOpen
+public import Froberg.AttachedReindex
+
+@[expose] public section
 
 /-! The common-open construction accepts arbitrary finite attached label sets. -/
 noncomputable section

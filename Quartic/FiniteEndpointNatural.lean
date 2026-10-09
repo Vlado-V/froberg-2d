@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCertificate
+module
+
+public import Quartic.FiniteEndpointCertificate
+
+@[expose] public section
 
 /-! Compact natural-index sparse certificates, with explicit bounds proving that
 no modular wraparound changes their matrix entries. -/

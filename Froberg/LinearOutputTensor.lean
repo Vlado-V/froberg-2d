@@ -1,7 +1,11 @@
-import Froberg.LinearCutVectors
-import Froberg.BiformDegreeTransport
-import Froberg.TensorVectorEmbedding
-import Froberg.StrictVectorModel
+module
+
+public import Froberg.LinearCutVectors
+public import Froberg.BiformDegreeTransport
+public import Froberg.TensorVectorEmbedding
+public import Froberg.StrictVectorModel
+
+@[expose] public section
 
 /-! Explicit linear-output tensor coordinates for actual vector-valued
 homogeneous polynomial rows. -/

@@ -1,5 +1,9 @@
-import Froberg.Koszul
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import Froberg.Koszul
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-!
 # Linear subspace part of the exact hyperplane replacement

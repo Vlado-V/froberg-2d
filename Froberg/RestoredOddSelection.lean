@@ -1,4 +1,8 @@
-import Froberg.PreparedCountedRestoredOdd
+module
+
+public import Froberg.PreparedCountedRestoredOdd
+
+@[expose] public section
 
 /-! Odd injection is imposed on the same restored parameters as the pure
 basis and the even-row reduction, together with any further principal open. -/

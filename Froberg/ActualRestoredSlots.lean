@@ -1,7 +1,11 @@
-import Froberg.PreparedExtraColumn
-import Froberg.RestoredExtraColumn
-import Froberg.CountedRestorationSlots
-import Froberg.CriticalComparisonCounts
+module
+
+public import Froberg.PreparedExtraColumn
+public import Froberg.RestoredExtraColumn
+public import Froberg.CountedRestorationSlots
+public import Froberg.CriticalComparisonCounts
+
+@[expose] public section
 
 /-! Canonical finite indices for the actual restored even family. The pure
 slots occupy the quadratic labels e,...,e+u-1; the temporary extra label is

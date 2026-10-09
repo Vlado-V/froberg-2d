@@ -1,4 +1,8 @@
-import Froberg.ExactOuterLimit
+module
+
+public import Froberg.ExactOuterLimit
+
+@[expose] public section
 
 /-! The actual outer-family size is eventually below every positive
 degree-d allowance, as needed by the final thin-slice comparison. -/

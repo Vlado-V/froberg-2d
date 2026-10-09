@@ -1,4 +1,8 @@
-import Froberg.TopCountInequalities
+module
+
+public import Froberg.TopCountInequalities
+
+@[expose] public section
 
 /-! The prescribed rounded pure-generator count fills the next degree for
 all sufficiently large numbers of variables. -/

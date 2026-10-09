@@ -1,7 +1,11 @@
-import Froberg.FourBlockVariables
-import Froberg.CrossCoefficientSpaces
-import Froberg.PairedDiagonalSpace
-import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+module
+
+public import Froberg.FourBlockVariables
+public import Froberg.CrossCoefficientSpaces
+public import Froberg.PairedDiagonalSpace
+public import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+
+@[expose] public section
 
 /-! Actual four-block polynomial witnesses for individual cross and
 diagonal factors in the product row. -/

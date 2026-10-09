@@ -1,4 +1,8 @@
-import Froberg.TopCountLimits
+module
+
+public import Froberg.TopCountLimits
+
+@[expose] public section
 
 /-! # The eventual numerical hypotheses for projected top-degree multiplication -/
 

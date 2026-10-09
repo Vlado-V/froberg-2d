@@ -1,4 +1,8 @@
-import Quartic.Homogeneous
+module
+
+public import Quartic.Homogeneous
+
+@[expose] public section
 
 /-! # Explicit monomial coefficients compatible with every field extension -/
 noncomputable section

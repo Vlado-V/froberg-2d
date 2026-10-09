@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! Stability of a strictly positive finite transport. The allowed graph
 has a column adjacent to every row; every other column has a chosen parent.

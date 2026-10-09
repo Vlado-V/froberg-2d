@@ -1,7 +1,11 @@
-import Froberg.CoefficientMotion
-import Quartic.SliceMotionAvoidance
-import Quartic.AuxiliaryMotionMatrix
-import Quartic.AuxiliarySurjectivity
+module
+
+public import Froberg.CoefficientMotion
+public import Quartic.SliceMotionAvoidance
+public import Quartic.AuxiliaryMotionMatrix
+public import Quartic.AuxiliarySurjectivity
+
+@[expose] public section
 
 /-! The C.6 passage from closed covector slices to maximal rank of the
 actual coefficient motion. The matrix equations and the auxiliary columns

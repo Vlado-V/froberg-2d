@@ -1,4 +1,8 @@
-import Froberg.MatrixRankSpecialization
+module
+
+public import Froberg.MatrixRankSpecialization
+
+@[expose] public section
 
 /-! # Matrix rank under extension of the ground field -/
 

@@ -1,4 +1,8 @@
-import Froberg.InvariantRationalLine
+module
+
+public import Froberg.InvariantRationalLine
+
+@[expose] public section
 
 /-! # Special-linear characters without regularity hypotheses
 

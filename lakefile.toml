@@ -1,6 +1,6 @@
 name = "froberg"
-version = "0.1.0"
-defaultTargets = ["Froberg"]
+version = "0.2.0"
+defaultTargets = ["Froberg", "Solution", "Challenge"]
 
 [[require]]
 name = "mathlib"
@@ -9,10 +9,15 @@ rev = "8accc04827c389e678c3ef83e623b402e7480394"
 
 [[lean_lib]]
 name = "Froberg"
-globs = ["Froberg.*"]
 
 [[lean_lib]]
 name = "OAI"
 
 [[lean_lib]]
 name = "Quartic"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "Challenge"

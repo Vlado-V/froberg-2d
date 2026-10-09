@@ -1,8 +1,12 @@
-import Froberg.PreparedFourthRow
-import Froberg.ShiftedPreparedCapacities
-import Froberg.ShiftedSmallCapacities
-import Froberg.ShiftedSparseBudgets
-import Froberg.SingleProfileScalar
+module
+
+public import Froberg.PreparedFourthRow
+public import Froberg.ShiftedPreparedCapacities
+public import Froberg.ShiftedSmallCapacities
+public import Froberg.ShiftedSparseBudgets
+public import Froberg.SingleProfileScalar
+
+@[expose] public section
 
 /-! The literal fourth-row capacity record in degrees five through eight.
 The output module, scalar shift, and fixed appended columns are chosen after

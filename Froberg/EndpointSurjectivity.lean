@@ -1,6 +1,10 @@
-import Froberg.Generic
-import Froberg.Prefix
-import Froberg.MonomialCounts
+module
+
+public import Froberg.Generic
+public import Froberg.Prefix
+public import Froberg.MonomialCounts
+
+@[expose] public section
 
 /-! Actual surjective multiplication families obtained from a proved endpoint. -/
 noncomputable section

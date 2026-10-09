@@ -1,6 +1,10 @@
-import Froberg.PreparedBiformCompatibility
-import Froberg.FullPreparedFibers
-import Froberg.FreezeParameters
+module
+
+public import Froberg.PreparedBiformCompatibility
+public import Froberg.FullPreparedFibers
+public import Froberg.FreezeParameters
+
+@[expose] public section
 
 /-! The positive-row scalar coefficients form an actual independent
 factor of the shared prepared parameter space. -/

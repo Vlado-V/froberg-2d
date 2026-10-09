@@ -1,5 +1,9 @@
-import Froberg.GradedCutoffProjection
-import Froberg.TailCutoffCounts
+module
+
+public import Froberg.GradedCutoffProjection
+public import Froberg.TailCutoffCounts
+
+@[expose] public section
 
 /-! The actual rounded odd pure family admits the simultaneous C.3 projection. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Froberg.ScalarShadowBudgets
+module
+
+public import Froberg.ScalarShadowBudgets
+
+@[expose] public section
 
 /-! Generic scalar surjectivity transported from coordinates to arbitrary
 finite-dimensional polynomial or quotient spaces. -/

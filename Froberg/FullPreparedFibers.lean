@@ -1,4 +1,8 @@
-import Froberg.FullPreparedParameters
+module
+
+public import Froberg.FullPreparedParameters
+
+@[expose] public section
 
 /-! Affine restrictions of the common parameter family. In odd degree the
 cutoff pure-X tuple may stay fixed while every lower private part varies. -/

@@ -1,6 +1,10 @@
-import Froberg.PolynomialRowOpening
-import Froberg.BilinearKoszulTransport
-import Froberg.BiformCoordinates
+module
+
+public import Froberg.PolynomialRowOpening
+public import Froberg.BilinearKoszulTransport
+public import Froberg.BiformCoordinates
+
+@[expose] public section
 
 /-! Sparse witnesses yield literal exactness in the fixed intrinsic biform
 space, independent of the output basis chosen to construct a witness. -/

@@ -1,5 +1,9 @@
-import Froberg.PreparedParameterMaps
-import Froberg.BilinearKoszulReindex
+module
+
+public import Froberg.PreparedParameterMaps
+public import Froberg.BilinearKoszulReindex
+
+@[expose] public section
 
 /-! Exactness of a prepared row is open in the full shared coefficient space.
 The scalar and all product columns use those same actual parameters. -/

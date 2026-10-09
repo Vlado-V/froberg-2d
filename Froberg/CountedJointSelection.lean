@@ -1,6 +1,10 @@
-import Froberg.CountedPrivateThinOpen
-import Froberg.ThinGenericFlag
-import Froberg.FiberwisePrincipal
+module
+
+public import Froberg.CountedPrivateThinOpen
+public import Froberg.ThinGenericFlag
+public import Froberg.FiberwisePrincipal
+
+@[expose] public section
 
 /-! Simultaneous exact-count outer model, generic child flag, thin scalar
 quotient, and an arbitrary nonempty joint open of the remaining parameters. -/

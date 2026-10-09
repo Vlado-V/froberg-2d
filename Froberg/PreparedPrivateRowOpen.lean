@@ -1,5 +1,9 @@
-import Froberg.PreparedRowOpen
-import Froberg.PrivateCoefficientRow
+module
+
+public import Froberg.PreparedRowOpen
+public import Froberg.PrivateCoefficientRow
+
+@[expose] public section
 
 /-! The ordinary and private coefficient blocks share one actual prepared
 parameter space. Exactness of their combined row is a principal-open property. -/

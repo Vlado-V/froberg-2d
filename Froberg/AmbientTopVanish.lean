@@ -1,5 +1,9 @@
-import Froberg.AmbientTopGrowth
-import Froberg.BiformComponentVanish
+module
+
+public import Froberg.AmbientTopGrowth
+public import Froberg.BiformComponentVanish
+
+@[expose] public section
 
 /-! The actual top growth projection annihilates every other output
 weight, in particular the literal bottom row. -/

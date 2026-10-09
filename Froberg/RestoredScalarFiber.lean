@@ -1,5 +1,9 @@
-import Froberg.PreparedScalarFiberAt
-import Froberg.RestoredOuterOddOpen
+module
+
+public import Froberg.PreparedScalarFiberAt
+public import Froberg.RestoredOuterOddOpen
+
+@[expose] public section
 
 /-! Positive scalar coefficients remain a free factor after pure even
 restoration. Restricting a principal open through a good point freezes the

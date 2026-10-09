@@ -1,5 +1,9 @@
-import Quartic.ActualSmallMotionAvoidance
-import Quartic.ActualDeformationResponse
+module
+
+public import Quartic.ActualSmallMotionAvoidance
+public import Quartic.ActualDeformationResponse
+
+@[expose] public section
 
 /-!
 # Maximal actual deformation response in the small range

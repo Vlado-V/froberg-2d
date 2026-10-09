@@ -1,6 +1,10 @@
-import Froberg.BaseC4Growth
-import Froberg.CountedTopGrowth
-import Froberg.PreparedOddScalarGrowth
+module
+
+public import Froberg.BaseC4Growth
+public import Froberg.CountedTopGrowth
+public import Froberg.PreparedOddScalarGrowth
+
+@[expose] public section
 
 /-! The exact base generator count gives simultaneous top and ordinary
 growth before any positive-row scalar coefficients are chosen. -/

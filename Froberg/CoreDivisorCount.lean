@@ -1,5 +1,9 @@
-import Froberg.FiberDimensions
-import Froberg.RepeatedMonomials
+module
+
+public import Froberg.FiberDimensions
+public import Froberg.RepeatedMonomials
+
+@[expose] public section
 
 /-! Exact core-divisor counts and the repeated-variable error in coarse
 outer-module capacities. -/

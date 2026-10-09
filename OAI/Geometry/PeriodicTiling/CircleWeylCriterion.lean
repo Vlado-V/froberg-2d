@@ -1,5 +1,9 @@
-import OAI.Geometry.PeriodicTiling.ScalarAverage
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import OAI.Geometry.PeriodicTiling.ScalarAverage
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 namespace OAI
 

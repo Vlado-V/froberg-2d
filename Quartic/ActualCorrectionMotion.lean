@@ -1,6 +1,10 @@
-import Quartic.MovingMiddleCorrection
-import Quartic.QuotientMotionRank
-import Quartic.RowMultiplicationCoordinates
+module
+
+public import Quartic.MovingMiddleCorrection
+public import Quartic.QuotientMotionRank
+public import Quartic.RowMultiplicationCoordinates
+
+@[expose] public section
 
 /-!
 # Actual second-stage correction motion constraints

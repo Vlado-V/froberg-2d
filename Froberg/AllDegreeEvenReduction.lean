@@ -1,11 +1,15 @@
-import Froberg.PairedEvenReduction
-import Froberg.PairedLeadingWitnesses
-import Froberg.PreparedSmallLeadingWitnesses
-import Froberg.PreparedAllScalarSmallReduction
-import Froberg.AllScalarEvenReduction
-import Froberg.AllScalarSmallReduction
-import Froberg.AllScalarEvenLeading
-import Froberg.AllScalarSmallLeading
+module
+
+public import Froberg.PairedEvenReduction
+public import Froberg.PairedLeadingWitnesses
+public import Froberg.PreparedSmallLeadingWitnesses
+public import Froberg.PreparedAllScalarSmallReduction
+public import Froberg.AllScalarEvenReduction
+public import Froberg.AllScalarSmallReduction
+public import Froberg.AllScalarEvenLeading
+public import Froberg.AllScalarSmallLeading
+
+@[expose] public section
 
 /-! The actual scalar/even reduction, uniformly over all degrees at
 least three, ordinary output variables, and sufficiently large scalar

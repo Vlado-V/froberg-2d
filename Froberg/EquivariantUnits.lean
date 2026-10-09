@@ -1,8 +1,12 @@
-import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Algebra.Polynomial.FieldDivision
-import Mathlib.Algebra.MvPolynomial.Polynomial
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Algebra.Polynomial.FieldDivision
+public import Mathlib.Algebra.MvPolynomial.Polynomial
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Polynomial units and special-linear transvections

@@ -1,5 +1,9 @@
-import Froberg.UpperTargetParity
-import Froberg.EvenRestorationSpace
+module
+
+public import Froberg.UpperTargetParity
+public import Froberg.EvenRestorationSpace
+
+@[expose] public section
 
 /-! The supported scalar deletion leaves every positive output-weight
 component unchanged, as required by the literal restoration reduction. -/

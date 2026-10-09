@@ -1,4 +1,8 @@
-import Quartic.SplitBlock31
+module
+
+public import Quartic.SplitBlock31
+
+@[expose] public section
 
 /-!
 # Actual Koszul cross-boundaries in bidegree (3,1)
@@ -30,14 +34,14 @@ def crossPair (i : Fin 4) (j : Fin c) : GeneratorPair (4 + (c + q)) :=
     change i.val < 4 + j.val
     omega⟩
 
-@[simp] private theorem leftIndex_ne_rightIndex {a b : ℕ} (i : Fin a) (j : Fin b) :
+@[simp] theorem leftIndex_ne_rightIndex {a b : ℕ} (i : Fin a) (j : Fin b) :
     Fin.castAdd b i ≠ Fin.natAdd a j := by
   intro h
   have hv := congrArg Fin.val h
   change i.val = a + j.val at hv
   omega
 
-@[simp] private theorem rightIndex_ne_leftIndex {a b : ℕ} (i : Fin a) (j : Fin b) :
+@[simp] theorem rightIndex_ne_leftIndex {a b : ℕ} (i : Fin a) (j : Fin b) :
     Fin.natAdd a j ≠ Fin.castAdd b i := (leftIndex_ne_rightIndex i j).symm
 
 /-- Every incoming (3,1) boundary is the indicated sum of full Koszul boundaries. -/
@@ -87,7 +91,7 @@ theorem cycleEmbedding_injective (g : SplitMiddle31.Mixed K m c) (Q : Fin q → 
   apply sourceEmbedding_injective (q := q)
   exact congrArg Subtype.val h
 
-private def quotientOfCycleMap {V W V' W' : Type*}
+def quotientOfCycleMap {V W V' W' : Type*}
     [AddCommGroup V] [Module K V] [AddCommGroup W] [Module K W]
     [AddCommGroup V'] [Module K V'] [AddCommGroup W'] [Module K W']
     (f : V →ₗ[K] W) (f' : V' →ₗ[K] W') (B : Submodule K V) (B' : Submodule K V')

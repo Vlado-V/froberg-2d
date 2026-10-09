@@ -1,5 +1,9 @@
-import Quartic.SimultaneousBlockConditions
-import Quartic.UniformScalar
+module
+
+public import Quartic.SimultaneousBlockConditions
+public import Quartic.UniformScalar
+
+@[expose] public section
 
 /-!
 # Simultaneous actual block conditions at every transfer endpoint

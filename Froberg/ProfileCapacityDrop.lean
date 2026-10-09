@@ -1,4 +1,8 @@
-import Froberg.FiniteMonomialTransport
+module
+
+public import Froberg.FiniteMonomialTransport
+
+@[expose] public section
 
 /-! Every source profile has a uniformly positive decrease of capacity
 on an explicitly chosen allowed target profile. -/

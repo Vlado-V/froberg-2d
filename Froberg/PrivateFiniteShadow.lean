@@ -1,6 +1,10 @@
-import Froberg.PrivateGoodTargets
-import Froberg.PrivateShadowBookkeeping
-import Froberg.OuterCapacityBounds
+module
+
+public import Froberg.PrivateGoodTargets
+public import Froberg.PrivateShadowBookkeeping
+public import Froberg.OuterCapacityBounds
+
+@[expose] public section
 
 /-! The complete finite regular/private split of the ideal outer shadow. -/
 noncomputable section

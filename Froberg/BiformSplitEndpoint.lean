@@ -1,7 +1,11 @@
-import Froberg.OddSplitComplex
-import Froberg.ParityPolynomialEndpoint
-import Froberg.OppositeCoefficientBoundary
-import Froberg.OddBackgroundBottomDetection
+module
+
+public import Froberg.OddSplitComplex
+public import Froberg.ParityPolynomialEndpoint
+public import Froberg.OppositeCoefficientBoundary
+public import Froberg.OddBackgroundBottomDetection
+
+@[expose] public section
 
 /-! A split biform odd-row calculation is the literal opposite-parity
 Koszul statement for the ordinary enumerated polynomial endpoint. -/

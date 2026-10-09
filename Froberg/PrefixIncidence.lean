@@ -1,5 +1,9 @@
-import Froberg.Prefix
-import Quartic.BilinearGeneric
+module
+
+public import Froberg.Prefix
+public import Quartic.BilinearGeneric
+
+@[expose] public section
 
 /-!
 # The incidence criterion for prefix injectivity

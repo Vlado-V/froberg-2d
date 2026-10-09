@@ -1,5 +1,9 @@
-import Froberg.NormalDeformation
-import Froberg.TargetProjection
+module
+
+public import Froberg.NormalDeformation
+public import Froberg.TargetProjection
+
+@[expose] public section
 
 /-! First normal maps after the fixed target projection used in the transfer
 construction. The resulting bound also applies to the original polynomial ideal. -/

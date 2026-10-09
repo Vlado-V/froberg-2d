@@ -1,5 +1,9 @@
-import Froberg.AdditionalScalarGrowth
-import Froberg.TwoFamilyIntrinsic
+module
+
+public import Froberg.AdditionalScalarGrowth
+public import Froberg.TwoFamilyIntrinsic
+
+@[expose] public section
 
 /-! Splitting off additional scalar columns preserves the actual old family
 and supplies uniform growth in its quotient. -/

@@ -1,5 +1,9 @@
-import Froberg.IntermediateScalar
-import Froberg.OuterGeneric
+module
+
+public import Froberg.IntermediateScalar
+public import Froberg.OuterGeneric
+
+@[expose] public section
 
 /-! Exact prescribed new-layer counts are obtained by selecting the labels
 before choosing the generic vectors. This preserves the full B.11 estimate. -/

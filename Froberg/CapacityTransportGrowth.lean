@@ -1,6 +1,10 @@
-import Froberg.CapacityRowGain
-import Froberg.JointConditionals
-import Froberg.NormalizedLimits
+module
+
+public import Froberg.CapacityRowGain
+public import Froberg.JointConditionals
+public import Froberg.NormalizedLimits
+
+@[expose] public section
 
 /-! Strict growth for a finite system of source and target capacities,
 with its actual joint transport. -/

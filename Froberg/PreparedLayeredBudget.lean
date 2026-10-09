@@ -1,10 +1,14 @@
-import Froberg.ShiftedCountLimits
-import Froberg.PreparedAllEvenCounts
-import Froberg.HigherRelationCost
-import Froberg.OddCoefficientCount
-import Froberg.LayeredCapacityAsymptotic
-import Froberg.LayeredIntegerBudget
-import Froberg.OddRowAugmentedConstants
+module
+
+public import Froberg.ShiftedCountLimits
+public import Froberg.PreparedAllEvenCounts
+public import Froberg.HigherRelationCost
+public import Froberg.OddCoefficientCount
+public import Froberg.LayeredCapacityAsymptotic
+public import Froberg.LayeredIntegerBudget
+public import Froberg.OddRowAugmentedConstants
+
+@[expose] public section
 
 /-! The actual prepared even slots and ambient relation losses satisfy the
 C.4 integer budget. All scalar-variable reserves may be fixed in advance. -/

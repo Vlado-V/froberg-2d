@@ -1,5 +1,9 @@
-import Froberg.PreparedOddParameterProjection
-import Froberg.ScalarVectorRowsOpen
+module
+
+public import Froberg.PreparedOddParameterProjection
+public import Froberg.ScalarVectorRowsOpen
+
+@[expose] public section
 
 /-! The complete odd exactness statement holds on a nonempty principal
 open of the actual prepared parameter space. The same open works for every

@@ -1,6 +1,10 @@
-import Froberg.PreparedCountedOddCycles
-import Froberg.PreparedIndependenceOpen
-import Froberg.FiniteBasisPrincipalIntersection
+module
+
+public import Froberg.PreparedCountedOddCycles
+public import Froberg.PreparedIndependenceOpen
+public import Froberg.FiniteBasisPrincipalIntersection
+
+@[expose] public section
 
 /-! Independence and odd-cycle exactness hold on a single explicit
 principal open inside any supplied nonempty prepared-parameter open. -/

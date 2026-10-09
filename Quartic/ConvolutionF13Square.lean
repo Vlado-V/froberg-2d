@@ -1,6 +1,10 @@
-import Quartic.ConvolutionCubicGeneric
-import Quartic.QuotientExchange
-import Mathlib.LinearAlgebra.Quotient.Pi
+module
+
+public import Quartic.ConvolutionCubicGeneric
+public import Quartic.QuotientExchange
+public import Mathlib.LinearAlgebra.Quotient.Pi
+
+@[expose] public section
 
 /-! # The actual convolution quotient-exchange square -/
 noncomputable section

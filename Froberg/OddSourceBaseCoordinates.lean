@@ -1,5 +1,9 @@
-import Froberg.OddBiformDecomposition
-import Froberg.SourceCoordinateTools
+module
+
+public import Froberg.OddBiformDecomposition
+public import Froberg.SourceCoordinateTools
+
+@[expose] public section
 
 /-! Explicit odd source coordinates after quotienting by the linear outer
 generators. Every higher odd coefficient block is retained unchanged. -/

@@ -1,6 +1,10 @@
-import Froberg.PreparedCountCompatibility
-import Froberg.PreparedPositiveBackground
-import Froberg.PositiveExtraColumn
+module
+
+public import Froberg.PreparedCountCompatibility
+public import Froberg.PreparedPositiveBackground
+public import Froberg.PositiveExtraColumn
+
+@[expose] public section
 
 /-! The temporary extra positive generator and the retained prepared family
 are restrictions of one parameter point. -/

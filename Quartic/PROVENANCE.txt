@@ -1,3 +1,12 @@
+Publication snapshot note (2026-10-09)
+The historical import record below describes the original imported files.
+This submission uses Lean's module system: module/public-import headers and
+required public visibility were added. The stated original-file hashes below
+identify the import snapshot, not these subsequently edited submission files.
+The Quartic library additionally contains the arbitrary-characteristic proof
+and its characteristic-two marked transfer. Only modules needed by the final
+uniform theorem are included here.
+
 Quadratic endpoint foundation: exact source import closure of Quartic.Main.
 Source: /Users/vlado/Documents/Codex/2026-09-26/go/outputs/QuarticLean
 Imported for the d=2 endpoint base of the updated Froberg manuscript.

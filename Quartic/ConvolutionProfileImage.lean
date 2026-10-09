@@ -1,5 +1,9 @@
-import Quartic.ConvolutionLayerInclusions
-import Quartic.ConvolutionCoreImages
+module
+
+public import Quartic.ConvolutionLayerInclusions
+public import Quartic.ConvolutionCoreImages
+
+@[expose] public section
 
 /-!
 # Layer subspaces inside actual quadratic multiplication images

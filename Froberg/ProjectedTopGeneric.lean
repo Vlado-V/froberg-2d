@@ -1,5 +1,9 @@
-import Froberg.ProjectedTopOpen
-import Froberg.AugmentedTopBudget
+module
+
+public import Froberg.ProjectedTopOpen
+public import Froberg.AugmentedTopBudget
+
+@[expose] public section
 
 /-! Generic C.9 with exactly the manuscript's scalar augmentation. -/
 noncomputable section

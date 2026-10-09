@@ -1,4 +1,8 @@
-import Froberg.CoreLower
+module
+
+public import Froberg.CoreLower
+
+@[expose] public section
 
 /-! The core proportion has the exact limiting value specified in B.2. -/
 noncomputable section

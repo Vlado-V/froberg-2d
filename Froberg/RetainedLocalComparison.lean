@@ -1,5 +1,9 @@
-import Froberg.ActualThinProjectedNormal
-import Froberg.RetainedTransfer
+module
+
+public import Froberg.ActualThinProjectedNormal
+public import Froberg.RetainedTransfer
+
+@[expose] public section
 
 /-! The actual retained child homology and deleted child cokernel give
 the two critical-defect bounds in the final local comparison. -/
@@ -14,7 +18,7 @@ variable {F V W : Type*}
   [AddCommGroup W] [Module K W] [FiniteDimensional K W]
 variable {m n d r t c : ℕ}
 
-theorem exists_local_comparison_from_retained (htwo : (2 : K)≠0) (hm : 0 < m)
+theorem exists_local_comparison_from_retained (hm : 0 < m)
     (D : Submodule K (Forms K n (2*d))) (q : Fin r → Forms K n d)
     (hq : LinearIndependent K q) (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] V)
@@ -32,14 +36,14 @@ theorem exists_local_comparison_from_retained (htwo : (2 : K)≠0) (hm : 0 < m)
     (hrel : (D.mkQ.comp formalPolynomialMultiplication).ker ⊓ formalMixed T=
       (D.mkQ.comp formalPolynomialMultiplication).ker ⊓
         formalProducts ((Submodule.span K (Set.range old)).map (renameForm f)) (renameForm f).range)
-    (hcoeff : (actualProjectedMappedCoefficients htwo D.mkQ q hq dual vmap).ker=
-      projectedRetainedHomology htwo D.mkQ q hq T)
+    (hcoeff : (actualProjectedMappedCoefficients D.mkQ q hq dual vmap).ker=
+      projectedRetainedHomology D.mkQ q hq T)
     (hdeleted : finrank K D=genericCokernel K m d (upperCount m d)) :
     Nonempty (LocalComparisonData K n d r (criticalDefect K m d)) := by
-  apply exists_local_comparison_of_actual_thin_slices htwo D q hq dual vmap eJ phi mu hmu C hC hslices
-  · exact coefficient_kernel_critical_bound htwo hm D.mkQ q hq T hT old hold hc hgeneric f hinj hrel
-      (actualProjectedMappedCoefficients htwo D.mkQ q hq dual vmap) hcoeff
+  apply exists_local_comparison_of_actual_thin_slices D q hq dual vmap eJ phi mu hmu C hC hslices
+  · exact coefficient_kernel_critical_bound hm D.mkQ q hq T hT old hold hc hgeneric f hinj hrel
+      (actualProjectedMappedCoefficients D.mkQ q hq dual vmap) hcoeff
   · rw [hdeleted]
-    exact (critical_child_defects_le htwo hm).2
+    exact (critical_child_defects_le hm).2
 
 end Froberg

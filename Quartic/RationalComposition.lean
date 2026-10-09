@@ -1,4 +1,8 @@
-import Quartic.RationalImageAvoidance
+module
+
+public import Quartic.RationalImageAvoidance
+
+@[expose] public section
 
 /-!
 # Composition and clearing denominators of actual rational charts

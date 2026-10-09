@@ -1,5 +1,9 @@
-import Quartic.GenericMatrix
-import Quartic.StandardCases
+module
+
+public import Quartic.GenericMatrix
+public import Quartic.StandardCases
+
+@[expose] public section
 
 /-!
 # Rank conditions around a concrete witness

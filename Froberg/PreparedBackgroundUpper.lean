@@ -1,5 +1,9 @@
-import Froberg.PreparedBiformFamilies
-import Froberg.UpperTargetRange
+module
+
+public import Froberg.PreparedBiformFamilies
+public import Froberg.UpperTargetRange
+
+@[expose] public section
 
 /-! The prepared endpoint family and the Q/E/F/G family are the same
 literal generators, up to their finite enumeration. -/

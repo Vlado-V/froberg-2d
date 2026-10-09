@@ -1,5 +1,9 @@
-import Froberg.LowHomogeneousProduct
-import Froberg.FormalHomology
+module
+
+public import Froberg.LowHomogeneousProduct
+public import Froberg.FormalHomology
+
+@[expose] public section
 
 /-! Exact low-X-degree conditions on an actual prepared background. The
 record does not assume the desired product separation: it controls only

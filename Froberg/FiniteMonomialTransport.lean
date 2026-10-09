@@ -1,5 +1,9 @@
-import Froberg.MonomialProfileTransport
-import Froberg.FiniteProfileTransport
+module
+
+public import Froberg.MonomialProfileTransport
+public import Froberg.FiniteProfileTransport
+
+@[expose] public section
 
 /-! Exact finite transport on individual monomials with source and target
 masses proportional to the actual profile capacities. -/

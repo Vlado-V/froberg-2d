@@ -1,7 +1,11 @@
-import Froberg.PreparedFiniteRows
-import Froberg.PreparedFiniteProducts
-import Froberg.IntermediateScalarBudget
-import Froberg.ParityProfileScalar
+module
+
+public import Froberg.PreparedFiniteRows
+public import Froberg.PreparedFiniteProducts
+public import Froberg.IntermediateScalarBudget
+public import Froberg.ParityProfileScalar
+
+@[expose] public section
 
 /-! Rows with no new generators still have their scalar/product equation.
 The zero sparse-block count handles them, including the row of degree d. -/

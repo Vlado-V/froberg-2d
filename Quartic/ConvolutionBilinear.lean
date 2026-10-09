@@ -1,7 +1,11 @@
-import Quartic.ConvolutionEvaluation
-import Quartic.ConvolutionHilbert
-import Quartic.RationalCurve
-import Mathlib.LinearAlgebra.Matrix.BilinearForm
+module
+
+public import Quartic.ConvolutionEvaluation
+public import Quartic.ConvolutionHilbert
+public import Quartic.RationalCurve
+public import Mathlib.LinearAlgebra.Matrix.BilinearForm
+
+@[expose] public section
 
 /-!
 # Symmetric bilinear coordinates for the actual quadratic inverse factor

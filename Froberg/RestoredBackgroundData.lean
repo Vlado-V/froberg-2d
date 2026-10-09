@@ -1,5 +1,9 @@
-import Froberg.RestoredCertificateOpen
-import Froberg.RestoredScalarCompatibility
+module
+
+public import Froberg.RestoredCertificateOpen
+public import Froberg.RestoredScalarCompatibility
+
+@[expose] public section
 
 /-! The restored certificate gives the literal scalar/positive/outer
 background used in the local comparison, including its enumeration. -/

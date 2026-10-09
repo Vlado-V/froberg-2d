@@ -1,5 +1,9 @@
-import Froberg.PluckerCoordinates
-import Mathlib.LinearAlgebra.ExteriorPower.WedgePairing
+module
+
+public import Froberg.PluckerCoordinates
+public import Mathlib.LinearAlgebra.ExteriorPower.WedgePairing
+
+@[expose] public section
 
 /-! Mixed determinant constraints are linear in the actual Plücker coordinates. -/
 noncomputable section

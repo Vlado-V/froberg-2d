@@ -1,6 +1,10 @@
-import Froberg.IntrinsicKernelCoordinates
-import Froberg.AffineKernelProfiles
-import Froberg.ParameterPullbackOpen
+module
+
+public import Froberg.IntrinsicKernelCoordinates
+public import Froberg.AffineKernelProfiles
+public import Froberg.ParameterPullbackOpen
+
+@[expose] public section
 
 /-! The layered kernel avoidance theorem on actual finite-dimensional
 spaces and actual dual covectors. Coordinate transport is discharged here. -/

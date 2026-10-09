@@ -1,4 +1,8 @@
-import Quartic.Homology
+module
+
+public import Quartic.Homology
+
+@[expose] public section
 
 /-!
 # The moving correction space

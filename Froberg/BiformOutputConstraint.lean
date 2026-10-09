@@ -1,4 +1,8 @@
-import Froberg.BiformWitnesses
+module
+
+public import Froberg.BiformWitnesses
+
+@[expose] public section
 
 /-! Output constraints survive adjoining scalar variables and renaming
 within the two variable blocks. -/

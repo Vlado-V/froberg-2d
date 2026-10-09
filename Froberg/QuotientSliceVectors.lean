@@ -1,5 +1,9 @@
-import Froberg.ActualSliceVectors
-import Froberg.ScalarQuotientSlices
+module
+
+public import Froberg.ActualSliceVectors
+public import Froberg.ScalarQuotientSlices
+
+@[expose] public section
 
 /-! Lifting and descending actual covector slices through an arbitrary
 target quotient, with the source held fixed. -/

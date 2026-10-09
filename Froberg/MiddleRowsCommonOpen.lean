@@ -1,5 +1,9 @@
-import Froberg.BiformLayerOpen
-import Froberg.MiddleTargetCoverage
+module
+
+public import Froberg.BiformLayerOpen
+public import Froberg.MiddleTargetCoverage
+
+@[expose] public section
 
 /-! The prescribed higher generator layers fill every middle target row
 simultaneously, with a single family in each active layer. -/

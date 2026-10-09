@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! The exact rank bound for restricting coefficient equations to an
 injected homology space, as used in Proposition C.6. -/

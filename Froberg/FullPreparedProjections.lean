@@ -1,5 +1,9 @@
-import Froberg.FullPreparedFibers
-import Froberg.ParameterPullbackOpen
+module
+
+public import Froberg.FullPreparedFibers
+public import Froberg.ParameterPullbackOpen
+
+@[expose] public section
 
 /-! Surjective parameter projections let the prepared rows, the scalar
 background, and the outer/private linear parts impose conditions on one

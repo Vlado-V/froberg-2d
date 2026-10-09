@@ -1,5 +1,9 @@
-import Froberg.ConvolutionImage
-import Mathlib.RingTheory.Flat.Basic
+module
+
+public import Froberg.ConvolutionImage
+public import Mathlib.RingTheory.Flat.Basic
+
+@[expose] public section
 
 /-! # Convolution reaches the full separated homogeneous target -/
 

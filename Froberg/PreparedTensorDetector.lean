@@ -1,4 +1,8 @@
-import Froberg.CoreTensorProjection
+module
+
+public import Froberg.CoreTensorProjection
+
+@[expose] public section
 
 /-! The exact tensor detector annihilates the actual prepared background.
 Only the scalar ideal, quadratic output kernel, and explicit private term

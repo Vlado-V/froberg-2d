@@ -1,6 +1,10 @@
-import Froberg.PreparedWitnessEmbedding
-import Froberg.PreparedFiniteRows
-import Froberg.PreparedEvenReduction
+module
+
+public import Froberg.PreparedWitnessEmbedding
+public import Froberg.PreparedFiniteRows
+public import Froberg.PreparedEvenReduction
+
+@[expose] public section
 
 /-! Above the coefficient degree the prepared-family condition is just
 independence of actual products; it is open in the same common parameters. -/

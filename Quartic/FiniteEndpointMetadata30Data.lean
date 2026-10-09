@@ -1,7 +1,11 @@
-import Quartic.FiniteEndpointCheckerLoad
-import Quartic.FiniteEndpointProductRows
-import Quartic.FiniteEndpointNatural
-import Quartic.FiniteEndpointChunks
+module
+
+public import Quartic.FiniteEndpointCheckerLoad
+public import Quartic.FiniteEndpointProductRows
+public import Quartic.FiniteEndpointNatural
+public import Quartic.FiniteEndpointChunks
+
+@[expose] public section
 
 /-! Compact data for the supplied thirty-variable certificate. These declarations
 contain data only; all required properties are proved in separate modules. -/

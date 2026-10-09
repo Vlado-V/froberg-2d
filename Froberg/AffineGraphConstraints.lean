@@ -1,5 +1,9 @@
-import Froberg.AffineSharedPolynomial
-import Quartic.PolynomialSubspaceCovectorCharts
+module
+
+public import Froberg.AffineSharedPolynomial
+public import Quartic.PolynomialSubspaceCovectorCharts
+
+@[expose] public section
 
 /-! Literal first-stage graph equations. Their higher-covector rank equals
 the actual product-image dimension; adjoining the fixed bottom covector

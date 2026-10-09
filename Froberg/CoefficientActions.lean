@@ -1,6 +1,10 @@
-import Froberg.GeneratorActions
-import Froberg.PolynomialSectionActions
-import Froberg.GenericFractionRank
+module
+
+public import Froberg.GeneratorActions
+public import Froberg.PolynomialSectionActions
+public import Froberg.GenericFractionRank
+
+@[expose] public section
 
 /-! # Actual special-linear actions on coefficient tuples and forms -/
 

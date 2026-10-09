@@ -1,6 +1,10 @@
-import Froberg.RestoredFormalRelations
-import Froberg.SupportedDeletionProjection
-import Froberg.RestorationRename
+module
+
+public import Froberg.RestoredFormalRelations
+public import Froberg.SupportedDeletionProjection
+public import Froberg.RestorationRename
+
+@[expose] public section
 
 /-! The formal relation comparison after the manuscript's supported
 scalar deletion, using literal restored homogeneous polynomials. -/
@@ -10,7 +14,6 @@ open Module MvPolynomial
 variable {K : Type} [Field K] [Infinite K] {h m d r : ℕ}
 
 theorem restored_supported_formal_relations
-    (htwo : (2 : K)≠0)
     (g : Fin r → evenRestorationSpace (K := K) (coreWeight h m) d)
     (hi : LinearIndependent K (restorationForms (coreWeight h m) g))
     (D : Submodule K (Forms K (h+m) (2*d)))
@@ -31,7 +34,7 @@ theorem restored_supported_formal_relations
         formalMixed (Submodule.span K (Set.range (restorationForms (coreWeight h m) g)))=
       (D.mkQ.comp formalPolynomialMultiplication).ker ⊓
         formalProducts Q (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
-  exact restored_projected_formal_relations htwo (coreWeight h m) g hi D.mkQ
+  exact restored_projected_formal_relations (coreWeight h m) g hi D.mkQ
     (supported_deletion_odd_zero D hD) (supported_deletion_positive_zero D hD)
     hodd degree Q _ hQ hlabel core_weight_zero_mem_scalar_range hreduce
 

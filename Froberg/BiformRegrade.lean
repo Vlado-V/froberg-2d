@@ -1,4 +1,8 @@
-import Froberg.BiformRange
+module
+
+public import Froberg.BiformRange
+
+@[expose] public section
 
 /-! Degree identifications for literal homogeneous tensor multiplication. -/
 noncomputable section

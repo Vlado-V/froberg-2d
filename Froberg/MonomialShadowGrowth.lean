@@ -1,7 +1,11 @@
-import Froberg.ProfileProbabilities
-import Froberg.MonomialMinorization
-import Froberg.MonomialCapacityDecrease
-import Froberg.CapacityTransportGrowth
+module
+
+public import Froberg.ProfileProbabilities
+public import Froberg.MonomialMinorization
+public import Froberg.MonomialCapacityDecrease
+public import Froberg.CapacityTransportGrowth
+
+@[expose] public section
 
 /-! Strict growth for all finite monomial shadows. The transport is the
 explicit profile coupling lifted through actual divisor monomials. -/

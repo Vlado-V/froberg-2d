@@ -1,5 +1,9 @@
-import Froberg.EvenBackgroundScalar
-import Froberg.OddEvenTargetExtension
+module
+
+public import Froberg.EvenBackgroundScalar
+public import Froberg.OddEvenTargetExtension
+
+@[expose] public section
 
 /-! The even-case background is exactly the general Q/F/G quotient
 with the G family empty. -/

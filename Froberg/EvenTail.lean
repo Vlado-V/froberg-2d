@@ -1,4 +1,8 @@
-import Froberg.TailPureCutoff
+module
+
+public import Froberg.TailPureCutoff
+
+@[expose] public section
 
 /-! In even degree the prescribed pure family is the entire homogeneous space. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Quartic.RationalMatrixPullback
+module
+
+public import Quartic.RationalMatrixPullback
+
+@[expose] public section
 
 /-!
 # Successive kernel constraints along rational parameterizations

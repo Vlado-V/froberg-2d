@@ -1,4 +1,8 @@
-import Froberg.ShiftedPreparedCapacities
+module
+
+public import Froberg.ShiftedPreparedCapacities
+
+@[expose] public section
 
 /-! Actual shifted quadratic counts, uniformly in the output detector. -/
 noncomputable section

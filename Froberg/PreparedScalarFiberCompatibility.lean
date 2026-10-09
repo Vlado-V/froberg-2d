@@ -1,4 +1,8 @@
-import Froberg.PreparedScalarFiber
+module
+
+public import Froberg.PreparedScalarFiber
+
+@[expose] public section
 
 /-! Freezing the remaining prepared coordinates preserves the base
 family and makes the positive generators exactly E_i+a_i. -/

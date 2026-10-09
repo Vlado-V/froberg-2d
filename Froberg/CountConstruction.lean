@@ -1,5 +1,9 @@
-import Froberg.AsymptoticCounts
-import Froberg.CountMargin
+module
+
+public import Froberg.AsymptoticCounts
+public import Froberg.CountMargin
+
+@[expose] public section
 
 /-! Exact counts at either critical endpoint, with lower-order auxiliary
 families and any prescribed fixed lower bound for the core dimension. -/

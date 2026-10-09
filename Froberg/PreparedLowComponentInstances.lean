@@ -1,8 +1,12 @@
-import Froberg.PreparedTensorDetector
-import Froberg.PreparedBiformFamilies
-import Froberg.PreparedFamilyIndependence
-import Froberg.RestoredScalarCompatibility
-import Froberg.BackgroundFlagSpan
+module
+
+public import Froberg.PreparedTensorDetector
+public import Froberg.PreparedBiformFamilies
+public import Froberg.PreparedFamilyIndependence
+public import Froberg.RestoredScalarCompatibility
+public import Froberg.BackgroundFlagSpan
+
+@[expose] public section
 
 /-! Literal low-degree components of prepared and restored backgrounds.
 The scalar space includes every scalar tail, while the linear space includes

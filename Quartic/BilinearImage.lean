@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.BilinearMap
-import Mathlib.LinearAlgebra.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.BilinearMap
+public import Mathlib.LinearAlgebra.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Actual images of subspaces under bilinear multiplication

@@ -1,6 +1,10 @@
-import Froberg.PreparedLowComponentInstances
-import Froberg.RestoredEndpointSpan
-import Froberg.RestoredQuadraticParameters
+module
+
+public import Froberg.PreparedLowComponentInstances
+public import Froberg.RestoredEndpointSpan
+public import Froberg.RestoredQuadraticParameters
+
+@[expose] public section
 
 /-! The actual restored C.2 coordinates have exactly the scalar space and
 low components used by the formal separation bridge. -/

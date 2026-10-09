@@ -1,4 +1,8 @@
-import Mathlib.Tactic
+module
+
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The normalized two-family dimension ratio gives the full coefficient
 incidence budget, including both Grassmannian overheads. -/

@@ -1,4 +1,8 @@
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! A fixed additional source monomial affects only O(m^s) target monomials. -/
 noncomputable section

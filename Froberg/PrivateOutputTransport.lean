@@ -1,6 +1,10 @@
-import Froberg.PrivateSparseSeparation
-import Froberg.PolynomialOutputImage
-import Froberg.HomogeneousOutputCoordinates
+module
+
+public import Froberg.PrivateSparseSeparation
+public import Froberg.PolynomialOutputImage
+public import Froberg.HomogeneousOutputCoordinates
+
+@[expose] public section
 
 /-! The coordinate private maps are exactly multiplication by the literal
 private-power generators after transporting their output coordinates. -/

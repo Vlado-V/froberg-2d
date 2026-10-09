@@ -1,6 +1,10 @@
-import Froberg.TopRowComparison
-import Froberg.MixedScalarComponents
-import Froberg.OddBackgroundProduct
+module
+
+public import Froberg.TopRowComparison
+public import Froberg.MixedScalarComponents
+public import Froberg.OddBackgroundProduct
+
+@[expose] public section
 
 /-! The actual ambient target projects to the C.11 tensor quotient.
 Only a projection is needed for its scalar image lower bound. -/

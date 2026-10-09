@@ -1,4 +1,8 @@
-import Froberg.BinomialProfiles
+module
+
+public import Froberg.BinomialProfiles
+
+@[expose] public section
 
 /-! Explicit strictly positive transport for every allowed outer-module
 profile pair. The construction diverts a marked Bernoulli event to the last

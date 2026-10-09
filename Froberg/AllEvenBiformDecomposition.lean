@@ -1,5 +1,9 @@
-import Froberg.BiformParitySpaces
-import Froberg.AllEvenHomogeneousComponents
+module
+
+public import Froberg.BiformParitySpaces
+public import Froberg.AllEvenHomogeneousComponents
+
+@[expose] public section
 
 /-! Linear even-parity biform coordinates, with the actual weighted
 component formula in each degree. This applies also to degree 2*d. -/

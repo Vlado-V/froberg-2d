@@ -1,5 +1,9 @@
-import Froberg.CanonicalFrameConstraint
-import Froberg.AllDegreeEvenReduction
+module
+
+public import Froberg.CanonicalFrameConstraint
+public import Froberg.AllDegreeEvenReduction
+
+@[expose] public section
 
 /-! Actual-count even reduction and leading independence for any
 independent quadratic output frame, selected after the scalar threshold. -/

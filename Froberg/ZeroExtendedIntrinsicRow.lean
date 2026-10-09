@@ -1,6 +1,10 @@
-import Froberg.ZeroExtendedPolynomialRow
-import Froberg.PreparedCoreExtension
-import Froberg.IntrinsicBiformRow
+module
+
+public import Froberg.ZeroExtendedPolynomialRow
+public import Froberg.PreparedCoreExtension
+public import Froberg.IntrinsicBiformRow
+
+@[expose] public section
 
 /-! The core-extension argument produces exactness in the actual fixed
 biform coefficient spaces, ready for a common-parameter rank open. -/

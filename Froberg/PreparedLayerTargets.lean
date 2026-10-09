@@ -1,6 +1,10 @@
-import Froberg.PreparedBiformCoordinates
-import Froberg.AllTargetElimination
-import Froberg.BiformFullRow
+module
+
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.AllTargetElimination
+public import Froberg.BiformFullRow
+
+@[expose] public section
 
 /-! Actual prepared layer generators satisfy the top-component and support
 conditions used by the target-row lifts. Their scalar shifts are unrestricted. -/

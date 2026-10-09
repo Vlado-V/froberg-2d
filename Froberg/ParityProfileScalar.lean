@@ -1,7 +1,11 @@
-import Froberg.ParityProfileGrowth
-import Froberg.ProjectedPrefix
-import Froberg.ScalarSeparationAsymptotic
-import Froberg.CapacityBinomial
+module
+
+public import Froberg.ParityProfileGrowth
+public import Froberg.ProjectedPrefix
+public import Froberg.ScalarSeparationAsymptotic
+public import Froberg.CapacityBinomial
+
+@[expose] public section
 
 /-! The common scalar list is generically injective after removing all
 product profiles in a row of B.4. -/

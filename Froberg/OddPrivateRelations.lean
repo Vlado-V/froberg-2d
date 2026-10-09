@@ -1,5 +1,9 @@
-import Froberg.BiformParitySpaces
-import Froberg.ExtraRelationLoss
+module
+
+public import Froberg.BiformParitySpaces
+public import Froberg.ExtraRelationLoss
+
+@[expose] public section
 
 /-! The remaining C.13 relations are actual products of the mixed pure
 generators with positive even biform coefficients. Their image completes

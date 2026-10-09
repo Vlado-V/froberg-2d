@@ -1,5 +1,9 @@
-import Quartic.QuotientBilinearImage
-import Mathlib.LinearAlgebra.ExteriorPower.WedgePairing
+module
+
+public import Quartic.QuotientBilinearImage
+public import Mathlib.LinearAlgebra.ExteriorPower.WedgePairing
+
+@[expose] public section
 
 /-! Actual failure of a quotient projection forces vanishing exterior products. -/
 noncomputable section

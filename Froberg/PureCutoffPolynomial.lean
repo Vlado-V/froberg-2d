@@ -1,5 +1,9 @@
-import Froberg.PureCutoffPropagation
-import Froberg.PureCutoff
+module
+
+public import Froberg.PureCutoffPropagation
+public import Froberg.PureCutoff
+
+@[expose] public section
 
 /-! Translation of the intrinsic pure cutoff into the actual polynomial
 product equality used by upper-row propagation. -/

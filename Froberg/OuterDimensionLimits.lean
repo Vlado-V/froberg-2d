@@ -1,8 +1,12 @@
-import Froberg.StrictModelCounts
-import Froberg.ExactOuterLimit
-import Froberg.ProfileCriticalRatio
-import Froberg.UpperEndpointConvolution
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.StrictModelCounts
+public import Froberg.ExactOuterLimit
+public import Froberg.ProfileCriticalRatio
+public import Froberg.UpperEndpointConvolution
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! Leading dimensions and the lower-order deficit in the outer scalar quotient. -/
 noncomputable section

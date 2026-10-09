@@ -1,7 +1,11 @@
-import Froberg.PolynomialOutputImage
-import Froberg.PolynomialRowKernel
-import Froberg.IntermediateOutputEmbedding
-import Froberg.ScalarVectorInjection
+module
+
+public import Froberg.PolynomialOutputImage
+public import Froberg.PolynomialRowKernel
+public import Froberg.IntermediateOutputEmbedding
+public import Froberg.ScalarVectorInjection
+
+@[expose] public section
 
 /-! The complete even polynomial row: common scalars, a sparse new layer,
 and all formal products. Its only kernel is the literal constant Koszul source. -/

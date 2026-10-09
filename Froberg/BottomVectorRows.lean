@@ -1,6 +1,10 @@
-import Froberg.LinearOutputTensor
-import Froberg.OddBackgroundRowProjection
-import Froberg.ScalarDoubleQuotient
+module
+
+public import Froberg.LinearOutputTensor
+public import Froberg.OddBackgroundRowProjection
+public import Froberg.ScalarDoubleQuotient
+
+@[expose] public section
 
 /-! The actual bottom tensor relation map is the vector-valued scalar
 model, including both the old vector relations and the scalar family. -/

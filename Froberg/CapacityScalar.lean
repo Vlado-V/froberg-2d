@@ -1,6 +1,10 @@
-import Froberg.CapacityFactors
-import Froberg.CapacityQuadratic
-import Froberg.CapacityBinomial
+module
+
+public import Froberg.CapacityFactors
+public import Froberg.CapacityQuadratic
+public import Froberg.CapacityBinomial
+
+@[expose] public section
 
 /-! # Uniform scalar-capacity inequalities -/
 

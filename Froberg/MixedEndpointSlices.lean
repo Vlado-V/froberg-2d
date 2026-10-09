@@ -1,7 +1,11 @@
-import Froberg.MixedActualSlices
-import Froberg.EndpointThinSlices
-import Froberg.TopDegreeSeparation
-import Froberg.PreparedLayeredBudget
+module
+
+public import Froberg.MixedActualSlices
+public import Froberg.EndpointThinSlices
+public import Froberg.TopDegreeSeparation
+public import Froberg.PreparedLayeredBudget
+
+@[expose] public section
 
 /-! The odd mixed-background C.4 conclusion on the actual endpoint
 quotient, with its true target dimension as the thin-slice index. -/

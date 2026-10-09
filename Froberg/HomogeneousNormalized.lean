@@ -1,6 +1,10 @@
-import Froberg.InitialSubspace
-import Froberg.MonomialExpansionBound
-import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+module
+
+public import Froberg.InitialSubspace
+public import Froberg.MonomialExpansionBound
+public import Mathlib.Data.Finsupp.MonomialOrder.DegLex
+
+@[expose] public section
 
 /-! Ordinary normalized multiplication growth, valid in every pair of degrees. -/
 noncomputable section

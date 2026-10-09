@@ -1,4 +1,8 @@
-import Froberg.CoefficientReconstruction
+module
+
+public import Froberg.CoefficientReconstruction
+
+@[expose] public section
 
 /-! After removing the unique private-private row-two boundary, delayed
 pure-output terms vanish inductively. The ordinary even-row elimination then

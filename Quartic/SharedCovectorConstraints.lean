@@ -1,4 +1,8 @@
-import Quartic.CoefficientConstraintRank
+module
+
+public import Quartic.CoefficientConstraintRank
+
+@[expose] public section
 
 /-!
 # Shared child and auxiliary-target covector equations

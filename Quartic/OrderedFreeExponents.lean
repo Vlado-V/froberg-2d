@@ -1,6 +1,10 @@
-import Quartic.FreePieces
-import Mathlib.Data.Finsupp.MonomialOrder
-import Mathlib.Data.Fintype.Sort
+module
+
+public import Quartic.FreePieces
+public import Mathlib.Data.Finsupp.MonomialOrder
+public import Mathlib.Data.Fintype.Sort
+
+@[expose] public section
 
 /-!
 # Additively ordered finite free-monomial indices

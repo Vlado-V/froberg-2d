@@ -1,5 +1,9 @@
-import Froberg.PrefixSurjectivity
-import Froberg.PrefixPrediction
+module
+
+public import Froberg.PrefixSurjectivity
+public import Froberg.PrefixPrediction
+
+@[expose] public section
 
 /-! The complete lower-degree input: generic forms have the predicted Hilbert
 function through degree `2*d-1` in sufficiently many variables. -/

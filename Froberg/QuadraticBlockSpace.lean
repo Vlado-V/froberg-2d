@@ -1,5 +1,9 @@
-import Froberg.QuadraticBlockAssembly
-import Froberg.PairedSpace
+module
+
+public import Froberg.QuadraticBlockAssembly
+public import Froberg.PairedSpace
+
+@[expose] public section
 
 /-! A strengthened quadratic independent-product construction, and the
 quadratic dimension required in Proposition 4.2. -/

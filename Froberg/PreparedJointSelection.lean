@@ -1,4 +1,8 @@
-import Froberg.PreparedJointCoordinates
+module
+
+public import Froberg.PreparedJointCoordinates
+
+@[expose] public section
 
 /-! The exact-count generic child flag and thin bottom quotient can be
 chosen inside any nonempty open of the full actual prepared family. -/

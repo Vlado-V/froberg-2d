@@ -1,4 +1,8 @@
-import Quartic.HomogeneousNullstellensatz
+module
+
+public import Quartic.HomogeneousNullstellensatz
+
+@[expose] public section
 
 /-! # Finite-degree multiplication certificates for geometric projective emptiness -/
 noncomputable section

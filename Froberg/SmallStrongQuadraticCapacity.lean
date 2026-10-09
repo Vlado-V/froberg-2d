@@ -1,5 +1,9 @@
-import Froberg.SmallFiniteCapacities
-import Froberg.SmallCrossCapacities
+module
+
+public import Froberg.SmallFiniteCapacities
+public import Froberg.SmallCrossCapacities
+
+@[expose] public section
 
 /-! The full quadratic block construction has density 1/4. In degrees
 three and four it retains enough capacity after intersecting any detector

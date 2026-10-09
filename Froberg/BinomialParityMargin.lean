@@ -1,5 +1,9 @@
-import Mathlib.Data.Nat.Choose.Sum
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Nat.Choose.Sum
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact finite binomial mass retained in the scalar separation of B.4. -/
 namespace Froberg

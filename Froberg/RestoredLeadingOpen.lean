@@ -1,5 +1,9 @@
-import Froberg.PreparedPositiveLeadingOpen
-import Froberg.RestoredQuadraticParameters
+module
+
+public import Froberg.PreparedPositiveLeadingOpen
+public import Froberg.RestoredQuadraticParameters
+
+@[expose] public section
 
 /-! Actual witnesses for each positive row give one nonempty principal
 open where all restored leading families are independent. -/

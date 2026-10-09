@@ -1,5 +1,9 @@
-import Froberg.PreparedRestrictedCertifiedFiber
-import Froberg.PreparedBaseGrowthOpen
+module
+
+public import Froberg.PreparedRestrictedCertifiedFiber
+public import Froberg.PreparedBaseGrowthOpen
+
+@[expose] public section
 
 /-! The actual-count shared base growth, base certificates, and enlarged
 certificates coexist before the temporary columns are frozen. -/

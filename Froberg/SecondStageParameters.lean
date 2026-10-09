@@ -1,5 +1,9 @@
-import Froberg.ClosedBaseParameters
-import Froberg.SecondStageSlices
+module
+
+public import Froberg.ClosedBaseParameters
+public import Froberg.SecondStageSlices
+
+@[expose] public section
 
 /-! Graph parameters over a sliced algebraic base, with all constrained
 first-stage vectors quantified and only the common final parameters chosen. -/

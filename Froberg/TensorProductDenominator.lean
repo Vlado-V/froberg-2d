@@ -1,4 +1,8 @@
-import Froberg.CoreBiform
+module
+
+public import Froberg.CoreBiform
+
+@[expose] public section
 
 /-! Actual tensor-product denominator pieces are killed by the split detector
 when either their output product or their scalar product is killed. -/

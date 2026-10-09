@@ -1,4 +1,8 @@
-import Froberg.DetectedLinearPairs
+module
+
+public import Froberg.DetectedLinearPairs
+
+@[expose] public section
 
 /-! Actual quadratic output projections for finitely many private linear
 columns. The only target dimension cost is 2h−1. -/

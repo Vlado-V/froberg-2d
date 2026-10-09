@@ -1,7 +1,11 @@
-import Quartic.HomogeneousCoefficientCoordinates
-import Quartic.BilinearScalarExtension
-import Froberg.OuterMultiplication
-import Quartic.PolynomialBilinearCoordinates
+module
+
+public import Quartic.HomogeneousCoefficientCoordinates
+public import Quartic.BilinearScalarExtension
+public import Froberg.OuterMultiplication
+public import Quartic.PolynomialBilinearCoordinates
+
+@[expose] public section
 
 /-!
 # Field-compatible coordinates for actual row multiplication

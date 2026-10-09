@@ -1,6 +1,10 @@
-import Froberg.PreparedPositiveIndependence
-import Froberg.FiniteBasisPrincipalIntersection
-import Froberg.PreparedIndependenceOpen
+module
+
+public import Froberg.PreparedPositiveIndependence
+public import Froberg.FiniteBasisPrincipalIntersection
+public import Froberg.PreparedIndependenceOpen
+
+@[expose] public section
 
 /-! Independent positive leading parts can be imposed simultaneously on
 the full prepared parameter space using the actual row witnesses. -/

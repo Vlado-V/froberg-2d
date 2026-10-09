@@ -1,5 +1,9 @@
-import Quartic.RankOpen
-import Quartic.RationalCurve
+module
+
+public import Quartic.RankOpen
+public import Quartic.RationalCurve
+
+@[expose] public section
 
 /-!
 # Polynomial parameter curves and rank

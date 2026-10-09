@@ -1,5 +1,9 @@
-import Froberg.PrivateFullParameterOpen
-import Froberg.FullPreparedProjections
+module
+
+public import Froberg.PrivateFullParameterOpen
+public import Froberg.FullPreparedProjections
+
+@[expose] public section
 
 /-! Private positive-row reduction is an actual principal open on the same
 fixed-pure parameter space used for the outer and scalar conditions. -/

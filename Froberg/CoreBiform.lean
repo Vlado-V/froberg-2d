@@ -1,6 +1,10 @@
-import Froberg.PreparedBackground
-import Froberg.PolynomialTensorTransport
-import Quartic.SplitTensor
+module
+
+public import Froberg.PreparedBackground
+public import Froberg.PolynomialTensorTransport
+public import Quartic.SplitTensor
+
+@[expose] public section
 
 /-! Weighted X-degree extraction equals the actual tensor biform component. -/
 noncomputable section

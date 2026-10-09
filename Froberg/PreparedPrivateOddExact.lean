@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateFormalRelations
-import Froberg.OddSplitRestriction
+module
+
+public import Froberg.PreparedPrivateFormalRelations
+public import Froberg.OddSplitRestriction
+
+@[expose] public section
 
 /-! The private background inherits independence and odd exactness from
 the complete prepared family, after removing the outer F columns. -/

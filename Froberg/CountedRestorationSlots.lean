@@ -1,5 +1,9 @@
-import Froberg.PreparedPureSlots
-import Froberg.EvenTail
+module
+
+public import Froberg.PreparedPureSlots
+public import Froberg.EvenTail
+
+@[expose] public section
 
 /-! The pure basis occupies actual appended quadratic slots. Optional
 additional quadratic columns do not interfere with these distinguished slots. -/

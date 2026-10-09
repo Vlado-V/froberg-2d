@@ -1,5 +1,9 @@
-import Froberg.MixedPacking
-import Froberg.ProjectionFailure
+module
+
+public import Froberg.MixedPacking
+public import Froberg.ProjectionFailure
+
+@[expose] public section
 
 /-! Actual quotient-projection failures for blocks of attached relations. -/
 noncomputable section

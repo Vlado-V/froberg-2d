@@ -1,5 +1,9 @@
-import Froberg.PrivatePolynomialMap
-import Froberg.Koszul
+module
+
+public import Froberg.PrivatePolynomialMap
+public import Froberg.Koszul
+
+@[expose] public section
 
 /-! The private polynomial row has no more than its constant alternating
 relations. The proof uses the literal coefficients of its polynomial kernel. -/

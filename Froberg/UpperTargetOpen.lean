@@ -1,6 +1,10 @@
-import Froberg.AllTargetElimination
-import Froberg.Koszul
-import Froberg.SurjectiveParameterOpen
+module
+
+public import Froberg.AllTargetElimination
+public import Froberg.Koszul
+public import Froberg.SurjectiveParameterOpen
+
+@[expose] public section
 
 /-! The simultaneous high-target conclusion is an ordinary rank-open
 condition on the full generator family, in a fixed quotient of actual forms. -/

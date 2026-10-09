@@ -1,4 +1,8 @@
-import Froberg.OddSplitElimination
+module
+
+public import Froberg.OddSplitElimination
+
+@[expose] public section
 
 /-! Even-parity elimination needs only the even rows constructed in B.4.
 The other coefficient rows vanish by parity, without extra rank assumptions. -/

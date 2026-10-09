@@ -1,5 +1,9 @@
-import Froberg.EvenPolynomialRow
-import Froberg.SingleProfileScalar
+module
+
+public import Froberg.EvenPolynomialRow
+public import Froberg.SingleProfileScalar
+
+@[expose] public section
 
 /-! The Appendix E rows use a single scalar half-degree, including their
 unequal output splits. The exact row kernel needs no balanced output split. -/

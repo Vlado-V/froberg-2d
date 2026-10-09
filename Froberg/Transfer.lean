@@ -1,5 +1,9 @@
-import Froberg.ProjectedDeformation
-import Froberg.GenericMonotonicity
+module
+
+public import Froberg.ProjectedDeformation
+public import Froberg.GenericMonotonicity
+
+@[expose] public section
 
 /-! The transfer inequalities, derived from an actual projected polynomial
 complex and its first normal map. The construction of such data is separate. -/

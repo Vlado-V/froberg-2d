@@ -1,4 +1,8 @@
-import Froberg.VectorExpansionOpen
+module
+
+public import Froberg.VectorExpansionOpen
+
+@[expose] public section
 
 /-! A common affine coefficient space for arbitrary homogeneous vector generators. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.RestoredCommonSelection
-import Froberg.PreparedRestoredRelations
+module
+
+public import Froberg.RestoredCommonSelection
+public import Froberg.PreparedRestoredRelations
+
+@[expose] public section
 
 /-! A common restored certificate supplies the background independence
 and odd-cycle hypotheses of the literal formal-relation theorem. -/
@@ -72,8 +76,7 @@ theorem RestoredCertificate.background_independent (hdp : 1≤d) (hd : d%2=0)
   have hi := cert.independent.comp (Fin.castAdd f) (Fin.castAdd_injective r f)
   simpa only [Function.comp_def,restoredOuterEndpoint_castAdd] using hi
 
-theorem restored_certificate_formal_relations (htwo : (2 : K)≠0)
-    (hdp : 1≤d) (hd : d%2=0)
+theorem restored_certificate_formal_relations (hdp : 1≤d) (hd : d%2=0)
     (hO : ∀ j∈J,O j≤Forms K h j) (hJ : ∀ j∈J,j≤d) (heven : ∀ j∈J,j%2=0)
     (hpos : ∀ j∈J,0<j)
     (idx : Fin r ≃ Label q J counts) (slot : Fin (finrank K (Forms K h d)) → Fin r)
@@ -88,7 +91,7 @@ theorem restored_certificate_formal_relations (htwo : (2 : K)≠0)
         formalProducts ((Submodule.span K (Set.range (fun j : Fin q => p.1.1.1 (Sum.inl j)))).map
           (renameForm (Fin.natAdd h)))
           (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
-  apply prepared_restored_formal_relations htwo hd hO hJ heven hpos idx slot hslot p.1
+  apply prepared_restored_formal_relations hd hO hJ heven hpos idx slot hslot p.1
     (cert.background_independent hdp hd hO hJ heven idx slot p) D hD
   · intro a ha
     have hz := biform_restoration_odd_cycle_zero

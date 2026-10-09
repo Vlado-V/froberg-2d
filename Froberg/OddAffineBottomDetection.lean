@@ -1,7 +1,11 @@
-import Froberg.OddEvenAffineRelations
-import Froberg.OddEvenBottomDetection
-import Froberg.SurjectiveSplitTarget
-import Froberg.OddAmbientProduct
+module
+
+public import Froberg.OddEvenAffineRelations
+public import Froberg.OddEvenBottomDetection
+public import Froberg.SurjectiveSplitTarget
+public import Froberg.OddAmbientProduct
+
+@[expose] public section
 
 /-! The actual appended odd quotient satisfies the zero-bottom exclusion
 used by the common scalar incidence theorem. -/

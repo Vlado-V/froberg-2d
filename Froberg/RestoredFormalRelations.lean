@@ -1,6 +1,10 @@
-import Froberg.EvenFormalRelations
-import Froberg.EvenRestorationSpace
-import Froberg.ParityWeights
+module
+
+public import Froberg.EvenFormalRelations
+public import Froberg.EvenRestorationSpace
+public import Froberg.ParityWeights
+
+@[expose] public section
 
 /-! The checked natural-weight restoration statement gives the exact
 formal-relation equality for the intrinsic projected endpoint complex. -/
@@ -22,7 +26,7 @@ theorem restorationForms_even (w : Fin n → ℕ)
   exact (mem_weightedParitySpace_iff w 0 (g i).val).mp (g i).property.2
 
 theorem restored_projected_formal_relations
-    (htwo : (2 : K)≠0) (w : Fin n → ℕ)
+    (w : Fin n → ℕ)
     (g : Fin r → evenRestorationSpace (K := K) w d)
     (hi : LinearIndependent K (restorationForms w g))
     (pi : Forms K n (2*d) →ₗ[K] Z)
@@ -44,7 +48,7 @@ theorem restored_projected_formal_relations
         formalMixed (Submodule.span K (Set.range (restorationForms w g)))=
       (pi.comp formalPolynomialMultiplication).ker ⊓ formalProducts Q A := by
   classical
-  apply projected_formal_relations_of_even_reduction htwo (fun x => (w x : ZMod 2))
+  apply projected_formal_relations_of_even_reduction (fun x => (w x : ZMod 2))
     (fun _ => 0) (restorationForms w g) hi (restorationForms_even w g) pi hpi
     (by
       intro a ha

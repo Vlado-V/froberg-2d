@@ -1,6 +1,10 @@
-import Froberg.PreparedZeroLayers
-import Froberg.HigherCapacityParameters
-import Froberg.CapacityRelabel
+module
+
+public import Froberg.PreparedZeroLayers
+public import Froberg.HigherCapacityParameters
+public import Froberg.CapacityRelabel
+
+@[expose] public section
 
 /-! The induction includes every positive even degree. Inactive layers
 have zero slots and do not change the scalar count or the actual family. -/

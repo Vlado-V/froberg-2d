@@ -1,5 +1,9 @@
-import Froberg.DeletedBidegreeQuotient
-import Froberg.PrefixGrowth
+module
+
+public import Froberg.DeletedBidegreeQuotient
+public import Froberg.PrefixGrowth
+
+@[expose] public section
 
 /-! Generic scalar families have no low-degree relation after deleting a
 bidegree, once the weighted image bound exceeds the incidence parameter count. -/

@@ -1,5 +1,9 @@
-import Quartic.RankOpen
-import Mathlib.Algebra.MvPolynomial.Funext
+module
+
+public import Quartic.RankOpen
+public import Mathlib.Algebra.MvPolynomial.Funext
+
+@[expose] public section
 
 /-!
 # Polynomial parameter families and nonempty rank opens

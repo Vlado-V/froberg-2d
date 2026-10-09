@@ -1,4 +1,8 @@
-import Froberg.MixedRowComponents
+module
+
+public import Froberg.MixedRowComponents
+
+@[expose] public section
 
 /-! Finite weighted-component decompositions of ordinary homogeneous forms.
 The variable weights may be zero; weights at most one suffice. -/

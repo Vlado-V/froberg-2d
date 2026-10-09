@@ -1,6 +1,10 @@
-import Froberg.PreparedBiformCoordinates
-import Froberg.SpecialDiagonalBiform
-import Froberg.PairedScalarSeparation
+module
+
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.SpecialDiagonalBiform
+public import Froberg.PairedScalarSeparation
+
+@[expose] public section
 
 /-! The literal quartic block space supplies the exceptional diagonal
 capacity used in degrees five through eight. -/

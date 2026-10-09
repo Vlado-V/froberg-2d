@@ -1,4 +1,8 @@
-import Froberg.QuadraticOutputDimension
+module
+
+public import Froberg.QuadraticOutputDimension
+
+@[expose] public section
 
 /-! The actual detector codimension contains the fixed private-frame loss. -/
 noncomputable section

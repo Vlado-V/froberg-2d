@@ -1,4 +1,8 @@
-import Froberg.CoreQuotientLimits
+module
+
+public import Froberg.CoreQuotientLimits
+
+@[expose] public section
 
 /-! A fixed number of private columns preserves the leading dimensions and
 critical quotient slope. -/

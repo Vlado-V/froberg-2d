@@ -1,5 +1,9 @@
-import Quartic.ConvolutionFreeMultiplication
-import Quartic.FreeMonomialCounts
+module
+
+public import Quartic.ConvolutionFreeMultiplication
+public import Quartic.FreeMonomialCounts
+
+@[expose] public section
 
 /-!
 # The grouped free-variable layers of the actual convolution quotient

@@ -1,6 +1,10 @@
-import Froberg.PreparedPrivateWitnessOpen
-import Froberg.PreparedRestorationOpen
-import Froberg.SplitRestorationOpen
+module
+
+public import Froberg.PreparedPrivateWitnessOpen
+public import Froberg.PreparedRestorationOpen
+public import Froberg.SplitRestorationOpen
+
+@[expose] public section
 
 /-! The literal private reduction in fixed even and odd homogeneous
 coefficient spaces, ready for polynomial-complex openness. -/

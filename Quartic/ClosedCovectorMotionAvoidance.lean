@@ -1,5 +1,9 @@
-import Quartic.ConvolutionClosedSlices
-import Quartic.SliceMotionAvoidance
+module
+
+public import Quartic.ConvolutionClosedSlices
+public import Quartic.SliceMotionAvoidance
+
+@[expose] public section
 
 /-!
 # From actual closed covector slices to successive motion avoidance

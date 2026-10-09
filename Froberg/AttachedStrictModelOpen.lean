@@ -1,6 +1,10 @@
-import Froberg.AttachedStrictOpen
-import Froberg.AttachedDimensionCounts
-import Froberg.StrictVectorModel
+module
+
+public import Froberg.AttachedStrictOpen
+public import Froberg.AttachedDimensionCounts
+public import Froberg.StrictVectorModel
+
+@[expose] public section
 
 /-! A geometric attached witness yields a genuine open of strict vector models. -/
 noncomputable section

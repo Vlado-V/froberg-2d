@@ -1,4 +1,8 @@
-import Quartic.UniformSurplus.Interpolation
+module
+
+public import Quartic.UniformSurplus.Interpolation
+
+@[expose] public section
 
 /-! Explicit ordered-profile barycentric interpolation. No assertion about
 geometric subspaces is used in this numerical module. -/

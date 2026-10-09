@@ -1,4 +1,8 @@
-import Froberg.ProductRows
+module
+
+public import Froberg.ProductRows
+
+@[expose] public section
 
 /-! Canonical unordered generator pairs behind the product-row source. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Quartic.EndpointHomology
-import Quartic.Squares
+module
+
+public import Quartic.EndpointHomology
+public import Quartic.Squares
+
+@[expose] public section
 
 /-!
 # Injection from quartic homology through a marked coefficient

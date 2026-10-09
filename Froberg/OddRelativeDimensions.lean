@@ -1,7 +1,11 @@
-import Froberg.OddEvenTargetExtension
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Froberg.HigherRelationCost
-import Froberg.LayeredTargetDimension
+module
+
+public import Froberg.OddEvenTargetExtension
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Froberg.HigherRelationCost
+public import Froberg.LayeredTargetDimension
+
+@[expose] public section
 
 /-! The actual odd quotient dimension and the exact common-even-family
 contribution to the C.4 dimension budget. -/

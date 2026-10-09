@@ -1,6 +1,10 @@
-import Froberg.ProjectedPrefix
-import Froberg.OuterMultiplication
-import Froberg.BilinearScalarFamily
+module
+
+public import Froberg.ProjectedPrefix
+public import Froberg.OuterMultiplication
+public import Froberg.BilinearScalarFamily
+
+@[expose] public section
 
 /-! Scalar injection extends to arbitrary finite output coefficients. -/
 noncomputable section

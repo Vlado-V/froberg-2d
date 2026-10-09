@@ -1,6 +1,10 @@
-import Froberg.PairedSpace
-import Froberg.SeparatedCoefficientSpaces
-import Froberg.SubspaceProductRestriction
+module
+
+public import Froberg.PairedSpace
+public import Froberg.SeparatedCoefficientSpaces
+public import Froberg.SubspaceProductRestriction
+
+@[expose] public section
 
 /-! The diagonal-pair construction in Lemma B.4, including the loss from
 any finite-dimensional output constraint. -/

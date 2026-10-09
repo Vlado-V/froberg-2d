@@ -1,5 +1,9 @@
-import Froberg.ConvolutionDimension
-import Froberg.PairedCapacity
+module
+
+public import Froberg.ConvolutionDimension
+public import Froberg.PairedCapacity
+
+@[expose] public section
 
 /-! The two rounding operations in B.7 preserve the required leading densities. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Quartic.ProjectiveTupleCharts
-import Quartic.PolynomialKernelAvoidance
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.ProjectiveTupleCharts
+public import Quartic.PolynomialKernelAvoidance
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-!
 # Generic injectivity from projective relation charts

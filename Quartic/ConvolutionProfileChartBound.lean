@@ -1,8 +1,12 @@
-import Quartic.ConvolutionProfileCoordinates
-import Quartic.ConvolutionFiniteImages
-import Quartic.IteratedCovectorCharts
-import Quartic.ProfileOuterFinite
-import Quartic.ConvolutionOuterIncidence
+module
+
+public import Quartic.ConvolutionProfileCoordinates
+public import Quartic.ConvolutionFiniteImages
+public import Quartic.IteratedCovectorCharts
+public import Quartic.ProfileOuterFinite
+public import Quartic.ConvolutionOuterIncidence
+
+@[expose] public section
 
 /-! # The finite image budget for the actual polynomial profile charts -/
 set_option backward.isDefEq.respectTransparency false

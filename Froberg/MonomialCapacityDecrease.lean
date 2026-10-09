@@ -1,4 +1,8 @@
-import Froberg.ProfileCapacityDrop
+module
+
+public import Froberg.ProfileCapacityDrop
+
+@[expose] public section
 
 /-! The capacity decrease in one target profile has uniform mass in each
 source row of the actual monomial transport. -/

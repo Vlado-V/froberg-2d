@@ -1,5 +1,9 @@
-import Quartic.FiniteCounts
-import Quartic.UniformCertificate
+module
+
+public import Quartic.FiniteCounts
+public import Quartic.UniformCertificate
+
+@[expose] public section
 
 /-!
 # Actual endpoint parameters in the uniform Bernstein rectangle

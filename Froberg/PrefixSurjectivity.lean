@@ -1,5 +1,9 @@
-import Froberg.PrefixGrowth
-import Froberg.PrefixPartialIncidence
+module
+
+public import Froberg.PrefixGrowth
+public import Froberg.PrefixPartialIncidence
+
+@[expose] public section
 
 /-! The strengthened subspace growth bound implies surjectivity at the first
 possible generator count, via the sharp partial-row incidence charts. -/

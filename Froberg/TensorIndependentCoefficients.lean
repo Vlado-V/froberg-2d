@@ -1,6 +1,10 @@
-import Froberg.TensorQuotientCoordinates
-import Froberg.MixedQuotientExactness
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.TensorQuotientCoordinates
+public import Froberg.MixedQuotientExactness
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Independent left tensor factors detect each right-factor relation. -/
 noncomputable section

@@ -1,7 +1,11 @@
-import Froberg.ProductFibers
-import Froberg.ProductMinors
-import Froberg.Graded
-import Mathlib.Data.Finsupp.Indicator
+module
+
+public import Froberg.ProductFibers
+public import Froberg.ProductMinors
+public import Froberg.Graded
+public import Mathlib.Data.Finsupp.Indicator
+
+@[expose] public section
 
 /-! Concrete paired-variable monomials and their index-degree product fibers. -/
 noncomputable section

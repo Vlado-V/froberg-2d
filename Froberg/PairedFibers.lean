@@ -1,5 +1,9 @@
-import Froberg.PairedMonomials
-import Mathlib.Data.Sym.Card
+module
+
+public import Froberg.PairedMonomials
+public import Mathlib.Data.Sym.Card
+
+@[expose] public section
 
 /-! Finite index-degree fibers for the actual paired-variable family. -/
 noncomputable section

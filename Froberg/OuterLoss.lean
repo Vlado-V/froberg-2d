@@ -1,6 +1,10 @@
-import Froberg.OuterShadow
-import Froberg.ProjectionEndpoints
-import Froberg.ExceptionBudget
+module
+
+public import Froberg.OuterShadow
+public import Froberg.ProjectionEndpoints
+public import Froberg.ExceptionBudget
+
+@[expose] public section
 
 /-! The uniform exceptional loss for the actual outer-module shadow. -/
 noncomputable section

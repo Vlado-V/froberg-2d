@@ -1,7 +1,11 @@
-import Froberg.BinomialPolynomial
-import Mathlib.Analysis.Polynomial.Basic
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import Froberg.BinomialPolynomial
+public import Mathlib.Analysis.Polynomial.Basic
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 /-!
 # The numerical condition in the asymptotic prefix theorem

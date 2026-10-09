@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCertificate
+module
+
+public import Quartic.FiniteEndpointCertificate
+
+@[expose] public section
 
 /-! Sparse product rows reconstructed from original generator supports and a
 checked monomial-product lookup. No expanded quartic-row table is required. -/

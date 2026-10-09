@@ -1,7 +1,11 @@
-import Froberg.PreparedPositiveQuotient
-import Froberg.PreparedBiformFamilies
-import Froberg.BackgroundFlagSpan
-import Froberg.RestoredScalarCompatibility
+module
+
+public import Froberg.PreparedPositiveQuotient
+public import Froberg.PreparedBiformFamilies
+public import Froberg.BackgroundFlagSpan
+public import Froberg.RestoredScalarCompatibility
+
+@[expose] public section
 
 /-! Scalar-quotient independence for the literal even/private indexing
 used in the final flag comparison. -/

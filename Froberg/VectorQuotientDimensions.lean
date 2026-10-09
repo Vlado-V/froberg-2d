@@ -1,4 +1,8 @@
-import Froberg.VectorQuotientOpen
+module
+
+public import Froberg.VectorQuotientOpen
+
+@[expose] public section
 
 /-! Exact dimensions in the actual polynomial quotients used by the open family. -/
 noncomputable section

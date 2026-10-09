@@ -1,4 +1,8 @@
-import Froberg.ExactKernelGeneral
+module
+
+public import Froberg.ExactKernelGeneral
+
+@[expose] public section
 
 /-! Exact polynomial complexes with finite source spaces are open even when
 the target is the full polynomial ring and the boundary is not injective. -/

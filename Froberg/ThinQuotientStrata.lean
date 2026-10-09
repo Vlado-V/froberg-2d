@@ -1,7 +1,11 @@
-import Froberg.ThinScalarOpen
-import Froberg.ScalarQuotientSlices
-import Froberg.ActualClosedKernelSlices
-import Froberg.StrictVectorModel
+module
+
+public import Froberg.ThinScalarOpen
+public import Froberg.ScalarQuotientSlices
+public import Froberg.ActualClosedKernelSlices
+public import Froberg.StrictVectorModel
+
+@[expose] public section
 
 /-! The thin-case conclusion on the actual scalar quotient, with literal
 homogeneous closed equations and exactly the prescribed number of slices. -/

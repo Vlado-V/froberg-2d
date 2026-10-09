@@ -1,5 +1,9 @@
-import Froberg.PreparedPrivateQuadraticWitness
-import Froberg.PreparedExtendedWitness
+module
+
+public import Froberg.PreparedPrivateQuadraticWitness
+public import Froberg.PreparedExtendedWitness
+
+@[expose] public section
 
 /-! The same finite row capacities give literal witnesses after adjoining
 any fixed number of scalar variables, including the scalar-degree-zero row. -/

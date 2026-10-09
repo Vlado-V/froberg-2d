@@ -1,6 +1,10 @@
-import Froberg.PreparedFiniteProducts
-import Froberg.PreparedQuadraticRow
-import Froberg.PreparedFiniteRows
+module
+
+public import Froberg.PreparedFiniteProducts
+public import Froberg.PreparedQuadraticRow
+public import Froberg.PreparedFiniteRows
+
+@[expose] public section
 
 /-! Capacity records depend on the scalar-label cardinality and the actual
 new-row count, so adding zero-count labels changes no incidence input. -/

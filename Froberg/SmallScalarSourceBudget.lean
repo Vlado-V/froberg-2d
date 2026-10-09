@@ -1,6 +1,10 @@
-import Froberg.SmallDegreeCapacities
-import Froberg.CapacityProductIdentity
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.SmallDegreeCapacities
+public import Froberg.CapacityProductIdentity
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! The two-fifths retained scalar-source incidence budget in Appendix E. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.MixedRowComponents
-import Froberg.GradedKoszulElimination
+module
+
+public import Froberg.MixedRowComponents
+public import Froberg.GradedKoszulElimination
+
+@[expose] public section
 
 /-! Exact substitution of previously solved coefficient rows. The remaining
 nonlinear-looking terms are constants times products of two positive layers. -/

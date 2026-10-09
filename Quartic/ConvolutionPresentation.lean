@@ -1,5 +1,9 @@
-import Quartic.Homogeneous
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-!
 # The actual three-row convolution presentation

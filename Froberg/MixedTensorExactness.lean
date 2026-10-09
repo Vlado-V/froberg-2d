@@ -1,5 +1,9 @@
-import Froberg.MixedQuotientExactness
-import Quartic.SplitTensor
+module
+
+public import Froberg.MixedQuotientExactness
+public import Quartic.SplitTensor
+
+@[expose] public section
 
 /-! The actual tensor-product exact sequence behind the odd top quotient.
 The left term is U tensor (Y/Q), not a dimensionally substituted vector space. -/

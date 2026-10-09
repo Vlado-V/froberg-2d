@@ -1,5 +1,9 @@
-import Quartic.SharpCertificate.Expression
-import Quartic.HullCertificate.Rational
+module
+
+public import Quartic.SharpCertificate.Expression
+public import Quartic.HullCertificate.Rational
+
+@[expose] public section
 
 /-! Clearing positive denominators in the two sharp incidence inequalities. -/
 

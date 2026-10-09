@@ -1,6 +1,10 @@
-import Froberg.BilinearPostcompose
-import Froberg.TwoFamilyIntrinsicOpen
-import Froberg.TensorScalarGrowth
+module
+
+public import Froberg.BilinearPostcompose
+public import Froberg.TwoFamilyIntrinsicOpen
+public import Froberg.TensorScalarGrowth
+
+@[expose] public section
 
 /-! The actual two-family map of C.9 after projecting the X factor. -/
 noncomputable section

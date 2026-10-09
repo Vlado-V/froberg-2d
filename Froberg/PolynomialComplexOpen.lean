@@ -1,4 +1,8 @@
-import Froberg.ExactKernelOpen
+module
+
+public import Froberg.ExactKernelOpen
+
+@[expose] public section
 
 /-! Exactness of a polynomial complex persists on a principal open through
 every exact specialization. Neither boundary injectivity nor a separately

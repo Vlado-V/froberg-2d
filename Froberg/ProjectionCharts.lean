@@ -1,6 +1,10 @@
-import Froberg.PolynomialLinearAvoidance
-import Froberg.SandwichRank
-import Quartic.BilinearCovectorCharts
+module
+
+public import Froberg.PolynomialLinearAvoidance
+public import Froberg.SandwichRank
+public import Quartic.BilinearCovectorCharts
+
+@[expose] public section
 
 /-! The literal quotient maps for Grassmannian graph charts and the exact
 number of equations imposed on a varying projection. -/

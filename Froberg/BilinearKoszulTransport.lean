@@ -1,4 +1,8 @@
-import Froberg.BilinearKoszulRow
+module
+
+public import Froberg.BilinearKoszulRow
+
+@[expose] public section
 
 /-! Exact scalar/new-layer rows are independent of the chosen complete
 coordinates in the output coefficient space. -/

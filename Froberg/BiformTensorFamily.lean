@@ -1,4 +1,8 @@
-import Froberg.BiformPolynomialOpen
+module
+
+public import Froberg.BiformPolynomialOpen
+
+@[expose] public section
 
 /-! Full tensor-valued biform generator families, with polynomial rank opens.
 Pure-tensor convolution witnesses are points of this full parameter space. -/

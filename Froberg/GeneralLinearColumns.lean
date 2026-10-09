@@ -1,5 +1,9 @@
-import Froberg.DetectedPrivateOutputs
-import Froberg.UniversalMixedPosition
+module
+
+public import Froberg.DetectedPrivateOutputs
+public import Froberg.UniversalMixedPosition
+
+@[expose] public section
 
 /-! A finite family of pairwise independent linear forms, and its common
 quadratic detector, constructed over every infinite field. -/

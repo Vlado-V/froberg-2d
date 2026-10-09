@@ -1,5 +1,9 @@
-import Froberg.PrivateMixedRow
-import Froberg.PreparedCoreExtension
+module
+
+public import Froberg.PrivateMixedRow
+public import Froberg.PreparedCoreExtension
+
+@[expose] public section
 
 /-! Private separation for actual homogeneous biforms. Output coordinates
 are constructed here, so the row consumer supplies only polynomial data. -/

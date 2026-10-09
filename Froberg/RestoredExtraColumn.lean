@@ -1,6 +1,10 @@
-import Froberg.PreparedCountCompatibility
-import Froberg.PreparedPositiveBackground
-import Froberg.PositiveExtraColumn
+module
+
+public import Froberg.PreparedCountCompatibility
+public import Froberg.PreparedPositiveBackground
+public import Froberg.PositiveExtraColumn
+
+@[expose] public section
 
 /-! Restricting one enlarged restored family keeps all base positive
 columns literally and separates its single extra positive column. -/

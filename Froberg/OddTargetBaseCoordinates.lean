@@ -1,7 +1,11 @@
-import Froberg.OddBackgroundBlocks
-import Froberg.OddSourceBaseCoordinates
-import Froberg.ProjectedQuotientEquiv
-import Froberg.FactoredGraphCoordinates
+module
+
+public import Froberg.OddBackgroundBlocks
+public import Froberg.OddSourceBaseCoordinates
+public import Froberg.ProjectedQuotientEquiv
+public import Froberg.FactoredGraphCoordinates
+
+@[expose] public section
 
 /-! All rows of the actual Q,F target quotient, with its bottom row
 separated before the mixed private scalar relations are imposed. -/

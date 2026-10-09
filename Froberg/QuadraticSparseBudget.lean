@@ -1,6 +1,10 @@
-import Froberg.QuadraticSparseConstants
-import Froberg.FullSparseBlockCount
-import Froberg.IntermediateScalarBudget
+module
+
+public import Froberg.QuadraticSparseConstants
+public import Froberg.FullSparseBlockCount
+public import Froberg.IntermediateScalarBudget
+
+@[expose] public section
 
 /-! The finite sparse budget for the actual quadratic output D, in every
 degree at least three. Exact counts may be any integer below the prescribed

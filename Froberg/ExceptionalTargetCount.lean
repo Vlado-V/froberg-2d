@@ -1,5 +1,9 @@
-import Froberg.MixedPacking
-import Froberg.CommonMultipleCount
+module
+
+public import Froberg.MixedPacking
+public import Froberg.CommonMultipleCount
+
+@[expose] public section
 
 /-! Uniform exceptional-target count for the attached monomial relations. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Froberg.PreparedParameters
-import Froberg.IntrinsicBiformRow
-import Froberg.ProductRowPolynomial
+module
+
+public import Froberg.PreparedParameters
+public import Froberg.IntrinsicBiformRow
+public import Froberg.ProductRowPolynomial
+
+@[expose] public section
 
 /-! Every row uses polynomial maps from the same actual prepared-family
 coefficient space. -/

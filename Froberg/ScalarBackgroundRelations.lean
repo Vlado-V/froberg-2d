@@ -1,5 +1,9 @@
-import Froberg.MixedScalarComponents
-import Froberg.OddBackgroundProduct
+module
+
+public import Froberg.MixedScalarComponents
+public import Froberg.OddBackgroundProduct
+
+@[expose] public section
 
 /-! Scalar coefficients already in the Q span give actual Q relations,
 including when they multiply mixed private generators. -/

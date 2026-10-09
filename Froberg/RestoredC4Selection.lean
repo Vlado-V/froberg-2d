@@ -1,7 +1,11 @@
-import Froberg.RestoredRestrictedCertifiedFiber
-import Froberg.RestoredScalarThinOpen
-import Froberg.PreparedBaseGrowthOpen
-import Froberg.BottomThinFlag
+module
+
+public import Froberg.RestoredRestrictedCertifiedFiber
+public import Froberg.RestoredScalarThinOpen
+public import Froberg.PreparedBaseGrowthOpen
+public import Froberg.BottomThinFlag
+
+@[expose] public section
 
 /-! Actual-count C.4 selection for the final restored family keeps all
 temporary added columns and the supplied enlarged-family open fixed. -/

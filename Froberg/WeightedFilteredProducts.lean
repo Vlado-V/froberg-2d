@@ -1,4 +1,8 @@
-import Froberg.WeightedParitySpace
+module
+
+public import Froberg.WeightedParitySpace
+
+@[expose] public section
 
 /-! A positive-weight factor cannot create a new first nonzero component
 before that component appears in the other factor. -/

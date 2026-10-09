@@ -1,5 +1,9 @@
-import Quartic.FreePieces
-import Quartic.ProfileCertificate.Core
+module
+
+public import Quartic.FreePieces
+public import Quartic.ProfileCertificate.Core
+
+@[expose] public section
 
 /-!
 # Counts of free monomials meeting a chosen set of variables

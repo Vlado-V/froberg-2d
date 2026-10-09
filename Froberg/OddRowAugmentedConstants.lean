@@ -1,4 +1,8 @@
-import Froberg.OddRowGeneralBudget
+module
+
+public import Froberg.OddRowGeneralBudget
+
+@[expose] public section
 
 noncomputable section
 namespace Froberg

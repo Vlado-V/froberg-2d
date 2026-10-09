@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Polynomial.Pochhammer
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.Polynomial.Pochhammer
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Polynomial interpolation of homogeneous monomial counts and factorial
 identities for the critical-root leading coefficient. -/

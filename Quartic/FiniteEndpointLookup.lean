@@ -1,4 +1,8 @@
-import Mathlib.Data.Nat.Basic
+module
+
+public import Mathlib.Data.Nat.Basic
+
+@[expose] public section
 
 /-! Plain data for certificate lookup. Tree shape and lookup correctness are not
 trusted: all uses separately check the resulting row and support equations. -/

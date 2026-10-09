@@ -1,5 +1,9 @@
-import Froberg.CoefficientReconstruction
-import Froberg.BoundedWeightedComponents
+module
+
+public import Froberg.CoefficientReconstruction
+public import Froberg.BoundedWeightedComponents
+
+@[expose] public section
 
 /-! Actual polynomial coefficient elimination from the exact finite row conditions.
 This is the scalar-plus-positive-layer part of the prepared-background argument. -/

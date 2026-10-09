@@ -1,5 +1,9 @@
-import Quartic.ThreeBlock
-import Quartic.Homology
+module
+
+public import Quartic.ThreeBlock
+public import Quartic.Homology
+
+@[expose] public section
 
 /-!
 # The explicit three-variable block in the homogeneous polynomial model

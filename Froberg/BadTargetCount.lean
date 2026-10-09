@@ -1,4 +1,8 @@
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! A direct substitute for the small-defect monomial growth estimate in B.2.
 Splitting a target into two source monomials and one variable suffices. -/

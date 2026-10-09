@@ -1,6 +1,10 @@
-import Froberg.PreparedQuadraticRow
-import Froberg.PreparedFiniteRows
-import Froberg.PreparedFiniteProducts
+module
+
+public import Froberg.PreparedQuadraticRow
+public import Froberg.PreparedFiniteRows
+public import Froberg.PreparedFiniteProducts
+
+@[expose] public section
 
 /-! Capacity records depend on output constraints only through the recorded
 dimensions and the vanishing of the currently introduced higher detector. -/

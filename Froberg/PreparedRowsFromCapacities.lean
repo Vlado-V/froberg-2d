@@ -1,5 +1,9 @@
-import Froberg.PreparedFiniteRows
-import Froberg.PreparedQuadraticRow
+module
+
+public import Froberg.PreparedFiniteRows
+public import Froberg.PreparedQuadraticRow
+
+@[expose] public section
 
 /-! Finite arithmetic capacities and the proved scalar opens produce all
 positive even coefficient rows on one actual prepared-family open. -/

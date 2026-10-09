@@ -1,5 +1,9 @@
-import Quartic.ConvolutionOuterIncidence
-import Quartic.BilinearGeneric
+module
+
+public import Quartic.ConvolutionOuterIncidence
+public import Quartic.BilinearGeneric
+
+@[expose] public section
 
 /-!
 # Generic injective outer multiplication at the convolution presentation

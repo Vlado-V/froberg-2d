@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Mathlib.LinearAlgebra.TensorProduct.Submodule
-import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+module
+
+public import Froberg.Graded
+public import Mathlib.LinearAlgebra.TensorProduct.Submodule
+public import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+
+@[expose] public section
 
 /-! Propagation of the pure-X cutoff to every upper bidegree, using actual
 polynomial multiplication and its tensor product with the scalar forms. -/

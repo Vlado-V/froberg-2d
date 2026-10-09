@@ -1,5 +1,9 @@
-import Froberg.BottomVectorSlices
-import Froberg.CountedJointSelection
+module
+
+public import Froberg.BottomVectorSlices
+public import Froberg.CountedJointSelection
+
+@[expose] public section
 
 /-! The actual B.3 child-flag certificate supplies bottom-row thin slices
 with the dimension of the bottom target itself. -/

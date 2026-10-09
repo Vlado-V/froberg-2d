@@ -1,5 +1,9 @@
-import Quartic.PolynomialSubspaceTupleCharts
-import Quartic.PolynomialBilinearCoordinates
+module
+
+public import Quartic.PolynomialSubspaceTupleCharts
+public import Quartic.PolynomialBilinearCoordinates
+
+@[expose] public section
 
 /-!
 # Generic bilinear injectivity from finite polynomial subspace charts

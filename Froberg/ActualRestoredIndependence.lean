@@ -1,6 +1,10 @@
-import Froberg.RestoredOuterIndependence
-import Froberg.PreparedCountedIndependence
-import Froberg.PreparedAllEvenCounts
+module
+
+public import Froberg.RestoredOuterIndependence
+public import Froberg.PreparedCountedIndependence
+public import Froberg.PreparedAllEvenCounts
+
+@[expose] public section
 
 /-! Actual all-even counts make the whole restored endpoint independent
 on a nonempty open, including any fixed number of added quadratic slots. -/

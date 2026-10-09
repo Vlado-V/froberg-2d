@@ -1,5 +1,9 @@
-import Quartic.GenericF13AllRange
-import Quartic.EndpointCubicConditions
+module
+
+public import Quartic.GenericF13AllRange
+public import Quartic.EndpointCubicConditions
+
+@[expose] public section
 
 /-!
 # One actual endpoint coefficient open including varying-presentation F₁₃

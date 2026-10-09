@@ -1,5 +1,9 @@
-import Froberg.BiformVectorDetector
-import Froberg.PrivateBoundaryTransport
+module
+
+public import Froberg.BiformVectorDetector
+public import Froberg.PrivateBoundaryTransport
+
+@[expose] public section
 
 /-! In the first positive even row, the actual output detector turns the
 private coefficient into a literal constant private Koszul boundary. -/

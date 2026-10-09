@@ -1,4 +1,8 @@
-import Froberg.BiformOutputConstraint
+module
+
+public import Froberg.BiformOutputConstraint
+
+@[expose] public section
 
 /-! Cross-pair product witnesses with arbitrary finite-dimensional output
 constraints, at the full half-variable tensor capacity. -/

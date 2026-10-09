@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact rank of the linear equations C P A=0 on a varying projection P.
 This supplies the Schubert codimension calculation used in C.3. -/

@@ -1,4 +1,8 @@
-import Froberg.PolynomialProperties
+module
+
+public import Froberg.PolynomialProperties
+
+@[expose] public section
 
 /-! Finite intersections in the actual finite-dimensional parameter space. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.AmbientTopGrowth
-import Froberg.OddSourceAllCoordinates
+module
+
+public import Froberg.AmbientTopGrowth
+public import Froberg.OddSourceAllCoordinates
+
+@[expose] public section
 
 /-! The top source quotient is the actual quotient of pure forms by U,
 and hence the projection target R. Degree transports match target growth. -/

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Taylor
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Polynomial.Basic
+public import Mathlib.Algebra.Polynomial.Taylor
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact top coefficients of finite differences, and normalized limits.
 These supply the asymptotic estimates used in the integer count selection. -/

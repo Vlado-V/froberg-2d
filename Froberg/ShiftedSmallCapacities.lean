@@ -1,5 +1,9 @@
-import Froberg.ShiftedCountLimits
-import Froberg.SmallStrongQuadraticCapacity
+module
+
+public import Froberg.ShiftedCountLimits
+public import Froberg.SmallStrongQuadraticCapacity
+
+@[expose] public section
 
 /-! Appendix E capacities with a fixed private-variable reserve and any
 fixed number of appended columns. The special output witnesses are unchanged. -/

@@ -1,5 +1,9 @@
-import Froberg.CountedPrivatePreparedOpen
-import Froberg.SmallCountedPrivateFrameOpen
+module
+
+public import Froberg.CountedPrivatePreparedOpen
+public import Froberg.SmallCountedPrivateFrameOpen
+
+@[expose] public section
 
 /-! All odd degrees admit the full private split-reduction open on a
 cofinal sequence of output dimensions. Frames and fixed pure tuples are

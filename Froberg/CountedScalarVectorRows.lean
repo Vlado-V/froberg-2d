@@ -1,6 +1,10 @@
-import Froberg.ScalarVectorRowsOpen
-import Froberg.VectorModelCoordinates
-import Froberg.AugmentedOuterCapacity
+module
+
+public import Froberg.ScalarVectorRowsOpen
+public import Froberg.VectorModelCoordinates
+public import Froberg.AugmentedOuterCapacity
+
+@[expose] public section
 
 /-! The exact reserve absorbs every lower-order scalar overhead and any
 fixed private family in the common first and higher odd-row construction. -/

@@ -1,5 +1,9 @@
-import Quartic.Homogeneous
-import Mathlib.RingTheory.Nullstellensatz
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.RingTheory.Nullstellensatz
+
+@[expose] public section
 
 /-!
 # A finite homogeneous certificate for an empty projective fiber

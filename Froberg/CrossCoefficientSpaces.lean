@@ -1,5 +1,9 @@
-import Froberg.GradedProductAssembly
-import Froberg.SubspaceProductRestriction
+module
+
+public import Froberg.GradedProductAssembly
+public import Froberg.SubspaceProductRestriction
+
+@[expose] public section
 
 /-! Exact finite-dimensional cross-pair capacities used in Lemma B.4. -/
 noncomputable section

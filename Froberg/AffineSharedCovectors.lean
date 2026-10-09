@@ -1,5 +1,9 @@
-import Froberg.AffinePolynomialAvoidance
-import Quartic.SharedCovectorPolynomial
+module
+
+public import Froberg.AffinePolynomialAvoidance
+public import Quartic.SharedCovectorPolynomial
+
+@[expose] public section
 
 /-! The common scalar family retains all fixed positive-degree components.
 One shared homogenizing coordinate handles these affine terms, while the

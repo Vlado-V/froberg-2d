@@ -1,6 +1,10 @@
-import Froberg.SourceFibers
-import Froberg.CoreDivisorCount
-import Froberg.ProfileCapacityDrop
+module
+
+public import Froberg.SourceFibers
+public import Froberg.CoreDivisorCount
+public import Froberg.ProfileCapacityDrop
+
+@[expose] public section
 
 /-! Exact real-valued source capacities and coarse target capacities for
 one and the same actual attached presentation. -/

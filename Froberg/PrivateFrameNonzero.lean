@@ -1,4 +1,8 @@
-import Froberg.PrivateFrameModel
+module
+
+public import Froberg.PrivateFrameModel
+
+@[expose] public section
 
 /-! The exact private-power kernel holds for a general quadratic frame.
 The detector has kernel precisely the span of that same frame. -/

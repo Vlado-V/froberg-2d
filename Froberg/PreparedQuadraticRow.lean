@@ -1,6 +1,10 @@
-import Froberg.PreparedWitnessEmbedding
-import Froberg.SparseFullOutput
-import Froberg.EmptyProductRow
+module
+
+public import Froberg.PreparedWitnessEmbedding
+public import Froberg.SparseFullOutput
+public import Froberg.EmptyProductRow
+
+@[expose] public section
 
 /-! The quadratic new-layer witness is constructed in its prescribed output
 space D; the first even row has no formal product block. -/

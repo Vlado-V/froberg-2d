@@ -1,6 +1,10 @@
-import Froberg.ThinShadowBudget
-import Froberg.AffinePolynomialSubstitution
-import Quartic.ExpansionClosedSlices
+module
+
+public import Froberg.ThinShadowBudget
+public import Froberg.AffinePolynomialSubstitution
+public import Quartic.ExpansionClosedSlices
+
+@[expose] public section
 
 /-! One actual scalar tuple open and fixed linear slices for every closed
 kernel threshold in the thin range. -/

@@ -1,5 +1,9 @@
-import Quartic.ConvolutionHilbert
-import Quartic.ConvolutionMultiplication
+module
+
+public import Quartic.ConvolutionHilbert
+public import Quartic.ConvolutionMultiplication
+
+@[expose] public section
 
 /-!
 # The quadratic image of the actual output space

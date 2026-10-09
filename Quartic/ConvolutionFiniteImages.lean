@@ -1,6 +1,10 @@
-import Quartic.ConvolutionProfileBound
-import Quartic.SharpMinimization
-import Quartic.ProfileCertificate
+module
+
+public import Quartic.ConvolutionProfileBound
+public import Quartic.SharpMinimization
+public import Quartic.ProfileCertificate
+
+@[expose] public section
 
 /-!
 # Finite scalar consequences for actual convolution images

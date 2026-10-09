@@ -1,5 +1,9 @@
-import Froberg.PrivateMultiplierCounts
-import Froberg.PrivateMultiplierLimits
+module
+
+public import Froberg.PrivateMultiplierCounts
+public import Froberg.PrivateMultiplierLimits
+
+@[expose] public section
 
 /-! The actual good monomial set has more than the critical endpoint density. -/
 noncomputable section

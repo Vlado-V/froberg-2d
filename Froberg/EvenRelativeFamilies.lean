@@ -1,5 +1,9 @@
-import Froberg.EvenBackgroundEquivalence
-import Froberg.OddEvenAffineRelations
+module
+
+public import Froberg.EvenBackgroundEquivalence
+public import Froberg.OddEvenAffineRelations
+
+@[expose] public section
 
 /-! Literal even-family multiplication transported to the even-case
 Q/F coordinates. -/

@@ -1,4 +1,10 @@
-import Quartic.FiniteEndpointCheckerLoad
+module
+
+public import Quartic.CertificateBinaryIO
+
+public import Quartic.FiniteEndpointCheckerLoad
+
+@[expose] public section
 
 /-! A proof-producing sparse-row elaborator. Every generated equality is submitted
 as an ordinary theorem to `addDecl`; no evaluator result is trusted as a proof. -/
@@ -6,16 +12,16 @@ namespace Quartic.FiniteEndpointCheckerMemo
 open Lean Meta Elab Command
 meta section
 
-private def u64 (a : ByteArray) (o : Nat) : UInt64 :=
+def u64 (a : ByteArray) (o : Nat) : UInt64 :=
   (a.get! (o+7)).toUInt64 <<< 56 ||| (a.get! (o+6)).toUInt64 <<< 48 |||
   (a.get! (o+5)).toUInt64 <<< 40 ||| (a.get! (o+4)).toUInt64 <<< 32 |||
   (a.get! (o+3)).toUInt64 <<< 24 ||| (a.get! (o+2)).toUInt64 <<< 16 |||
   (a.get! (o+1)).toUInt64 <<< 8 ||| (a.get! o).toUInt64
-private def u32 (a : ByteArray) (o : Nat) : Nat :=
+def u32 (a : ByteArray) (o : Nat) : Nat :=
   (a.get! o).toNat + 256*(a.get! (o+1)).toNat +
   65536*(a.get! (o+2)).toNat + 16777216*(a.get! (o+3)).toNat
 
-private def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : MetaM (Expr × Expr) := do
+def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : MetaM (Expr × Expr) := do
   let valName := stem ++ Name.mkSimple ("value_" ++ toString j)
   let eqName := stem ++ Name.mkSimple ("lookup_" ++ toString j)
   if !(← getEnv).contains valName then
@@ -23,7 +29,7 @@ private def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : Met
     let mut val : Nat := 0
     for rev in [:nw] do
       val := val <<< 64 ||| (u64 bytes ((j*nw+(nw-1-rev))*8)).toNat
-    addDecl <| .defnDecl {
+    addDecl (forceExpose := true) <| .defnDecl {
       name := valName
       levelParams := []
       type := mkConst ``Nat
@@ -40,7 +46,7 @@ private def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : Met
       value := ← mkEqRefl rhs }
   return (mkConst valName,mkConst eqName)
 
-private def certifyRow (stem invFn rowFn : Name) (invBytes : ByteArray)
+def certifyRow (stem invFn rowFn : Name) (invBytes : ByteArray)
     (nw i : Nat) (indices : Array Nat) : MetaM Unit := do
   let nat := mkConst ``Nat
   let nil := mkApp (mkConst ``List.nil [.zero]) nat
@@ -75,7 +81,7 @@ syntax (name := memoLookups) "certify_inverse_lookups " ident " from " str
 @[command_elab memoLookups] def elabMemoLookups : CommandElab := fun stx => do
   let `(certify_inverse_lookups $pref:ident from $path:str inverse_fn $fn:ident
       nrows $nr:num nwords $nw:num) := stx | throwUnsupportedSyntax
-  let bytes ← IO.FS.readBinFile path.getString
+  let bytes ← Quartic.CertificateBinaryIO.readBinaryOrPartsCached path.getString
   let stem := (← getCurrNamespace) ++ pref.getId
   for j in [:nr.getNat] do
     liftTermElabM do
@@ -90,8 +96,8 @@ syntax (name := memoRows) "certify_sparse_rows " ident " from " str
   let `(certify_sparse_rows $pref:ident from $sparsePath:str
       inverse_file $invPath:str inverse_fn $invFn:ident row_fn $rowFn:ident
       nwords $nw:num start_index $start:num row_count $count:num) := stx | throwUnsupportedSyntax
-  let sparseBytes ← IO.FS.readBinFile sparsePath.getString
-  let invBytes ← IO.FS.readBinFile invPath.getString
+  let sparseBytes ← Quartic.CertificateBinaryIO.readSparseOrReconstructCached sparsePath.getString
+  let invBytes ← Quartic.CertificateBinaryIO.readBinaryOrPartsCached invPath.getString
   let stem := (← getCurrNamespace) ++ pref.getId
   let mut offset := 0
   for i in [:start.getNat+count.getNat] do

@@ -1,6 +1,10 @@
-import Mathlib.Data.Finset.Max
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! A bounded disjoint exceptional family has a bounded hitting set. -/
 namespace Froberg.ExceptionalFamilies

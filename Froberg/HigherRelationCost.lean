@@ -1,4 +1,8 @@
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! The exact number of C.13 coefficient equations is lower order than
 the graph and scalar-shadow scales used in C.4. -/

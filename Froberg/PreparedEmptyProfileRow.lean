@@ -1,6 +1,10 @@
-import Froberg.EmptyIntrinsicRow
-import Froberg.SingleLayerProfiles
-import Froberg.SingleProfileScalar
+module
+
+public import Froberg.EmptyIntrinsicRow
+public import Froberg.SingleLayerProfiles
+public import Froberg.SingleProfileScalar
+
+@[expose] public section
 
 /-! An inactive new layer is exact at an actual common parameter whenever
 its old product columns have one scalar profile and the scalar columns

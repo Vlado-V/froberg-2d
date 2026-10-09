@@ -1,4 +1,8 @@
-import Froberg.PreparedWitnessEmbedding
+module
+
+public import Froberg.PreparedWitnessEmbedding
+
+@[expose] public section
 
 /-! The explicit parameter supplied by a sparse witness, with its actual
 scalar coordinates and layer polynomials retained in the conclusion. -/

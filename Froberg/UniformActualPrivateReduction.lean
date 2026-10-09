@@ -1,5 +1,9 @@
-import Froberg.PreparedActualPrivateReduction
-import Froberg.CapacityTargetTransport
+module
+
+public import Froberg.PreparedActualPrivateReduction
+public import Froberg.CapacityTargetTransport
+
+@[expose] public section
 
 /-! The scalar threshold is fixed before choosing the final output detector
 and private model. A reference detector is used only to obtain capacities. -/

@@ -1,5 +1,9 @@
-import Froberg.TailCutoffCounts
-import Froberg.PureCutoff
+module
+
+public import Froberg.TailCutoffCounts
+public import Froberg.PureCutoff
+
+@[expose] public section
 
 /-! Actual pure-generator cutoff spaces for the prescribed manuscript counts. -/
 noncomputable section

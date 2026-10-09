@@ -1,8 +1,12 @@
-import Quartic.ConvolutionClosedSlices
-import Quartic.ConvolutionAmbientImage
-import Quartic.QuotientCovectorKernel
-import Quartic.ConvolutionSharedSlices
-import Quartic.RowMultiplicationCoordinates
+module
+
+public import Quartic.ConvolutionClosedSlices
+public import Quartic.ConvolutionAmbientImage
+public import Quartic.QuotientCovectorKernel
+public import Quartic.ConvolutionSharedSlices
+public import Quartic.RowMultiplicationCoordinates
+
+@[expose] public section
 
 /-! Actual covector and kernel transport from quotient to fixed ambient spaces. -/
 noncomputable section

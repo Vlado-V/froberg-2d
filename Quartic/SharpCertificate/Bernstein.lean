@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Certificate
+module
+
+public import Quartic.HullCertificate.Certificate
+
+@[expose] public section
 
 /-! Exact integer cubic positivity certificates. -/
 

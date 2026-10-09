@@ -1,5 +1,9 @@
-import Froberg.BilinearScalarFamily
-import Quartic.BilinearImage
+module
+
+public import Froberg.BilinearScalarFamily
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! An injective additional scalar family supplies uniform growth of every
 subspace in the actual quotient. This is the C.19 augmentation argument. -/

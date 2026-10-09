@@ -1,5 +1,9 @@
-import Froberg.SingleProfileProducts
-import Froberg.ScalarProductRow
+module
+
+public import Froberg.SingleProfileProducts
+public import Froberg.ScalarProductRow
+
+@[expose] public section
 
 /-! Empty new layers with arbitrary output splitting require only one
 retained scalar profile, as in the small-degree appendix. -/

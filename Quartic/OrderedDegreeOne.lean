@@ -1,4 +1,8 @@
-import Quartic.ConvolutionInitialSplit
+module
+
+public import Quartic.ConvolutionInitialSplit
+
+@[expose] public section
 
 /-! # The constant and variable slots in the ordered degree-one decomposition -/
 noncomputable section

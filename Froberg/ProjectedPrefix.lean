@@ -1,5 +1,9 @@
-import Froberg.RetainedSubspaceGrowth
-import Froberg.PrefixGrowth
+module
+
+public import Froberg.RetainedSubspaceGrowth
+public import Froberg.PrefixGrowth
+
+@[expose] public section
 
 /-! Generic scalar multiplication after an arbitrary coordinate projection.
 The numerical growth fraction is a parameter, so this covers both C.1 and B.4. -/

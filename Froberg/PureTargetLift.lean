@@ -1,5 +1,9 @@
-import Froberg.AllTargetElimination
-import Froberg.PureBiformRows
+module
+
+public import Froberg.AllTargetElimination
+public import Froberg.PureBiformRows
+
+@[expose] public section
 
 /-! Upper target rows from a fixed pure-X generating tuple.  Arbitrary
 lower-X-degree perturbations of that tuple are permitted. -/

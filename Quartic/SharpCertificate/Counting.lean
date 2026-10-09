@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Counting.Data
+module
+
+public import Quartic.SharpCertificate.Counting.Data
+
+@[expose] public section
 
 /-! Kernel-verified totals, assembled from bounded per-configuration counts. -/
 

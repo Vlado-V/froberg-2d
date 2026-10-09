@@ -1,5 +1,9 @@
-import Froberg.RestoredJointCoordinates
-import Froberg.HigherOddVectorOpen
+module
+
+public import Froberg.RestoredJointCoordinates
+public import Froberg.HigherOddVectorOpen
+
+@[expose] public section
 
 /-! The actual outer tensor and base scalar families are independent
 linear coordinates of the complete parameter space. -/

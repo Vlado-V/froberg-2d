@@ -1,6 +1,10 @@
-import Froberg.VectorOutputMap
-import Froberg.IntermediateKoszul
-import Froberg.Prefix
+module
+
+public import Froberg.VectorOutputMap
+public import Froberg.IntermediateKoszul
+public import Froberg.Prefix
+
+@[expose] public section
 
 /-! An exact sparse scalar/new-layer row remains exact after embedding its
 output space into a larger output space. The extra scalar summands are free. -/

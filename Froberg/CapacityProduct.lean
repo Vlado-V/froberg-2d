@@ -1,6 +1,10 @@
-import Froberg.CapacityProductBounds
-import Froberg.CapacityFinite
-import Froberg.CapacityFactorials
+module
+
+public import Froberg.CapacityProductBounds
+public import Froberg.CapacityFinite
+public import Froberg.CapacityFactorials
+
+@[expose] public section
 
 /-! # Product-capacity inequalities in all degrees at least nine -/
 

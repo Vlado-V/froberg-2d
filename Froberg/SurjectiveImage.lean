@@ -1,4 +1,8 @@
-import Quartic.QuotientBilinearImage
+module
+
+public import Quartic.QuotientBilinearImage
+
+@[expose] public section
 
 /-! Exact source dimensions and image bounds for commuting surjective
 linear maps. -/

@@ -1,5 +1,9 @@
-import Froberg.PreparedMiddleSmallReduction
-import Froberg.CountedFourthRow
+module
+
+public import Froberg.PreparedMiddleSmallReduction
+public import Froberg.CountedFourthRow
+
+@[expose] public section
 
 /-! The exact rounded counts, with a fixed private-variable reserve and
 fixed appended columns, satisfy every finite small-degree witness bound. -/

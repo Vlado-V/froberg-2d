@@ -1,4 +1,8 @@
-import Froberg.QuadraticBlockMinors
+module
+
+public import Froberg.QuadraticBlockMinors
+
+@[expose] public section
 
 /-! Transport of the finite quadratic block certificates to arbitrary sets of
 at most four vertices, retaining one consistent monomial for each form label. -/

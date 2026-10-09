@@ -1,5 +1,9 @@
-import Froberg.PreparedBiformFamilies
-import Froberg.BackgroundFlagSpan
+module
+
+public import Froberg.PreparedBiformFamilies
+public import Froberg.BackgroundFlagSpan
+
+@[expose] public section
 
 /-! The C.2 separation certificate on the actual full prepared parameter
 space. It is uniform in the later supported scalar deletion. -/

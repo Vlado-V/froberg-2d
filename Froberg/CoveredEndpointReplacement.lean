@@ -1,6 +1,10 @@
-import Froberg.ActualEndpointReplacement
-import Froberg.OddExactEnumeration
-import Froberg.EvenCoverageOpen
+module
+
+public import Froberg.ActualEndpointReplacement
+public import Froberg.OddExactEnumeration
+public import Froberg.EvenCoverageOpen
+
+@[expose] public section
 
 /-! One replacement preserves the full even-target coverage as well as
 the odd C.4 slices. Thus the fixed-deletion projected target remains the

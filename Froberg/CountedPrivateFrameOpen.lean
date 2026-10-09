@@ -1,8 +1,12 @@
-import Froberg.UniformActualPrivateReduction
-import Froberg.PrivateFrameReduction
-import Froberg.PrivateFrameReference
-import Froberg.PrivateFrameNonzero
-import Froberg.PrivateDetectorCapacity
+module
+
+public import Froberg.UniformActualPrivateReduction
+public import Froberg.PrivateFrameReduction
+public import Froberg.PrivateFrameReference
+public import Froberg.PrivateFrameNonzero
+public import Froberg.PrivateDetectorCapacity
+
+@[expose] public section
 
 /-! The actual rounded private family has a nonempty coefficient open for
 every successful quadratic frame. The scalar threshold is chosen before

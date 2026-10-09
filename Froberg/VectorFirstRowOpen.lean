@@ -1,6 +1,10 @@
-import Froberg.HigherOddVectorOpen
-import Froberg.PolynomialComplexOpen
-import Froberg.StrictScalarJointSelection
+module
+
+public import Froberg.HigherOddVectorOpen
+public import Froberg.PolynomialComplexOpen
+public import Froberg.StrictScalarJointSelection
+
+@[expose] public section
 
 /-! Exactness of the first vector row is a genuine principal open in the
 joint vector/scalar coefficients. -/

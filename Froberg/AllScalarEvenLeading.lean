@@ -1,5 +1,9 @@
-import Froberg.ShiftedActualEvenLeading
-import Froberg.NaturalEventualParity
+module
+
+public import Froberg.ShiftedActualEvenLeading
+public import Froberg.NaturalEventualParity
+
+@[expose] public section
 
 /-! Independent leading components for the actual prescribed row counts,
 with output constraints chosen after the scalar threshold. -/

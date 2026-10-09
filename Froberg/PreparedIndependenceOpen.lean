@@ -1,5 +1,9 @@
-import Froberg.PreparedFamilyIndependence
-import Froberg.ScalarVectorIndependenceOpen
+module
+
+public import Froberg.PreparedFamilyIndependence
+public import Froberg.ScalarVectorIndependenceOpen
+
+@[expose] public section
 
 /-! A nonempty principal open makes the full prepared family independent.
 The same open works for every choice of the pure top forms. -/

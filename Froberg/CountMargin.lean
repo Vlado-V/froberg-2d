@@ -1,4 +1,8 @@
-import Froberg.SlackLeading
+module
+
+public import Froberg.SlackLeading
+
+@[expose] public section
 
 /-! Positivity of the actual dimension margin for every exact count in the
 prescribed interval, including both adjacent critical generator counts. -/

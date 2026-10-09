@@ -1,5 +1,9 @@
-import Froberg.PrivateReductionRename
-import Froberg.PreparedActualReduction
+module
+
+public import Froberg.PrivateReductionRename
+public import Froberg.PreparedActualReduction
+
+@[expose] public section
 
 /-! Output reindexing preserves the ordinary positive-row reduction and
 its nonempty principal open, including kernel-constrained output spaces. -/

@@ -1,6 +1,10 @@
-import Froberg.ExtendedEvenRowWitnesses
-import Froberg.PreparedLeadingWitness
-import Froberg.PrivateBiformFamily
+module
+
+public import Froberg.ExtendedEvenRowWitnesses
+public import Froberg.PreparedLeadingWitness
+public import Froberg.PrivateBiformFamily
+
+@[expose] public section
 
 /-! Literal independent high components survive extension of the scalar variables. -/
 noncomputable section

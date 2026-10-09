@@ -1,5 +1,9 @@
-import Froberg.PrivateColumns
-import Froberg.MixedRestriction
+module
+
+public import Froberg.PrivateColumns
+public import Froberg.MixedRestriction
+
+@[expose] public section
 
 /-! Injectivity and exact quotient dimensions after adjoining finitely many
 columns on distinct free variables. -/

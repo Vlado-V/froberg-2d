@@ -1,4 +1,8 @@
-import Froberg.OuterInjection
+module
+
+public import Froberg.OuterInjection
+
+@[expose] public section
 
 /-! Exact source and target dimensions in the actual outer presentation. -/
 noncomputable section

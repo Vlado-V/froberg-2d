@@ -1,6 +1,10 @@
-import Froberg.CountedJointSelection
-import Froberg.BackgroundFlagSpan
-import Froberg.SupportedOddTarget
+module
+
+public import Froberg.CountedJointSelection
+public import Froberg.BackgroundFlagSpan
+public import Froberg.SupportedOddTarget
+
+@[expose] public section
 
 /-! The generic child flag supplies the supported deletion and even
 coverage needed by the concrete background comparison. -/

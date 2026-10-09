@@ -1,4 +1,8 @@
-import Froberg.LowHomogeneousProduct
+module
+
+public import Froberg.LowHomogeneousProduct
+
+@[expose] public section
 
 /-! Exact coefficient rows for scalar-plus-positive-degree generators. -/
 noncomputable section

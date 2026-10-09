@@ -1,4 +1,8 @@
-import Froberg.ProductCapacityLimits
+module
+
+public import Froberg.ProductCapacityLimits
+
+@[expose] public section
 
 /-! The proved B.9 bounds give a strict gap for the actual deleted output
 counts, including the quadratic loss. -/

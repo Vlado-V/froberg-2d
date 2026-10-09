@@ -1,6 +1,10 @@
-import Quartic.ActualDeformationColumns
-import Quartic.DeformationRank
-import Quartic.DeformationIndependence
+module
+
+public import Quartic.ActualDeformationColumns
+public import Quartic.DeformationRank
+public import Quartic.DeformationIndependence
+
+@[expose] public section
 
 /-!
 # Rank gain for the actual quartic deformation

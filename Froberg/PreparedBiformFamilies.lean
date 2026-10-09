@@ -1,5 +1,9 @@
-import Froberg.PreparedEndpointParity
-import Froberg.OddSplitRelativeInjection
+module
+
+public import Froberg.PreparedEndpointParity
+public import Froberg.OddSplitRelativeInjection
+
+@[expose] public section
 
 /-! The actual prepared coefficients split into the Q/E/F/G biform
 families used by the relative quotient and covector construction. -/

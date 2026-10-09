@@ -1,4 +1,8 @@
-import Froberg.BiformSplitEndpoint
+module
+
+public import Froberg.BiformSplitEndpoint
+
+@[expose] public section
 
 /-! Odd split exactness gives the actual opposite-parity Koszul conclusion
 under any literal variable and generator enumeration. -/

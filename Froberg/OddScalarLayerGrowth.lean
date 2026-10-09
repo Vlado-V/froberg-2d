@@ -1,6 +1,10 @@
-import Froberg.BiformDimensions
-import Froberg.TwoFamilyAugmentedOpen
-import Froberg.OddRowAugmentedBudget
+module
+
+public import Froberg.BiformDimensions
+public import Froberg.TwoFamilyAugmentedOpen
+public import Froberg.OddRowAugmentedBudget
+
+@[expose] public section
 
 /-! The non-top odd target quotients have uniform scalar growth on a
 nonempty open of the original scalar/linear generator parameters. -/

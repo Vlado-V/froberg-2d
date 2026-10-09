@@ -1,6 +1,10 @@
-import Froberg.PluckerCoordinates
-import Froberg.PrimitiveVectors
-import Froberg.PluckerLine
+module
+
+public import Froberg.PluckerCoordinates
+public import Froberg.PrimitiveVectors
+public import Froberg.PluckerLine
+
+@[expose] public section
 
 /-! # Primitive normalization of actual invariant Plücker coordinates -/
 

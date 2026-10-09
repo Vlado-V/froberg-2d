@@ -1,5 +1,9 @@
-import Froberg.UniversalMixedPosition
-import Froberg.OuterInjection
+module
+
+public import Froberg.UniversalMixedPosition
+public import Froberg.OuterInjection
+
+@[expose] public section
 
 /-! One actual outer presentation has both full rank and uniform mixed position. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.AttachedReindexedOpen
-import Froberg.VectorQuotientDimensions
+module
+
+public import Froberg.AttachedReindexedOpen
+public import Froberg.VectorQuotientDimensions
+
+@[expose] public section
 
 /-! The real strict-shadow inequality persists on an actual common open. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Froberg.BiformTensorFamily
+module
+
+public import Froberg.BiformTensorFamily
+
+@[expose] public section
 
 /-! Increasing a generator count preserves the target surjection, including
 when all output coefficients are required to stay in a fixed subspace. -/

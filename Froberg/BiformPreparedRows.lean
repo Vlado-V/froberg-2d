@@ -1,6 +1,10 @@
-import Froberg.CoreBiform
-import Froberg.BiformTensorFamily
-import Froberg.WeightedTriangularProducts
+module
+
+public import Froberg.CoreBiform
+public import Froberg.BiformTensorFamily
+public import Froberg.WeightedTriangularProducts
+
+@[expose] public section
 
 /-! Literal polynomial row maps for deformed biform generators. Their top
 components are the checked tensor multiplication maps, and all higher

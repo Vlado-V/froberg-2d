@@ -1,5 +1,9 @@
-import Quartic.SlicedCovectorAvoidance
-import Quartic.IteratedCovectorCharts
+module
+
+public import Quartic.SlicedCovectorAvoidance
+public import Quartic.IteratedCovectorCharts
+
+@[expose] public section
 
 /-!
 # Actual prefix-profile covector strata with auxiliary linear slices

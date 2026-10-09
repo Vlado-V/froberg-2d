@@ -1,9 +1,13 @@
-import Quartic.SplitBigrading
-import Quartic.ConvolutionFreeMultiplication
-import Mathlib.LinearAlgebra.TensorProduct.Pi
-import Mathlib.LinearAlgebra.TensorProduct.Prod
-import Mathlib.LinearAlgebra.TensorProduct.RightExactness
-import Mathlib.RingTheory.Flat.Basic
+module
+
+public import Quartic.SplitBigrading
+public import Quartic.ConvolutionFreeMultiplication
+public import Mathlib.LinearAlgebra.TensorProduct.Pi
+public import Mathlib.LinearAlgebra.TensorProduct.Prod
+public import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+public import Mathlib.RingTheory.Flat.Basic
+
+@[expose] public section
 
 /-!
 # Tensor coordinates for actual polynomial bidegrees

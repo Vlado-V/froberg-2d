@@ -1,9 +1,13 @@
-import Froberg.PreparedActualCubicPrivateUniform
-import Froberg.PreparedActualMiddlePrivateUniform
-import Froberg.PrivateFrameReduction
-import Froberg.PrivateFrameReference
-import Froberg.PrivateFrameNonzero
-import Froberg.PrivateDetectorCapacity
+module
+
+public import Froberg.PreparedActualCubicPrivateUniform
+public import Froberg.PreparedActualMiddlePrivateUniform
+public import Froberg.PrivateFrameReduction
+public import Froberg.PrivateFrameReference
+public import Froberg.PrivateFrameNonzero
+public import Froberg.PrivateDetectorCapacity
+
+@[expose] public section
 
 /-! In odd degrees three, five and seven, one nonempty frame open supports
 a fixed nonzero private tuple and the actual counted prepared-family open.

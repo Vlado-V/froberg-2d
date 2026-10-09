@@ -1,5 +1,9 @@
-import Froberg.AttachedFibers
-import Froberg.CoreDivisors
+module
+
+public import Froberg.AttachedFibers
+public import Froberg.CoreDivisors
+
+@[expose] public section
 
 /-! Exact dimensions of the vector fibers of the attached-monomial quotient. -/
 noncomputable section

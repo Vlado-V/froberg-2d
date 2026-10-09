@@ -1,4 +1,8 @@
-import Froberg.WeightedExpansion
+module
+
+public import Froberg.WeightedExpansion
+
+@[expose] public section
 
 /-! Weighted counting after deleting target coordinates. -/
 namespace Froberg

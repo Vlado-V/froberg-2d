@@ -1,6 +1,10 @@
-import Froberg.EvenRowWitness
-import Froberg.BalancedProductRow
-import Froberg.ProductRowUpdate
+module
+
+public import Froberg.EvenRowWitness
+public import Froberg.BalancedProductRow
+public import Froberg.ProductRowUpdate
+
+@[expose] public section
 
 /-! The finite even-row constructor: the sparse layer and all its product
 columns belong to one actual polynomial family and use one scalar list. -/

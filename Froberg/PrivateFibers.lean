@@ -1,5 +1,9 @@
-import Froberg.PrivateColumns
-import Froberg.CommonMultipleCount
+module
+
+public import Froberg.PrivateColumns
+public import Froberg.CommonMultipleCount
+
+@[expose] public section
 
 /-! Exact fiber relations on the retained regular and private targets. -/
 noncomputable section

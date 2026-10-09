@@ -1,5 +1,9 @@
-import Froberg.PrefixCharts
-import Froberg.PrefixAffineCharts
+module
+
+public import Froberg.PrefixCharts
+public import Froberg.PrefixAffineCharts
+
+@[expose] public section
 
 /-! Polynomial charts for a normalized nonzero last row with prescribed support,
 and arbitrary other rows whose rank modulo the last row is fixed. -/

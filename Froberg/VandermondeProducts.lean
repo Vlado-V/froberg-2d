@@ -1,8 +1,12 @@
-import Froberg.Graded
-import Mathlib.Algebra.Polynomial.BigOperators
-import Mathlib.Algebra.Polynomial.Eval.Degree
-import Mathlib.Data.Fintype.Powerset
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import Froberg.Graded
+public import Mathlib.Algebra.Polynomial.BigOperators
+public import Mathlib.Algebra.Polynomial.Eval.Degree
+public import Mathlib.Data.Fintype.Powerset
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-! # A basis of products of Vandermonde linear forms
 

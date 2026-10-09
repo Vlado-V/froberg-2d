@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Certificate
+module
+
+public import Quartic.SharpCertificate.Certificate
+
+@[expose] public section
 
 /-! Exact counts of checked sharp edges, compressed intervals, and integer edge values. -/
 

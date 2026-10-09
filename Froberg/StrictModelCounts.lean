@@ -1,5 +1,9 @@
-import Froberg.StrictVectorModel
-import Froberg.AttachedDimensionCounts
+module
+
+public import Froberg.StrictVectorModel
+public import Froberg.AttachedDimensionCounts
+
+@[expose] public section
 
 /-! Exact ordinary monomial counts for every strict vector model. -/
 noncomputable section

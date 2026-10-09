@@ -1,4 +1,8 @@
-import Froberg.PolynomialTensorTransport
+module
+
+public import Froberg.PolynomialTensorTransport
+
+@[expose] public section
 
 /-! The tensor separation construction inside the actual homogeneous
 polynomial spaces, with the precise formal-product conclusion used in C.6. -/

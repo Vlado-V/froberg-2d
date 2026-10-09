@@ -1,6 +1,10 @@
-import Froberg.CoreLower
-import Froberg.AuxiliaryCounts
-import Froberg.BlockParameters
+module
+
+public import Froberg.CoreLower
+public import Froberg.AuxiliaryCounts
+public import Froberg.BlockParameters
+
+@[expose] public section
 
 /-! Simultaneous exact counts and the positive dimension reserve, with
 arbitrarily large fixed block size. Both adjacent critical counts use the

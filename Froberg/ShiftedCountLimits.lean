@@ -1,5 +1,9 @@
-import Froberg.FixedSlotCapacity
-import Froberg.PreparedCountIdentities
+module
+
+public import Froberg.FixedSlotCapacity
+public import Froberg.PreparedCountIdentities
+
+@[expose] public section
 
 /-! Fixed additions to the scalar variable count preserve normalized leading
 coefficients. Rounded counts retain the same sparse block coverage. -/

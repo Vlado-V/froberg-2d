@@ -1,5 +1,9 @@
-import Froberg.PreparedCoefficientRows
-import Froberg.PreparedPrivateRowOpen
+module
+
+public import Froberg.PreparedCoefficientRows
+public import Froberg.PreparedPrivateRowOpen
+
+@[expose] public section
 
 /-! The open intrinsic augmented-row conditions imply the literal
 coefficient equations used by delayed private elimination. -/

@@ -1,4 +1,8 @@
-import Froberg.ParityEndpointRange
+module
+
+public import Froberg.ParityEndpointRange
+
+@[expose] public section
 
 /-! The endpoint map on arbitrary finite variable and generator sets, with
 literal homogeneous parity coefficients. It is conjugate to the ordinary

@@ -1,6 +1,10 @@
-import Quartic.SharedChildFlag
-import Quartic.ActualSmallResponseRank
-import Quartic.ActualDeformationColumns
+module
+
+public import Quartic.SharedChildFlag
+public import Quartic.ActualSmallResponseRank
+public import Quartic.ActualDeformationColumns
+
+@[expose] public section
 
 /-! Actual child flag and maximal response at the same small-range parameter. -/
 noncomputable section

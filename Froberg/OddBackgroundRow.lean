@@ -1,5 +1,9 @@
-import Froberg.BiformTensorComponent
-import Froberg.TwoFamilyIntrinsic
+module
+
+public import Froberg.BiformTensorComponent
+public import Froberg.TwoFamilyIntrinsic
+
+@[expose] public section
 
 /-! The row relations of the actual scalar/linear polynomial background
 are exactly the two-family tensor multiplication relations. -/

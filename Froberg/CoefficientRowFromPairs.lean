@@ -1,5 +1,9 @@
-import Froberg.CoefficientRowElimination
-import Froberg.MatrixProductKernel
+module
+
+public import Froberg.CoefficientRowElimination
+public import Froberg.MatrixProductKernel
+
+@[expose] public section
 
 /-! Converting exact polynomial rows to the matrix invariant used in the
 increasing-degree elimination. Unordered products retain diagonal equations

@@ -1,5 +1,9 @@
-import Froberg.PrefixPartialCharts
-import Quartic.ProjectiveKernelIncidence
+module
+
+public import Froberg.PrefixPartialCharts
+public import Quartic.ProjectiveKernelIncidence
+
+@[expose] public section
 
 /-! Incidence avoidance for a rectangular array with a partially filled last
 row. The sharp chart count handles the surjective side of generic prefix rank. -/

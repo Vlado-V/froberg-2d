@@ -1,6 +1,10 @@
-import Froberg.PreparedPositiveIndependence
-import Froberg.ScalarQuotientTransport
-import Froberg.RestoredBiformFamily
+module
+
+public import Froberg.PreparedPositiveIndependence
+public import Froberg.ScalarQuotientTransport
+public import Froberg.RestoredBiformFamily
+
+@[expose] public section
 
 /-! The actual positive generators, with their pure perturbations, are
 independent modulo the entire scalar form space used in flag replacement. -/

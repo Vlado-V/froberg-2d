@@ -1,8 +1,12 @@
-import OAI.Geometry.PeriodicTiling.ScalarAverage
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.Algebra.Order.Chebyshev
-import Mathlib.Tactic.Abel
-import Mathlib.Tactic.Module
+module
+
+public import OAI.Geometry.PeriodicTiling.ScalarAverage
+public import Mathlib.Analysis.InnerProductSpace.Basic
+public import Mathlib.Algebra.Order.Chebyshev
+public import Mathlib.Tactic.Abel
+public import Mathlib.Tactic.Module
+
+@[expose] public section
 
 namespace OAI
 

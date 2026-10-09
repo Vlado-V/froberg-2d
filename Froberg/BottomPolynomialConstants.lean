@@ -1,6 +1,10 @@
-import Froberg.BottomVectorRows
-import Froberg.ScalarLayerQuotientExact
-import Froberg.EvenCoefficientElimination
+module
+
+public import Froberg.BottomVectorRows
+public import Froberg.ScalarLayerQuotientExact
+public import Froberg.EvenCoefficientElimination
+
+@[expose] public section
 
 /-! The actual first odd polynomial row has precisely the scalar–vector
 constant relations whenever scalar multiplication on the vector quotient

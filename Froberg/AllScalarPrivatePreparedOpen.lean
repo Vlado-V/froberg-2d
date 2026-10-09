@@ -1,6 +1,10 @@
-import Froberg.AllOddCountedPrivatePreparedOpen
-import Froberg.NaturalEventualParity
-import Froberg.TargetLayerAssembly
+module
+
+public import Froberg.AllOddCountedPrivatePreparedOpen
+public import Froberg.NaturalEventualParity
+public import Froberg.TargetLayerAssembly
+
+@[expose] public section
 
 /-! The full private split reduction at every sufficiently large total
 scalar dimension, with the frame chosen after that dimension. -/

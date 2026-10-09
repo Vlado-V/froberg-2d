@@ -1,8 +1,12 @@
-import Froberg.RestoredTargetOpen
-import Froberg.RestoredCountedOuterOdd
-import Froberg.RestoredOddSelection
-import Froberg.FiniteBasisPrincipalIntersection
-import Froberg.FreezeAtPoint
+module
+
+public import Froberg.RestoredTargetOpen
+public import Froberg.RestoredCountedOuterOdd
+public import Froberg.RestoredOddSelection
+public import Froberg.FiniteBasisPrincipalIntersection
+public import Froberg.FreezeAtPoint
+
+@[expose] public section
 
 /-! Every restored condition is imposed on one actual parameter tuple.
 The full-family open is restricted through a successful point before

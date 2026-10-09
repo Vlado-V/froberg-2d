@@ -1,4 +1,8 @@
-import Quartic.SplitBlock22Full
+module
+
+public import Quartic.SplitBlock22Full
+
+@[expose] public section
 
 /-!
 # Exact boundary reflection for the full (2,2) block

@@ -1,6 +1,10 @@
-import Froberg.CycleReductionFormal
-import Froberg.ParityComplex
-import Froberg.ProjectedHomologyCoefficients
+module
+
+public import Froberg.CycleReductionFormal
+public import Froberg.ParityComplex
+public import Froberg.ProjectedHomologyCoefficients
+
+@[expose] public section
 
 /-! Odd exactness and explicit reduction of even cycles give the complete
 projected formal-relation equality used in the hyperplane replacement. -/
@@ -11,7 +15,7 @@ variable {K : Type} [Field K] {n d r : ℕ}
 variable {Z : Type*} [AddCommGroup Z] [Module K Z]
 
 theorem projected_formal_relations_of_even_reduction
-    (htwo : (2 : K) ≠ 0) (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
+    (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hi : LinearIndependent K q)
     (hq : ∀ i,(q i).val.IsWeightedHomogeneous w (e i))
     (pi : Forms K n (2*d) →ₗ[K] Z)
@@ -37,7 +41,7 @@ theorem projected_formal_relations_of_even_reduction
     let cycle : (projectedEndpointMultiplication pi q).ker := ⟨c,hc⟩
     obtain ⟨v,hv,hclass⟩ := exists_even_projected_cycle_representative w e q hq pi hpi hodd
       (kernelClass (projectedEndpointMultiplication pi q) (koszulSpace q) cycle)
-    have hf := congrArg (projectedFormalRepresentative htwo pi q hi) hclass
+    have hf := congrArg (projectedFormalRepresentative pi q hi) hclass
     simp only [projectedFormalRepresentative_mk] at hf
     obtain ⟨M,z,hz,hzQ,hzA⟩ := hreduce v hv
     refine ⟨hx,?_⟩

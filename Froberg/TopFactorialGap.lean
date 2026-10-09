@@ -1,4 +1,8 @@
-import Froberg.TopShadowMargin
+module
+
+public import Froberg.TopShadowMargin
+
+@[expose] public section
 
 /-! The projected growth ratio pays for both families in C.9. -/
 noncomputable section

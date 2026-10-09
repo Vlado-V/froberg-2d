@@ -1,5 +1,9 @@
-import Quartic.RowMultiplicationCoordinates
-import Quartic.BilinearExpansionOpen
+module
+
+public import Quartic.RowMultiplicationCoordinates
+public import Quartic.BilinearExpansionOpen
+
+@[expose] public section
 
 /-! # Actual row-polynomial expansion on an open family of mixed columns -/
 noncomputable section

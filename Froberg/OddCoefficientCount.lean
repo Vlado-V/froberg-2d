@@ -1,5 +1,9 @@
-import Froberg.ScalarSeparationAsymptotic
-import Froberg.OddBiformDecomposition
+module
+
+public import Froberg.ScalarSeparationAsymptotic
+public import Froberg.OddBiformDecomposition
+
+@[expose] public section
 
 /-! Every odd coefficient layer has positive X-degree, so its total
 Y-dimension is lower order than the scalar degree-d count. -/

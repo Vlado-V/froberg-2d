@@ -1,5 +1,9 @@
-import Froberg.MonomialIncidence
-import Mathlib
+module
+
+public import Froberg.MonomialIncidence
+public import Mathlib
+
+@[expose] public section
 
 /-! The uniform divisibility coupling, with exact source and target
 marginals for all monomials, including repeated variables. -/

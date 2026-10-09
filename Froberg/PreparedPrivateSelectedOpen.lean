@@ -1,4 +1,8 @@
-import Froberg.PreparedPrivateKernels
+module
+
+public import Froberg.PreparedPrivateKernels
+
+@[expose] public section
 
 /-! Exact first and later row witnesses select one prepared family with
 all ordinary rows and all private separations simultaneously. -/

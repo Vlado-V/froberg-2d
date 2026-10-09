@@ -1,5 +1,9 @@
-import Froberg.IntrinsicTransfer
-import Froberg.AuxiliaryCounts
+module
+
+public import Froberg.IntrinsicTransfer
+public import Froberg.AuxiliaryCounts
+
+@[expose] public section
 
 /-! The concrete projected complex and rank certificate consumed by the
 two-critical-count recurrence. -/

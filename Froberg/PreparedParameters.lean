@@ -1,5 +1,9 @@
-import Froberg.ProductRowPairs
-import Froberg.BiformCoordinates
+module
+
+public import Froberg.ProductRowPairs
+public import Froberg.BiformCoordinates
+
+@[expose] public section
 
 /-! One common coefficient space for all scalar and positive even rows.
 The output spaces carry actual polynomial restrictions, including D in degree two. -/

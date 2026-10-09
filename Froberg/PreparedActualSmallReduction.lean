@@ -1,6 +1,10 @@
-import Froberg.PreparedSmallEvenReduction
-import Froberg.ShiftedPreparedCapacities
-import Froberg.ShiftedSmallCapacities
+module
+
+public import Froberg.PreparedSmallEvenReduction
+public import Froberg.ShiftedPreparedCapacities
+public import Froberg.ShiftedSmallCapacities
+
+@[expose] public section
 
 /-! The actual cubic and quartic counts, including a fixed private-variable
 reserve and appended columns, satisfy the full common-open construction. -/

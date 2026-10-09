@@ -1,4 +1,8 @@
-import Froberg.ProfileTransport
+module
+
+public import Froberg.ProfileTransport
+
+@[expose] public section
 
 /-! Identification of the explicit transport's target marginal with the
 coarse quotient capacities in Theorem B.2. -/

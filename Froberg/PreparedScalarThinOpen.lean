@@ -1,8 +1,12 @@
-import Froberg.PreparedThinProperty
-import Froberg.EndpointThinProperty
-import Froberg.MixedEndpointSlices
-import Froberg.CountedBaseC4Growth
-import Froberg.OddSourceDimensionBudget
+module
+
+public import Froberg.PreparedThinProperty
+public import Froberg.EndpointThinProperty
+public import Froberg.MixedEndpointSlices
+public import Froberg.CountedBaseC4Growth
+public import Froberg.OddSourceDimensionBudget
+
+@[expose] public section
 
 /-! Apply the actual odd quotient estimate on a frozen prepared scalar
 fiber. The input open retains all geometric certificates already imposed. -/

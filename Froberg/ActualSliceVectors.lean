@@ -1,5 +1,9 @@
-import Froberg.LinearCutVectors
-import Froberg.ActualClosedKernelSlices
+module
+
+public import Froberg.LinearCutVectors
+public import Froberg.ActualClosedKernelSlices
+
+@[expose] public section
 
 /-! Closed kernel slices are exactly annihilator conditions on finitely
 many actual target vectors. -/

@@ -1,5 +1,9 @@
-import Quartic.SplitBlock22
-import Quartic.Homology
+module
+
+public import Quartic.SplitBlock22
+public import Quartic.Homology
+
+@[expose] public section
 
 /-!
 # Canonical homology reduction in actual bidegree (2,2)
@@ -173,7 +177,7 @@ theorem cycleProjection_ker (g : Fin c → MiddleCoordinates.Mixed K m)
   rw [← Subtype.val_inj]
   exact cycle_zero_mixed_iff g h hh a.val a.property
 
-private def quotientByKernel {V W : Type*} [AddCommGroup V] [Module K V]
+def quotientByKernel {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (B : Submodule K V)
     (hk : f.ker = B) (hs : Function.Surjective f) : (V ⧸ B) ≃ₗ[K] W :=
   (Submodule.quotEquivOfEq _ _ hk.symm).trans (f.quotKerEquivOfSurjective hs)

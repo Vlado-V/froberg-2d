@@ -1,5 +1,9 @@
-import Froberg.MixedAmbientKernel
-import Froberg.OddAmbientCoordinates
+module
+
+public import Froberg.MixedAmbientKernel
+public import Froberg.OddAmbientCoordinates
+
+@[expose] public section
 
 /-! Actual ambient graph correction from pure-column independence and
 concrete top-row separation. Scalar/linear weight conditions are proved. -/

@@ -1,4 +1,8 @@
-import Froberg.OuterGrowthTransfer
+module
+
+public import Froberg.OuterGrowthTransfer
+
+@[expose] public section
 
 /-! A lower-half ideal bound transfers to every actual subspace of that size. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Quartic.BilinearImage
-import Mathlib.LinearAlgebra.Matrix.ToLin
+module
+
+public import Quartic.BilinearImage
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+
+@[expose] public section
 
 /-! # Scalar extension of a coordinate bilinear map by its actual coefficient tensor -/
 noncomputable section

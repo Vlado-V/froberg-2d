@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Arithmetic
+module
+
+public import Quartic.HullCertificate.Arithmetic
+
+@[expose] public section
 
 /-! A small certificate format for supporting lines and quadratic minima. -/
 

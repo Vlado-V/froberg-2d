@@ -1,8 +1,12 @@
-import Froberg.MixedAmbientHigherGrowth
-import Froberg.MixedBottomCompatibility
-import Froberg.SurjectiveSplitTarget
-import Froberg.BottomVectorSlices
-import Froberg.MixedAmbientCorrection
+module
+
+public import Froberg.MixedAmbientHigherGrowth
+public import Froberg.MixedBottomCompatibility
+public import Froberg.SurjectiveSplitTarget
+public import Froberg.BottomVectorSlices
+public import Froberg.MixedAmbientCorrection
+
+@[expose] public section
 
 /-! Literal bottom-source multiplication agrees with the B.3 vector
 quotient action in the corrected ambient target. -/
@@ -45,7 +49,10 @@ theorem mixed_full_bottom_compat
     (p : Forms K m d) (x : OddBottomQuotient F) :
     ell (μ p ((eV).symm (x,0)))=
       quotientSplitBottom (oddAmbientCoordinates (K := K) (h := h) (m := m) (d := d) (q := q) (f := f) (u := u) hdp Q₀ F₁ hQ₀ hF₁ G₁ D hD) π ell (ν p x) := by
-  have he := mixedAmbientScalar_bottom hd hd3 Q g U P B hB D hD p x
+  have he : oddAmbientCoordinates (K := K) (h := h) (m := m) (d := d)
+      (q := q) (f := f) (u := u) hdp Q₀ F₁ hQ₀ hF₁ G₁ D hD
+      (mixedAmbientScalar hd hd3 Q F U P p ((eV).symm (x,0))) = (ν p x,0) :=
+    mixedAmbientScalar_bottom hd hd3 Q g U P B hB D hD p x
   have hmu : π (mixedAmbientScalar hd hd3 Q F U P p ((eV).symm (x,0)))=
       μ p ((eV).symm (x,0)) := by
     have hgen (v : MixedAmbientSource hd hd3 F U P) :
@@ -101,8 +108,16 @@ theorem mixed_full_higher_kernel_growth
     t*(finrank K (QuotientCovectorKernel.relation μ ell).ker-
       finrank K (QuotientCovectorKernel.relation ν (quotientSplitBottom (oddAmbientCoordinates (K := K) (h := h) (m := m) (d := d) (q := q) (f := f) (u := u) hdp Q₀ F₁ hQ₀ hF₁ G₁ D hD) π ell)).ker)≤
       finrank K (BilinearImage.image (splitTargetHigherAction (oddAmbientCoordinates (K := K) (h := h) (m := m) (d := d) (q := q) (f := f) (u := u) hdp Q₀ F₁ hQ₀ hF₁ G₁ D hD) (mixedAmbientScalar hd hd3 Q F U P)) (QuotientCovectorKernel.relation μ ell).ker) := by
-  have hg := mixedAmbientHigher_growth hd hd3 R hR Q F U P hker B hB D hD t htop hmid
-    (QuotientCovectorKernel.relation μ ell).ker
+  have hg : t*(finrank K (QuotientCovectorKernel.relation μ ell).ker-
+      finrank K ((QuotientCovectorKernel.relation μ ell).ker.comap
+        ((eV).symm.toLinearMap.comp (LinearMap.inl K (OddBottomQuotient F)
+          (OddMixedBlockCoordinates hd hd3 F U P))))) ≤
+      finrank K (BilinearImage.image (splitTargetHigherAction
+        (oddAmbientCoordinates (K := K) (h := h) (m := m) (d := d) (q := q)
+          (f := f) (u := u) hdp Q₀ F₁ hQ₀ hF₁ G₁ D hD)
+        (mixedAmbientScalar hd hd3 Q F U P)) (QuotientCovectorKernel.relation μ ell).ker) :=
+    mixedAmbientHigher_growth hd hd3 R hR Q F U P hker B hB D hD t htop hmid
+      (QuotientCovectorKernel.relation μ ell).ker
   rw [mixed_full_bottom_kernel hd hd3 Q g U P B hB D hD ell] at hg
   exact hg
 

@@ -1,6 +1,10 @@
-import Froberg.SingleLayerProducts
-import Froberg.StrongQuadraticDiagonal
-import Froberg.PreparedProductOpen
+module
+
+public import Froberg.SingleLayerProducts
+public import Froberg.StrongQuadraticDiagonal
+public import Froberg.PreparedProductOpen
+
+@[expose] public section
 
 /-! The strengthened small-degree diagonal witness is a point of the
 same prepared parameter space used by the row openness argument. -/

@@ -1,5 +1,9 @@
-import Froberg.VectorParameters
-import Froberg.AffinePolynomialSubstitution
+module
+
+public import Froberg.VectorParameters
+public import Froberg.AffinePolynomialSubstitution
+
+@[expose] public section
 
 /-! The strict vector model opens use monomial coefficients. This exact
 coordinate change supplies principal opens in the canonical finite basis

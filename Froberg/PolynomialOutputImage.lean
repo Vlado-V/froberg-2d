@@ -1,4 +1,8 @@
-import Froberg.HomogeneousOutputCoordinates
+module
+
+public import Froberg.HomogeneousOutputCoordinates
+
+@[expose] public section
 
 /-! The output constraint of a sparse family survives every scalar multiplier. -/
 noncomputable section

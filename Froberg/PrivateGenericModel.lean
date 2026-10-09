@@ -1,5 +1,9 @@
-import Froberg.PrivateModelOpen
-import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
+module
+
+public import Froberg.PrivateModelOpen
+public import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
+
+@[expose] public section
 
 /-! The uniform B.2 private-column construction on a nonempty open in the
 full coefficient space, with actual strict growth and scalar maximal rank. -/

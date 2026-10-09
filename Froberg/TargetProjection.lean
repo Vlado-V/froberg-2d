@@ -1,4 +1,8 @@
-import Froberg.Koszul
+module
+
+public import Froberg.Koszul
+
+@[expose] public section
 
 /-! The actual endpoint complex after a fixed linear projection of its target.
 This includes the quotient by the complementary pure-variable target in Section 6. -/

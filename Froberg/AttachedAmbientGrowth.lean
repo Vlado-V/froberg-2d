@@ -1,5 +1,9 @@
-import Froberg.OuterMultiplication
-import Froberg.SurjectiveImage
+module
+
+public import Froberg.OuterMultiplication
+public import Froberg.SurjectiveImage
+
+@[expose] public section
 
 /-! Exact ambient interpretation of expansion for attached polynomial quotients. -/
 noncomputable section

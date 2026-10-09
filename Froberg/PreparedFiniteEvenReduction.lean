@@ -1,5 +1,9 @@
-import Froberg.PreparedRowsFromCapacities
-import Froberg.PreparedFiniteProducts
+module
+
+public import Froberg.PreparedRowsFromCapacities
+public import Froberg.PreparedFiniteProducts
+
+@[expose] public section
 
 /-! A single finite-capacity constructor for the scalar/even prepared family.
 The resulting open carries the literal positive-row boundary reduction. -/

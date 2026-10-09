@@ -1,5 +1,9 @@
-import Froberg.TwoFamilyIntrinsic
-import Froberg.TwoFamilyGrowth
+module
+
+public import Froberg.TwoFamilyIntrinsic
+public import Froberg.TwoFamilyGrowth
+
+@[expose] public section
 
 /-! Nonempty polynomial opens for two bilinear families with arbitrary
 finite-dimensional coefficient spaces. -/

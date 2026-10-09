@@ -1,5 +1,9 @@
-import Froberg.ProjectedGeneralVectors
-import Froberg.AttachedMultiplication
+module
+
+public import Froberg.ProjectedGeneralVectors
+public import Froberg.AttachedMultiplication
+
+@[expose] public section
 
 /-! Sparse attached generators remain injective modulo a finite family of
 fixed output relations. The same unrestricted coefficient tuple works for all

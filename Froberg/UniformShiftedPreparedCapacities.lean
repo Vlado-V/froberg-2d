@@ -1,5 +1,9 @@
-import Froberg.ShiftedPreparedCapacities
-import Froberg.UniformShiftedProductCapacity
+module
+
+public import Froberg.ShiftedPreparedCapacities
+public import Froberg.UniformShiftedProductCapacity
+
+@[expose] public section
 
 /-! The output target module can depend on the chosen output dimension. All
 thresholds precede its selection, avoiding a fixed-rank asymptotic premise. -/

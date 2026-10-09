@@ -1,5 +1,9 @@
-import Quartic.SmallCovectorCommonOpen
-import Quartic.SliceMotionAvoidance
+module
+
+public import Quartic.SmallCovectorCommonOpen
+public import Quartic.SliceMotionAvoidance
+
+@[expose] public section
 
 /-! Motion avoidance on the actual common small-range coefficient locus. -/
 noncomputable section

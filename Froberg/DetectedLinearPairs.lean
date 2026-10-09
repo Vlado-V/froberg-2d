@@ -1,5 +1,9 @@
-import Froberg.LinearSyzygies
-import Froberg.FiniteSubspaceProjection
+module
+
+public import Froberg.LinearSyzygies
+public import Froberg.FiniteSubspaceProjection
+
+@[expose] public section
 
 /-! The detected quadratic output spaces retain exactly their classical
 one-dimensional overlaps after a projection injective on each pair space. -/

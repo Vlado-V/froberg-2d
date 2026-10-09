@@ -1,5 +1,9 @@
-import Froberg.FullPreparedFibers
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.FullPreparedFibers
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! Rank openness is applied to the actual varying family. In particular,
 a successful fixed private tuple gives a nonempty open with variable

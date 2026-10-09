@@ -1,4 +1,8 @@
-import Quartic.AugmentedGeneric
+module
+
+public import Quartic.AugmentedGeneric
+
+@[expose] public section
 
 /-!
 # A common nonempty middle and augmented parameter open

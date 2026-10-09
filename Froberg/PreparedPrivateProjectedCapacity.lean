@@ -1,5 +1,9 @@
-import Froberg.ProjectedSparseCapacity
-import Froberg.PreparedActualCapacities
+module
+
+public import Froberg.ProjectedSparseCapacity
+public import Froberg.PreparedActualCapacities
+
+@[expose] public section
 
 /-! Every active higher row meets the projected private-output capacity;
 zero-count inactive rows use zero sparse blocks. -/

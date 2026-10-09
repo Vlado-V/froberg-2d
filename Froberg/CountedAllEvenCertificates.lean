@@ -1,6 +1,10 @@
-import Froberg.PreparedCountedOddCycles
-import Froberg.PreparedCountedIndependence
-import Froberg.PreparedAllEvenCounts
+module
+
+public import Froberg.PreparedCountedOddCycles
+public import Froberg.PreparedCountedIndependence
+public import Froberg.PreparedAllEvenCounts
+
+@[expose] public section
 
 /-! The actual all-even family, including finitely many temporary columns,
 has a uniform odd-exactness open. Output constraints may be chosen after

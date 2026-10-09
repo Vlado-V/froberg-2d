@@ -1,5 +1,9 @@
-import Froberg.OddOutputSpace
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.OddOutputSpace
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! The actual odd-half output space occupies asymptotically one half of
 the homogeneous output space. -/

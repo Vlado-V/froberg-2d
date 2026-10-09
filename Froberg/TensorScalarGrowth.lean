@@ -1,5 +1,9 @@
-import Froberg.TensorizedGrowth
-import Mathlib.RingTheory.Flat.Basic
+module
+
+public import Froberg.TensorizedGrowth
+public import Mathlib.RingTheory.Flat.Basic
+
+@[expose] public section
 
 /-! Exact image dimensions for multiplication by a full tensor factor. -/
 noncomputable section

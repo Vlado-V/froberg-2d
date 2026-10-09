@@ -1,6 +1,10 @@
-import Froberg.GeneralOuterShadow
-import Froberg.BilinearScalarFamily
-import Froberg.IntermediateScalarBudget
+module
+
+public import Froberg.GeneralOuterShadow
+public import Froberg.BilinearScalarFamily
+public import Froberg.IntermediateScalarBudget
+
+@[expose] public section
 
 /-! The new-layer quotient in B.4 has generically injective scalar action,
 with an explicit sufficient finite budget. -/

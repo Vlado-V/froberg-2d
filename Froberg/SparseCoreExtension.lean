@@ -1,5 +1,9 @@
-import Froberg.ExtendedExactRow
-import Froberg.PolynomialRowRelations
+module
+
+public import Froberg.ExtendedExactRow
+public import Froberg.PolynomialRowRelations
+
+@[expose] public section
 
 /-! The exact same sparse even-row witness remains exact after adjoining
 private variables: its lower injections and endpoint kernel supply every

@@ -1,6 +1,10 @@
-import Quartic.ConvolutionProfileChartBound
-import Quartic.IteratedChartGeneric
-import Quartic.ConvolutionOuterGeneric
+module
+
+public import Quartic.ConvolutionProfileChartBound
+public import Quartic.IteratedChartGeneric
+public import Quartic.ConvolutionOuterGeneric
+
+@[expose] public section
 
 /-!
 # Generic actual outer injectivity for every endpoint with m≥28

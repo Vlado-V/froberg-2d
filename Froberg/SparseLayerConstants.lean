@@ -1,6 +1,10 @@
-import Froberg.CapacityScalar
-import Froberg.CapacityProductIdentity
-import Froberg.OddOutputLimit
+module
+
+public import Froberg.CapacityScalar
+public import Froberg.CapacityProductIdentity
+public import Froberg.OddOutputLimit
+
+@[expose] public section
 
 /-! The scalar-capacity inequalities in the normalization of the actual
 odd-half output space. -/

@@ -1,6 +1,10 @@
-import Froberg.ProductRowGluing
-import Froberg.ParityProfileGrowth
-import Froberg.PairedScalarSeparation
+module
+
+public import Froberg.ProductRowGluing
+public import Froberg.ParityProfileGrowth
+public import Froberg.PairedScalarSeparation
+
+@[expose] public section
 
 /-! All products in a row are supported in the removed parity and at most
 one additional scalar half-degree. -/

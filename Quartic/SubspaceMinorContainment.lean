@@ -1,4 +1,8 @@
-import Quartic.SubspaceMinorCoordinates
+module
+
+public import Quartic.SubspaceMinorCoordinates
+
+@[expose] public section
 
 /-!
 # Homogeneous containment equations for projective subspace coordinates

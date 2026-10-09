@@ -1,5 +1,9 @@
-import Froberg.ActualParityCoefficientKernel
-import Froberg.RetainedLocalComparison
+module
+
+public import Froberg.ActualParityCoefficientKernel
+public import Froberg.RetainedLocalComparison
+
+@[expose] public section
 
 /-! The C.6 local comparison follows from the actual odd-source slices,
 C.2 separation, and the retained scalar relation equality of B.5. -/
@@ -13,7 +17,7 @@ variable {F V W : Type*}
   [AddCommGroup W] [Module K W] [FiniteDimensional K W]
 variable {m n d r t c : ℕ}
 
-theorem exists_local_comparison_of_odd_separation (htwo : (2 : K)≠0) (hm : 0 < m)
+theorem exists_local_comparison_of_odd_separation (hm : 0 < m)
     (D : Submodule K (Forms K n (2*d)))
     (w : Fin n → ZMod 2) (parity : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
@@ -47,9 +51,9 @@ theorem exists_local_comparison_of_odd_separation (htwo : (2 : K)≠0) (hm : 0 <
           (renameForm rename).range)
     (hdeleted : finrank K D=genericCokernel K m d (upperCount m d)) :
     Nonempty (LocalComparisonData K n d r (criticalDefect K m d)) := by
-  obtain ⟨dual,_,_,hkernel⟩ := exists_actual_odd_retained_kernel htwo w parity q hq hqparity
+  obtain ⟨dual,_,_,hkernel⟩ := exists_actual_odd_retained_kernel w parity q hq hqparity
     D.mkQ hD hodd T f hf hspan heven hsep coords
-  apply exists_local_comparison_from_retained htwo hm D q hq dual
+  apply exists_local_comparison_from_retained hm D q hq dual
     (coords.toLinearMap.comp (oddCoefficientProjection w parity q hqparity))
     eJ phi mu hmu C hC hslices T (by rw [hspan]; exact le_sup_left)
     old hold hc hgeneric rename hinj hrel hkernel hdeleted

@@ -1,5 +1,9 @@
-import Froberg.ScalarSeparationAsymptotic
-import Froberg.BalancedWeightPolynomial
+module
+
+public import Froberg.ScalarSeparationAsymptotic
+public import Froberg.BalancedWeightPolynomial
+
+@[expose] public section
 
 /-! An explicit eventual incidence budget for the sparse new layers in B.4. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.PreparedExtendedWitness
-import Froberg.PreparedPrivateSeparation
+module
+
+public import Froberg.PreparedExtendedWitness
+public import Froberg.PreparedPrivateSeparation
+
+@[expose] public section
 
 /-! An inactive ordinary row remains exact after adding private variables,
 and its empty new-layer block separates every prescribed private column. -/

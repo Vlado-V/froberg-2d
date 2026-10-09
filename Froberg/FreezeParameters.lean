@@ -1,4 +1,8 @@
-import Froberg.AffinePolynomialSubstitution
+module
+
+public import Froberg.AffinePolynomialSubstitution
+
+@[expose] public section
 
 /-! A nonempty principal parameter open remains nonempty after fixing a
 suitable value of the auxiliary parameters. The parameterization may be any

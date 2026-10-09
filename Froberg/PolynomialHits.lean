@@ -1,5 +1,9 @@
-import OAI.Geometry.PeriodicTiling.PolynomialWeyl
-import Mathlib
+module
+
+public import OAI.Geometry.PeriodicTiling.PolynomialWeyl
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # Arbitrarily late interval hits for polynomial fractional parts

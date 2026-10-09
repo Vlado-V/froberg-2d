@@ -1,5 +1,9 @@
-import Quartic.SplitMiddle22
-import Quartic.RankOpen
+module
+
+public import Quartic.SplitMiddle22
+public import Quartic.RankOpen
+
+@[expose] public section
 
 /-!
 # Generic middle multiplication from the explicit polynomial witnesses

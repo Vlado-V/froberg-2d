@@ -1,6 +1,10 @@
-import Froberg.HomogeneousNormalized
-import Froberg.Prefix
-import Froberg.IntrinsicProjection
+module
+
+public import Froberg.HomogeneousNormalized
+public import Froberg.Prefix
+public import Froberg.IntrinsicProjection
+
+@[expose] public section
 
 /-! Uniform normalized growth and its generic projection, for the actual
 multiplication of homogeneous forms. -/

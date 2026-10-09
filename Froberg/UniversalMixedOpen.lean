@@ -1,4 +1,8 @@
-import Froberg.UniversalMixedPosition
+module
+
+public import Froberg.UniversalMixedPosition
+
+@[expose] public section
 
 /-! The uniform mixed-position conditions hold on a genuine principal open. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.OddBottomDetection
-import Froberg.OddBackgroundEndpoint
+module
+
+public import Froberg.OddBottomDetection
+public import Froberg.OddBackgroundEndpoint
+
+@[expose] public section
 
 /-! The zero-bottom exclusion on the literal Q/F/G background quotient. -/
 noncomputable section

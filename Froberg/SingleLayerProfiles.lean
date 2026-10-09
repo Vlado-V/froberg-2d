@@ -1,5 +1,9 @@
-import Froberg.SingleLayerParameters
-import Froberg.BiformProductProfile
+module
+
+public import Froberg.SingleLayerParameters
+public import Froberg.BiformProductProfile
+
+@[expose] public section
 
 /-! The small quadratic product witness has both injective multiplication
 and the scalar-profile support used to separate it from old scalar products. -/

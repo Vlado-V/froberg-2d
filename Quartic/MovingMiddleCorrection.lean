@@ -1,7 +1,11 @@
-import Quartic.CorrectionSpace
-import Quartic.SplitBlock22MiddleHomology
-import Quartic.AugmentedGeneric
-import Mathlib.LinearAlgebra.Quotient.Pi
+module
+
+public import Quartic.CorrectionSpace
+public import Quartic.SplitBlock22MiddleHomology
+public import Quartic.AugmentedGeneric
+public import Mathlib.LinearAlgebra.Quotient.Pi
+
+@[expose] public section
 
 /-!
 # Actual moving middle correction coefficients

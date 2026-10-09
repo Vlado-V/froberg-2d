@@ -1,6 +1,10 @@
-import Froberg.ExtendedEvenRowWitnesses
-import Froberg.PreparedPrivateFinite
-import Froberg.PreparedFiniteEvenReduction
+module
+
+public import Froberg.ExtendedEvenRowWitnesses
+public import Froberg.PreparedPrivateFinite
+public import Froberg.PreparedFiniteEvenReduction
+
+@[expose] public section
 
 /-! A single finite-capacity constructor for the scalar/even prepared family.
 The resulting open carries the literal positive-row boundary reduction. -/

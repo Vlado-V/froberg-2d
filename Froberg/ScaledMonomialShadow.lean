@@ -1,4 +1,8 @@
-import Froberg.UniformMonomialShadow
+module
+
+public import Froberg.UniformMonomialShadow
+
+@[expose] public section
 
 /-! The shadow inequality is invariant under multiplying all capacities
 by the fixed block multiplicity. -/

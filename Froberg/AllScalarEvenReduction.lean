@@ -1,5 +1,9 @@
-import Froberg.ShiftedActualEvenReduction
-import Froberg.NaturalEventualParity
+module
+
+public import Froberg.ShiftedActualEvenReduction
+public import Froberg.NaturalEventualParity
+
+@[expose] public section
 
 /-! The scalar/even background with the actual counts has the literal
 positive-row reduction on a nonempty open. This is the U=0 input to even

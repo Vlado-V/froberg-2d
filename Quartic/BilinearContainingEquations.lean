@@ -1,5 +1,9 @@
-import Quartic.BilinearExpansionEquations
-import Quartic.SubspaceMinorContainment
+module
+
+public import Quartic.BilinearExpansionEquations
+public import Quartic.SubspaceMinorContainment
+
+@[expose] public section
 
 /-! # Homogeneous equations for low bilinear images containing a varying presentation -/
 noncomputable section

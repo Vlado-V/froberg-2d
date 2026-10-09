@@ -1,4 +1,8 @@
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! Exact weighted row sums after separating the variables into two blocks. -/
 noncomputable section

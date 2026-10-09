@@ -1,4 +1,8 @@
-import Quartic.ProfileCertificate.Core
+module
+
+public import Quartic.ProfileCertificate.Core
+
+@[expose] public section
 
 /-! Numerical kernel checks. Kept separate so wrapper edits reuse these proofs. -/
 

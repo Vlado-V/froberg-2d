@@ -1,5 +1,9 @@
-import Froberg.SharedQuadraticFrame
-import Froberg.PrivateDetectorCapacity
+module
+
+public import Froberg.SharedQuadraticFrame
+public import Froberg.PrivateDetectorCapacity
+
+@[expose] public section
 
 /-! The manuscript's rounded quadratic codimension simultaneously fits
 all outer symmetric products and the private-power detector conditions. -/

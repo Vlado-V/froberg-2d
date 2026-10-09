@@ -1,4 +1,8 @@
-import Froberg.CoefficientActions
+module
+
+public import Froberg.CoefficientActions
+
+@[expose] public section
 
 /-! # The central scalar pair on the actual coefficient space -/
 

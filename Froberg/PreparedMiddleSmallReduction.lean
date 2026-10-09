@@ -1,6 +1,10 @@
-import Froberg.SmallRenamedProducts
-import Froberg.PreparedFourthRow
-import Froberg.PreparedSmallEvenReduction
+module
+
+public import Froberg.SmallRenamedProducts
+public import Froberg.PreparedFourthRow
+public import Froberg.PreparedSmallEvenReduction
+
+@[expose] public section
 
 /-! All rows in degrees five through eight are witnessed in one actual
 prepared parameter space; finite rank openness makes them simultaneous. -/

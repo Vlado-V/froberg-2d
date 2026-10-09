@@ -1,4 +1,8 @@
-import Froberg.PolynomialProperties
+module
+
+public import Froberg.PolynomialProperties
+
+@[expose] public section
 
 noncomputable section
 namespace Froberg

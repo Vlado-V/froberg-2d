@@ -1,4 +1,8 @@
-import Froberg.ClosedKernelSlices
+module
+
+public import Froberg.ClosedKernelSlices
+
+@[expose] public section
 
 /-! Every homogeneous linear covector cut is the annihilator of an actual
 target vector, including a zero-dimensional target. -/

@@ -1,5 +1,9 @@
-import Quartic.Homogeneous
-import Mathlib.LinearAlgebra.Finsupp.Defs
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.LinearAlgebra.Finsupp.Defs
+
+@[expose] public section
 
 /-!
 # Coefficients in a disjoint set of free polynomial variables

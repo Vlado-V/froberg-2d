@@ -1,4 +1,8 @@
-import Froberg.AttachedGenerators
+module
+
+public import Froberg.AttachedGenerators
+
+@[expose] public section
 
 /-! Reindexing an attached presentation changes none of its polynomial relations. -/
 noncomputable section

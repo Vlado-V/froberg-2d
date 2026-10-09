@@ -1,5 +1,9 @@
-import Froberg.Generic
-import Mathlib.Algebra.MvPolynomial.Funext
+module
+
+public import Froberg.Generic
+public import Mathlib.Algebra.MvPolynomial.Funext
+
+@[expose] public section
 
 /-! Generic dimensions are minima of actual quotient dimensions.  Their rank
 opens are proved nonempty; no generic-rank assertion is part of the definition. -/
@@ -12,7 +16,7 @@ variable (K : Type*) [Field K] (n d r : ℕ)
 def coefficientCokernel (a : CoefficientIndex n d r → K) : ℕ :=
   finrank K (EndpointQuotient K n d (coefficientSpace K n d r a))
 
-private theorem cokernel_value_exists :
+theorem cokernel_value_exists :
     ∃ c, ∃ a : CoefficientIndex n d r → K, coefficientCokernel K n d r a = c :=
   ⟨_, (fun _ => 0), rfl⟩
 

@@ -1,7 +1,11 @@
-import Froberg.PrivateBiformRow
-import Froberg.DelayedPrivateElimination
-import Froberg.IntrinsicCoefficientRows
-import Froberg.EmptyCoefficientRows
+module
+
+public import Froberg.PrivateBiformRow
+public import Froberg.DelayedPrivateElimination
+public import Froberg.IntrinsicCoefficientRows
+public import Froberg.EmptyCoefficientRows
+
+@[expose] public section
 
 /-! The private-row separation contract for literal core-extended prepared
 generators. The sparse family and the private tuple are kept unchanged. -/

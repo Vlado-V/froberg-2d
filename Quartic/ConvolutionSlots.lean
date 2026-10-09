@@ -1,5 +1,9 @@
-import Quartic.ConvolutionFactor
-import Quartic.ConvolutionDual
+module
+
+public import Quartic.ConvolutionFactor
+public import Quartic.ConvolutionDual
+
+@[expose] public section
 
 /-!
 # Ordered-slot polynomials

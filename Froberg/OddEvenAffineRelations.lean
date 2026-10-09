@@ -1,4 +1,8 @@
-import Froberg.OddRelativeDimensions
+module
+
+public import Froberg.OddRelativeDimensions
+
+@[expose] public section
 
 /-! Actual affine scalar motion in the remaining even generators. -/
 noncomputable section

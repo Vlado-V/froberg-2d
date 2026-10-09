@@ -1,4 +1,8 @@
-import Froberg.IntermediateKoszul
+module
+
+public import Froberg.IntermediateKoszul
+
+@[expose] public section
 
 /-! The exact dimension of the new-layer constant Koszul kernel. -/
 noncomputable section

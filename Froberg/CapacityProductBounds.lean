@@ -1,6 +1,10 @@
-import Froberg.CapacityCentral
-import Froberg.CapacityProductIdentity
-import Froberg.CapacityPowers
+module
+
+public import Froberg.CapacityCentral
+public import Froberg.CapacityProductIdentity
+public import Froberg.CapacityPowers
+
+@[expose] public section
 
 /-! # Product-capacity bounds from explicit binomial estimates -/
 

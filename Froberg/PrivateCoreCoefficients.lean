@@ -1,5 +1,9 @@
-import Quartic.SplitBigrading
-import Froberg.Graded
+module
+
+public import Quartic.SplitBigrading
+public import Froberg.Graded
+
+@[expose] public section
 
 /-! Adding private variables to a core polynomial matrix. Every private
 monomial coefficient is an actual lower-degree core relation. -/

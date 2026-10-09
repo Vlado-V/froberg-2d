@@ -1,7 +1,11 @@
-import Froberg.Graded
-import Mathlib.Algebra.Order.Antidiag.Finsupp
-import Mathlib.RingTheory.PowerSeries.WellKnown
-import Mathlib.Data.Nat.Choose.Vandermonde
+module
+
+public import Froberg.Graded
+public import Mathlib.Algebra.Order.Antidiag.Finsupp
+public import Mathlib.RingTheory.PowerSeries.WellKnown
+public import Mathlib.Data.Nat.Choose.Vandermonde
+
+@[expose] public section
 
 /-! Weighted monomial incidence for an elementary replacement of condensed
 Macaulay growth in the eventual prefix argument. -/

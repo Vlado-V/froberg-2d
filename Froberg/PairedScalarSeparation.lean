@@ -1,6 +1,10 @@
-import Froberg.PairedSpace
-import Froberg.PolynomialTensorTransport
-import Froberg.DeletedBidegreeQuotient
+module
+
+public import Froberg.PairedSpace
+public import Froberg.PolynomialTensorTransport
+public import Froberg.DeletedBidegreeQuotient
+
+@[expose] public section
 
 /-! Paired-variable scalar spaces in the precise bidegree summands used by
 the generic scalar separation theorem. -/

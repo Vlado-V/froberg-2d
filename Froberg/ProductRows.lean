@@ -1,4 +1,8 @@
-import Froberg.GradedProductAssembly
+module
+
+public import Froberg.GradedProductAssembly
+
+@[expose] public section
 
 /-! Actual polynomial multiplication on the formal cross and diagonal source
 blocks of the product row Π_R. Distinct half-degrees assemble all its blocks. -/

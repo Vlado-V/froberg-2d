@@ -1,5 +1,9 @@
-import Froberg.Koszul
-import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
+module
+
+public import Froberg.Koszul
+public import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
+
+@[expose] public section
 
 /-!+# Linear changes of the actual homogeneous polynomial spaces
 

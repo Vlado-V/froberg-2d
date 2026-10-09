@@ -1,5 +1,10 @@
-import Quartic.FiniteEndpointInverseMemo29
-import Quartic.FiniteEndpointMetadata29Data
+module
+
+public import Quartic.FiniteEndpointInverseMemo29
+import Quartic.FiniteEndpointRows29.Chunk017
+public import Quartic.FiniteEndpointMetadata29Data
+
+@[expose] public section
 
 /-! Kernel-checked rows of the actual quartic multiplication matrix. -/
 namespace Quartic.FiniteEndpointRows29

@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Mathlib.Algebra.DirectSum.Internal
-import Mathlib.Data.Finset.NatAntidiagonal
+module
+
+public import Froberg.Graded
+public import Mathlib.Algebra.DirectSum.Internal
+public import Mathlib.Data.Finset.NatAntidiagonal
+
+@[expose] public section
 
 /-! The exact low-degree product formula used by background detection. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.LowerRelationComparison
-import Froberg.PrivateCoreCoefficients
+module
+
+public import Froberg.LowerRelationComparison
+public import Froberg.PrivateCoreCoefficients
+
+@[expose] public section
 
 /-! A scalar/new-layer relation one degree below its exact endpoint must
 vanish. This is the core argument used before adjoining private variables. -/

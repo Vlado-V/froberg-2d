@@ -1,5 +1,9 @@
-import Froberg.ActualThinSlices
-import Froberg.AffinePolynomialSubstitution
+module
+
+public import Froberg.ActualThinSlices
+public import Froberg.AffinePolynomialSubstitution
+
+@[expose] public section
 
 /-! The same actual scalar open has full source rank and all thin slices. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Quartic.ConvolutionProfileImage
+module
+
+public import Quartic.ConvolutionProfileImage
+
+@[expose] public section
 
 /-!
 # Independent layer dimensions inside the actual quadratic image

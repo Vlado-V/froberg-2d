@@ -1,5 +1,9 @@
-import Froberg.GenericFractionRank
-import Froberg.MatrixRankBaseChange
+module
+
+public import Froberg.GenericFractionRank
+public import Froberg.MatrixRankBaseChange
+
+@[expose] public section
 
 /-! # Field-extension invariance of the actual generic endpoint defects
 

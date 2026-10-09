@@ -1,6 +1,10 @@
-import Quartic.PolynomialRankOpen
-import Quartic.Deformation
-import Quartic.PolynomialImageAvoidance
+module
+
+public import Quartic.PolynomialRankOpen
+public import Quartic.Deformation
+public import Quartic.PolynomialImageAvoidance
+
+@[expose] public section
 
 /-!
 # Rank gained from exact corrected columns

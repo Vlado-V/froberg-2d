@@ -1,5 +1,9 @@
-import Froberg.OddRowAugmentedConstants
-import Froberg.RoundingLimits
+module
+
+public import Froberg.OddRowAugmentedConstants
+public import Froberg.RoundingLimits
+
+@[expose] public section
 
 /-! The higher odd rows retain an explicit extra scalar family of density
 1/(100*(2d)!), as required for the projected expansion argument. -/

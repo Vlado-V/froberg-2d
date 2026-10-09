@@ -1,6 +1,10 @@
-import Froberg.PositiveIntrinsicLayeredSlices
-import Froberg.OddAffineBottomDetection
-import Froberg.LayeredTargetDimension
+module
+
+public import Froberg.PositiveIntrinsicLayeredSlices
+public import Froberg.OddAffineBottomDetection
+public import Froberg.LayeredTargetDimension
+
+@[expose] public section
 
 /-! The actual common even-scalar family: C.15 and relative exactness
 supply the dimension budget, and B.7 supplies the zero-bottom exclusion. -/

@@ -1,4 +1,8 @@
-import Quartic.AlgebraicKernelAvoidance
+module
+
+public import Quartic.AlgebraicKernelAvoidance
+
+@[expose] public section
 
 /-! Eliminate the first constrained vector and obtain an equation only in
 second-stage parameters. Every first-stage kernel vector is quantified. -/

@@ -1,4 +1,8 @@
-import Froberg.QuadraticBlockChoices
+module
+
+public import Froberg.QuadraticBlockChoices
+
+@[expose] public section
 
 /-! Each product fiber lives on at most four blocks.  Restricting to those
 blocks transfers the finite consistent-monomial certificate to arbitrary size. -/

@@ -1,5 +1,9 @@
-import Froberg.PreparedEndpointParity
-import Froberg.FilteredFamilyIndependence
+module
+
+public import Froberg.PreparedEndpointParity
+public import Froberg.FilteredFamilyIndependence
+
+@[expose] public section
 
 /-! Independence of the scalar and linear leading parts implies
 independence of the entire prepared family, for arbitrary higher parts. -/

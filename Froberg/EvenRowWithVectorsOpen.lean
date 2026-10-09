@@ -1,6 +1,10 @@
-import Froberg.EvenPolynomialRow
-import Froberg.GenericDimensions
-import Froberg.SparseIntermediateOpen
+module
+
+public import Froberg.EvenPolynomialRow
+public import Froberg.GenericDimensions
+public import Froberg.SparseIntermediateOpen
+
+@[expose] public section
 
 /-! A complete finite B.4 witness from the proved sparse budget and retained
 scalar open. The scalar list is chosen once for both conditions. -/

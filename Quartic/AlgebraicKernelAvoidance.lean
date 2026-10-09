@@ -1,6 +1,10 @@
-import Quartic.SuccessiveKernelAvoidance
-import Mathlib.RingTheory.Ideal.MinimalPrime.Noetherian
-import Mathlib.RingTheory.Ideal.Quotient.Operations
+module
+
+public import Quartic.SuccessiveKernelAvoidance
+public import Mathlib.RingTheory.Ideal.MinimalPrime.Noetherian
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+
+@[expose] public section
 
 /-! Algebraic source charts for the missing sliced-to-motion implication.
 The source may be nonrational. Its dimension is measured by transcendence

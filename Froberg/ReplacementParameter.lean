@@ -1,4 +1,8 @@
-import Froberg.GenericDimensions
+module
+
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! A nonzero replacement parameter in every prescribed finite intersection
 of principal opens through the undeformed family. -/

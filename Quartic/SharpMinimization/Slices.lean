@@ -1,4 +1,8 @@
-import Quartic.SharpMinimization.Concavity
+module
+
+public import Quartic.SharpMinimization.Concavity
+
+@[expose] public section
 
 /-! Explicit triangles covering each fixed-sum slice of the ordered simplex. -/
 namespace Quartic.SharpMinimization

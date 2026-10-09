@@ -1,5 +1,9 @@
-import Froberg.ThinProjectedNormal
-import Froberg.ActualClosedKernelSlices
+module
+
+public import Froberg.ThinProjectedNormal
+public import Froberg.ActualClosedKernelSlices
+
+@[expose] public section
 
 /-! C.6 in the actual coefficient and target spaces. Coordinates preserve
 the coefficient kernel and transport the closed-kernel slices, so the
@@ -17,25 +21,23 @@ variable {F V W Z : Type*}
   [AddCommGroup Z] [Module K Z] [FiniteDimensional K Z]
 variable {n d r t B : ℕ}
 
-def actualProjectedMappedCoefficients (htwo : (2 : K)≠0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d)
+def actualProjectedMappedCoefficients (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d)
     (hq : LinearIndependent K q) (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] V) :
     ProjectedEndpointHomology pi q →ₗ[K] (Fin t → V) :=
   (vmap.compLeft (Fin t)).comp
-    (projectedHomologyCoefficients htwo pi q hq (Submodule.span K (Set.range q)) dual)
+    (projectedHomologyCoefficients pi q hq (Submodule.span K (Set.range q)) dual)
 
-theorem projectedMappedCoefficients_coordinate_ker (htwo : (2 : K)≠0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d)
+theorem projectedMappedCoefficients_coordinate_ker (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d)
     (hq : LinearIndependent K q) (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] V) :
-    (projectedMappedCoefficients htwo pi q hq dual
+    (projectedMappedCoefficients pi q hq dual
       ((coordinates K V).toLinearMap.comp vmap)).ker=
-        (actualProjectedMappedCoefficients htwo pi q hq dual vmap).ker := by
-  have he : projectedMappedCoefficients htwo pi q hq dual
+        (actualProjectedMappedCoefficients pi q hq dual vmap).ker := by
+  have he : projectedMappedCoefficients pi q hq dual
       ((coordinates K V).toLinearMap.comp vmap)=
       ((coordinates K V).toLinearMap.compLeft (Fin t)).comp
-        (actualProjectedMappedCoefficients htwo pi q hq dual vmap) := rfl
+        (actualProjectedMappedCoefficients pi q hq dual vmap) := rfl
   rw [he]
   apply LinearMap.ker_comp_of_ker_eq_bot
   apply LinearMap.ker_eq_bot.mpr
@@ -44,8 +46,7 @@ theorem projectedMappedCoefficients_coordinate_ker (htwo : (2 : K)≠0)
   apply (coordinates K V).injective
   exact congrFun hxy i
 
-theorem exists_local_comparison_of_actual_thin_slices (htwo : (2 : K)≠0)
-    (D : Submodule K (Forms K n (2*d))) (q : Fin r → Forms K n d)
+theorem exists_local_comparison_of_actual_thin_slices (D : Submodule K (Forms K n (2*d))) (q : Fin r → Forms K n d)
     (hq : LinearIndependent K q) (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] V)
     (eJ : ProjectedEndpointCokernel D.mkQ q ≃ₗ[K] W)
@@ -53,11 +54,11 @@ theorem exists_local_comparison_of_actual_thin_slices (htwo : (2 : K)≠0)
     (hmu : ∀ z v,mu z (vmap v)=eJ (projectedQuotientProduct D.mkQ q (phi z) v))
     (C : ℝ) (hC : (t : ℝ)≤C)
     (hslices : HasClosedKernelSlices mu (BilinearCovectorStrata.thinSlices (finrank K W) C))
-    (hkernel : finrank K (actualProjectedMappedCoefficients htwo D.mkQ q hq dual vmap).ker≤B)
+    (hkernel : finrank K (actualProjectedMappedCoefficients D.mkQ q hq dual vmap).ker≤B)
     (hdeleted : finrank K D≤B) :
     Nonempty (LocalComparisonData K n d r B) := by
   obtain ⟨count,degrees,eqs,cuts,hiff,hempty⟩ := hslices
-  apply exists_local_comparison_of_thin_slices htwo D q hq dual
+  apply exists_local_comparison_of_thin_slices D q hq dual
     ((coordinates K V).toLinearMap.comp vmap)
     (eJ.trans (coordinates K W))
     (phi.comp (coordinates K F).symm.toLinearMap)

@@ -1,6 +1,10 @@
-import Froberg.AffineKernelNormalized
-import Froberg.IntrinsicFiniteOpen
-import Quartic.HomogeneousSliceNormalization
+module
+
+public import Froberg.AffineKernelNormalized
+public import Froberg.IntrinsicFiniteOpen
+public import Quartic.HomogeneousSliceNormalization
+
+@[expose] public section
 
 /-! A joint scalar-and-cut open excluding every covector in one kernel
 stratum. All full Grassmann charts and all bottom normalization charts are

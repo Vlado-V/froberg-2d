@@ -1,5 +1,9 @@
-import Quartic.ConvolutionF13
-import Quartic.MiddleCoordinates
+module
+
+public import Quartic.ConvolutionF13
+public import Quartic.MiddleCoordinates
+
+@[expose] public section
 
 /-!
 # The actual F₁₃ map for arbitrary mixed and child generators

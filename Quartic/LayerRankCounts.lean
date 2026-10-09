@@ -1,5 +1,9 @@
-import Quartic.FreeMonomialCounts
-import Quartic.UniformSurplus.Rational
+module
+
+public import Quartic.FreeMonomialCounts
+public import Quartic.UniformSurplus.Rational
+
+@[expose] public section
 
 /-!
 # Sharp-profile arithmetic for actual free-monomial index sets

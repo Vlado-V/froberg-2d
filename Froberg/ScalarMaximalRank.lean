@@ -1,4 +1,8 @@
-import Froberg.BilinearScalarSurjection
+module
+
+public import Froberg.BilinearScalarSurjection
+
+@[expose] public section
 
 /-! The strict-shadow criterion gives an actual scalar family of maximal
 rank for every number of scalar forms. -/

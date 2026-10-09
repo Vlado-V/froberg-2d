@@ -1,5 +1,9 @@
-import Froberg.ProductRows
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.ProductRows
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! The actual product row is polynomial in the coefficients of its generators.
 Thus each concrete row witness gives a principal open in one common parameter

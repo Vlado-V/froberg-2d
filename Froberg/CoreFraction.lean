@@ -1,5 +1,9 @@
-import Froberg.CountConstruction
-import Mathlib.Algebra.Order.Ring.Pow
+module
+
+public import Froberg.CountConstruction
+public import Mathlib.Algebra.Order.Ring.Pow
+
+@[expose] public section
 
 /-! A fixed positive proportion of variables remains outside the auxiliary
 core. An explicit rational fraction avoids any inverse-asymptotics premise. -/

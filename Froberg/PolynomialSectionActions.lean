@@ -1,5 +1,9 @@
-import Froberg.LinearPullback
-import Froberg.SemilinearMatrices
+module
+
+public import Froberg.LinearPullback
+public import Froberg.SemilinearMatrices
+
+@[expose] public section
 
 /-! # Polynomial sections of linear representations -/
 

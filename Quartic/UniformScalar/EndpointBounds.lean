@@ -1,4 +1,8 @@
-import Quartic.UniformEndpoint
+module
+
+public import Quartic.UniformEndpoint
+
+@[expose] public section
 
 /-! Sharper exact endpoint bounds used by the all-dimension scalar argument. -/
 

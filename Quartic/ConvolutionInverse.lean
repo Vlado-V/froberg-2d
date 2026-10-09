@@ -1,5 +1,9 @@
-import Quartic.ConvolutionSlots
-import Quartic.ConvolutionTuples
+module
+
+public import Quartic.ConvolutionSlots
+public import Quartic.ConvolutionTuples
+
+@[expose] public section
 
 /-!
 # The convolution dual embeds into the diagonal inverse system

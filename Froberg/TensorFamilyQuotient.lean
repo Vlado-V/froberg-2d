@@ -1,5 +1,9 @@
-import Froberg.TensorQuotientCoordinates
-import Froberg.BilinearPostcompose
+module
+
+public import Froberg.TensorQuotientCoordinates
+public import Froberg.BilinearPostcompose
+
+@[expose] public section
 
 /-! Canonical scalar action in the tensor quotient by the actual two
 families. Its formula on every lifted vector is the original tensor product. -/

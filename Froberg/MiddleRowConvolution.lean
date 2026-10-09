@@ -1,6 +1,10 @@
-import Froberg.PrefixConvolution
-import Froberg.PrefixOutputLimits
-import Froberg.TargetCosts
+module
+
+public import Froberg.PrefixConvolution
+public import Froberg.PrefixOutputLimits
+public import Froberg.TargetCosts
+
+@[expose] public section
 
 /-! Actual middle-row witnesses at every density strictly above the B.7 threshold. -/
 noncomputable section

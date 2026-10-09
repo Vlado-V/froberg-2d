@@ -1,5 +1,9 @@
-import Quartic.ActualSlicedMotionAvoidance
-import Quartic.ActualDeformationResponse
+module
+
+public import Quartic.ActualSlicedMotionAvoidance
+public import Quartic.ActualDeformationResponse
+
+@[expose] public section
 
 /-!
 # Maximal actual deformation response from closed slices

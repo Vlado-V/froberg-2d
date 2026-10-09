@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The actual relative odd injection and the ambient relation loss give
 the target dimension term in the layered covector budget. -/

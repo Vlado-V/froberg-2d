@@ -1,4 +1,8 @@
-import Froberg.DisjointShadowSum
+module
+
+public import Froberg.DisjointShadowSum
+
+@[expose] public section
 
 /-! Exact finite shadow accounting for an injectively indexed collection of
 private source fibers. -/

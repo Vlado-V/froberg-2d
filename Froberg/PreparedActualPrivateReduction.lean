@@ -1,6 +1,10 @@
-import Froberg.PreparedPrivateFinite
-import Froberg.PreparedPrivateProjectedCapacity
-import Froberg.UniformShiftedPreparedCapacities
+module
+
+public import Froberg.PreparedPrivateFinite
+public import Froberg.PreparedPrivateProjectedCapacity
+public import Froberg.UniformShiftedPreparedCapacities
+
+@[expose] public section
 
 /-! The literal rounded counts at the full scalar dimension admit a common
 private positive-row reduction open. The remaining hypotheses specify the

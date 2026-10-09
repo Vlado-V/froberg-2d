@@ -1,5 +1,9 @@
-import Froberg.SolvedCoefficientReduction
-import Froberg.EvenParityElimination
+module
+
+public import Froberg.SolvedCoefficientReduction
+public import Froberg.EvenParityElimination
+
+@[expose] public section
 
 /-! Literal polynomial reconstruction for the odd-degree prepared background,
 after the first private-private boundary has been removed. -/

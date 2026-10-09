@@ -1,6 +1,10 @@
-import Froberg.TensorFormCoordinates
-import Froberg.OrderedMonomialWeights
-import Froberg.WeightedBilinearGrowth
+module
+
+public import Froberg.TensorFormCoordinates
+public import Froberg.OrderedMonomialWeights
+public import Froberg.WeightedBilinearGrowth
+
+@[expose] public section
 
 /-! The dimension ratio of an actual bilinear image is preserved after
 multiplying by homogeneous forms. This is the tensorization used in C.3/C.4. -/

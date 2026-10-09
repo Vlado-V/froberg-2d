@@ -1,5 +1,9 @@
-import Quartic.BlockSubspaceCharts
-import Quartic.FilteredImage
+module
+
+public import Quartic.BlockSubspaceCharts
+public import Quartic.FilteredImage
+
+@[expose] public section
 
 /-!
 # Selected coordinates adapted to an actual prefix filtration

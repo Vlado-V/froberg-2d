@@ -1,7 +1,11 @@
-import Froberg.SubspaceFrame
-import Froberg.BiformTensorFamily
-import Froberg.SurjectiveParameterOpen
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.SubspaceFrame
+public import Froberg.BiformTensorFamily
+public import Froberg.SurjectiveParameterOpen
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Output frames parameterize constrained biform families by ordinary affine
 coordinates. Every witness in a prescribed-dimensional output plane lifts to

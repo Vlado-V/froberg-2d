@@ -1,9 +1,13 @@
-import Froberg.OddIntermediateCoordinates
-import Froberg.OddActualRowGrowth
-import Froberg.TopSourceCoordinates
-import Froberg.AmbientTopVanish
-import Froberg.PiHigherProjectedGrowth
-import Froberg.OddAmbientBottomRepresentatives
+module
+
+public import Froberg.OddIntermediateCoordinates
+public import Froberg.OddActualRowGrowth
+public import Froberg.TopSourceCoordinates
+public import Froberg.AmbientTopVanish
+public import Froberg.PiHigherProjectedGrowth
+public import Froberg.OddAmbientBottomRepresentatives
+
+@[expose] public section
 
 /-! Concrete top and middle target projections for every higher block of
 the actual mixed odd source. Both choices are placed in a common product

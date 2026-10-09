@@ -1,4 +1,8 @@
-import Froberg.DetectedSymmetricProducts
+module
+
+public import Froberg.DetectedSymmetricProducts
+
+@[expose] public section
 
 /-! Separation of the new symmetric square also supplies the relative
 independence of the new generators required by the homology coefficient map. -/

@@ -1,4 +1,8 @@
-import Froberg.EvenReductionRename
+module
+
+public import Froberg.EvenReductionRename
+
+@[expose] public section
 
 /-! A paired-output construction yields the same eventual reduction on
 the usual finite set of variables, for every sufficiently large block

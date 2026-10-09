@@ -1,5 +1,9 @@
-import Froberg.SeparatedCoefficientSpaces
-import Froberg.DetectedSymmetricProducts
+module
+
+public import Froberg.SeparatedCoefficientSpaces
+public import Froberg.DetectedSymmetricProducts
+
+@[expose] public section
 
 /-! Scalar disjointness and independent output products give genuine
 symmetric-product separation after quotienting a tensor factor. -/

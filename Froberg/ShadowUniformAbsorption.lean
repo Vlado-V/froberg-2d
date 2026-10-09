@@ -1,5 +1,9 @@
-import Froberg.ShadowAbsorptionLimits
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.ShadowAbsorptionLimits
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! # Uniform finite-size shadow surplus
 

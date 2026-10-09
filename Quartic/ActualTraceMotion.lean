@@ -1,8 +1,12 @@
-import Quartic.QuotientMotionRank
-import Quartic.TraceGeneric
-import Quartic.RowMultiplicationCoordinates
-import Quartic.SplitBlock22Coordinates
-import Quartic.TraceTranspose
+module
+
+public import Quartic.QuotientMotionRank
+public import Quartic.TraceGeneric
+public import Quartic.RowMultiplicationCoordinates
+public import Quartic.SplitBlock22Coordinates
+public import Quartic.TraceTranspose
+
+@[expose] public section
 
 /-!
 Actual first-stage pure-motion constraints. A fixed section of pure cubic
@@ -77,7 +81,7 @@ theorem cycleLift_surjective (g : Mixed K m c) : Function.Surjective (cycleLift 
 def rawCoefficients (g : Mixed K m c) : CycleParameters K m c →ₗ[K] PureCoefficients K m :=
   (LinearMap.snd K _ _).comp (cycleParameter g)
 
-private def cycleClassProjection {V W : Type*} [AddCommGroup V] [Module K V]
+def cycleClassProjection {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (D : Submodule K V) :
     f.ker →ₗ[K] KernelModulo f D := (kernelBoundary f D).mkQ
 

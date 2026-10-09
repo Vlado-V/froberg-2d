@@ -1,5 +1,9 @@
-import Froberg.OddAmbientCoordinates
-import Froberg.OddTargetBottomCoordinates
+module
+
+public import Froberg.OddAmbientCoordinates
+public import Froberg.OddTargetBottomCoordinates
+
+@[expose] public section
 
 /-! Corrected ambient coordinates preserve the literal bottom row and
 its scalar multiplication. -/

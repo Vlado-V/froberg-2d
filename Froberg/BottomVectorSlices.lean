@@ -1,7 +1,11 @@
-import Froberg.BottomVectorQuotient
-import Froberg.OddRowCoordinateRelations
-import Froberg.OddTargetBaseCoordinates
-import Froberg.ClosedKernelEquivalence
+module
+
+public import Froberg.BottomVectorQuotient
+public import Froberg.OddRowCoordinateRelations
+public import Froberg.OddTargetBaseCoordinates
+public import Froberg.ClosedKernelEquivalence
+
+@[expose] public section
 
 /-! The B.3 closed kernel slices transfer to the literal bottom quotient
 in the ambient odd target decomposition. -/

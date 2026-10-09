@@ -1,4 +1,8 @@
-import Froberg.CountConstruction
+module
+
+public import Froberg.CountConstruction
+
+@[expose] public section
 
 /-! The explicit higher-bidegree and tail counts in Section 5, and their
 proved lower order relative to the main outer count. -/

@@ -1,5 +1,9 @@
-import Quartic.FilteredImage
-import Quartic.BilinearImage
+module
+
+public import Quartic.FilteredImage
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! Scalar multiplication in ordered source/target layers. The actual image
 of a graph subspace contains, in its initial pieces, every diagonal product

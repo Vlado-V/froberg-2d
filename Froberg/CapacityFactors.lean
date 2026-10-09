@@ -1,4 +1,8 @@
-import Froberg.CapacityFactorials
+module
+
+public import Froberg.CapacityFactorials
+
+@[expose] public section
 
 /-! # Separated factorial factors in the higher scalar ratios -/
 

@@ -1,5 +1,9 @@
-import Froberg.TensorVectorEmbedding
-import Froberg.IntermediateKernelDimension
+module
+
+public import Froberg.TensorVectorEmbedding
+public import Froberg.IntermediateKernelDimension
+
+@[expose] public section
 
 /-! The exact scalar/new-layer row transported to genuine split polynomials. -/
 noncomputable section

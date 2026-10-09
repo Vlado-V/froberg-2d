@@ -1,5 +1,9 @@
-import Froberg.FilteredOddElimination
-import Froberg.PreparedOddVectorCriteria
+module
+
+public import Froberg.FilteredOddElimination
+public import Froberg.PreparedOddVectorCriteria
+
+@[expose] public section
 
 /-! All even higher components, including the restored pure terms, are
 allowed in the full odd row once the scalar and vector rows are exact. -/

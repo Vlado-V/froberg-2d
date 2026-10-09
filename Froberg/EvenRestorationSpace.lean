@@ -1,6 +1,10 @@
-import Froberg.WeightedParitySpace
-import Froberg.PolynomialFamilyRestoration
-import Froberg.HomogeneousOutputCoordinates
+module
+
+public import Froberg.WeightedParitySpace
+public import Froberg.PolynomialFamilyRestoration
+public import Froberg.HomogeneousOutputCoordinates
+
+@[expose] public section
 
 /-! The actual coefficient and target spaces for restoring pure forms in even
 degree. The target remembers every positive output-weight component. -/

@@ -1,5 +1,9 @@
-import Quartic.CubicLinearCoordinates
-import Mathlib.RingTheory.Ideal.Quotient.Operations
+module
+
+public import Quartic.CubicLinearCoordinates
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+
+@[expose] public section
 
 /-!
 # Cubic products of a coordinate subspace

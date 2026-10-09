@@ -1,6 +1,10 @@
-import Froberg.TwoFamilyGeneric
-import Froberg.TwoFamilyBudget
-import Froberg.BilinearScalarFamily
+module
+
+public import Froberg.TwoFamilyGeneric
+public import Froberg.TwoFamilyBudget
+public import Froberg.BilinearScalarFamily
+
+@[expose] public section
 
 /-! Two actual bilinear generator families are simultaneously independent
 when their normalized dimension ratios, including coefficient overhead, fit. -/

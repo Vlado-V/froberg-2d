@@ -1,4 +1,8 @@
-import Froberg.CapacityRatios
+module
+
+public import Froberg.CapacityRatios
+
+@[expose] public section
 
 /-! # Room for the preceding-degree endpoint in the outer family -/
 

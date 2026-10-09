@@ -1,5 +1,9 @@
-import Froberg.SparseCoreExtension
-import Froberg.PrivateBiformRow
+module
+
+public import Froberg.SparseCoreExtension
+public import Froberg.PrivateBiformRow
+
+@[expose] public section
 
 /-! Literal polynomial row exactness survives adjoining private variables.
 The generators, product columns and scalar list are the same core witness. -/

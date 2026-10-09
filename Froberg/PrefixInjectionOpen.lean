@@ -1,5 +1,9 @@
-import Froberg.PrefixGrowth
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.PrefixGrowth
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! The previously proved prefix injectivity witness gives an open in
 intrinsic scalar-family coordinates. -/

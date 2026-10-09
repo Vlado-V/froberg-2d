@@ -1,6 +1,10 @@
-import Froberg.OuterCapacityBounds
-import Froberg.MonomialExponentGrowth
-import Froberg.OuterGrowthTransfer
+module
+
+public import Froberg.OuterCapacityBounds
+public import Froberg.MonomialExponentGrowth
+public import Froberg.OuterGrowthTransfer
+
+@[expose] public section
 
 /-! Exact source dimensions and target error bounds in the finite profile
 normalization used by the transport. -/

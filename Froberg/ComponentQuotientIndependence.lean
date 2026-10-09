@@ -1,4 +1,8 @@
-import Froberg.WeightedFamilyIndependence
+module
+
+public import Froberg.WeightedFamilyIndependence
+
+@[expose] public section
 
 /-! Component projections detect independence modulo a scalar subspace,
 even when each generator contains additional higher-weight terms. -/

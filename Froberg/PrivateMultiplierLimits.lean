@@ -1,5 +1,9 @@
-import Froberg.PrivateColumnDensity
-import Froberg.NormalizedLimits
+module
+
+public import Froberg.PrivateColumnDensity
+public import Froberg.NormalizedLimits
+
+@[expose] public section
 
 /-! Asymptotics of the conservative private-column multiplier count. -/
 noncomputable section

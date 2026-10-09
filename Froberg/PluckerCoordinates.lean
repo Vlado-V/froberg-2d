@@ -1,5 +1,9 @@
-import Froberg.ExteriorMatrix
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+module
+
+public import Froberg.ExteriorMatrix
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+
+@[expose] public section
 
 /-!
 # Plücker coordinates of an actual invariant subspace

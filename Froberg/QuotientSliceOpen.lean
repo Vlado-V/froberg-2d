@@ -1,5 +1,9 @@
-import Froberg.PresentationSliceOpen
-import Froberg.QuotientSliceVectors
+module
+
+public import Froberg.PresentationSliceOpen
+public import Froberg.QuotientSliceVectors
+
+@[expose] public section
 
 /-! Persistence of all actual quotient-covector slice bounds under a
 polynomial change of the target relations. No varying basis is assumed. -/

@@ -1,4 +1,8 @@
-import Froberg.VectorFirstRowOpen
+module
+
+public import Froberg.VectorFirstRowOpen
+
+@[expose] public section
 
 /-! Both the first exact row and all higher odd rows hold on one principal
 open in the complete scalar/vector coefficient space. -/

@@ -1,4 +1,8 @@
-import Froberg.PreparedPrivateBoundaryOpen
+module
+
+public import Froberg.PreparedPrivateBoundaryOpen
+
+@[expose] public section
 
 /-! All private rows are exact on one common coefficient open. The private
 polynomial tuple is fixed once before the row opens are intersected. -/

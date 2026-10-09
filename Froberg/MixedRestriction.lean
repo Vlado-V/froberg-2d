@@ -1,4 +1,8 @@
-import Froberg.UniversalMixedPosition
+module
+
+public import Froberg.UniversalMixedPosition
+
+@[expose] public section
 
 /-! Generic vector conditions are inherited by every injectively indexed
 subfamily. -/

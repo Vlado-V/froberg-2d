@@ -1,6 +1,10 @@
-import Froberg.AttachedStrictModelOpen
-import Froberg.GeometricPrivateModel
-import Froberg.VectorParameters
+module
+
+public import Froberg.AttachedStrictModelOpen
+public import Froberg.GeometricPrivateModel
+public import Froberg.VectorParameters
+
+@[expose] public section
 
 /-! A geometric private-column witness produces an actual nonempty open in
 all coefficients of the homogeneous vector generators. -/

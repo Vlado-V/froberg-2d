@@ -1,6 +1,10 @@
-import Froberg.AttachedMultiplication
-import Quartic.HomogeneousCoefficientCoordinates
-import Mathlib.LinearAlgebra.Quotient.Pi
+module
+
+public import Froberg.AttachedMultiplication
+public import Quartic.HomogeneousCoefficientCoordinates
+public import Mathlib.LinearAlgebra.Quotient.Pi
+
+@[expose] public section
 
 /-! The actual outer quotient decomposes into its monomial vector fibers. -/
 noncomputable section

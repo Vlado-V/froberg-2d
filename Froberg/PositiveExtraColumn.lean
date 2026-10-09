@@ -1,5 +1,9 @@
-import Froberg.ComponentQuotientIndependence
-import Mathlib.Data.Fin.Tuple.Basic
+module
+
+public import Froberg.ComponentQuotientIndependence
+public import Mathlib.Data.Fin.Tuple.Basic
+
+@[expose] public section
 
 /-! Separating the temporary extra positive column from the retained
 positive family preserves their joint independence in the scalar quotient. -/

@@ -1,5 +1,9 @@
-import Froberg.AffineKernelAvoidance
-import Froberg.FreezeParameters
+module
+
+public import Froberg.AffineKernelAvoidance
+public import Froberg.FreezeParameters
+
+@[expose] public section
 
 /-! Simultaneous actual kernel profiles. The auxiliary cuts remain variable
 through both the chart and profile intersections and are fixed only once. -/

@@ -1,4 +1,8 @@
-import Quartic.ConvolutionDivisibility
+module
+
+public import Quartic.ConvolutionDivisibility
+
+@[expose] public section
 
 /-!
 # Separate degree bounds for the convolution diagonal factor

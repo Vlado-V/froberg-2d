@@ -1,4 +1,8 @@
-import Quartic.SliceFiniteModule
+module
+
+public import Quartic.SliceFiniteModule
+
+@[expose] public section
 
 /-! Homogeneous scaling and complete coverage by normalized linear-slice charts. -/
 noncomputable section

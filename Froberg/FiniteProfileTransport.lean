@@ -1,5 +1,9 @@
-import Froberg.ProfileWeights
-import Froberg.TransportStability
+module
+
+public import Froberg.ProfileWeights
+public import Froberg.TransportStability
+
+@[expose] public section
 
 /-! The limiting transport persists for the exact finite-dimensional
 source and coarse target profiles, with one positive bound on every

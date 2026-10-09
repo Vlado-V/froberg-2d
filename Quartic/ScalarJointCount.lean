@@ -1,4 +1,8 @@
-import Quartic.UniformScalar
+module
+
+public import Quartic.UniformScalar
+
+@[expose] public section
 
 /-!
 # Scalar incidence bounds imply the strict joint chart budget

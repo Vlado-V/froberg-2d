@@ -1,7 +1,11 @@
-import Froberg.PreparedPrivateComponents
-import Froberg.RowTwoTargetLift
-import Froberg.PureTargetLift
-import Froberg.TargetLiftCoverage
+module
+
+public import Froberg.PreparedPrivateComponents
+public import Froberg.RowTwoTargetLift
+public import Froberg.PureTargetLift
+public import Froberg.TargetLiftCoverage
+
+@[expose] public section
 
 /-! All high target rows for one literal prepared family. The inputs are
 actual homogeneous tensor row maps and the pure-X product condition; scalar

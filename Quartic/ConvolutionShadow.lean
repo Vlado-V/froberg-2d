@@ -1,6 +1,10 @@
-import Quartic.ConvolutionImage
-import Quartic.ConvolutionLinearFactor
-import Quartic.ShadowArithmetic
+module
+
+public import Quartic.ConvolutionImage
+public import Quartic.ConvolutionLinearFactor
+public import Quartic.ShadowArithmetic
+
+@[expose] public section
 
 /-!
 # The sharp lower bound for the actual convolution multiplication image

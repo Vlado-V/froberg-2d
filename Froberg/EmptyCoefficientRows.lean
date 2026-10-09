@@ -1,5 +1,9 @@
-import Froberg.CoefficientRowFromPairs
-import Froberg.EvenCoefficientElimination
+module
+
+public import Froberg.CoefficientRowFromPairs
+public import Froberg.EvenCoefficientElimination
+
+@[expose] public section
 
 /-! Above the coefficient degree, only the independent formal products remain. -/
 noncomputable section

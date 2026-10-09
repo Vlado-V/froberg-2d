@@ -1,6 +1,10 @@
-import Froberg.PrivateDetectedBoundary
-import Froberg.PrivateBoundaryRemoval
-import Froberg.IntrinsicBiformRow
+module
+
+public import Froberg.PrivateDetectedBoundary
+public import Froberg.PrivateBoundaryRemoval
+public import Froberg.IntrinsicBiformRow
+
+@[expose] public section
 
 /-! The first private coefficient row splits into its actual private Koszul
 boundary and an ordinary scalar/new-layer relation. -/

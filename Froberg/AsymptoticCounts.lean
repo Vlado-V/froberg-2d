@@ -1,6 +1,10 @@
-import Froberg.RoundingLimits
-import Froberg.BoundedCounts
-import Froberg.SlackPolynomial
+module
+
+public import Froberg.RoundingLimits
+public import Froberg.BoundedCounts
+public import Froberg.SlackPolynomial
+
+@[expose] public section
 
 /-! Exact generator selection from normalized limits, with uniform control
 of the residual interval and any fixed lower bound on the auxiliary dimension. -/

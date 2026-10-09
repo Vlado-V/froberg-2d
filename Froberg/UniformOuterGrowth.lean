@@ -1,6 +1,10 @@
-import Froberg.OuterShadowTransfer
-import Froberg.OuterNearFull
-import Froberg.ShadowDependentAbsorption
+module
+
+public import Froberg.OuterShadowTransfer
+public import Froberg.OuterNearFull
+public import Froberg.ShadowDependentAbsorption
+
+@[expose] public section
 
 /-! Uniform strict growth of the actual core-attached outer module. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Froberg.SingleLayerProducts
+module
+
+public import Froberg.SingleLayerProducts
+
+@[expose] public section
 
 /-! A fixed product row can be diagonal even when other generator layers
 are nonempty. This is the quartic-square row in the small-degree construction. -/

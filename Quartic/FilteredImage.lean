@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.LinearAlgebra.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.LinearAlgebra.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Finite filtered subspaces and their initial multiplication images

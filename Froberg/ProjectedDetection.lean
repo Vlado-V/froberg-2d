@@ -1,4 +1,8 @@
-import Froberg.DetectedSymmetricProducts
+module
+
+public import Froberg.DetectedSymmetricProducts
+
+@[expose] public section
 
 /-! A detector that annihilates the deleted target gives the same product
 separation on the actual projected target. -/

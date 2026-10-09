@@ -1,6 +1,10 @@
-import Froberg.EvenRelativeQuotient
-import Froberg.EvenCovectorGrowth
-import Froberg.OddTargetBottomCoordinates
+module
+
+public import Froberg.EvenRelativeQuotient
+public import Froberg.EvenCovectorGrowth
+public import Froberg.OddTargetBottomCoordinates
+
+@[expose] public section
 
 /-! Affine even relations in the Q/F background, with the actual B.7
 bottom-detection consequence. -/

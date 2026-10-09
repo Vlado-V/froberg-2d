@@ -1,5 +1,9 @@
-import Froberg.ParityProfileRows
-import Froberg.RetainedSubspaceGrowth
+module
+
+public import Froberg.ParityProfileRows
+public import Froberg.RetainedSubspaceGrowth
+
+@[expose] public section
 
 /-! The retained scalar row estimate for B.4, transferred to every actual
 homogeneous polynomial subspace by initial monomials. -/

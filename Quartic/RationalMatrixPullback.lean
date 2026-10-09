@@ -1,5 +1,9 @@
-import Quartic.RationalComposition
-import Quartic.KernelPolynomialCharts
+module
+
+public import Quartic.RationalComposition
+public import Quartic.KernelPolynomialCharts
+
+@[expose] public section
 
 /-!
 # Matrix families pulled back through rational charts

@@ -1,6 +1,10 @@
-import Froberg.PreparedOddCyclesOpen
-import Froberg.OppositeCoefficientBoundary
-import Froberg.OddBackgroundBottomDetection
+module
+
+public import Froberg.PreparedOddCyclesOpen
+public import Froberg.OppositeCoefficientBoundary
+public import Froberg.OddBackgroundBottomDetection
+
+@[expose] public section
 
 /-! The literal odd-cycle constants of the prepared family give exactly
 the opposite-parity Koszul space in the ordinary enumerated endpoint ring. -/

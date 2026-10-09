@@ -1,5 +1,9 @@
-import Quartic.UniformCertificate
-import Mathlib.Tactic.FieldSimp
+module
+
+public import Quartic.UniformCertificate
+public import Mathlib.Tactic.FieldSimp
+
+@[expose] public section
 
 /-! Numerical interpolation of the 32 uniform vertex certificates. -/
 

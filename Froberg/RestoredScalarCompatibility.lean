@@ -1,9 +1,13 @@
-import Froberg.RestoredScalarFiber
-import Froberg.PreparedScalarFiberCompatibility
-import Froberg.RestoredEndpointPolynomial
-import Froberg.EvenBackgroundEquivalence
-import Froberg.UpperTargetRange
-import Froberg.OddExactEnumeration
+module
+
+public import Froberg.RestoredScalarFiber
+public import Froberg.PreparedScalarFiberCompatibility
+public import Froberg.RestoredEndpointPolynomial
+public import Froberg.EvenBackgroundEquivalence
+public import Froberg.UpperTargetRange
+public import Froberg.OddExactEnumeration
+
+@[expose] public section
 
 /-! The restored scalar fiber is the literal Q/E/F family: the base Q
 and outer F are fixed, while every positive even column is E_i+a_i. -/

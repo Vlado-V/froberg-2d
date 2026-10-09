@@ -1,6 +1,10 @@
-import Quartic.SmallTransferData
-import Quartic.ActualDeformationRank
-import Quartic.TransferRankCount
+module
+
+public import Quartic.SmallTransferData
+public import Quartic.ActualDeformationRank
+public import Quartic.TransferRankCount
+
+@[expose] public section
 
 /-! The actual three-variable transfer for child dimensions 28 through 40. -/
 noncomputable section

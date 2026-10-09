@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! Weighted incidence summation with uniformly bounded exceptional projections. -/
 namespace Froberg.WeightedProjectionGrowth

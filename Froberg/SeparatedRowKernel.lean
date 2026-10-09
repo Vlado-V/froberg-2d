@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.LinearAlgebra.Dimension.Finrank
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.LinearAlgebra.Dimension.Finrank
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact row kernels after adjoining a separated formal-product block. -/
 noncomputable section

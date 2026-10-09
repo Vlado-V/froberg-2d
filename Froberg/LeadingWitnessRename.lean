@@ -1,4 +1,8 @@
-import Froberg.EvenReductionRename
+module
+
+public import Froberg.EvenReductionRename
+
+@[expose] public section
 
 /-! Independent leading layers survive a bijection of output variables. -/
 noncomputable section

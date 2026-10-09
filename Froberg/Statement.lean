@@ -1,6 +1,10 @@
-import Froberg.GenericDimensions
-import Froberg.HilbertSeries
-import Froberg.MonomialCounts
+module
+
+public import Froberg.GenericDimensions
+public import Froberg.HilbertSeries
+public import Froberg.MonomialCounts
+
+@[expose] public section
 
 /-! Precise formulation of the requested theorem in the actual polynomial
 quotient ring, and finite intersections of its generic conditions. -/

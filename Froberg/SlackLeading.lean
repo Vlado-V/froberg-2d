@@ -1,5 +1,9 @@
-import Froberg.SlackMargins
-import Froberg.CriticalLimits
+module
+
+public import Froberg.SlackMargins
+public import Froberg.CriticalLimits
+
+@[expose] public section
 
 /-! Cancellation of the leading term and strict asymptotic positivity of
 the polynomial lower bound for the dimension margin. -/

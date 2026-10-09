@@ -1,5 +1,9 @@
-import Froberg.PairedMatching
-import Froberg.GenericProductSupport
+module
+
+public import Froberg.PairedMatching
+public import Froberg.GenericProductSupport
+
+@[expose] public section
 
 /-! Assembly of the actual nonzero minors and their common coefficient specialization. -/
 noncomputable section

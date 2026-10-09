@@ -1,6 +1,10 @@
-import Froberg.OddBackgroundRowProjection
-import Froberg.BilinearParameterTransport
-import Froberg.ScalarBiformParameter
+module
+
+public import Froberg.OddBackgroundRowProjection
+public import Froberg.BilinearParameterTransport
+public import Froberg.ScalarBiformParameter
+
+@[expose] public section
 
 /-! Uniform middle-row scalar growth uses the actual scalar polynomial
 space, with its harmless degree-zero output factor removed. -/

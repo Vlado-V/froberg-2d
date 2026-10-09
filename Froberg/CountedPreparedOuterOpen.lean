@@ -1,7 +1,11 @@
-import Froberg.PreparedDetectedWitnessOpen
-import Froberg.QuadraticScalarData
-import Froberg.CountedSharedQuadraticFrame
-import Froberg.PreparedAllEvenCounts
+module
+
+public import Froberg.PreparedDetectedWitnessOpen
+public import Froberg.QuadraticScalarData
+public import Froberg.CountedSharedQuadraticFrame
+public import Froberg.PreparedAllEvenCounts
+
+@[expose] public section
 
 /-! Counted C.2 opens with a common output frame. The scalar threshold is
 independent of that frame and the resulting parameter open works for every

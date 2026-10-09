@@ -1,4 +1,8 @@
-import Quartic.AmbientCovectorSpreading
+module
+
+public import Quartic.AmbientCovectorSpreading
+
+@[expose] public section
 
 /-! Empty sections persist for polynomially varying homogeneous equations
 and polynomially varying linear cuts. -/

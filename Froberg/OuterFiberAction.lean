@@ -1,5 +1,9 @@
-import Froberg.OuterMultiplication
-import Froberg.AttachedProjection
+module
+
+public import Froberg.OuterMultiplication
+public import Froberg.AttachedProjection
+
+@[expose] public section
 
 /-! Monomial multiplication acts by the actual quotient projections on outer fibers. -/
 noncomputable section

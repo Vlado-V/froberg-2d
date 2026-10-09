@@ -1,4 +1,8 @@
-import Froberg.SmallDegreeRationalBounds
+module
+
+public import Froberg.SmallDegreeRationalBounds
+
+@[expose] public section
 
 /-! # The explicit inequalities of Appendix E
 

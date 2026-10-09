@@ -1,5 +1,9 @@
-import Quartic.SharpMinimization.Source
-import Quartic.SharpCertificate
+module
+
+public import Quartic.SharpMinimization.Source
+public import Quartic.SharpCertificate
+
+@[expose] public section
 
 /-! Extension of the finite sharp edge certificates to all ordered real
 profiles having an integral total source dimension. -/

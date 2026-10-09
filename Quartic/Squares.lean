@@ -1,4 +1,8 @@
-import Quartic.Homogeneous
+module
+
+public import Quartic.Homogeneous
+
+@[expose] public section
 
 /-!
 # Polarization and a surviving quadratic square

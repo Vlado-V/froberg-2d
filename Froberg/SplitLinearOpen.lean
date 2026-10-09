@@ -1,4 +1,8 @@
-import Froberg.SplitRestorationOpen
+module
+
+public import Froberg.SplitRestorationOpen
+
+@[expose] public section
 
 /-! The split coefficient-complex open in arbitrary finite-dimensional linear
 parameters, with one fixed affine contribution to the second family. -/

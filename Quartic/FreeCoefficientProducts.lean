@@ -1,4 +1,8 @@
-import Quartic.ConvolutionLayers
+module
+
+public import Quartic.ConvolutionLayers
+
+@[expose] public section
 
 /-!
 # Actual multiplication in free-monomial coordinates

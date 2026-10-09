@@ -1,6 +1,10 @@
-import Quartic.SplitBlock22MiddleHomology
-import Quartic.SplitBlock31Projection
-import Quartic.CubicLinearCoordinates
+module
+
+public import Quartic.SplitBlock22MiddleHomology
+public import Quartic.SplitBlock31Projection
+public import Quartic.CubicLinearCoordinates
+
+@[expose] public section
 
 /-!
 # Projections of actual split quadrics for the (2,2) block

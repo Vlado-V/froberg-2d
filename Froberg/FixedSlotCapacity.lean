@@ -1,5 +1,9 @@
-import Froberg.ProductFiniteCapacity
-import Froberg.FullSparseBlockCount
+module
+
+public import Froberg.ProductFiniteCapacity
+public import Froberg.FullSparseBlockCount
+
+@[expose] public section
 
 /-! Fixed appended columns are absorbed by the strict finite capacity
 margins, without changing either the prescribed density or the sparse block count. -/

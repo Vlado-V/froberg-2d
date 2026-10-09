@@ -1,6 +1,10 @@
-import Froberg.ScalarFlagReplacement
-import Froberg.EndpointPreparedFlag
-import Froberg.ReplacementSeparation
+module
+
+public import Froberg.ScalarFlagReplacement
+public import Froberg.EndpointPreparedFlag
+public import Froberg.ReplacementSeparation
+
+@[expose] public section
 
 /-! A concrete canonical background gives the critical local comparison.
 The nonzero replacement parameter, all properties of the replaced family,
@@ -13,7 +17,7 @@ variable {K : Type} [Field K] [Infinite K] [IsAlgClosed K]
 variable {h m d e f u : ℕ}
 
 theorem exists_critical_comparison_of_concrete_background
-    (htwo : (2 : K)≠0) (hm : 0 < m) (upper : Bool)
+    (hm : 0 < m) (upper : Bool)
     (hcard : upperCount m d+e+f+u=adjacentCriticalCount upper (h+m) d)
     (D : Submodule K (Forms K (h+m) (2*d)))
     (hD : D≤(renameForm (K := K) (d := 2*d)
@@ -110,7 +114,7 @@ theorem exists_critical_comparison_of_concrete_background
     intro hphi
     simpa only [oddEndpointScalarAction_eq,backgroundOddTargetDimension]
       using hs'
-  apply exists_critical_comparison_of_endpoint_flag htwo hm upper hr D hD Q hQ
+  apply exists_critical_comparison_of_endpoint_flag hm upper hr D hD Q hQ
     (backgroundPositiveForms E G) (evenPolynomialToForms M) hpositive hbackground c hc
     (backgroundEnumeratedForms S' F G) hi'
     (indexedSplitParity (backgroundSplitIndex (q := upperCount m d+e) (f := f) (u := u)))

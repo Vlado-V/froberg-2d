@@ -1,5 +1,9 @@
-import Froberg.PrivateModel
-import Froberg.UniformOuterGrowth
+module
+
+public import Froberg.PrivateModel
+public import Froberg.UniformOuterGrowth
+
+@[expose] public section
 
 /-! Exact source and target dimension shifts for adjoining private columns. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Froberg.PreparedCountScalarFiber
-import Froberg.RestoredScalarFiber
+module
+
+public import Froberg.PreparedCountScalarFiber
+public import Froberg.RestoredScalarFiber
+
+@[expose] public section
 
 /-! The refined scalar fiber for an enlarged restored family fixes the
 temporary slots, every high term, the pure tuple, and the outer family. -/

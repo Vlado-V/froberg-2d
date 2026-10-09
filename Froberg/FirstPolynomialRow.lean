@@ -1,4 +1,8 @@
-import Froberg.VectorFirstRowOpen
+module
+
+public import Froberg.VectorFirstRowOpen
+
+@[expose] public section
 
 /-! Exactness of the joint first vector row gives literal polynomial
 constants without retaining the quotient presentation in the hypothesis. -/

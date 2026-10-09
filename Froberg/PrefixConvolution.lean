@@ -1,5 +1,9 @@
-import Froberg.BiformMultiplication
-import Froberg.PrefixSurjectivity
+module
+
+public import Froberg.BiformMultiplication
+public import Froberg.PrefixSurjectivity
+
+@[expose] public section
 
 /-! The strict-prefix theorem supplies the output spaces for the middle rows
 of B.7, and convolution turns them into actual biform generators. -/

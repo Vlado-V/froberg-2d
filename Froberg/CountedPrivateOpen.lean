@@ -1,5 +1,9 @@
-import Froberg.CountSequences
-import Froberg.PrivateGenericModel
+module
+
+public import Froberg.CountSequences
+public import Froberg.PrivateGenericModel
+
+@[expose] public section
 
 /-! The private-column open with exactly the counts selected for the theorem. -/
 noncomputable section

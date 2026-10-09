@@ -1,6 +1,10 @@
-import Froberg.SeparatedScalarFamilies
-import Froberg.TensorFiberIndependence
-import Mathlib.RingTheory.TensorProduct.Basic
+module
+
+public import Froberg.SeparatedScalarFamilies
+public import Froberg.TensorFiberIndependence
+public import Mathlib.RingTheory.TensorProduct.Basic
+
+@[expose] public section
 
 /-! Lemma A.4: pairwise separated scalar coefficient spaces provide the full
 stated capacity for independent symmetric products in a tensor product. -/

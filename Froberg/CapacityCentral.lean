@@ -1,4 +1,8 @@
-import Froberg.CapacityRatios
+module
+
+public import Froberg.CapacityRatios
+
+@[expose] public section
 
 /-! # Explicit lower bounds two places from the middle binomial coefficient -/
 

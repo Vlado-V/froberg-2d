@@ -1,5 +1,9 @@
-import Quartic.PolynomialBilinearCoordinates
-import Quartic.ProjectiveKernelIncidence
+module
+
+public import Quartic.PolynomialBilinearCoordinates
+public import Quartic.ProjectiveKernelIncidence
+
+@[expose] public section
 
 /-!
 # Generic injectivity for actual finite-dimensional bilinear families

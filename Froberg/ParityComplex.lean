@@ -1,6 +1,10 @@
-import Froberg.HomologyCoefficientMotion
-import Froberg.TargetProjection
-import Mathlib.Data.ZMod.Basic
+module
+
+public import Froberg.HomologyCoefficientMotion
+public import Froberg.TargetProjection
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-! Monomial parity projections and the actual endpoint Koszul complex.
 The grading group is `ZMod 2`; no division by two or sign involution is used. -/

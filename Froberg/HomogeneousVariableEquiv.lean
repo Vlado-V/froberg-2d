@@ -1,4 +1,8 @@
-import Froberg.Graded
+module
+
+public import Froberg.Graded
+
+@[expose] public section
 
 /-! Equivalences of variable sets on homogeneous polynomial spaces, with
 their compatibility with multiplication. -/

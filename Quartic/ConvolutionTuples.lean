@@ -1,5 +1,9 @@
-import Quartic.ConvolutionDual
-import Mathlib.Data.Finsupp.Order
+module
+
+public import Quartic.ConvolutionDual
+public import Mathlib.Data.Finsupp.Order
+
+@[expose] public section
 
 /-!
 # Ordered tuples and homogeneous monomial exponents

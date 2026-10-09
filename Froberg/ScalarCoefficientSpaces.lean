@@ -1,6 +1,10 @@
-import Froberg.PairedScalarSeparation
-import Froberg.ScalarSeparation
-import Froberg.QuadraticQuotientSeparation
+module
+
+public import Froberg.PairedScalarSeparation
+public import Froberg.ScalarSeparation
+public import Froberg.QuadraticQuotientSeparation
+
+@[expose] public section
 
 /-! Instantiate the scalar side of quadratic separation with an actual
 paired-variable space and the checked generic deleted-bidegree theorem. -/

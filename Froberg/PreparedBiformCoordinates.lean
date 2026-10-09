@@ -1,4 +1,8 @@
-import Froberg.FramedPreparedParameters
+module
+
+public import Froberg.FramedPreparedParameters
+
+@[expose] public section
 
 /-! Linear extraction of the exact high biform coefficients from the
 prepared parameter space. Scalar shifts do not enter these maps. -/

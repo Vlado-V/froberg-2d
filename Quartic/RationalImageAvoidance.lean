@@ -1,6 +1,10 @@
-import Quartic.PolynomialImageAvoidance
-import Mathlib.RingTheory.Localization.Away.Basic
-import Mathlib.RingTheory.Algebraic.Basic
+module
+
+public import Quartic.PolynomialImageAvoidance
+public import Mathlib.RingTheory.Localization.Away.Basic
+public import Mathlib.RingTheory.Algebraic.Basic
+
+@[expose] public section
 
 /-!
 # Avoiding lower-dimensional rational charts

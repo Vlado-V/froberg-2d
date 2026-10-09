@@ -1,5 +1,9 @@
-import Quartic.Multiplication
-import Quartic.Counts
+module
+
+public import Quartic.Multiplication
+public import Quartic.Counts
+
+@[expose] public section
 
 /-!
 # Degree-four first Koszul homology

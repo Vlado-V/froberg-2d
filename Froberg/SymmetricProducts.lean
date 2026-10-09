@@ -1,6 +1,10 @@
-import Froberg.FormalHomology
-import Mathlib.Algebra.Algebra.Bilinear
-import Mathlib.Data.Sym.Card
+module
+
+public import Froberg.FormalHomology
+public import Mathlib.Algebra.Algebra.Bilinear
+public import Mathlib.Data.Sym.Card
+
+@[expose] public section
 
 /-! Independent unordered products imply injective multiplication on the actual symmetric square. -/
 noncomputable section

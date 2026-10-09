@@ -1,6 +1,10 @@
-import Froberg.PreparedProductBiform
-import Froberg.FirstPrivateIntrinsicRow
-import Froberg.IntrinsicPrivateBoundary
+module
+
+public import Froberg.PreparedProductBiform
+public import Froberg.FirstPrivateIntrinsicRow
+public import Froberg.IntrinsicPrivateBoundary
+
+@[expose] public section
 
 /-! The first private row has precisely the ordinary scalar-layer constants
 and the genuine private-private constants, in the literal prepared family. -/

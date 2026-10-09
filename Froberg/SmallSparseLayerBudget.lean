@@ -1,5 +1,9 @@
-import Froberg.SparseLayerBudget
-import Froberg.SmallDegreeCapacities
+module
+
+public import Froberg.SparseLayerBudget
+public import Froberg.SmallDegreeCapacities
+
+@[expose] public section
 
 /-! Appendix E supplies the sparse fourth-layer margin, completing the
 active higher-layer finite budgets in every degree at least three. -/

@@ -1,5 +1,9 @@
-import Froberg.ParityComplex
-import Froberg.ProjectedHomologyCoefficients
+module
+
+public import Froberg.ParityComplex
+public import Froberg.ProjectedHomologyCoefficients
+
+@[expose] public section
 
 /-! The new-generator coefficient map lands in the odd quotient, after
 actual odd-cycle exactness has supplied even representatives. -/
@@ -48,7 +52,6 @@ variable {Z : Type*} [AddCommGroup Z] [Module K Z]
 /-- Odd projection preserves the complete new-generator coefficient map,
 so it cannot introduce an extra coefficient kernel. -/
 theorem projectedHomologyCoefficients_odd
-    (htwo : (2 : K) ≠ 0)
     (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hi : LinearIndependent K q)
     (hq : ∀ i, (q i).val.IsWeightedHomogeneous w (e i))
@@ -61,10 +64,10 @@ theorem projectedHomologyCoefficients_odd
     (hdual : ∀ i j, e j=0 → dual i (q j)=0)
     (x : ProjectedEndpointHomology pi q) (i : Fin t) :
     parityGeneratorQuotient w e q hq 1
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x i) =
-      projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x i := by
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x i) =
+      projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x i := by
   obtain ⟨a,ha,rfl⟩ := exists_even_projected_cycle_representative w e q hq pi hpi hodd x
-  rw [projectedHomologyCoefficients_mk htwo pi q hi (Submodule.span K (Set.range q))
+  rw [projectedHomologyCoefficients_mk pi q hi (Submodule.span K (Set.range q))
     (fun j => (Submodule.subset_span (s := Set.range q) ⟨j,rfl⟩)) dual a]
   simp only [map_sum,map_smul]
   apply Finset.sum_congr rfl
@@ -81,7 +84,6 @@ theorem projectedHomologyCoefficients_odd
 
 /-- The odd projection therefore preserves the actual retained coefficient kernel. -/
 theorem projectedHomologyCoefficients_odd_kernel
-    (htwo : (2 : K) ≠ 0)
     (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hi : LinearIndependent K q)
     (hq : ∀ i, (q i).val.IsWeightedHomogeneous w (e i))
@@ -93,12 +95,12 @@ theorem projectedHomologyCoefficients_odd_kernel
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (hdual : ∀ i j, e j=0 → dual i (q j)=0) :
     (((parityGeneratorQuotient w e q hq 1).compLeft (Fin t)).comp
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual)).ker =
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual).ker := by
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual)).ker =
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual).ker := by
   congr 1
   apply LinearMap.ext
   intro x
   funext i
-  exact projectedHomologyCoefficients_odd htwo w e q hi hq pi hpi hodd dual hdual x i
+  exact projectedHomologyCoefficients_odd w e q hi hq pi hpi hodd dual hdual x i
 
 end Froberg

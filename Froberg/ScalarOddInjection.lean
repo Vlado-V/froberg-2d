@@ -1,9 +1,13 @@
-import Froberg.PrefixLowerInjection
-import Froberg.IntrinsicBiformRow
-import Froberg.ScalarVectorInjection
-import Froberg.OddBiformDecomposition
-import Froberg.WeightedTriangularProducts
-import Froberg.MixedAmbientCorrection
+module
+
+public import Froberg.PrefixLowerInjection
+public import Froberg.IntrinsicBiformRow
+public import Froberg.ScalarVectorInjection
+public import Froberg.OddBiformDecomposition
+public import Froberg.WeightedTriangularProducts
+public import Froberg.MixedAmbientCorrection
+
+@[expose] public section
 
 /-! A scalar tuple injective through the strict prefix has no relation with
 odd homogeneous biform coefficients. Every odd output layer has smaller

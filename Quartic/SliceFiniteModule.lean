@@ -1,6 +1,10 @@
-import Quartic.HomogeneousMultiplicationCertificate
-import Mathlib.RingTheory.Finiteness.Basic
-import Mathlib.RingTheory.Ideal.Quotient.Operations
+module
+
+public import Quartic.HomogeneousMultiplicationCertificate
+public import Mathlib.RingTheory.Finiteness.Basic
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+
+@[expose] public section
 
 /-! Finite module generation from an actual homogeneous slice certificate. -/
 noncomputable section

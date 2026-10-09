@@ -1,5 +1,9 @@
-import Quartic.ConvolutionInitialSplit
-import Quartic.ConvolutionIntegralProfile
+module
+
+public import Quartic.ConvolutionInitialSplit
+public import Quartic.ConvolutionIntegralProfile
+
+@[expose] public section
 
 /-!
 # Uniform profile bounds for arbitrary actual convolution subspaces

@@ -1,7 +1,11 @@
-import Froberg.Koszul
-import Froberg.FormalProducts
-import Mathlib.LinearAlgebra.Isomorphisms
-import Mathlib.LinearAlgebra.BilinearMap
+module
+
+public import Froberg.Koszul
+public import Froberg.FormalProducts
+public import Mathlib.LinearAlgebra.Isomorphisms
+public import Mathlib.LinearAlgebra.BilinearMap
+
+@[expose] public section
 
 /-! Identification of the actual endpoint Koszul homology with formal-product relations. -/
 noncomputable section
@@ -13,7 +17,7 @@ variable {K : Type} [Field K]
 variable {V : Type v} [AddCommGroup V] [Module K V]
 variable {Z : Type w} [AddCommGroup Z] [Module K Z]
 
-private def bilinearMultilinear (b : V →ₗ[K] V →ₗ[K] Z) :
+def bilinearMultilinear (b : V →ₗ[K] V →ₗ[K] Z) :
     MultilinearMap K (fun _ : Fin 2 => V) Z where
   toFun a := b (a 0) (a 1)
   map_update_add' a i x y := by
@@ -29,7 +33,7 @@ private theorem bilinearMultilinear_symmetric (b : V →ₗ[K] V →ₗ[K] Z)
   generalize h1 : e 1 = j at *
   fin_cases i <;> fin_cases j <;> simp_all [bilinearMultilinear]
 
-private theorem bilinear_rel (b : V →ₗ[K] V →ₗ[K] Z)
+theorem bilinear_rel (b : V →ₗ[K] V →ₗ[K] Z)
     (hb : ∀ a a', b a a' = b a' a) (x y : ⨂[K] (_ : Fin 2), V)
     (h : addConGen (SymmetricPower.Rel K (Fin 2) V) x y) :
     PiTensorProduct.lift (bilinearMultilinear b) x =
@@ -61,7 +65,7 @@ def symmetricBilinearLift (b : V →ₗ[K] V →ₗ[K] Z)
   rw [PiTensorProduct.lift.tprod]
   rfl
 
-private def contractionBilinear (ℓ : V →ₗ[K] K) : V →ₗ[K] V →ₗ[K] V :=
+def contractionBilinear (ℓ : V →ₗ[K] K) : V →ₗ[K] V →ₗ[K] V :=
   LinearMap.mk₂ K (fun a b => ℓ a • b + ℓ b • a)
     (by intros; simp [map_add, add_smul, smul_add]; abel)
     (by intros; simp [map_smul, smul_add, smul_smul, mul_comm])
@@ -117,8 +121,26 @@ private theorem pairVector_mem (q : Fin r → V) (i j : Fin r) :
     rw [heq]
     exact Submodule.neg_mem _ (Submodule.subset_span ⟨⟨(j, i), hij⟩, rfl⟩)
 
-/-- There are no formal quadratic relations besides alternating constant boundaries. -/
-theorem ker_formalCoefficientMap (htwo : (2 : K) ≠ 0)
+private def squareBilinear (ℓ : V →ₗ[K] K) : V →ₗ[K] V →ₗ[K] K :=
+  LinearMap.mk₂ K (fun a b => ℓ a * ℓ b)
+    (by intros; simp [map_add, add_mul])
+    (by intros; simp [map_smul, mul_assoc])
+    (by intros; simp [map_add, mul_add])
+    (by intros; simp [map_smul, mul_left_comm])
+
+/-- The coefficient of a square is detected without polarizing it. This is
+the diagonal test needed in characteristic two. -/
+private def squareEvaluation (ℓ : V →ₗ[K] K) : SymmetricSquare K V →ₗ[K] K :=
+  symmetricBilinearLift (squareBilinear ℓ) (by intros; exact mul_comm _ _)
+
+@[simp] private theorem squareEvaluation_symProd (ℓ : V →ₗ[K] K) (a b : V) :
+    squareEvaluation ℓ (symProd a b) = ℓ a * ℓ b :=
+  symmetricBilinearLift_symProd _ _ _ _
+
+/-- There are no formal quadratic relations besides alternating constant
+boundaries, over a field of any characteristic. Ordered pairs give each
+boundary exactly once, so no division by two occurs. -/
+theorem ker_formalCoefficientMap_anyChar
     (q : Fin r → V) (hq : LinearIndependent K q) :
     LinearMap.ker (formalCoefficientMap (K := K) q) =
       Submodule.span K (Set.range (koszulVector q)) := by
@@ -135,24 +157,33 @@ theorem ker_formalCoefficientMap (htwo : (2 : K) ≠ 0)
       have hij : dual j (a i) + dual i (a j) = 0 := by
         simpa [hdual, smul_eq_mul] using h
       exact eq_neg_of_add_eq_zero_left hij
-    have hsum : (∑ i, ∑ j, dual j (a i) • pairVector q i j) = (2 : K) • a := by
+    have hdiag (i : Fin r) : dual i (a i) = 0 := by
+      have h := congrArg (squareEvaluation (dual i)) ha
+      simpa [formalCoefficientMap_apply, hdual] using h
+    let b : Fin r → Fin r → K := fun i j => if i < j then dual j (a i) else 0
+    have hbij (i j : Fin r) : b i j - b j i = dual j (a i) := by
+      rcases lt_trichotomy i j with hij | hij | hij
+      · simp [b, hij, not_lt_of_ge hij.le]
+      · subst j; simp [b, hdiag]
+      · simp [b, hij, not_lt_of_ge hij.le, hskew i j]
+    have hsum : (∑ i, ∑ j, b i j • pairVector q i j) = a := by
       ext k
       simp only [Finset.sum_apply, Pi.smul_apply, pairVector, smul_sub,
         smul_ite, smul_zero, Finset.sum_sub_distrib]
-      have hf : (∑ i, ∑ j, if k = i then dual j (a i) • q j else 0) =
-          ∑ j, dual j (a k) • q j := by
+      have hf : (∑ i, ∑ j, if k = i then b i j • q j else 0) =
+          ∑ j, b k j • q j := by
         rw [Finset.sum_comm]
         simp
-      have hs : (∑ i, ∑ j, if k = j then dual j (a i) • q i else 0) =
-          ∑ i, dual k (a i) • q i := by simp
-      rw [hf, hs]
+      have hs : (∑ i, ∑ j, if k = j then b i j • q i else 0) =
+          ∑ i, b i k • q i := by simp
+      rw [hf, hs, ← Finset.sum_sub_distrib]
+      simp_rw [← sub_smul, hbij]
       simp_rw [hskew k, neg_smul]
       rw [Finset.sum_neg_distrib]
       have hr : (∑ j, dual k (a j) • q j) = -a k := by
         exact eq_neg_of_add_eq_zero_right (hrel k)
       rw [hr]
-      simp [two_smul]
-    apply (Submodule.smul_mem_iff _ htwo).mp
+      simp
     rw [← hsum]
     apply Submodule.sum_mem
     intro i _
@@ -162,6 +193,13 @@ theorem ker_formalCoefficientMap (htwo : (2 : K) ≠ 0)
   · apply Submodule.span_le.mpr
     rintro _ ⟨p, rfl⟩
     exact formalCoefficientMap_koszul q p
+
+/-- Compatibility wrapper for the previous characteristic-not-two interface. -/
+theorem ker_formalCoefficientMap (htwo : (2 : K) ≠ 0)
+    (q : Fin r → V) (hq : LinearIndependent K q) :
+    LinearMap.ker (formalCoefficientMap (K := K) q) =
+      Submodule.span K (Set.range (koszulVector q)) :=
+  ker_formalCoefficientMap_anyChar q hq
 
 /-- The image of formal coefficient multiplication is precisely the mixed-product space. -/
 theorem range_formalCoefficientMap (q : Fin r → V) :
@@ -206,7 +244,7 @@ def kernelModuloEquivRange {E T Z : Type*}
 section PolynomialHomology
 variable {n d : ℕ}
 
-private def polynomialProductBilinear :
+def polynomialProductBilinear :
     Forms K n d →ₗ[K] Forms K n d →ₗ[K] Forms K n (2 * d) where
   toFun := mulForm
   map_add' f g := by
@@ -325,6 +363,79 @@ theorem endpointHomology_comp_le {r' : ℕ} (htwo : (2 : K) ≠ 0)
     (q : Fin r' → Forms K n d) (hq : LinearIndependent K q) (ι : Fin r ↪ Fin r') :
     finrank K (EndpointHomology (q ∘ ι)) ≤ finrank K (EndpointHomology q) := by
   apply endpointHomology_mono htwo (q ∘ ι) q (hq.comp ι ι.injective) hq
+  apply Submodule.span_le.mpr
+  rintro _ ⟨i, rfl⟩
+  exact Submodule.subset_span ⟨ι i, rfl⟩
+
+
+/-! Characteristic-free endpoint identifications. The preceding interfaces
+remain available for compatibility with the original development. -/
+
+/-- Exactly the constant Koszul boundaries map to zero. -/
+theorem ker_cycleToFormal_anyChar 
+    (q : Fin r → Forms K n d) (hq : LinearIndependent K q) :
+    LinearMap.ker (cycleToFormal q) = incomingInKernel q := by
+  rw [cycleToFormal, LinearMap.ker_comp, ker_formalCoefficientMap_anyChar q hq]
+  rfl
+
+/-- The actual endpoint Koszul homology is naturally the formal-product relation space. -/
+def endpointHomologyEquivFormal_anyChar 
+    (q : Fin r → Forms K n d) (hq : LinearIndependent K q) :
+    EndpointHomology q ≃ₗ[K]
+      (LinearMap.ker (formalPolynomialMultiplication (K := K) (n := n) (d := d)) ⊓
+        formalMixed (Submodule.span K (Set.range q)) :
+          Submodule K (SymmetricSquare K (Forms K n d))) := by
+  let ψ : (endpointMultiplication q).ker →ₗ[K] SymmetricSquare K (Forms K n d) :=
+    cycleToFormal q
+  have hψ : ψ.ker = kernelBoundary (endpointMultiplication q) (koszulSpace q) :=
+    ker_cycleToFormal_anyChar q hq
+  let e := kernelModuloEquivRange (K := K) (E := Fin r → Forms K n d)
+    (T := Forms K n (2 * d)) (Z := SymmetricSquare K (Forms K n d))
+    (endpointMultiplication q) (koszulSpace q) ψ hψ
+  exact e.trans (LinearEquiv.ofEq _ _ (range_cycleToFormal q))
+
+/-- In particular the two actual homology constructions have identical dimensions. -/
+theorem finrank_endpointHomology_eq_formal_anyChar 
+    (q : Fin r → Forms K n d) (hq : LinearIndependent K q) :
+    finrank K (EndpointHomology q) =
+      finrank K (LinearMap.ker (formalPolynomialMultiplication (K := K) (n := n) (d := d)) ⊓
+        formalMixed (Submodule.span K (Set.range q)) :
+          Submodule K (SymmetricSquare K (Forms K n d))) :=
+  (endpointHomologyEquivFormal_anyChar q hq).finrank_eq
+
+/-- Actual first homology injects under inclusion of independent generator spaces. -/
+def endpointHomologyInclusion_anyChar {r' : ℕ} 
+    (q : Fin r → Forms K n d) (q' : Fin r' → Forms K n d)
+    (hq : LinearIndependent K q) (hq' : LinearIndependent K q')
+    (hspan : Submodule.span K (Set.range q) ≤ Submodule.span K (Set.range q')) :
+    EndpointHomology q →ₗ[K] EndpointHomology q' :=
+  (endpointHomologyEquivFormal_anyChar q' hq').symm.toLinearMap.comp
+    ((Submodule.inclusion (inf_le_inf le_rfl (formalMixed_mono hspan))).comp
+      (endpointHomologyEquivFormal_anyChar q hq).toLinearMap)
+
+theorem endpointHomologyInclusion_injective_anyChar {r' : ℕ} 
+    (q : Fin r → Forms K n d) (q' : Fin r' → Forms K n d)
+    (hq : LinearIndependent K q) (hq' : LinearIndependent K q')
+    (hspan : Submodule.span K (Set.range q) ≤ Submodule.span K (Set.range q')) :
+    Function.Injective (endpointHomologyInclusion_anyChar q q' hq hq' hspan) :=
+  (endpointHomologyEquivFormal_anyChar q' hq').symm.injective.comp
+    ((Submodule.inclusion_injective (inf_le_inf le_rfl (formalMixed_mono hspan))).comp
+      (endpointHomologyEquivFormal_anyChar q hq).injective)
+
+/-- Dimension monotonicity for the genuine endpoint homology of independent tuples. -/
+theorem endpointHomology_mono_anyChar {r' : ℕ} 
+    (q : Fin r → Forms K n d) (q' : Fin r' → Forms K n d)
+    (hq : LinearIndependent K q) (hq' : LinearIndependent K q')
+    (hspan : Submodule.span K (Set.range q) ≤ Submodule.span K (Set.range q')) :
+    finrank K (EndpointHomology q) ≤ finrank K (EndpointHomology q') :=
+  LinearMap.finrank_le_finrank_of_injective
+    (endpointHomologyInclusion_injective_anyChar q q' hq hq' hspan)
+
+/-- Selecting any subtuple, including a prefix, cannot increase endpoint homology. -/
+theorem endpointHomology_comp_le_anyChar {r' : ℕ} 
+    (q : Fin r' → Forms K n d) (hq : LinearIndependent K q) (ι : Fin r ↪ Fin r') :
+    finrank K (EndpointHomology (q ∘ ι)) ≤ finrank K (EndpointHomology q) := by
+  apply endpointHomology_mono_anyChar (q ∘ ι) q (hq.comp ι ι.injective) hq
   apply Submodule.span_le.mpr
   rintro _ ⟨i, rfl⟩
   exact Submodule.subset_span ⟨ι i, rfl⟩

@@ -1,9 +1,13 @@
-import Quartic.SubspaceCharts
-import Mathlib.LinearAlgebra.Matrix.Adjugate
-import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
-import Mathlib.LinearAlgebra.Matrix.Rank
-import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
-import Mathlib.Tactic
+module
+
+public import Quartic.SubspaceCharts
+public import Mathlib.LinearAlgebra.Matrix.Adjugate
+public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
+public import Mathlib.LinearAlgebra.Matrix.Rank
+public import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Kernel coordinates from actual pivot minors

@@ -1,4 +1,8 @@
-import Quartic.ConvolutionSplitProfile
+module
+
+public import Quartic.ConvolutionSplitProfile
+
+@[expose] public section
 
 /-!
 # The manuscript's integral Phi bound for actual split subspaces

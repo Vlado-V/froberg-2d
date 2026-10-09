@@ -1,6 +1,10 @@
-import Quartic.UniformSurplus.Rational
-import Mathlib.Analysis.Convex.Jensen
-import Mathlib.Data.Fintype.Lattice
+module
+
+public import Quartic.UniformSurplus.Rational
+public import Mathlib.Analysis.Convex.Jensen
+public import Mathlib.Data.Fintype.Lattice
+
+@[expose] public section
 
 /-! Concavity of the exact real sharp profile on the free-layer box. -/
 namespace Quartic.SharpMinimization

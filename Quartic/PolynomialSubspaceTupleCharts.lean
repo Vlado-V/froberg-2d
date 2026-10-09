@@ -1,5 +1,9 @@
-import Quartic.PolynomialSubspaceCovectorCharts
-import Quartic.ProjectiveKernelIncidence
+module
+
+public import Quartic.PolynomialSubspaceCovectorCharts
+public import Quartic.ProjectiveKernelIncidence
+
+@[expose] public section
 
 /-!
 # Projective tuple charts over arbitrary polynomial subspace charts

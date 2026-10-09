@@ -1,4 +1,8 @@
-import Quartic.UniformSurplus.Rational
+module
+
+public import Quartic.UniformSurplus.Rational
+
+@[expose] public section
 
 /-!
 # Uniform scalar inequalities for every actual endpoint and every sharp profile

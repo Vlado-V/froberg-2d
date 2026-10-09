@@ -1,5 +1,9 @@
-import Froberg.FiniteEvenRow
-import Froberg.EvenProjectedRow
+module
+
+public import Froberg.FiniteEvenRow
+public import Froberg.EvenProjectedRow
+
+@[expose] public section
 
 /-! Finite sparse/product witnesses with every private-output projection
 imposed on the very same vector tuple, in a prescribed output basis. -/

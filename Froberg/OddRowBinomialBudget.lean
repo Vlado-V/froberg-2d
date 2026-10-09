@@ -1,5 +1,9 @@
-import Froberg.AdjacentCriticalRatio
-import Froberg.CapacityProductIdentity
+module
+
+public import Froberg.AdjacentCriticalRatio
+public import Froberg.CapacityProductIdentity
+
+@[expose] public section
 
 /-! Exact binomial costs for the higher odd coefficient rows. -/
 noncomputable section

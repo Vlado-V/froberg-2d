@@ -1,4 +1,8 @@
-import Froberg.LinearEndpoint
+module
+
+public import Froberg.LinearEndpoint
+
+@[expose] public section
 
 /-! Exact linear-coefficient syzygies of independent linear forms. This is
 the private-power overlap calculation used in the degree-two row of B.4. -/

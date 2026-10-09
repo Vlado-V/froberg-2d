@@ -1,6 +1,10 @@
-import Quartic.Homogeneous
-import Mathlib.RingTheory.Ideal.Quotient.Operations
-import Mathlib.LinearAlgebra.Isomorphisms
+module
+
+public import Quartic.Homogeneous
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+public import Mathlib.LinearAlgebra.Isomorphisms
+
+@[expose] public section
 
 /-!
 # The degree-four piece of the actual polynomial quotient

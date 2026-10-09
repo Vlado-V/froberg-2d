@@ -1,4 +1,8 @@
-import Froberg.MonomialProfileTransport
+module
+
+public import Froberg.MonomialProfileTransport
+
+@[expose] public section
 
 /-! Identifying the transport's states with actual source monomials and
 with the nonzero-capacity target monomials. -/

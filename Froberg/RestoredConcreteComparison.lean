@@ -1,9 +1,13 @@
-import Froberg.RestoredBackgroundData
-import Froberg.BackgroundChildDeletion
-import Froberg.RestoredCertificateRelations
-import Froberg.RestoredEndpointSpan
-import Froberg.RestoredExtraColumn
-import Froberg.ConcreteBackgroundComparison
+module
+
+public import Froberg.RestoredBackgroundData
+public import Froberg.BackgroundChildDeletion
+public import Froberg.RestoredCertificateRelations
+public import Froberg.RestoredEndpointSpan
+public import Froberg.RestoredExtraColumn
+public import Froberg.ConcreteBackgroundComparison
+
+@[expose] public section
 
 /-! A base restored certificate, its one-column enlargement, and the
 actual thin and separation conditions give the critical local comparison. -/
@@ -29,7 +33,7 @@ private theorem positive_empty_span (E : Fin r → biformParitySpace K h m d 0) 
     exact ⟨Sum.inl i,rfl⟩
 
 theorem exists_critical_comparison_of_restored_background
-    (htwo : (2 : K)≠0) (hm : 0 < m) (hdp : 1≤d) (hd : d%2=0) (upper : Bool)
+    (hm : 0 < m) (hdp : 1≤d) (hd : d%2=0) (upper : Bool)
     (hO : ∀ j∈J,O j≤Forms K h j) (hJ : ∀ j∈J,j≤d) (heven : ∀ j∈J,j%2=0)
     (hpos : ∀ j∈J,0<j) (hJlt : ∀ j∈J,0<c' j → j<d)
     (hc : ∀ j∈J,c j≤c' j)
@@ -101,12 +105,12 @@ theorem exists_critical_comparison_of_restored_background
     rw [restoredPositiveBiform_extra_span hd hO hJ heven hc extra hcover idx idx' slot p.1]
     rw [positive_empty_span]
     exact (sup_assoc _ _ _).symm
-  have hbackground := restored_certificate_formal_relations htwo hdp hd hO hJ heven hpos
+  have hbackground := restored_certificate_formal_relations hdp hd hO hJ heven hpos
     idx' slots hslots p hlarge D hD
   rw [hspan] at hbackground
   have hseparation := hsep D hD
   rw [hspan] at hseparation
-  exact exists_critical_comparison_of_concrete_background htwo hm upper
+  exact exists_critical_comparison_of_concrete_background hm upper
     (by simpa only [Nat.add_zero] using hcard) D hD Q hQdata.1 E F emptyOddFamily M
     hpositive hbackground hseparation hdata.1 hdata.2.1 hdata.2.2 hcoverage C hC hthin
     hQdata.2.2 hinj hDdim

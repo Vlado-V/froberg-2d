@@ -1,6 +1,10 @@
-import Froberg.BiformScalarProjection
-import Froberg.ProductRowProfiles
-import Froberg.ParityProfileScalar
+module
+
+public import Froberg.BiformScalarProjection
+public import Froberg.ProductRowProfiles
+public import Froberg.ParityProfileScalar
+
+@[expose] public section
 
 /-! The actual common scalar image is disjoint from the entire formal
 product image in B.4. -/

@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.TensorProduct.Associator
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.LinearAlgebra.LinearIndependent.Basic
+module
+
+public import Mathlib.LinearAlgebra.TensorProduct.Associator
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.LinearAlgebra.LinearIndependent.Basic
+
+@[expose] public section
 
 /-! Linear independence can be checked separately in the fibers of an
 independent first tensor factor. -/

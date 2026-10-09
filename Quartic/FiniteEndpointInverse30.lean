@@ -1,4 +1,8 @@
-import Quartic.FiniteEndpointCheckerLoad
+module
+
+public import Quartic.FiniteEndpointCheckerLoad
+
+@[expose] public section
 
 /-! Packed inverse data for the supplied thirty-variable endpoint certificate.
 This module only reifies natural-number literals; equations are checked separately. -/

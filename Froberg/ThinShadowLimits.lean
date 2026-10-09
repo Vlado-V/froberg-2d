@@ -1,4 +1,8 @@
-import Froberg.ShadowAbsorptionLimits
+module
+
+public import Froberg.ShadowAbsorptionLimits
+
+@[expose] public section
 
 /-! The strict surplus dominates the thin deficit and all source overhead. -/
 noncomputable section

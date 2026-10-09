@@ -1,7 +1,11 @@
-import Quartic.FiniteEndpointChecker
-import Quartic.MinorLift
-import Quartic.EndpointReduction
-import Mathlib.Data.List.Sort
+module
+
+public import Quartic.FiniteEndpointChecker
+public import Quartic.MinorLift
+public import Quartic.EndpointReduction
+public import Mathlib.Data.List.Sort
+
+@[expose] public section
 
 /-! Field-independent sparse monomial certificates for actual polynomial families. -/
 namespace Quartic.FiniteEndpointCheckerPolynomial

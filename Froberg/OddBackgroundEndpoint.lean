@@ -1,5 +1,9 @@
-import Froberg.ParityPolynomialEndpoint
-import Froberg.OddBackgroundQuotient
+module
+
+public import Froberg.ParityPolynomialEndpoint
+public import Froberg.OddBackgroundQuotient
+
+@[expose] public section
 
 /-! The background odd quotient is the odd part of the actual endpoint
 quotient. Both the variable and generator enumerations are explicit. -/

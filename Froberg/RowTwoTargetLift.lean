@@ -1,5 +1,9 @@
-import Froberg.BiformTargetLift
-import Froberg.LowRowsCommonOpen
+module
+
+public import Froberg.BiformTargetLift
+public import Froberg.LowRowsCommonOpen
+
+@[expose] public section
 
 /-! The coupled F/E2 row gives a genuine degree-two target lift, with no
 higher X-components, in the same actual polynomial product ideal. -/

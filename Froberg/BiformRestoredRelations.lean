@@ -1,4 +1,8 @@
-import Froberg.RestoredSupportedRelations
+module
+
+public import Froberg.RestoredSupportedRelations
+
+@[expose] public section
 
 /-! The restored prepared polynomials on X and Y give the literal formal
 relation equality after renaming variables into the single endpoint ring. -/
@@ -14,7 +18,6 @@ def biformRestorationForms
     (fun i => evenRestorationRenameEquiv finSumFinEquiv (blockWeight h m) d (g i))
 
 theorem biform_restored_supported_relations
-    (htwo : (2 : K)≠0)
     (g : Fin r → evenRestorationSpace (K := K) (blockWeight h m) d)
     (hi : LinearIndependent K (biformRestorationForms g))
     (D : Submodule K (Forms K (h+m) (2*d)))
@@ -37,8 +40,7 @@ theorem biform_restored_supported_relations
         formalProducts Q (renameForm (K := K) (d := d) (Fin.natAdd h : Fin m → Fin (h+m))).range := by
   have hw : ∀ x,blockWeight h m x≤1 := by intro x;cases x <;> simp [blockWeight]
   have hr := restoration_reduction_rename finSumFinEquiv (blockWeight h m) hw g degree hreduce
-  refine restored_projected_formal_relations htwo
-    (blockWeight h m ∘ finSumFinEquiv.symm)
+  refine restored_projected_formal_relations (blockWeight h m ∘ finSumFinEquiv.symm)
     (fun i => evenRestorationRenameEquiv finSumFinEquiv (blockWeight h m) d (g i)) hi D.mkQ
     ?_ ?_ ?_ degree Q _ hQ hlabel ?_ hr
   · intro z hz

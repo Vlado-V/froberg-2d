@@ -1,4 +1,8 @@
-import Froberg.PairedMonomials
+module
+
+public import Froberg.PairedMonomials
+
+@[expose] public section
 
 /-! Three consistent monomial specializations certify the quadratic block
 construction: one edge, two adjacent edges, and all three disjoint pairings. -/

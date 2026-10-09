@@ -1,4 +1,8 @@
-import Quartic.SharpCertificate.Bernstein
+module
+
+public import Quartic.SharpCertificate.Bernstein
+
+@[expose] public section
 
 /-! Exact source formulas for the rational sharp edges. -/
 

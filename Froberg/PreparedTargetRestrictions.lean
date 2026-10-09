@@ -1,4 +1,8 @@
-import Froberg.PreparedTargetForms
+module
+
+public import Froberg.PreparedTargetForms
+
+@[expose] public section
 
 /-! Linear parameter restrictions preserving the odd private-column parity. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Quartic.ThreeBlockModel
-import Quartic.MarkedCoefficient
+module
+
+public import Quartic.ThreeBlockModel
+public import Quartic.MarkedCoefficient
+
+@[expose] public section
 
 /-!
 # The actual polynomial (3,1) split block

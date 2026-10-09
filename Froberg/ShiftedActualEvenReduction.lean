@@ -1,8 +1,12 @@
-import Froberg.PreparedActualReduction
-import Froberg.ShiftedFiniteEvenReduction
-import Froberg.UniformShiftedPreparedCapacities
-import Froberg.CapacityTargetTransport
-import Froberg.PrivateFrameReference
+module
+
+public import Froberg.PreparedActualReduction
+public import Froberg.ShiftedFiniteEvenReduction
+public import Froberg.UniformShiftedPreparedCapacities
+public import Froberg.CapacityTargetTransport
+public import Froberg.PrivateFrameReference
+
+@[expose] public section
 
 /-! The scalar/even background with the actual counts has the literal
 positive-row reduction on a nonempty open. This is the U=0 input to even

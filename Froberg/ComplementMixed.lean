@@ -1,4 +1,8 @@
-import Froberg.MixedExterior
+module
+
+public import Froberg.MixedExterior
+
+@[expose] public section
 
 /-! Complement coordinate rows diagonalize the mixed determinant constraints. -/
 noncomputable section

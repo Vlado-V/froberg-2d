@@ -1,5 +1,9 @@
-import Froberg.SingleProfileScalarProduct
-import Froberg.IntrinsicBiformRow
+module
+
+public import Froberg.SingleProfileScalarProduct
+public import Froberg.IntrinsicBiformRow
+
+@[expose] public section
 
 /-! With no generators in the new layer, a scalar/product injection is
 exactly the required intrinsic prepared-row exactness. -/

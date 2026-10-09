@@ -1,4 +1,8 @@
-import Froberg.SymmetricIndependence
+module
+
+public import Froberg.SymmetricIndependence
+
+@[expose] public section
 
 /-! Detection of independent symmetric products gives the exact separation
 condition used by the coefficient map on endpoint homology. -/

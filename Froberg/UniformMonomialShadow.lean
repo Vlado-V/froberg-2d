@@ -1,4 +1,8 @@
-import Froberg.MonomialShadowGrowth
+module
+
+public import Froberg.MonomialShadowGrowth
+
+@[expose] public section
 
 /-! A positive strict-shadow constant works for every source subspace
 profile and every sufficiently large number of variables. -/

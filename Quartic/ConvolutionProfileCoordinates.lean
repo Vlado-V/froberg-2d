@@ -1,7 +1,11 @@
-import Quartic.OrderedDegreeOne
-import Quartic.FilteredCoordinates
-import Quartic.ProfileChartBound
-import Quartic.ConvolutionProfileBound
+module
+
+public import Quartic.OrderedDegreeOne
+public import Quartic.FilteredCoordinates
+public import Quartic.ProfileChartBound
+public import Quartic.ConvolutionProfileBound
+
+@[expose] public section
 
 /-!
 # Actual convolution coordinates for the profile charts

@@ -1,9 +1,13 @@
-import OAI.Geometry.PeriodicTiling.CircleWeylCriterion
-import OAI.Geometry.PeriodicTiling.ScalarVanDerCorput
-import OAI.Geometry.PeriodicTiling.PolynomialShiftDifference
-import Mathlib.NumberTheory.Real.Irrational
-import Mathlib.Tactic.Ring
-import Lean.Elab.Tactic.Omega
+module
+
+public import OAI.Geometry.PeriodicTiling.CircleWeylCriterion
+public import OAI.Geometry.PeriodicTiling.ScalarVanDerCorput
+public import OAI.Geometry.PeriodicTiling.PolynomialShiftDifference
+public import Mathlib.NumberTheory.Real.Irrational
+public import Mathlib.Tactic.Ring
+public import Lean.Elab.Tactic.Omega
+
+@[expose] public section
 
 namespace OAI
 

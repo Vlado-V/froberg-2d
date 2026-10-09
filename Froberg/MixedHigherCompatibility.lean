@@ -1,4 +1,8 @@
-import Froberg.MixedHigherRowData
+module
+
+public import Froberg.MixedHigherRowData
+
+@[expose] public section
 
 /-! Literal multiplication is diagonal in all higher source coordinates;
 no row of the odd target is discarded. -/

@@ -1,5 +1,9 @@
-import Froberg.ProductMinors
-import Mathlib.Data.Fintype.EquivFin
+module
+
+public import Froberg.ProductMinors
+public import Mathlib.Data.Fintype.EquivFin
+
+@[expose] public section
 
 /-! Finite families of vectors whose small subfamilies are all independent. -/
 noncomputable section

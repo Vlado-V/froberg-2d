@@ -1,4 +1,8 @@
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Explicit certificates for finite intersections of polynomial conditions. -/
 noncomputable section

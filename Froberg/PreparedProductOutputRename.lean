@@ -1,6 +1,10 @@
-import Froberg.BiformOutputRename
-import Froberg.PreparedParameters
-import Froberg.ProductRowRename
+module
+
+public import Froberg.BiformOutputRename
+public import Froberg.PreparedParameters
+public import Froberg.ProductRowRename
+
+@[expose] public section
 
 /-! Output reindexing sends actual prepared product witnesses to the common
 chosen output coordinates, preserving their scalar profiles. -/

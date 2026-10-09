@@ -1,6 +1,10 @@
-import Froberg.Koszul
-import Froberg.QuotientModel
-import Mathlib.LinearAlgebra.Matrix.Rank
+module
+
+public import Froberg.Koszul
+public import Froberg.QuotientModel
+public import Mathlib.LinearAlgebra.Matrix.Rank
+
+@[expose] public section
 
 /-! A precise nonempty principal-open meaning of a generic endpoint theorem.
 The determinant argument generalizes the earlier Quartic/RankOpen construction. -/

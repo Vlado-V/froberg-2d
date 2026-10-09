@@ -1,4 +1,8 @@
-import Froberg.MixedHigherRowData
+module
+
+public import Froberg.MixedHigherRowData
+
+@[expose] public section
 
 /-! Uniform scalar growth on every concrete higher block. -/
 noncomputable section

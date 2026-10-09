@@ -1,5 +1,9 @@
-import Froberg.Graded
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import Froberg.Graded
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-! Finite-dimensional Euler characteristic and the two-critical-count reduction.
 The reduction states its monotonicity hypotheses explicitly. -/

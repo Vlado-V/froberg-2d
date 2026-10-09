@@ -1,3 +1,12 @@
+Publication snapshot note (2026-10-09)
+The historical import record below describes the original imported files.
+This submission uses Lean's module system: module/public-import headers and
+required public visibility were added. The stated original-file hashes below
+identify the import snapshot, not these subsequently edited submission files.
+The Quartic library additionally contains the arbitrary-characteristic proof
+and its characteristic-two marked transfer. Only modules needed by the final
+uniform theorem are included here.
+
 These five Lean modules were copied from /Users/vlado/Downloads/math-main/lean.
 Original source toolchain: leanprover/lean4:v4.34.1.
 Target toolchain: leanprover/lean4:v4.35.0-rc3.

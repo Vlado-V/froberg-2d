@@ -1,5 +1,9 @@
-import Froberg.OrderedMonomials
-import Froberg.MonomialExpansionBound
+module
+
+public import Froberg.OrderedMonomials
+public import Froberg.MonomialExpansionBound
+
+@[expose] public section
 
 /-! Exact biregular incidence weights in increasing monomial coordinates. -/
 noncomputable section

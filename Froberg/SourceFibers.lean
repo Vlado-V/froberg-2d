@@ -1,4 +1,8 @@
-import Froberg.FiberDimensions
+module
+
+public import Froberg.FiberDimensions
+
+@[expose] public section
 
 /-! Exact source-fiber dimensions in the core-attached outer quotient. -/
 noncomputable section

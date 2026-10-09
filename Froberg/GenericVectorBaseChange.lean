@@ -1,6 +1,10 @@
-import Froberg.MixedRestriction
-import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.MixedRestriction
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! The two generic vector conditions persist under extension of scalars. -/
 noncomputable section

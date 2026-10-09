@@ -1,6 +1,10 @@
-import Froberg.TypedPrivateQuadraticExistence
-import Froberg.PrivateBiformFamily
-import Froberg.PrivateFrameDetector
+module
+
+public import Froberg.TypedPrivateQuadraticExistence
+public import Froberg.PrivateBiformFamily
+public import Froberg.PrivateFrameDetector
+
+@[expose] public section
 
 /-! The linear coordinates returned by the common-frame construction give
 the typed private-power witness with no additional choice of detector. -/

@@ -1,5 +1,9 @@
-import Froberg.SparseExactIntermediate
-import Froberg.UniversalMixedCoordinates
+module
+
+public import Froberg.SparseExactIntermediate
+public import Froberg.UniversalMixedCoordinates
+
+@[expose] public section
 
 /-! The sparse quotient witness is compatible with every prescribed nonempty
 open on its actual output vectors, while keeping the exponents fixed. -/

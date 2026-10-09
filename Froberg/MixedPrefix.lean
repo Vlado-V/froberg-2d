@@ -1,5 +1,9 @@
-import Froberg.UniversalMixedPosition
-import Froberg.PrefixExterior
+module
+
+public import Froberg.UniversalMixedPosition
+public import Froberg.PrefixExterior
+
+@[expose] public section
 
 /-! Uniform mixed minors prevent too many independent blocks from failing. -/
 noncomputable section

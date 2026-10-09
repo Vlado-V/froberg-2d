@@ -1,4 +1,8 @@
-import Froberg.FlagReplacement
+module
+
+public import Froberg.FlagReplacement
+
+@[expose] public section
 
 /-! The replacement background is contained in the temporary background
 with its extra column. Hence the C.2 separation for the temporary family

@@ -1,5 +1,9 @@
-import Froberg.OuterProfileDimensions
-import Froberg.OuterModel
+module
+
+public import Froberg.OuterProfileDimensions
+public import Froberg.OuterModel
+
+@[expose] public section
 
 /-! Applying the numerical monomial shadow bound to all actual subspaces
 of the attached polynomial quotient. -/

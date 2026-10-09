@@ -1,6 +1,10 @@
-import Froberg.MixedHigherRowData
-import Froberg.BottomVectorSlices
-import Froberg.MixedAmbientCorrection
+module
+
+public import Froberg.MixedHigherRowData
+public import Froberg.BottomVectorSlices
+public import Froberg.MixedAmbientCorrection
+
+@[expose] public section
 
 /-! Literal bottom-source multiplication agrees with the B.3 vector
 quotient action in the corrected ambient target. -/

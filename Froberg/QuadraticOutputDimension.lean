@@ -1,7 +1,11 @@
-import Froberg.ExtendedPrefixConvolution
-import Froberg.UpperEndpointConvolution
-import Froberg.SmallDegreeCapacities
-import Froberg.BlockParameters
+module
+
+public import Froberg.ExtendedPrefixConvolution
+public import Froberg.UpperEndpointConvolution
+public import Froberg.SmallDegreeCapacities
+public import Froberg.BlockParameters
+
+@[expose] public section
 
 /-! The actual allowed dimension of the quadratic output space leaves room
 for the row-three and row-four witnesses. -/

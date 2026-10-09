@@ -1,5 +1,9 @@
-import Froberg.BilinearKoszulRow
-import Froberg.PolynomialRowRelations
+module
+
+public import Froberg.BilinearKoszulRow
+public import Froberg.PolynomialRowRelations
+
+@[expose] public section
 
 /-! Sparse polynomial witnesses belong to the unrestricted coefficient row
 family. This is the bridge from finite row constructions to common opens. -/

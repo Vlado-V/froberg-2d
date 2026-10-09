@@ -1,5 +1,9 @@
-import Froberg.PreparedProductBiform
-import Froberg.PreparedPrivateRowOpen
+module
+
+public import Froberg.PreparedProductBiform
+public import Froberg.PreparedPrivateRowOpen
+
+@[expose] public section
 
 /-! At output degree d+1, the private coefficients have scalar degree zero.
 Their private powers separate them from every core product; this condition

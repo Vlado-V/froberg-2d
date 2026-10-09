@@ -1,4 +1,8 @@
-import Froberg.ParityComplex
+module
+
+public import Froberg.ParityComplex
+
+@[expose] public section
 
 /-! Variable equivalences preserve the actual homogeneous parity spaces,
 with the weight function transported along the same equivalence. -/

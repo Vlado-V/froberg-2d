@@ -1,4 +1,8 @@
-import Froberg.GradedKoszulElimination
+module
+
+public import Froberg.GradedKoszulElimination
+
+@[expose] public section
 
 /-! The final algebraic step of coefficient-row elimination. An alternating
 matrix of positive components is one actual constant Koszul boundary; the

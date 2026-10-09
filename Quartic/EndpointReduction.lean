@@ -1,5 +1,9 @@
-import Quartic.EndpointHomology
-import Quartic.RankOpen
+module
+
+public import Quartic.EndpointHomology
+public import Quartic.RankOpen
+
+@[expose] public section
 
 /-!
 # Reduction to adjacent endpoint witnesses

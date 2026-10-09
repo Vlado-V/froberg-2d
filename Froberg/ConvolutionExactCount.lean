@@ -1,4 +1,8 @@
-import Froberg.ConvolutionDimension
+module
+
+public import Froberg.ConvolutionDimension
+
+@[expose] public section
 
 /-! Extending the concrete convolution family to any prescribed larger count. -/
 noncomputable section

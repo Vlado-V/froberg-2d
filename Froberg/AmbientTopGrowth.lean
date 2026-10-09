@@ -1,6 +1,10 @@
-import Froberg.AmbientTopProjection
-import Froberg.TopQuotientGrowth
-import Froberg.BilinearScalarReparam
+module
+
+public import Froberg.AmbientTopProjection
+public import Froberg.TopQuotientGrowth
+public import Froberg.BilinearScalarReparam
+
+@[expose] public section
 
 /-! The actual top-row projection lands in the quotient used by the
 generic growth theorem. Both the scalar and coefficient transports are

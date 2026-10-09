@@ -1,5 +1,9 @@
-import Froberg.Graded
-import Mathlib.RingTheory.PowerSeries.WellKnown
+module
+
+public import Froberg.Graded
+public import Mathlib.RingTheory.PowerSeries.WellKnown
+
+@[expose] public section
 
 /-! The actual formal power series of Fröberg's prediction and its endpoint coefficients. -/
 noncomputable section

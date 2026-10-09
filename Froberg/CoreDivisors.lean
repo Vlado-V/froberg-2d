@@ -1,4 +1,8 @@
-import Froberg.OuterInjection
+module
+
+public import Froberg.OuterInjection
+
+@[expose] public section
 
 /-! Divisor counts using the actual core degree, rather than total degree. -/
 noncomputable section

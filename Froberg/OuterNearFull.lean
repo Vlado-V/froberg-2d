@@ -1,5 +1,9 @@
-import Froberg.OuterGrowthTransfer
-import Froberg.BadTargetCount
+module
+
+public import Froberg.OuterGrowthTransfer
+public import Froberg.BadTargetCount
+
+@[expose] public section
 
 /-! A direct quadratic small-defect bound in the actual outer quotient. -/
 noncomputable section

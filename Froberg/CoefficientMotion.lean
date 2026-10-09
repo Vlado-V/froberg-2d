@@ -1,6 +1,10 @@
-import Froberg.BilinearScalarFamily
-import Froberg.CoefficientRank
-import Quartic.BilinearMotionConstraints
+module
+
+public import Froberg.BilinearScalarFamily
+public import Froberg.CoefficientRank
+public import Quartic.BilinearMotionConstraints
+
+@[expose] public section
 
 /-! Actual scalar motions attached to an injected homology coefficient space.
 The covector equations are literal polynomial matrices, with their exact

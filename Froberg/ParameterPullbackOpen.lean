@@ -1,4 +1,8 @@
-import Froberg.AffinePolynomialSubstitution
+module
+
+public import Froberg.AffinePolynomialSubstitution
+
+@[expose] public section
 
 /-! A certified principal open pulls back through a surjective linear
 parameter map, retaining a nonzero evaluation at an actual preimage. -/

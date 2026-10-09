@@ -1,5 +1,9 @@
-import Froberg.ProjectedQuotientMultiplication
-import Froberg.ClosedCoefficientStrata
+module
+
+public import Froberg.ProjectedQuotientMultiplication
+public import Froberg.ClosedCoefficientStrata
+
+@[expose] public section
 
 /-! Maximal rank of the actual projected first normal map. A coefficient
 projection is allowed, so the odd coefficient space in C.6 is represented
@@ -15,40 +19,35 @@ variable {Z : Type*} [AddCommGroup Z] [Module K Z] [FiniteDimensional K Z]
 variable {n d r t a b T : ℕ}
 
 /-- Actual homology coefficients followed by a specified coefficient projection. -/
-def projectedMappedCoefficients (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+def projectedMappedCoefficients (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K)) :
     ProjectedEndpointHomology pi q →ₗ[K] (Fin t → Fin a → K) :=
   (vmap.compLeft (Fin t)).comp
-    (projectedHomologyCoefficients htwo pi q hq (Submodule.span K (Set.range q)) dual)
+    (projectedHomologyCoefficients pi q hq (Submodule.span K (Set.range q)) dual)
 
-abbrev ProjectedCoefficientQuotient (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+abbrev ProjectedCoefficientQuotient (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K)) :=
-  ProjectedEndpointHomology pi q ⧸ (projectedMappedCoefficients htwo pi q hq dual vmap).ker
+  ProjectedEndpointHomology pi q ⧸ (projectedMappedCoefficients pi q hq dual vmap).ker
 
 /-- The faithful map from its genuine coefficient-kernel quotient. -/
-def faithfulProjectedCoefficients (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+def faithfulProjectedCoefficients (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K)) :
-    ProjectedCoefficientQuotient htwo pi q hq dual vmap →ₗ[K] (Fin t → Fin a → K) :=
-  let c := projectedMappedCoefficients htwo pi q hq dual vmap
+    ProjectedCoefficientQuotient pi q hq dual vmap →ₗ[K] (Fin t → Fin a → K) :=
+  let c := projectedMappedCoefficients pi q hq dual vmap
   c.ker.liftQ c le_rfl
 
-theorem faithfulProjectedCoefficients_injective (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem faithfulProjectedCoefficients_injective (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K)) :
-    Function.Injective (faithfulProjectedCoefficients htwo pi q hq dual vmap) :=
+    Function.Injective (faithfulProjectedCoefficients pi q hq dual vmap) :=
   LinearMap.ker_eq_bot.mp (Submodule.ker_liftQ_eq_bot _ _ _ le_rfl)
 
 /-- Literal product compatibility implies the exact coordinate factorization
 of the projected normal map through its faithful coefficients. -/
-theorem projectedNormalMap_coordinate_factorization (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem projectedNormalMap_coordinate_factorization (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K))
     (eJ : ProjectedEndpointCokernel pi q ≃ₗ[K] (Fin T → K))
@@ -57,20 +56,19 @@ theorem projectedNormalMap_coordinate_factorization (htwo : (2 : K) ≠ 0)
     (hmu : ∀ z v, mu z (vmap v) = eJ (projectedQuotientProduct pi q (phi z) v))
     (z : Fin t → Fin b → K) :
     eJ.toLinearMap.comp (projectedNormalMap pi q (relativeGeneratorMotion q dual (fun i => phi (z i)))) =
-      (CoefficientMotion.motion mu (faithfulProjectedCoefficients htwo pi q hq dual vmap) z).comp
-        (projectedMappedCoefficients htwo pi q hq dual vmap).ker.mkQ := by
-  rw [projectedNormalMap_canonical_coefficient_formula htwo pi q hq dual]
+      (CoefficientMotion.motion mu (faithfulProjectedCoefficients pi q hq dual vmap) z).comp
+        (projectedMappedCoefficients pi q hq dual vmap).ker.mkQ := by
+  rw [projectedNormalMap_canonical_coefficient_formula pi q hq dual]
   apply LinearMap.ext
   intro x
   simp only [LinearMap.comp_apply,CoefficientMotion.motion_apply,coefficientResponse_apply,map_sum]
   apply Finset.sum_congr rfl
   intro i _
   exact (hmu (z i)
-    (projectedHomologyCoefficients htwo pi q hq (Submodule.span K (Set.range q)) dual x i)).symm
+    (projectedHomologyCoefficients pi q hq (Submodule.span K (Set.range q)) dual x i)).symm
 
 /-- Source quotienting and target coordinates preserve the exact response rank. -/
-theorem projectedNormalMap_rank_eq_coefficient_motion (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem projectedNormalMap_rank_eq_coefficient_motion (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K))
     (eJ : ProjectedEndpointCokernel pi q ≃ₗ[K] (Fin T → K))
@@ -79,16 +77,15 @@ theorem projectedNormalMap_rank_eq_coefficient_motion (htwo : (2 : K) ≠ 0)
     (hmu : ∀ z v, mu z (vmap v) = eJ (projectedQuotientProduct pi q (phi z) v))
     (z : Fin t → Fin b → K) :
     finrank K (projectedNormalMap pi q (relativeGeneratorMotion q dual (fun i => phi (z i)))).range =
-      finrank K (CoefficientMotion.motion mu (faithfulProjectedCoefficients htwo pi q hq dual vmap) z).range := by
-  have hf := projectedNormalMap_coordinate_factorization htwo pi q hq dual vmap eJ phi mu hmu z
+      finrank K (CoefficientMotion.motion mu (faithfulProjectedCoefficients pi q hq dual vmap) z).range := by
+  have hf := projectedNormalMap_coordinate_factorization pi q hq dual vmap eJ phi mu hmu z
   have hr := congrArg (fun F => finrank K (LinearMap.range F)) hf
   rw [LinearMap.range_comp,eJ.finrank_map_eq,
     LinearMap.range_comp_of_range_eq_top _ (Submodule.range_mkQ _)] at hr
   exact hr
 
 /-- C.6 on the actual projected complex, with literal scalar-incidence budget. -/
-theorem exists_maximal_projected_normal (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem exists_maximal_projected_normal (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K))
     (eJ : ProjectedEndpointCokernel pi q ≃ₗ[K] (Fin T → K))
@@ -100,22 +97,21 @@ theorem exists_maximal_projected_normal (htwo : (2 : K) ≠ 0)
       let e := finrank K (BilinearImage.image mu (LinearMap.ker (relationMap mu ell)))
       (k*(a-k) : ℕ)+(T : ℤ)-e-1 <
         (CoefficientMotion.coefficientSliceCount
-          (finrank K (ProjectedCoefficientQuotient htwo pi q hq dual vmap)) t T k : ℕ)) :
+          (finrank K (ProjectedCoefficientQuotient pi q hq dual vmap)) t T k : ℕ)) :
     ∃ z : Fin t → Fin b → K,
       finrank K (projectedNormalMap pi q (relativeGeneratorMotion q dual (fun i => phi (z i)))).range =
-        min (finrank K (ProjectedCoefficientQuotient htwo pi q hq dual vmap)) T := by
+        min (finrank K (ProjectedCoefficientQuotient pi q hq dual vmap)) T := by
   obtain ⟨z,hz⟩ := CoefficientMotion.exists_maximal_motion_of_incidence_budget mu
-    (faithfulProjectedCoefficients htwo pi q hq dual vmap)
-    (faithfulProjectedCoefficients_injective htwo pi q hq dual vmap) hbudget
+    (faithfulProjectedCoefficients pi q hq dual vmap)
+    (faithfulProjectedCoefficients_injective pi q hq dual vmap) hbudget
   refine ⟨z,?_⟩
-  rw [projectedNormalMap_rank_eq_coefficient_motion htwo pi q hq dual vmap eJ phi mu hmu z]
+  rw [projectedNormalMap_rank_eq_coefficient_motion pi q hq dual vmap eJ phi mu hmu z]
   exact hz
 
 /-- The C.4 closed-stratum interface for the actual projected normal map.
 This version consumes genuine empty projective sections and does not replace
 the multilayer C.4 estimate by a stronger global Grassmannian shadow. -/
-theorem exists_maximal_projected_normal_of_slices (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem exists_maximal_projected_normal_of_slices (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (vmap : (Forms K n d ⧸ Submodule.span K (Set.range q)) →ₗ[K] (Fin a → K))
     (eJ : ProjectedEndpointCokernel pi q ≃ₗ[K] (Fin T → K))
@@ -133,17 +129,17 @@ theorem exists_maximal_projected_normal_of_slices (htwo : (2 : K) ≠ 0)
       finrank K (LinearMap.ker (relationMap mu ell)) = k.val →
       ∀ i, MvPolynomial.eval ell (eqs k i).val = 0)
     (hcount : ∀ k, slices k ≤
-      (finrank K (ProjectedCoefficientQuotient htwo pi q hq dual vmap)-t*k.val)+
-        (T-finrank K (ProjectedCoefficientQuotient htwo pi q hq dual vmap))) :
+      (finrank K (ProjectedCoefficientQuotient pi q hq dual vmap)-t*k.val)+
+        (T-finrank K (ProjectedCoefficientQuotient pi q hq dual vmap))) :
     ∃ z : Fin t → Fin b → K,
       finrank K (projectedNormalMap pi q (relativeGeneratorMotion q dual (fun i => phi (z i)))).range =
-        min (finrank K (ProjectedCoefficientQuotient htwo pi q hq dual vmap)) T := by
+        min (finrank K (ProjectedCoefficientQuotient pi q hq dual vmap)) T := by
   obtain ⟨z,hz⟩ := CoefficientMotion.exists_maximal_motion mu
-    (faithfulProjectedCoefficients htwo pi q hq dual vmap)
-    (faithfulProjectedCoefficients_injective htwo pi q hq dual vmap)
+    (faithfulProjectedCoefficients pi q hq dual vmap)
+    (faithfulProjectedCoefficients_injective pi q hq dual vmap)
     count slices degrees eqs cuts hempty hcover hcount
   refine ⟨z,?_⟩
-  rw [projectedNormalMap_rank_eq_coefficient_motion htwo pi q hq dual vmap eJ phi mu hmu z]
+  rw [projectedNormalMap_rank_eq_coefficient_motion pi q hq dual vmap eJ phi mu hmu z]
   exact hz
 
 end Froberg

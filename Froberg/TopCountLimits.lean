@@ -1,5 +1,9 @@
-import Froberg.CapacityFactors
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.CapacityFactors
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! # Exact tail and quotient counts in the projected top degree -/
 

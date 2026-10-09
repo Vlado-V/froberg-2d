@@ -1,7 +1,11 @@
-import Froberg.PrivateLowerNumeric
-import Froberg.PrivateQuotientDimensions
-import Froberg.LowerHalfShadowTransfer
-import Froberg.OuterShadowTransfer
+module
+
+public import Froberg.PrivateLowerNumeric
+public import Froberg.PrivateQuotientDimensions
+public import Froberg.LowerHalfShadowTransfer
+public import Froberg.OuterShadowTransfer
+
+@[expose] public section
 
 /-! The lower-half private estimate for actual polynomial quotient subspaces. -/
 noncomputable section

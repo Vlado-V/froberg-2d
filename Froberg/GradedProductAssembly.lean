@@ -1,5 +1,9 @@
-import Froberg.PolynomialTensorTransport
-import Mathlib.RingTheory.MvPolynomial.WeightedHomogeneous
+module
+
+public import Froberg.PolynomialTensorTransport
+public import Mathlib.RingTheory.MvPolynomial.WeightedHomogeneous
+
+@[expose] public section
 
 /-! The two independence mechanisms in the product part of Lemma B.4:
 disjoint-variable cross products, and assembly in distinct half-degrees. -/

@@ -1,8 +1,12 @@
-import Froberg.PreparedActualReduction
-import Froberg.ExtendedLeadingWitnesses
-import Froberg.UniformShiftedPreparedCapacities
-import Froberg.CapacityTargetTransport
-import Froberg.PrivateFrameReference
+module
+
+public import Froberg.PreparedActualReduction
+public import Froberg.ExtendedLeadingWitnesses
+public import Froberg.UniformShiftedPreparedCapacities
+public import Froberg.CapacityTargetTransport
+public import Froberg.PrivateFrameReference
+
+@[expose] public section
 
 /-! Independent leading components for the actual prescribed row counts,
 with output constraints chosen after the scalar threshold. -/

@@ -1,6 +1,10 @@
-import Froberg.ActualThinProjectedNormal
-import Froberg.OddQuotientProduct
-import Froberg.SeparatedGeneratorIndependence
+module
+
+public import Froberg.ActualThinProjectedNormal
+public import Froberg.OddQuotientProduct
+public import Froberg.SeparatedGeneratorIndependence
+
+@[expose] public section
 
 /-! The retained coefficient kernel in the actual odd source quotient.
 Any linear coordinates on that quotient preserve the same kernel. -/
@@ -26,8 +30,7 @@ def oddCoefficientProjection (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (x : generatorQuotient q) :
     (oddCoefficientProjection w e q hq x).val=parityGeneratorQuotient w e q hq 1 x := rfl
 
-theorem actual_odd_coefficient_kernel (htwo : (2 : K)≠0)
-    (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
+theorem actual_odd_coefficient_kernel (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hi : LinearIndependent K q)
     (hq : ∀ i,(q i).val.IsWeightedHomogeneous w (e i))
     (pi : Forms K n (2*d) →ₗ[K] Z)
@@ -37,33 +40,32 @@ theorem actual_odd_coefficient_kernel (htwo : (2 : K)≠0)
     (dual : Fin t → Forms K n d →ₗ[K] K)
     (hdual : ∀ i j,e j=0 → dual i (q j)=0)
     (coords : oddCoefficientSpace w q ≃ₗ[K] V) :
-    (actualProjectedMappedCoefficients htwo pi q hi dual
+    (actualProjectedMappedCoefficients pi q hi dual
       (coords.toLinearMap.comp (oddCoefficientProjection w e q hq))).ker=
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual).ker := by
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual).ker := by
   ext x
   constructor
   · intro hx
-    change projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x=0
+    change projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x=0
     funext i
     have hx' := congrFun hx i
     change coords (oddCoefficientProjection w e q hq
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x i))=0 at hx'
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x i))=0 at hx'
     have hz := coords.map_eq_zero_iff.mp hx'
     have hv := congrArg Subtype.val hz
     change parityGeneratorQuotient w e q hq 1
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x i)=0 at hv
-    rw [projectedHomologyCoefficients_odd htwo w e q hi hq pi hpi hodd dual hdual] at hv
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x i)=0 at hv
+    rw [projectedHomologyCoefficients_odd w e q hi hq pi hpi hodd dual hdual] at hv
     exact hv
   · intro hx
     change ((coords.toLinearMap.comp (oddCoefficientProjection w e q hq)).compLeft (Fin t))
-      (projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x)=0
-    rw [show projectedHomologyCoefficients htwo pi q hi (Submodule.span K (Set.range q)) dual x=0 from hx,
+      (projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x)=0
+    rw [show projectedHomologyCoefficients pi q hi (Submodule.span K (Set.range q)) dual x=0 from hx,
       map_zero]
 
 /-- C.2 separation constructs the duals and identifies the retained kernel
 after passing to the actual odd quotient used by the growth argument. -/
-theorem exists_actual_odd_retained_kernel (htwo : (2 : K)≠0)
-    (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
+theorem exists_actual_odd_retained_kernel (w : Fin n → ZMod 2) (e : Fin r → ZMod 2)
     (q : Fin r → Forms K n d) (hi : LinearIndependent K q)
     (hq : ∀ i,(q i).val.IsWeightedHomogeneous w (e i))
     (pi : Forms K n (2*d) →ₗ[K] Z)
@@ -81,18 +83,18 @@ theorem exists_actual_odd_retained_kernel (htwo : (2 : K)≠0)
     ∃ dual : Fin t → Forms K n d →ₗ[K] K,
       (∀ i x,x∈T → dual i x=0) ∧
       (∀ i j,dual i (f j)=if i=j then 1 else 0) ∧
-      (actualProjectedMappedCoefficients htwo pi q hi dual
+      (actualProjectedMappedCoefficients pi q hi dual
         (coords.toLinearMap.comp (oddCoefficientProjection w e q hq))).ker=
-        projectedRetainedHomology htwo pi q hi T := by
+        projectedRetainedHomology pi q hi T := by
   classical
   obtain ⟨dual,hdT,hdF⟩ := exists_relative_coordinate_functionals T f
     (linearIndependent_quotient_of_formalSquare_separated
       (pi.comp formalPolynomialMultiplication) T f hf hsep)
   refine ⟨dual,hdT,hdF,?_⟩
-  rw [actual_odd_coefficient_kernel htwo w e q hi hq pi hpi hodd dual
+  rw [actual_odd_coefficient_kernel w e q hi hq pi hpi hodd dual
     (fun i j hj => hdT i (q j) (heven j hj)) coords]
-  have hker := projectedHomologyCoefficients_kernel htwo pi q hi T f hspan dual hdT hdF hsep
+  have hker := projectedHomologyCoefficients_kernel pi q hi T f hspan dual hdT hdF hsep
   exact (congrArg (fun G : Submodule K (Forms K n d) =>
-    (projectedHomologyCoefficients htwo pi q hi G dual).ker) hspan).trans hker
+    (projectedHomologyCoefficients pi q hi G dual).ker) hspan).trans hker
 
 end Froberg

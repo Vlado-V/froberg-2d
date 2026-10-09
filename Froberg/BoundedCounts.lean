@@ -1,4 +1,8 @@
-import Froberg.GeneratorCounts
+module
+
+public import Froberg.GeneratorCounts
+
+@[expose] public section
 
 /-! Integer selection with prescribed lower and upper bounds on the number
 of variables in the auxiliary block. -/

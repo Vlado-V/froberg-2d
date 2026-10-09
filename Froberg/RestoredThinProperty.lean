@@ -1,6 +1,10 @@
-import Froberg.RestoredScalarCompatibility
-import Froberg.OddEndpointScalarSlices
-import Froberg.BottomVectorQuotient
+module
+
+public import Froberg.RestoredScalarCompatibility
+public import Froberg.OddEndpointScalarSlices
+public import Froberg.BottomVectorQuotient
+
+@[expose] public section
 
 /-! The thin-slice property of the literal restored endpoint family. -/
 noncomputable section

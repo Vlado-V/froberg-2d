@@ -1,5 +1,9 @@
-import Froberg.CoreTensorProjection
-import Froberg.BiformVectorDetector
+module
+
+public import Froberg.CoreTensorProjection
+public import Froberg.BiformVectorDetector
+
+@[expose] public section
 
 /-! The coordinate detector on the literal single-ring polynomial model.
 It is supported in quadratic output degree and kills constrained quadratic

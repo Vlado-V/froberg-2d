@@ -1,4 +1,8 @@
-import Mathlib.Tactic
+module
+
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The explicit strict Schubert inequality in the projected-top argument. -/
 set_option maxHeartbeats 1500000

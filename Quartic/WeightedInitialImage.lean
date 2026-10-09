@@ -1,4 +1,8 @@
-import Quartic.FilteredImage
+module
+
+public import Quartic.FilteredImage
+
+@[expose] public section
 
 /-!
 # Multiplication images do not grow on passing to initial subspaces

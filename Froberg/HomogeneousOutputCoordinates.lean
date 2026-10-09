@@ -1,4 +1,8 @@
-import Froberg.PolynomialVectorRows
+module
+
+public import Froberg.PolynomialVectorRows
+
+@[expose] public section
 
 /-! Coordinates for embedding a prescribed homogeneous output subspace in
 all homogeneous output directions. -/

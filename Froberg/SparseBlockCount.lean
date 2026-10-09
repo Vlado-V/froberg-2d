@@ -1,5 +1,9 @@
-import Froberg.ConvolutionBlockLimits
-import Froberg.ScalarSeparationAsymptotic
+module
+
+public import Froberg.ConvolutionBlockLimits
+public import Froberg.ScalarSeparationAsymptotic
+
+@[expose] public section
 
 /-! A rounded number of sparse scalar blocks with a strict surplus over
 the prescribed generator density. -/

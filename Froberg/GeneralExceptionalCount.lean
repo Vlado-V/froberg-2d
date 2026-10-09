@@ -1,4 +1,8 @@
-import Froberg.AttachedProjection
+module
+
+public import Froberg.AttachedProjection
+
+@[expose] public section
 
 /-! The exceptional-projection bound for arbitrary multiplier degree.
 This is the geometric input to the intermediate-layer shadow estimate B.11. -/

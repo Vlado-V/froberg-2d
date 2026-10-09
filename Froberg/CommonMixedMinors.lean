@@ -1,5 +1,9 @@
-import Froberg.PaddedMixedMinors
-import Froberg.GeneralPositionVectors
+module
+
+public import Froberg.PaddedMixedMinors
+public import Froberg.GeneralPositionVectors
+
+@[expose] public section
 
 /-! One vector family satisfies finitely many mixed-minor conditions and full spark. -/
 noncomputable section

@@ -1,7 +1,11 @@
-import Quartic.ActualCorrectionMotion
-import Quartic.ActualTraceMotion
-import Quartic.ActualSplitCokernel
-import Quartic.AuxiliarySurjectivity
+module
+
+public import Quartic.ActualCorrectionMotion
+public import Quartic.ActualTraceMotion
+public import Quartic.ActualSplitCokernel
+public import Quartic.AuxiliarySurjectivity
+
+@[expose] public section
 
 /-!
 # The actual two-stage deformation response

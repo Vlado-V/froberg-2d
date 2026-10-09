@@ -1,5 +1,9 @@
-import Froberg.FramedBiformOpen
-import Froberg.BiformPairOpen
+module
+
+public import Froberg.FramedBiformOpen
+public import Froberg.BiformPairOpen
+
+@[expose] public section
 
 /-! The row-two witness as an open condition on an output frame. This
 uses the same affine frame parameters as rows three and four. -/

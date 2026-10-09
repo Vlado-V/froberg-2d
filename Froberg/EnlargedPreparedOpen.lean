@@ -1,7 +1,11 @@
-import Froberg.ActualPreparedComparison
-import Froberg.CountedLeadingOpen
-import Froberg.CountedPreparedOuterOpen
-import Froberg.FiniteBasisPrincipalIntersection
+module
+
+public import Froberg.ActualPreparedComparison
+public import Froberg.CountedLeadingOpen
+public import Froberg.CountedPreparedOuterOpen
+public import Froberg.FiniteBasisPrincipalIntersection
+
+@[expose] public section
 
 /-! The independent geometric opens combine on one actual enlarged
 prepared parameter space and supply all six comparison certificates. -/
@@ -9,7 +13,7 @@ noncomputable section
 set_option maxHeartbeats 1000000
 namespace Froberg.PreparedTarget
 open Froberg Module MvPolynomial PreparedParameters FullPreparedParameters
-variable {K : Type} [Field K] [CharZero K] [IsAlgClosed K]
+variable {K : Type} [Field K] [Infinite K]
 variable {h m d q f u r : ℕ} {J : Finset ℕ} {counts : ℕ → ℕ}
 variable {O : ℕ → Submodule K (Poly K h)}
 

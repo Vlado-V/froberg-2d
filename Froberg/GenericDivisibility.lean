@@ -1,7 +1,11 @@
-import Froberg.UniversalAction
-import Froberg.CentralScalar
-import Froberg.GenericFieldDescent
-import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed
+module
+
+public import Froberg.UniversalAction
+public import Froberg.CentralScalar
+public import Froberg.GenericFieldDescent
+public import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed
+
+@[expose] public section
 
 /-! # The actual generic endpoint divisibility theorem
 

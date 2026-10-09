@@ -1,6 +1,10 @@
-import Froberg.PrivateMultiplierCounts
-import Froberg.PrivateFibers
-import Froberg.PrivateTargetDeletion
+module
+
+public import Froberg.PrivateMultiplierCounts
+public import Froberg.PrivateFibers
+public import Froberg.PrivateTargetDeletion
+
+@[expose] public section
 
 /-! Disjoint target sets on which private source fibers multiply identically. -/
 noncomputable section

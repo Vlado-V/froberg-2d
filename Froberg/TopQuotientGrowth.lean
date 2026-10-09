@@ -1,6 +1,10 @@
-import Froberg.ProjectedTopAugmentation
-import Froberg.TopTensorExactness
-import Froberg.TensorFamilyGrowth
+module
+
+public import Froberg.ProjectedTopAugmentation
+public import Froberg.TopTensorExactness
+public import Froberg.TensorFamilyGrowth
+
+@[expose] public section
 
 /-! The scalar-growth bound is a statement about the literal tensor quotient
 of the manuscript, with both the pure and mixed relation spaces present. -/

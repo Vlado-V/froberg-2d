@@ -1,4 +1,8 @@
-import Froberg.LowerMixedRow
+module
+
+public import Froberg.LowerMixedRow
+
+@[expose] public section
 
 /-! Exact core rows persist on adjoining private variables: a relation with
 a core-only inhomogeneous term has no nonzero private coefficient. -/

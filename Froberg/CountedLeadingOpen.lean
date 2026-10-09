@@ -1,5 +1,9 @@
-import Froberg.PreparedCountedIndependence
-import Froberg.PreparedPositiveLeadingOpen
+module
+
+public import Froberg.PreparedCountedIndependence
+public import Froberg.PreparedPositiveLeadingOpen
+
+@[expose] public section
 
 /-! A fixed private tuple is independent for sufficiently many scalar
 variables. Together with the positive-layer witnesses this gives a

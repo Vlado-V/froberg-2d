@@ -1,5 +1,9 @@
-import Froberg.PreparedScalarFiber
-import Froberg.FreezeAtPoint
+module
+
+public import Froberg.PreparedScalarFiber
+public import Froberg.FreezeAtPoint
+
+@[expose] public section
 
 /-! The actual scalar fiber through a previously selected good prepared point. -/
 noncomputable section

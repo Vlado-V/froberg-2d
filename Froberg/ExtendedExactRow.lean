@@ -1,4 +1,8 @@
-import Froberg.ExtendedMixedRow
+module
+
+public import Froberg.ExtendedMixedRow
+
+@[expose] public section
 
 /-! Endpoint exactness supplies all lower mixed rows needed to adjoin the
 private variables. The core-only product term is kept literally unchanged. -/

@@ -1,4 +1,8 @@
-import Froberg.SymmetricIndependence
+module
+
+public import Froberg.SymmetricIndependence
+
+@[expose] public section
 
 /-! Restricting an independent symmetric-product space to a linear output
 constraint loses at most the number of constraint coordinates. -/

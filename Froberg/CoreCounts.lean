@@ -1,4 +1,8 @@
-import Froberg.CoreFraction
+module
+
+public import Froberg.CoreFraction
+
+@[expose] public section
 
 /-! The exact generator counts leave a fixed fraction of variables free. -/
 noncomputable section

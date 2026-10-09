@@ -1,5 +1,9 @@
-import Froberg.PrefixPolynomial
-import Mathlib.Data.Nat.Choose.Bounds
+module
+
+public import Froberg.PrefixPolynomial
+public import Mathlib.Data.Nat.Choose.Bounds
+
+@[expose] public section
 
 /-! Uniform eventual row retention for two balanced blocks of variables. -/
 noncomputable section

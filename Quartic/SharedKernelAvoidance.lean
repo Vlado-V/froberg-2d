@@ -1,4 +1,8 @@
-import Quartic.SharedKernelCharts
+module
+
+public import Quartic.SharedKernelCharts
+
+@[expose] public section
 
 /-!
 # Generic exclusion of a shared kernel condition on several coefficient vectors

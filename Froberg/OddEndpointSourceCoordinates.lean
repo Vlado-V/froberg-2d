@@ -1,5 +1,9 @@
-import Froberg.OddSourceGraphCoordinates
-import Froberg.OddBackgroundSource
+module
+
+public import Froberg.OddSourceGraphCoordinates
+public import Froberg.OddBackgroundSource
+
+@[expose] public section
 
 /-! The explicit source coordinates are coordinates on the actual odd
 coefficient space of the enumerated endpoint family. -/

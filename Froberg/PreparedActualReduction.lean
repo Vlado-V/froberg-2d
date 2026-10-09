@@ -1,5 +1,9 @@
-import Froberg.PreparedActualCapacities
-import Froberg.PreparedFiniteEvenReduction
+module
+
+public import Froberg.PreparedActualCapacities
+public import Froberg.PreparedFiniteEvenReduction
+
+@[expose] public section
 
 /-! The scalar/even background with the actual counts has the literal
 positive-row reduction on a nonempty open. This is the U=0 input to even

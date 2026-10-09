@@ -1,5 +1,9 @@
-import Froberg.PreparedLayeredBudget
-import Froberg.OddBackgroundSource
+module
+
+public import Froberg.PreparedLayeredBudget
+public import Froberg.OddBackgroundSource
+
+@[expose] public section
 
 /-! The actual old odd coefficient quotient has at most the full odd
 homogeneous dimension required by the numerical C.4 budget. -/

@@ -1,4 +1,8 @@
-import Froberg.InitialSubspace
+module
+
+public import Froberg.InitialSubspace
+
+@[expose] public section
 
 /-! Coordinate projections retaining any chosen monomials, and the initial
 subspace argument after such a projection. This includes deleting a bidegree. -/

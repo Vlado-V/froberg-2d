@@ -1,5 +1,9 @@
-import Froberg.PreparedAllScalarSmallReduction
-import Froberg.PreparedLeadingWitness
+module
+
+public import Froberg.PreparedAllScalarSmallReduction
+public import Froberg.PreparedLeadingWitness
+
+@[expose] public section
 
 /-! Literal independent leading-layer witnesses at every sufficiently
 large scalar size, uniformly before choosing output constraints. -/

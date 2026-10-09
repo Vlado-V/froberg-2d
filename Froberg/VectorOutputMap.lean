@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.TensorProduct.Pi
-import Mathlib.RingTheory.Flat.Basic
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+module
+
+public import Mathlib.LinearAlgebra.TensorProduct.Pi
+public import Mathlib.RingTheory.Flat.Basic
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+
+@[expose] public section
 
 /-! Functorial changes of the finite output space of a polynomial vector. -/
 noncomputable section

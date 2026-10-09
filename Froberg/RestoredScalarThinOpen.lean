@@ -1,7 +1,11 @@
-import Froberg.RestoredThinProperty
-import Froberg.EvenEndpointSlices
-import Froberg.OddSourceDimensionBudget
-import Froberg.EndpointThinProperty
+module
+
+public import Froberg.RestoredThinProperty
+public import Froberg.EvenEndpointSlices
+public import Froberg.OddSourceDimensionBudget
+public import Froberg.EndpointThinProperty
+
+@[expose] public section
 
 /-! The finite even-degree endpoint estimate on the actual restored
 scalar fiber preserves every condition on its supplied open. -/

@@ -1,4 +1,8 @@
-import Froberg.Statement
+module
+
+public import Froberg.Statement
+
+@[expose] public section
 
 /-! Generic spanning and all generator counts at or above the homogeneous dimension. -/
 noncomputable section

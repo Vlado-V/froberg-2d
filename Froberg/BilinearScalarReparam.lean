@@ -1,4 +1,8 @@
-import Froberg.BilinearPostcompose
+module
+
+public import Froberg.BilinearPostcompose
+
+@[expose] public section
 
 /-! A surjective change of scalar parameters leaves the full bilinear
 image unchanged. -/

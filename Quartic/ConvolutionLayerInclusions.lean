@@ -1,4 +1,8 @@
-import Quartic.FreeCoefficientProducts
+module
+
+public import Quartic.FreeCoefficientProducts
+
+@[expose] public section
 
 /-!
 # Actual insertion maps in the grouped convolution layers

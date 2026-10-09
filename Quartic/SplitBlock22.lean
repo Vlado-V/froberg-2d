@@ -1,6 +1,10 @@
-import Quartic.SplitTensor
-import Quartic.ThreeBlockQuotient
-import Quartic.MiddleCoordinates
+module
+
+public import Quartic.SplitTensor
+public import Quartic.ThreeBlockQuotient
+public import Quartic.MiddleCoordinates
+
+@[expose] public section
 
 /-!
 # Actual elimination in the (2,2) polynomial block
@@ -45,7 +49,7 @@ def childImage (Q : Submodule K (Forms K m 2)) : Submodule K (Target K m) :=
 def crossImage (Q : Submodule K (Forms K m 2)) : Submodule K (Target K m) :=
   SplitTensor.jointRelations pureSpace Q
 
-private def pairTensor (A : Type*) [AddCommGroup A] [Module K A] :
+def pairTensor (A : Type*) [AddCommGroup A] [Module K A] :
     ((K × K) ⊗[K] A) ≃ₗ[K] A × A :=
   (TensorProduct.prodLeft K K K K A).trans
     ((TensorProduct.lid K A).prodCongr (TensorProduct.lid K A))

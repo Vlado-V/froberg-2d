@@ -1,7 +1,11 @@
-import Froberg.ScalarCoefficientSpaces
-import Froberg.PrefixLowerInjection
-import Froberg.ShiftedCountLimits
-import Froberg.PairedCapacity
+module
+
+public import Froberg.ScalarCoefficientSpaces
+public import Froberg.PrefixLowerInjection
+public import Froberg.ShiftedCountLimits
+public import Froberg.PairedCapacity
+
+@[expose] public section
 
 /-! C.1 provides the whole scalar prefix-injectivity range and the paired
 coefficient space at the same parameter point. Fixed unused scalar variables

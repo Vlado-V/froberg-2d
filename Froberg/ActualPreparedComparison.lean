@@ -1,9 +1,13 @@
-import Froberg.PreparedC4Selection
-import Froberg.PreparedOddComparison
-import Froberg.CountedPreparedBasicOpen
-import Froberg.IndexedPureTail
-import Froberg.CriticalComparisonCounts
-import Froberg.ExactOuterBound
+module
+
+public import Froberg.PreparedC4Selection
+public import Froberg.PreparedOddComparison
+public import Froberg.PreparedBasicCore
+public import Froberg.IndexedPureTail
+public import Froberg.CriticalComparisonCounts
+public import Froberg.ExactOuterBound
+
+@[expose] public section
 
 /-! Actual-count odd prepared comparison. The supplied enlarged open contains
 all geometric certificates for the temporary column; the base open certifies
@@ -14,7 +18,7 @@ set_option backward.isDefEq.respectTransparency true
 namespace Froberg.PreparedTarget
 open Froberg PreparedParameters Filter Module MvPolynomial
 open scoped Topology
-variable {K : Type} [Field K] [CharZero K] [IsAlgClosed K]
+variable {K : Type} [Field K] [Infinite K]
 
 /-- The enlarged-family data used in the concrete comparison, on one actual
 parameter point and with one fixed enumeration of its even generators. -/
@@ -45,6 +49,8 @@ def HasEnlargedPreparedOpen {h m d q f u r : ℕ} {J : Finset ℕ}
       eval ((Module.finBasis K _).equivFun p) D≠0) ∧
     ∀ p,eval ((Module.finBasis K _).equivFun p) D≠0 →
       EnlargedPreparedCertificate hd ho hO hJ heven idx U p
+
+variable [CharZero K] [IsAlgClosed K]
 
 /-- Once the finite geometric opens are available, exact counts produce the
 actual critical comparison for every sufficiently large scalar block. -/
@@ -98,7 +104,7 @@ theorem eventually_actual_prepared_comparison {d k h lo : ℕ}
       (allEvenCount d h n (e n+0)) ⊕ (Fin (f n) ⊕ Fin (tailGeneratorCount d h)))=_ at hhcard
     simp only [Nat.add_zero,Fintype.card_sum,Fintype.card_fin,PreparedParameters.Label] at hhcard
     simpa only [Nat.add_comm n h,Nat.add_assoc] using hhcard
-  exact exists_critical_comparison_of_prepared_odd (by norm_num) (by omega) ho hnpos upper
+  exact exists_critical_comparison_of_prepared_odd (by omega) ho hnpos upper
     hO hJ heven (fun j hj => (mem_allEvenIndices.mp hj).1)
     (fun j hj _ => by have hle := hJ j hj; have he := heven j hj; omega)
     (allEvenCount_le_append hd h n (e n) 1) (quadraticExtraLayer hd h n (e n))

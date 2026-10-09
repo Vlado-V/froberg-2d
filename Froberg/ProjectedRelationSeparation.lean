@@ -1,4 +1,8 @@
-import Froberg.MixedTensorExactness
+module
+
+public import Froberg.MixedTensorExactness
+
+@[expose] public section
 
 /-! Injectivity of the projected two-family map excludes all unintended
 intersections with the actual tensor relation spaces. -/

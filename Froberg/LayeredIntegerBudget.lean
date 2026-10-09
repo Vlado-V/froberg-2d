@@ -1,5 +1,9 @@
-import Froberg.ThinShadowBudget
-import Froberg.ScalarReserveCount
+module
+
+public import Froberg.ThinShadowBudget
+public import Froberg.ScalarReserveCount
+
+@[expose] public section
 
 /-! Integer rounding and lower-order absorption for the actual layered
 kernel budget. All kernel thresholds share the same chosen rate. -/

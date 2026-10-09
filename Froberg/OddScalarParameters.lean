@@ -1,6 +1,10 @@
-import Froberg.OddScalarLayers
-import Froberg.ScalarBiformParameter
-import Froberg.ParameterPullbackOpen
+module
+
+public import Froberg.OddScalarLayers
+public import Froberg.ScalarBiformParameter
+public import Froberg.ParameterPullbackOpen
+
+@[expose] public section
 
 /-! All non-top odd-layer conditions hold on one open in the actual
 linear-form and scalar-form coefficients. -/

@@ -1,8 +1,12 @@
-import Froberg.OddEvenBottomDetection
-import Froberg.OddSplitComplex
-import Froberg.ClosedKernelEquivalence
-import Froberg.RangeQuotientSlices
-import Froberg.ReplacementParameter
+module
+
+public import Froberg.OddEvenBottomDetection
+public import Froberg.OddSplitComplex
+public import Froberg.ClosedKernelEquivalence
+public import Froberg.RangeQuotientSlices
+public import Froberg.ReplacementParameter
+
+@[expose] public section
 
 /-! A literal even-generator replacement preserves odd exactness and all
 closed scalar-contraction slices on one common nonzero parameter. The odd

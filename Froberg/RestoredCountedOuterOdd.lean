@@ -1,6 +1,10 @@
-import Froberg.RestoredOuterOddOpen
-import Froberg.CountedScalarVectorRows
-import Froberg.PreparedScalarReserve
+module
+
+public import Froberg.RestoredOuterOddOpen
+public import Froberg.CountedScalarVectorRows
+public import Froberg.PreparedScalarReserve
+
+@[expose] public section
 
 /-! Actual-count full odd exactness for a restored even family with all
 its outer generators. The scalar overhead may include fixed extra slots. -/

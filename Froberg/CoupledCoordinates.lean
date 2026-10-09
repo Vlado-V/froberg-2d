@@ -1,4 +1,8 @@
-import Froberg.CoupledCovectors
+module
+
+public import Froberg.CoupledCovectors
+
+@[expose] public section
 
 /-! Explicit linear coordinates for the coupled bottom/top covectors.
 The top coordinate is the dual of the actual quotient relation space. -/

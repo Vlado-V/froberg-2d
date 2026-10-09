@@ -1,6 +1,10 @@
-import Froberg.GenericDimensions
-import Froberg.MatrixRankSpecialization
-import Froberg.EulerDivisibility
+module
+
+public import Froberg.GenericDimensions
+public import Froberg.MatrixRankSpecialization
+public import Froberg.EulerDivisibility
+
+@[expose] public section
 
 /-!
 # The actual generic multiplication rank over a fraction field

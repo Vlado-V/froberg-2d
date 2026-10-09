@@ -1,7 +1,11 @@
-import Froberg.CycleReductionFormal
-import Froberg.PolynomialComplexOpen
-import Froberg.GeneralComplexOpen
-import Froberg.GenericDimensions
+module
+
+public import Froberg.CycleReductionFormal
+public import Froberg.PolynomialComplexOpen
+public import Froberg.GeneralComplexOpen
+public import Froberg.GenericDimensions
+
+@[expose] public section
 
 /-! Restoring pure components preserves the exact literal polynomial
 coefficient reduction. The incoming boundary may have arbitrary kernel. -/

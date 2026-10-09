@@ -1,4 +1,8 @@
-import Froberg.Prefix
+module
+
+public import Froberg.Prefix
+
+@[expose] public section
 
 /-! Multiplying a relation by one fixed nonzero monomial shows that prefix
 injectivity in one coefficient degree implies every smaller degree. -/

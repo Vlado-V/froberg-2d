@@ -1,4 +1,8 @@
-import Froberg.PreparedPrivateFinite
+module
+
+public import Froberg.PreparedPrivateFinite
+
+@[expose] public section
 
 noncomputable section
 set_option maxHeartbeats 2400000

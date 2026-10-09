@@ -1,6 +1,10 @@
-import Froberg.PolynomialKernelFrame
-import Froberg.SurjectiveParameterOpen
-import Quartic.BilinearImage
+module
+
+public import Froberg.PolynomialKernelFrame
+public import Froberg.SurjectiveParameterOpen
+public import Quartic.BilinearImage
+
+@[expose] public section
 
 /-! Surjectivity of multiplication by the kernel of a varying projection
 is an open condition at a surjective projection. The proof constructs

@@ -1,4 +1,8 @@
-import Froberg.ProjectedRelationSeparation
+module
+
+public import Froberg.ProjectedRelationSeparation
+
+@[expose] public section
 
 /-! Canonical identification of a quotient after a surjective target
 projection with the quotient by its kernel and the original relations. -/

@@ -1,5 +1,9 @@
-import Froberg.OddEvenTargetExtension
-import Froberg.OddBackgroundBottomDetection
+module
+
+public import Froberg.OddEvenTargetExtension
+public import Froberg.OddBackgroundBottomDetection
+
+@[expose] public section
 
 /-! The checked upper-target surjection excludes zero-bottom covectors
 after adding the actual common even-generator family. -/

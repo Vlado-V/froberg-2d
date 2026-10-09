@@ -1,5 +1,9 @@
-import Froberg.PreparedOddEndpoint
-import Froberg.PreparedEvenRestoration
+module
+
+public import Froberg.PreparedOddEndpoint
+public import Froberg.PreparedEvenRestoration
+
+@[expose] public section
 
 /-! The full prepared family has the stated generator parities in the
 ordinary endpoint ring, and its split-cycle statement applies to the same

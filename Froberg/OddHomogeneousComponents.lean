@@ -1,4 +1,8 @@
-import Froberg.EvenHomogeneousComponents
+module
+
+public import Froberg.EvenHomogeneousComponents
+
+@[expose] public section
 
 /-! Exact odd-weight decomposition in every ordinary homogeneous degree. -/
 noncomputable section

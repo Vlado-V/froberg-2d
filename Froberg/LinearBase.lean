@@ -1,6 +1,10 @@
-import Froberg.LinearEndpoint
-import Froberg.Prefix
-import Froberg.Spanning
+module
+
+public import Froberg.LinearEndpoint
+public import Froberg.Prefix
+public import Froberg.Spanning
+
+@[expose] public section
 
 /-! The complete generating-degree-one base of the manuscript. -/
 noncomputable section

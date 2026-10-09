@@ -1,6 +1,10 @@
-import Froberg.OutputFrameFamily
-import Froberg.CoreBiform
-import Froberg.PreparedParameters
+module
+
+public import Froberg.OutputFrameFamily
+public import Froberg.CoreBiform
+public import Froberg.PreparedParameters
+
+@[expose] public section
 
 /-! The output-frame parameterization used for target surjectivity is the
 full constrained biform parameter space used for prepared generators. -/

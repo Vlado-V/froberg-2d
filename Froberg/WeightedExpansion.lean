@@ -1,5 +1,9 @@
-import Mathlib.Combinatorics.Pigeonhole
-import Mathlib.Tactic
+module
+
+public import Mathlib.Combinatorics.Pigeonhole
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Weighted bipartite expansion, with the extra contribution of mixed targets.
 The weights retain multiplicities of divisors of nonsquarefree monomials. -/

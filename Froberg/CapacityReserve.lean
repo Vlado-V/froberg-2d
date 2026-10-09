@@ -1,4 +1,8 @@
-import Froberg.SmallDegreeRationalBounds
+module
+
+public import Froberg.SmallDegreeRationalBounds
+
+@[expose] public section
 
 /-! # Strict margins for the additional scalar reserve -/
 

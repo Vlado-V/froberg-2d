@@ -1,4 +1,8 @@
-import Quartic.SharpMinimization.Finite
+module
+
+public import Quartic.SharpMinimization.Finite
+
+@[expose] public section
 
 /-!
 # Sharp-profile minimization and finite scalar inequalities

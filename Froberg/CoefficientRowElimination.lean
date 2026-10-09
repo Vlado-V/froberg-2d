@@ -1,4 +1,8 @@
-import Froberg.CoefficientRowSubstitution
+module
+
+public import Froberg.CoefficientRowSubstitution
+
+@[expose] public section
 
 /-! Increasing-degree elimination from exact scalar/new-layer/product rows.
 The induction retains a coefficient matrix and performs no division. -/

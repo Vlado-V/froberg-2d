@@ -1,5 +1,9 @@
-import Froberg.GeneralComplexOpen
-import Froberg.PreparedPrivateRowOpen
+module
+
+public import Froberg.GeneralComplexOpen
+public import Froberg.PreparedPrivateRowOpen
+
+@[expose] public section
 
 /-! A product block remains independent modulo a varying relation block on
 a principal open, when the complete relation block has its expected kernel.

@@ -1,5 +1,9 @@
-import Froberg.PreparedAllEvenCounts
-import Froberg.LocalComparison
+module
+
+public import Froberg.PreparedAllEvenCounts
+public import Froberg.LocalComparison
+
+@[expose] public section
 
 /-! Exact final and temporary cardinalities in Section 6. The extra
 quadratic column is used only for replacement; it is not a final generator. -/

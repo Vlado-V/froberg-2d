@@ -1,4 +1,8 @@
-import Froberg.ShadowUniformAbsorption
+module
+
+public import Froberg.ShadowUniformAbsorption
+
+@[expose] public section
 
 /-! # Uniform absorption for dimension-dependent subspace families -/
 

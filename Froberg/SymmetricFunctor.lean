@@ -1,5 +1,9 @@
-import Mathlib.LinearAlgebra.TensorPower.Symmetric
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Mathlib.LinearAlgebra.TensorPower.Symmetric
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Functorial maps on mathlib's actual quotient construction of symmetric tensor powers. -/
 noncomputable section
@@ -12,7 +16,7 @@ variable {M : Type v} [AddCommMonoid M] [Module R M]
 variable {N : Type w} [AddCommMonoid N] [Module R N]
 variable {P : Type z} [AddCommMonoid P] [Module R P]
 
-private theorem map_relation (f : M →ₗ[R] N) (x y : ⨂[R] (_ : ι), M)
+theorem map_relation (f : M →ₗ[R] N) (x y : ⨂[R] (_ : ι), M)
     (h : addConGen (SymmetricPower.Rel R ι M) x y) :
     addConGen (SymmetricPower.Rel R ι N)
       (PiTensorProduct.map (fun _ : ι => f) x) (PiTensorProduct.map (fun _ : ι => f) y) := by

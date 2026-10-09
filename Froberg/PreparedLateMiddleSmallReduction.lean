@@ -1,6 +1,10 @@
-import Froberg.PreparedActualMiddleSmallReduction
-import Froberg.LateCountedFourthRow
-import Froberg.LateQuadraticCapacity
+module
+
+public import Froberg.PreparedActualMiddleSmallReduction
+public import Froberg.LateCountedFourthRow
+public import Froberg.LateQuadraticCapacity
+
+@[expose] public section
 
 /-! Scalar thresholds in the small degrees precede the choice of the
 output module and all output constraints. -/

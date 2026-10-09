@@ -1,4 +1,8 @@
-import Quartic.AmbientCovectorSpreading
+module
+
+public import Quartic.AmbientCovectorSpreading
+
+@[expose] public section
 
 /-! Homogeneous equations for the actual closed relation-kernel thresholds. -/
 noncomputable section

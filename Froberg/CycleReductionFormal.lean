@@ -1,5 +1,9 @@
-import Froberg.FormalHomology
-import Froberg.MatrixKoszul
+module
+
+public import Froberg.FormalHomology
+public import Froberg.MatrixKoszul
+
+@[expose] public section
 
 /-! Literal coefficient reduction implies the precise equality of formal
 relation spaces needed by the hyperplane replacement. The target map is

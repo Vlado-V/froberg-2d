@@ -1,4 +1,8 @@
-import Froberg.PrivateColumns
+module
+
+public import Froberg.PrivateColumns
+
+@[expose] public section
 
 /-! Exact overlaps of the distinct private powers. These assertions use the
 literal monomial exponents, including the unique two-column overlap target. -/

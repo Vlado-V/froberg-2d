@@ -1,6 +1,10 @@
-import Froberg.VandermondeProducts
-import Mathlib.RingTheory.TensorProduct.Basic
-import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+module
+
+public import Froberg.VandermondeProducts
+public import Mathlib.RingTheory.TensorProduct.Basic
+public import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+
+@[expose] public section
 
 /-! # The actual symmetric-power convolution map -/
 

@@ -1,4 +1,8 @@
-import Froberg.OuterFiberAction
+module
+
+public import Froberg.OuterFiberAction
+
+@[expose] public section
 
 /-! Actual target-fiber shadows of independent source-fiber subspaces. -/
 noncomputable section

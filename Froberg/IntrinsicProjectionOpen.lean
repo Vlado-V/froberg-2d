@@ -1,5 +1,9 @@
-import Froberg.IntrinsicProjection
-import Froberg.BilinearScalarSurjection
+module
+
+public import Froberg.IntrinsicProjection
+public import Froberg.BilinearScalarSurjection
+
+@[expose] public section
 
 /-! The uniform projection theorem in the actual vector spaces, with its
 kernel dimension established from the same uniform growth estimate. -/

@@ -1,6 +1,10 @@
-import Froberg.AuxiliaryCounts
-import Froberg.BlockParameters
-import Mathlib.Data.Nat.Choose.Central
+module
+
+public import Froberg.AuxiliaryCounts
+public import Froberg.BlockParameters
+public import Mathlib.Data.Nat.Choose.Central
+
+@[expose] public section
 
 /-! # Explicit capacity ratios for the intermediate families
 

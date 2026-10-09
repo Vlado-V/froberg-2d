@@ -1,5 +1,9 @@
-import Froberg.FilteredFamilyIndependence
-import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
+module
+
+public import Froberg.FilteredFamilyIndependence
+public import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
+
+@[expose] public section
 
 /-! Separate positive weights detect all coefficients of a finite family. -/
 noncomputable section

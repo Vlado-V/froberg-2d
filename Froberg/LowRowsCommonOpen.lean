@@ -1,5 +1,9 @@
-import Froberg.RowTwoFramedOpen
-import Froberg.PolynomialBinaryOpen
+module
+
+public import Froberg.RowTwoFramedOpen
+public import Froberg.PolynomialBinaryOpen
+
+@[expose] public section
 
 /-! Rows two, three and four simultaneously in one quadratic output plane.
 Separate witnesses yield a nonempty frame open, then a nonempty common

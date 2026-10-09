@@ -1,4 +1,8 @@
-import Froberg.SplitTargetDual
+module
+
+public import Froberg.SplitTargetDual
+
+@[expose] public section
 
 /-! A projection vanishing on the bottom summand factors through the
 higher summand, including on every value of a bilinear action. -/

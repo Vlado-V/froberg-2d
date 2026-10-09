@@ -1,5 +1,9 @@
-import Quartic.ConvolutionExpansionOpen
-import Quartic.EndpointF13AllRange
+module
+
+public import Quartic.ConvolutionExpansionOpen
+public import Quartic.EndpointF13AllRange
+
+@[expose] public section
 
 /-!
 # One actual open for expansion and all checked block conditions

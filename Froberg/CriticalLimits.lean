@@ -1,6 +1,10 @@
-import Froberg.CriticalApproximation
-import Froberg.CriticalRatioBounds
-import Froberg.PolynomialAsymptotics
+module
+
+public import Froberg.CriticalApproximation
+public import Froberg.CriticalRatioBounds
+public import Froberg.PolynomialAsymptotics
+
+@[expose] public section
 
 /-! Normalized limits for the critical count and its fixed-step increment,
 including either choice of the adjacent integer count. -/

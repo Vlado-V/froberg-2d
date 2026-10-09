@@ -1,4 +1,8 @@
-import Froberg.BilinearPostcompose
+module
+
+public import Froberg.BilinearPostcompose
+
+@[expose] public section
 
 /-! A target decomposition gives the actual dual restriction and
 reconstruction maps used in the layered covector argument. -/

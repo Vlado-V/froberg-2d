@@ -1,5 +1,9 @@
-import Froberg.PreparedBiformCoordinates
-import Froberg.PreparedTargetFamily
+module
+
+public import Froberg.PreparedBiformCoordinates
+public import Froberg.PreparedTargetFamily
+
+@[expose] public section
 
 /-! Realization of prescribed high tensors in the full prepared parameter
 space. Every scalar coordinate remains free. -/

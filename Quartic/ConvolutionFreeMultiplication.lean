@@ -1,4 +1,8 @@
-import Quartic.ConvolutionFreePieces
+module
+
+public import Quartic.ConvolutionFreePieces
+
+@[expose] public section
 
 /-!
 # Multiplication and coefficient summands in the actual free extension

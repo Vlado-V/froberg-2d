@@ -1,8 +1,12 @@
-import Quartic.IteratedSlicedCovectorCharts
-import Quartic.IteratedChartGeneric
-import Quartic.ConvolutionAllRange
-import Quartic.ConvolutionProfileBound
-import Quartic.BilinearImageMinors
+module
+
+public import Quartic.IteratedSlicedCovectorCharts
+public import Quartic.IteratedChartGeneric
+public import Quartic.ConvolutionAllRange
+public import Quartic.ConvolutionProfileBound
+public import Quartic.BilinearImageMinors
+
+@[expose] public section
 
 /-!
 # Closed sliced covector loci for the actual small convolution models

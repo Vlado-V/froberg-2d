@@ -1,4 +1,8 @@
-import Froberg.OddQuotientProduct
+module
+
+public import Froberg.OddQuotientProduct
+
+@[expose] public section
 
 /-! Adding even generators leaves the actual odd degree-d quotient unchanged. -/
 noncomputable section

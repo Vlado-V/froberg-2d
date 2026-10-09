@@ -1,4 +1,8 @@
-import Froberg.ConvolutionMap
+module
+
+public import Froberg.ConvolutionMap
+
+@[expose] public section
 
 /-! # The convolution image at a fixed distinct scalar tuple -/
 

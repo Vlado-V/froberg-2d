@@ -1,5 +1,9 @@
-import Froberg.ProfileProbabilities
-import Froberg.ProfileTotalLimits
+module
+
+public import Froberg.ProfileProbabilities
+public import Froberg.ProfileTotalLimits
+
+@[expose] public section
 
 /-! The outer target/source dimension ratio has the same critical leading
 coefficient as the number of degree-d generators. -/

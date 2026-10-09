@@ -1,7 +1,11 @@
-import Froberg.PreparedOddCyclesOpen
-import Froberg.PreparedScalarReserve
-import Froberg.VectorModelCoordinates
-import Froberg.AugmentedOuterCapacity
+module
+
+public import Froberg.PreparedOddCyclesOpen
+public import Froberg.PreparedScalarReserve
+public import Froberg.VectorModelCoordinates
+public import Froberg.AugmentedOuterCapacity
+
+@[expose] public section
 
 /-! The actual scalar, higher-layer, outer and private counts satisfy
 every hypothesis of the full prepared odd-cycle open. -/

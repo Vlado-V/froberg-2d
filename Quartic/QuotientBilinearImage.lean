@@ -1,5 +1,9 @@
-import Quartic.BilinearImage
-import Mathlib.LinearAlgebra.Quotient.Basic
+module
+
+public import Quartic.BilinearImage
+public import Mathlib.LinearAlgebra.Quotient.Basic
+
+@[expose] public section
 
 /-!
 # Ambient incidence for quotient multiplication images

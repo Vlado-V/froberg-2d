@@ -1,6 +1,10 @@
-import Froberg.PrivateMixedRow
-import Froberg.PrivateKoszulKernel
-import Froberg.SeparatedComplexOpen
+module
+
+public import Froberg.PrivateMixedRow
+public import Froberg.PrivateKoszulKernel
+public import Froberg.SeparatedComplexOpen
+
+@[expose] public section
 
 /-! The private-power specialization used for quadratic separation.
 Its scalar multipliers have degree below the private powers; the independent

@@ -1,6 +1,10 @@
-import Froberg.RestoredCountScalarFiber
-import Froberg.RestoredJointSelection
-import Froberg.FiniteBasisPrincipalIntersection
+module
+
+public import Froberg.RestoredCountScalarFiber
+public import Froberg.RestoredJointSelection
+public import Froberg.FiniteBasisPrincipalIntersection
+
+@[expose] public section
 
 /-! Select enlarged restored parameters while imposing the final
 certificates on their base restriction, then freeze all temporary slots. -/

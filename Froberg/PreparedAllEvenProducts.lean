@@ -1,4 +1,8 @@
-import Froberg.PreparedAllEvenCounts
+module
+
+public import Froberg.PreparedAllEvenCounts
+
+@[expose] public section
 
 /-! Zero-count positive even rows introduce no additional product capacity.
 All nonzero degree counts use the existing literal product bounds. -/

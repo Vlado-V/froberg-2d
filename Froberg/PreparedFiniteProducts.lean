@@ -1,6 +1,10 @@
-import Froberg.PreparedProductOpen
-import Froberg.BiformKernelIntersection
-import Froberg.BalancedProductRow
+module
+
+public import Froberg.PreparedProductOpen
+public import Froberg.BiformKernelIntersection
+public import Froberg.BalancedProductRow
+
+@[expose] public section
 
 /-! Explicit finite diagonal and cross capacities provide the remaining
 product-row witnesses in the common prepared-family coefficient space. -/

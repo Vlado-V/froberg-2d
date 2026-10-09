@@ -1,6 +1,10 @@
-import Froberg.PreparedPrivateFourthWitness
-import Froberg.EmptyPrivateRow
-import Froberg.PreparedPrivateFinite
+module
+
+public import Froberg.PreparedPrivateFourthWitness
+public import Froberg.EmptyPrivateRow
+public import Froberg.PreparedPrivateFinite
+
+@[expose] public section
 
 noncomputable section
 set_option maxHeartbeats 2400000

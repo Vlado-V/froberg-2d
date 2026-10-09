@@ -1,7 +1,11 @@
-import Quartic.UniformSurplus.Scaling
-import Quartic.UniformScalar
-import Quartic.ShadowArithmetic
-import Quartic.SharpCertificate.Expression
+module
+
+public import Quartic.UniformSurplus.Scaling
+public import Quartic.UniformScalar
+public import Quartic.ShadowArithmetic
+public import Quartic.SharpCertificate.Expression
+
+@[expose] public section
 
 /-! Source binomial parameters and canonical endpoint instances of the
 uniform numerical profile inequality. -/

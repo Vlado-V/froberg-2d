@@ -1,6 +1,10 @@
-import Quartic.ClosedCovectorSpreading
-import Quartic.SliceFiniteModule
-import Quartic.RowMultiplicationCoordinates
+module
+
+public import Quartic.ClosedCovectorSpreading
+public import Quartic.SliceFiniteModule
+public import Quartic.RowMultiplicationCoordinates
+
+@[expose] public section
 
 /-!
 Fixed-ambient closed covector equations for a varying presentation.

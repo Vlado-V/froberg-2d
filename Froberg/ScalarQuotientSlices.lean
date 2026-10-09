@@ -1,4 +1,8 @@
-import Froberg.ActualThinSlices
+module
+
+public import Froberg.ActualThinSlices
+
+@[expose] public section
 
 /-! Actual quotient covectors and slices after scalar multiplication. -/
 noncomputable section

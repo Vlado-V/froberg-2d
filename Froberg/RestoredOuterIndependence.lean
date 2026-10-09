@@ -1,5 +1,9 @@
-import Froberg.BiformSplitIndependence
-import Froberg.RestoredOuterOddOpen
+module
+
+public import Froberg.BiformSplitIndependence
+public import Froberg.RestoredOuterOddOpen
+
+@[expose] public section
 
 /-! Full restored endpoint independence holds on the same actual affine
 space as the restored odd-row and pure-basis conditions. -/

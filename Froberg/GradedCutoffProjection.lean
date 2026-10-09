@@ -1,6 +1,10 @@
-import Froberg.GradedNormalized
-import Froberg.NormalizedCutoff
-import Froberg.PureCutoff
+module
+
+public import Froberg.GradedNormalized
+public import Froberg.NormalizedCutoff
+public import Froberg.PureCutoff
+
+@[expose] public section
 
 /-! The pure family U and the quotient projection in C.3 can be chosen
 simultaneously, with both the next-degree cutoff and the uniform normalized

@@ -1,6 +1,10 @@
-import Froberg.PreparedCoefficientRows
-import Froberg.EmptyCoefficientRows
-import Froberg.EvenParityElimination
+module
+
+public import Froberg.PreparedCoefficientRows
+public import Froberg.EmptyCoefficientRows
+public import Froberg.EvenParityElimination
+
+@[expose] public section
 
 /-! The exact actual even-cycle reduction in a prepared scalar/even family.
 Only rows up to d need mixed scalar equations; larger rows need products. -/

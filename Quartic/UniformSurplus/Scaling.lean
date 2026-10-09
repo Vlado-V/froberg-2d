@@ -1,4 +1,8 @@
-import Quartic.UniformSurplus.Sharp
+module
+
+public import Quartic.UniformSurplus.Sharp
+
+@[expose] public section
 
 /-! Exact conversion of the normalized profile inequality back to the
 unscaled real polynomial in `sc:sharp-expression`. -/

@@ -1,4 +1,8 @@
-import Quartic.ThreeBlockQuotient
+module
+
+public import Quartic.ThreeBlockQuotient
+
+@[expose] public section
 
 /-!
 # The displayed cycles as a basis of actual pure-block Koszul homology
@@ -54,11 +58,11 @@ theorem cycles_is_cycle (j : Fin 3) :
     quadraticMultiplication blockQuadrics (cycles (K := K) j) = 0 := by
   simpa only [cycleCombination_single] using cycleCombination_is_cycle (Pi.single j (1 : K))
 
-private def kernelClass {V W : Type*} [AddCommGroup V] [Module K V]
+def kernelClass {V W : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] (f : V →ₗ[K] W) (B : Submodule K V) :
     f.ker →ₗ[K] KernelModulo f B := (kernelBoundary f B).mkQ
 
-private def classOfCycleMap {V W A : Type*} [AddCommGroup V] [Module K V]
+def classOfCycleMap {V W A : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] [AddCommGroup A] [Module K A]
     (f : V →ₗ[K] W) (B : Submodule K V) (L : A →ₗ[K] V) (h : ∀ a, f (L a) = 0) :
     A →ₗ[K] KernelModulo f B :=
@@ -91,7 +95,7 @@ theorem coefficientReduction_kills_boundaries :
   rintro _ ⟨p, rfl⟩
   exact coefficientReduction_koszul p
 
-private def descendKernel {V W A : Type*} [AddCommGroup V] [Module K V]
+def descendKernel {V W A : Type*} [AddCommGroup V] [Module K V]
     [AddCommGroup W] [Module K W] [AddCommGroup A] [Module K A]
     (f : V →ₗ[K] W) (B : Submodule K V) (L : V →ₗ[K] A) (h : B ≤ L.ker) :
     KernelModulo f B →ₗ[K] A :=

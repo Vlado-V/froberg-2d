@@ -1,6 +1,10 @@
-import Froberg.PreparedRowOpen
-import Froberg.IntrinsicCoefficientRows
-import Froberg.PreparedProductPairs
+module
+
+public import Froberg.PreparedRowOpen
+public import Froberg.IntrinsicCoefficientRows
+public import Froberg.PreparedProductPairs
+
+@[expose] public section
 
 /-! Exact rows in the common coefficient space give the actual polynomial
 coefficient rules used by the degree-by-degree elimination. -/

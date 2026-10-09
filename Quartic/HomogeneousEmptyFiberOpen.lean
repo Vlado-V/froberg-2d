@@ -1,5 +1,9 @@
-import Quartic.HomogeneousMultiplicationCertificate
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.HomogeneousMultiplicationCertificate
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-!
 # A principal open preserving an empty homogeneous projective fiber

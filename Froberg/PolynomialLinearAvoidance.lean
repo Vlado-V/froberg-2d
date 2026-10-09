@@ -1,5 +1,9 @@
-import Quartic.PolynomialKernelAvoidance
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.PolynomialKernelAvoidance
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Polynomial kernel avoidance in intrinsic finite-dimensional vector spaces. -/
 noncomputable section

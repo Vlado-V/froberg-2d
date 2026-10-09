@@ -1,5 +1,9 @@
-import Froberg.BinomialPolynomial
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+module
+
+public import Froberg.BinomialPolynomial
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+
+@[expose] public section
 
 /-! Strict rational bounds for the critical leading ratio, used in the
 large-variable construction and the deleted-bidegree estimate. -/

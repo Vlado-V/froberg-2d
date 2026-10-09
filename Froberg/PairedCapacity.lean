@@ -1,5 +1,9 @@
-import Froberg.CoreFraction
-import Froberg.BlockParameters
+module
+
+public import Froberg.CoreFraction
+public import Froberg.BlockParameters
+
+@[expose] public section
 
 /-! # The paired scalar capacity in Appendix C.2
 

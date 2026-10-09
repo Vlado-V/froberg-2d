@@ -1,4 +1,8 @@
-import Quartic.HullCertificate.Certificate
+module
+
+public import Quartic.HullCertificate.Certificate
+
+@[expose] public section
 
 /-!
 Generated interval witnesses. Every supporting line comes from two explicit

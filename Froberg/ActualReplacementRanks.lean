@@ -1,6 +1,10 @@
-import Froberg.ActualReplacementPencil
-import Froberg.UpperTargetOpen
-import Quartic.PolynomialRankOpen
+module
+
+public import Froberg.ActualReplacementPencil
+public import Froberg.UpperTargetOpen
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Independence and the full B.7 target surjection are preserved for the
 same literal replacement family and the same nonzero parameter as C.4. -/

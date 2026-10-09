@@ -1,6 +1,10 @@
-import Froberg.Graded
-import Mathlib.RingTheory.Ideal.Quotient.Operations
-import Mathlib.LinearAlgebra.Isomorphisms
+module
+
+public import Froberg.Graded
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+public import Mathlib.LinearAlgebra.Isomorphisms
+
+@[expose] public section
 
 /-!
 # Homogeneous pieces of the actual quotient ring

@@ -1,4 +1,8 @@
-import Froberg.BiformDimensions
+module
+
+public import Froberg.BiformDimensions
+
+@[expose] public section
 
 /-! Actual nonempty rank opens for the scalar-plus-linear higher odd rows.
 Every dimension is the cardinality of the corresponding homogeneous monomials. -/

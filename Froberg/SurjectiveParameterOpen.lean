@@ -1,4 +1,8 @@
-import Quartic.PolynomialRankOpen
+module
+
+public import Quartic.PolynomialRankOpen
+
+@[expose] public section
 
 /-! Finite intersection and base/fiber specialization of actual surjective
 polynomial maps. Different row witnesses may use different base points. -/

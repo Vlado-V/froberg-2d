@@ -1,4 +1,8 @@
-import Froberg.FreezeParameters
+module
+
+public import Froberg.FreezeParameters
+
+@[expose] public section
 
 /-! A polynomial open can be restricted to the scalar fiber through a
 specified successful point, preserving all other data at that point. -/

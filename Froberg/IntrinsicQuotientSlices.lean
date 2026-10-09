@@ -1,5 +1,9 @@
-import Froberg.IntrinsicKernelAvoidance
-import Froberg.QuotientSliceVectors
+module
+
+public import Froberg.IntrinsicKernelAvoidance
+public import Froberg.QuotientSliceVectors
+
+@[expose] public section
 
 /-! Common scalar parameters for all positive kernel thresholds, followed
 by descent to the actual target quotient. The zero threshold uses a basis

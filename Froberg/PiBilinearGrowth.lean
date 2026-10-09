@@ -1,4 +1,8 @@
-import Froberg.HigherProjectedGrowth
+module
+
+public import Froberg.HigherProjectedGrowth
+
+@[expose] public section
 
 /-! Uniform diagonal growth for any finite family of coefficient blocks.
 Only an enumeration is used in the proof; the interface keeps the actual

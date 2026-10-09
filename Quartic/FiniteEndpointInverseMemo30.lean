@@ -1,5 +1,13 @@
-import Quartic.FiniteEndpointInverse30
-import Quartic.FiniteEndpointCheckerMemo
+module
+
+public import Quartic.FiniteEndpointInverse30
+public import Quartic.FiniteEndpointCheckerMemo
+
+-- Build order: finish the large profile checks before concurrent certificate row checks.
+import Quartic.ProfileCertificate.Data
+import Quartic.SharpCertificate.Data
+
+@[expose] public section
 
 /-! Every packed inverse lookup is identified with a shared literal by a checked equality. -/
 namespace Quartic.FiniteEndpointRows30

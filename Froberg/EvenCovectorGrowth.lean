@@ -1,4 +1,8 @@
-import Froberg.EvenBottomCompatibility
+module
+
+public import Froberg.EvenBottomCompatibility
+
+@[expose] public section
 
 /-! The actual even-case contraction kernels satisfy both the bottom
 monotonicity and the full higher-image bound needed by C.4. -/

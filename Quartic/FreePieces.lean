@@ -1,4 +1,8 @@
-import Quartic.FreeCoefficients
+module
+
+public import Quartic.FreeCoefficients
+
+@[expose] public section
 
 /-!
 # The actual homogeneous decomposition by free monomials

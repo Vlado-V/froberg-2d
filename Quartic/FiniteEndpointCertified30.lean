@@ -1,8 +1,12 @@
-import Quartic.FiniteEndpointMetadata30
-import Quartic.FiniteEndpointRows30
-import Quartic.FiniteEndpointMinor30
-import Quartic.FiniteEndpointCertificate
-import Quartic.FiniteEndpointNatural
+module
+
+public import Quartic.FiniteEndpointMetadata30
+public import Quartic.FiniteEndpointRows30
+public import Quartic.FiniteEndpointMinor30
+public import Quartic.FiniteEndpointCertificate
+public import Quartic.FiniteEndpointNatural
+
+@[expose] public section
 
 /-! The complete supplied 30-variable endpoints, instantiated from checked actual
 polynomial metadata, multiplication inverse rows, and a quadratic coefficient minor. -/

@@ -1,40 +1,44 @@
-import Quartic.FiniteEndpointRows29.Chunk000
-import Quartic.FiniteEndpointRows29.Chunk001
-import Quartic.FiniteEndpointRows29.Chunk002
-import Quartic.FiniteEndpointRows29.Chunk003
-import Quartic.FiniteEndpointRows29.Chunk004
-import Quartic.FiniteEndpointRows29.Chunk005
-import Quartic.FiniteEndpointRows29.Chunk006
-import Quartic.FiniteEndpointRows29.Chunk007
-import Quartic.FiniteEndpointRows29.Chunk008
-import Quartic.FiniteEndpointRows29.Chunk009
-import Quartic.FiniteEndpointRows29.Chunk010
-import Quartic.FiniteEndpointRows29.Chunk011
-import Quartic.FiniteEndpointRows29.Chunk012
-import Quartic.FiniteEndpointRows29.Chunk013
-import Quartic.FiniteEndpointRows29.Chunk014
-import Quartic.FiniteEndpointRows29.Chunk015
-import Quartic.FiniteEndpointRows29.Chunk016
-import Quartic.FiniteEndpointRows29.Chunk017
-import Quartic.FiniteEndpointRows29.Chunk018
-import Quartic.FiniteEndpointRows29.Chunk019
-import Quartic.FiniteEndpointRows29.Chunk020
-import Quartic.FiniteEndpointRows29.Chunk021
-import Quartic.FiniteEndpointRows29.Chunk022
-import Quartic.FiniteEndpointRows29.Chunk023
-import Quartic.FiniteEndpointRows29.Chunk024
-import Quartic.FiniteEndpointRows29.Chunk025
-import Quartic.FiniteEndpointRows29.Chunk026
-import Quartic.FiniteEndpointRows29.Chunk027
-import Quartic.FiniteEndpointRows29.Chunk028
-import Quartic.FiniteEndpointRows29.Chunk029
-import Quartic.FiniteEndpointRows29.Chunk030
-import Quartic.FiniteEndpointRows29.Chunk031
-import Quartic.FiniteEndpointRows29.Chunk032
-import Quartic.FiniteEndpointRows29.Chunk033
-import Quartic.FiniteEndpointRows29.Chunk034
-import Quartic.FiniteEndpointRows29.Chunk035
-import Quartic.FiniteEndpointChunks
+module
+
+public import Quartic.FiniteEndpointRows29.Chunk000
+public import Quartic.FiniteEndpointRows29.Chunk001
+public import Quartic.FiniteEndpointRows29.Chunk002
+public import Quartic.FiniteEndpointRows29.Chunk003
+public import Quartic.FiniteEndpointRows29.Chunk004
+public import Quartic.FiniteEndpointRows29.Chunk005
+public import Quartic.FiniteEndpointRows29.Chunk006
+public import Quartic.FiniteEndpointRows29.Chunk007
+public import Quartic.FiniteEndpointRows29.Chunk008
+public import Quartic.FiniteEndpointRows29.Chunk009
+public import Quartic.FiniteEndpointRows29.Chunk010
+public import Quartic.FiniteEndpointRows29.Chunk011
+public import Quartic.FiniteEndpointRows29.Chunk012
+public import Quartic.FiniteEndpointRows29.Chunk013
+public import Quartic.FiniteEndpointRows29.Chunk014
+public import Quartic.FiniteEndpointRows29.Chunk015
+public import Quartic.FiniteEndpointRows29.Chunk016
+public import Quartic.FiniteEndpointRows29.Chunk017
+public import Quartic.FiniteEndpointRows29.Chunk018
+public import Quartic.FiniteEndpointRows29.Chunk019
+public import Quartic.FiniteEndpointRows29.Chunk020
+public import Quartic.FiniteEndpointRows29.Chunk021
+public import Quartic.FiniteEndpointRows29.Chunk022
+public import Quartic.FiniteEndpointRows29.Chunk023
+public import Quartic.FiniteEndpointRows29.Chunk024
+public import Quartic.FiniteEndpointRows29.Chunk025
+public import Quartic.FiniteEndpointRows29.Chunk026
+public import Quartic.FiniteEndpointRows29.Chunk027
+public import Quartic.FiniteEndpointRows29.Chunk028
+public import Quartic.FiniteEndpointRows29.Chunk029
+public import Quartic.FiniteEndpointRows29.Chunk030
+public import Quartic.FiniteEndpointRows29.Chunk031
+public import Quartic.FiniteEndpointRows29.Chunk032
+public import Quartic.FiniteEndpointRows29.Chunk033
+public import Quartic.FiniteEndpointRows29.Chunk034
+public import Quartic.FiniteEndpointRows29.Chunk035
+public import Quartic.FiniteEndpointChunks
+
+@[expose] public section
 
 namespace Quartic.FiniteEndpointRows29
 open FiniteEndpointChecker

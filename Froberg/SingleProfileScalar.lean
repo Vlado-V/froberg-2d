@@ -1,6 +1,10 @@
-import Froberg.RetainedPrefix
-import Froberg.ProjectedPrefix
-import Froberg.SmallScalarSourceBudget
+module
+
+public import Froberg.RetainedPrefix
+public import Froberg.ProjectedPrefix
+public import Froberg.SmallScalarSourceBudget
+
+@[expose] public section
 
 /-! The small-degree rows delete just one scalar profile, rather than an
 entire parity class. This is the scalar incidence input of Appendix E. -/

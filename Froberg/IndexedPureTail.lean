@@ -1,6 +1,10 @@
-import Froberg.OddTailProjection
-import Froberg.TopSourceProjection
-import Froberg.EvenTail
+module
+
+public import Froberg.OddTailProjection
+public import Froberg.TopSourceProjection
+public import Froberg.EvenTail
+
+@[expose] public section
 
 /-! Indexed pure families and the simultaneous projected top-growth data.
 The family is chosen from the actual kernel of the projection. -/

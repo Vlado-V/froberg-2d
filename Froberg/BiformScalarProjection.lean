@@ -1,6 +1,10 @@
-import Froberg.BiformWitnesses
-import Froberg.RetainedMonomials
-import Mathlib.RingTheory.Flat.Basic
+module
+
+public import Froberg.BiformWitnesses
+public import Froberg.RetainedMonomials
+public import Mathlib.RingTheory.Flat.Basic
+
+@[expose] public section
 
 /-! Scalar coordinate projection on a biform is the genuine tensor extension
 of the scalar projection. Thus scalar injectivity remains valid with arbitrary

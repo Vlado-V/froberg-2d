@@ -1,4 +1,8 @@
-import Froberg.OddSplitElimination
+module
+
+public import Froberg.OddSplitElimination
+
+@[expose] public section
 
 /-! Natural-weight parity is a linear condition, including in characteristic two. -/
 noncomputable section

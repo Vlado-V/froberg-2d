@@ -1,6 +1,10 @@
-import Froberg.PreparedFamilyIndependence
-import Froberg.PreparedRestoredRelations
-import Froberg.FilteredEvenOddExact
+module
+
+public import Froberg.PreparedFamilyIndependence
+public import Froberg.PreparedRestoredRelations
+public import Froberg.FilteredEvenOddExact
+
+@[expose] public section
 
 /-! The restored family has arbitrary positive even components but its
 scalar component remains exactly the original scalar parameter. -/

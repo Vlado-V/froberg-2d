@@ -1,5 +1,9 @@
-import Froberg.SplitWeights
-import Froberg.BalancedWeightPolynomial
+module
+
+public import Froberg.SplitWeights
+public import Froberg.BalancedWeightPolynomial
+
+@[expose] public section
 
 /-! A uniform weighted bound for deleting one bidegree in a balanced split. -/
 noncomputable section

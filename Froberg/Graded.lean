@@ -1,11 +1,15 @@
-import Mathlib.RingTheory.MvPolynomial.Homogeneous
-import Mathlib.RingTheory.MvPolynomial.Basic
-import Mathlib.Data.Finsupp.Multiset
-import Mathlib.Data.Sym.Card
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.Dimension.Finrank
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.MvPolynomial.Homogeneous
+public import Mathlib.RingTheory.MvPolynomial.Basic
+public import Mathlib.Data.Finsupp.Multiset
+public import Mathlib.Data.Sym.Card
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.LinearAlgebra.Dimension.Finrank
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Actual polynomial spaces and endpoint quotients

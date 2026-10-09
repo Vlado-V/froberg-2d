@@ -1,6 +1,10 @@
-import Quartic.ExpansionClosedSlices
-import Quartic.ExpansionCommonOpen
-import Quartic.AmbientCovectorTransport
+module
+
+public import Quartic.ExpansionClosedSlices
+public import Quartic.ExpansionCommonOpen
+public import Quartic.AmbientCovectorTransport
+
+@[expose] public section
 
 /-! Actual quotient multiplication on the large-range expansion locus. -/
 noncomputable section

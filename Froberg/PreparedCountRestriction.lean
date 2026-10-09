@@ -1,6 +1,10 @@
-import Froberg.PreparedCountExtension
-import Froberg.FullPreparedFibers
-import Froberg.RestoredOuterOddOpen
+module
+
+public import Froberg.PreparedCountExtension
+public import Froberg.FullPreparedFibers
+public import Froberg.RestoredOuterOddOpen
+
+@[expose] public section
 
 /-! Forgetting added positive slots is a surjective linear map on the
 actual prepared parameter spaces. Base-family certificates can therefore

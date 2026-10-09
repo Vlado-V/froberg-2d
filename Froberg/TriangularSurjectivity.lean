@@ -1,5 +1,9 @@
-import Froberg.TriangularCovectors
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import Froberg.TriangularCovectors
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-! Finite triangular elimination, with the bottom target filled separately.
 The sources and target blocks may all have different dimensions. -/

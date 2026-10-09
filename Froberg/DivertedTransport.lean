@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! A constructive positive transport obtained by diverting a marked part
 of each row to one new row. This is the finite transport used for the core

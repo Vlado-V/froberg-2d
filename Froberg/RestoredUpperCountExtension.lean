@@ -1,6 +1,10 @@
-import Froberg.RestoredTargetOpen
-import Froberg.PreparedCountCompatibility
-import Froberg.UpperTargetSpan
+module
+
+public import Froberg.RestoredTargetOpen
+public import Froberg.PreparedCountCompatibility
+public import Froberg.UpperTargetSpan
+
+@[expose] public section
 
 /-! Enlarging the even row counts preserves an actual upper-target witness.
 The pure slots follow the retained-label injection, so an appended extra

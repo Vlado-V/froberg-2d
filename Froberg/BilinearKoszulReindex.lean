@@ -1,4 +1,8 @@
-import Froberg.BilinearKoszulRow
+module
+
+public import Froberg.BilinearKoszulRow
+
+@[expose] public section
 
 /-! Literal row exactness does not depend on how either finite generator list
 is enumerated. -/

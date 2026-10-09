@@ -1,5 +1,9 @@
-import Froberg.OuterCapacityBounds
-import Froberg.BidegreeExponents
+module
+
+public import Froberg.OuterCapacityBounds
+public import Froberg.BidegreeExponents
+
+@[expose] public section
 
 /-! The core-attached presentation with fixed columns on distinct free
 variables. These are literal polynomial monomials and vector relations. -/

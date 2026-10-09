@@ -1,5 +1,9 @@
-import Froberg.CapacityFactors
-import Froberg.CapacityQuadratic
+module
+
+public import Froberg.CapacityFactors
+public import Froberg.CapacityQuadratic
+
+@[expose] public section
 
 /-! # Exact factorial expressions for the product capacities -/
 

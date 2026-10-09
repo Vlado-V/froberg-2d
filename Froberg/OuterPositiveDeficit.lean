@@ -1,5 +1,9 @@
-import Froberg.OuterDimensionLimits
-import Froberg.AsymptoticCounts
+module
+
+public import Froberg.OuterDimensionLimits
+public import Froberg.AsymptoticCounts
+
+@[expose] public section
 
 /-! The exact dimension reserve survives the finitely many private columns. -/
 noncomputable section

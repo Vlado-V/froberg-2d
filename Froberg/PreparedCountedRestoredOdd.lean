@@ -1,5 +1,9 @@
-import Froberg.RestoredOddEventual
-import Froberg.PreparedAllEvenCounts
+module
+
+public import Froberg.RestoredOddEventual
+public import Froberg.PreparedAllEvenCounts
+
+@[expose] public section
 
 /-! The actual all-even count has critical scalar density. Thus the
 restored-only odd injection open is available for the prescribed counts,

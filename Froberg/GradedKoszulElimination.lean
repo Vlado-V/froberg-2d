@@ -1,5 +1,9 @@
-import Froberg.Koszul
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import Froberg.Koszul
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-! Elementary coefficient operations used in increasing-degree elimination.
 The triangular representative works in every characteristic, including two. -/

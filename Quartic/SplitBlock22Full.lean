@@ -1,4 +1,8 @@
-import Quartic.SplitBlock22Coordinates
+module
+
+public import Quartic.SplitBlock22Coordinates
+
+@[expose] public section
 
 /-!
 # The (2,2) source inside full indexed quartic multiplication

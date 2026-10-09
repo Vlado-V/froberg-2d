@@ -1,5 +1,9 @@
-import Froberg.FormalHyperplane
-import Froberg.ProjectedHomologyCoefficients
+module
+
+public import Froberg.FormalHyperplane
+public import Froberg.ProjectedHomologyCoefficients
+
+@[expose] public section
 
 /-! Exact replacement and retained old homology for the actual endpoint
 complex after deleting a fixed target subspace. -/
@@ -11,8 +15,7 @@ variable {K : Type} [Field K]
 variable {Z : Type*} [AddCommGroup Z] [Module K Z]
 variable {n d r : ℕ}
 
-def projectedHyperplaneReplacement (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z)
+def projectedHyperplaneReplacement (pi : Forms K n (2*d) →ₗ[K] Z)
     (W A Q Qminus W₀ : Submodule K (Forms K n d))
     {f M : Forms K n d} {e : K}
     (hWA : W ⊓ A=Q) (hQ : Q=Qminus ⊔ Submodule.span K {f})
@@ -31,49 +34,47 @@ def projectedHyperplaneReplacement (htwo : (2 : K) ≠ 0)
       (pi.comp formalPolynomialMultiplication).ker ⊓ formalProducts Qminus A := by
     rw [hspan]
     exact formal_hyperplane_replacement _ W A Q Qminus W₀ hWA hQ hW hQ₀ hf₀ hM he hrelations
-  exact (projectedHomologyEquivFormal htwo pi q hq).trans (LinearEquiv.ofEq _ _ hEq)
+  exact (projectedHomologyEquivFormal pi q hq).trans (LinearEquiv.ofEq _ _ hEq)
 
-def projectedRetainedHomologyEquivFormal (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+def projectedRetainedHomologyEquivFormal (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (W : Submodule K (Forms K n d)) (hW : W ≤ Submodule.span K (Set.range q)) :
-    projectedRetainedHomology htwo pi q hq W ≃ₗ[K]
+    projectedRetainedHomology pi q hq W ≃ₗ[K]
       ((pi.comp formalPolynomialMultiplication).ker ⊓ formalMixed W :
         Submodule K (SymmetricSquare K (Forms K n d))) := by
-  let L : projectedRetainedHomology htwo pi q hq W →ₗ[K]
+  let L : projectedRetainedHomology pi q hq W →ₗ[K]
       ((pi.comp formalPolynomialMultiplication).ker ⊓ formalMixed W :
         Submodule K (SymmetricSquare K (Forms K n d))) :=
-    { toFun := fun x => ⟨projectedFormalRepresentative htwo pi q hq x.val,
-        (projectedFormalRepresentative_mem htwo pi q hq x.val).1,x.property⟩
+    { toFun := fun x => ⟨projectedFormalRepresentative pi q hq x.val,
+        (projectedFormalRepresentative_mem pi q hq x.val).1,x.property⟩
       map_add' := by intros; apply Subtype.ext; exact map_add _ _ _
       map_smul' := by intros; apply Subtype.ext; exact map_smul _ _ _ }
   apply LinearEquiv.ofBijective L
   constructor
   · intro x y hxy
     apply Subtype.ext
-    apply projectedFormalRepresentative_injective htwo pi q hq
+    apply projectedFormalRepresentative_injective pi q hq
     change (L x).val=(L y).val
     exact congrArg Subtype.val hxy
   · intro x
-    let e := projectedHomologyEquivFormal htwo pi q hq
+    let e := projectedHomologyEquivFormal pi q hq
     let x' : ((pi.comp formalPolynomialMultiplication).ker ⊓
         formalMixed (Submodule.span K (Set.range q)) :
           Submodule K (SymmetricSquare K (Forms K n d))) :=
       ⟨x.val,x.property.1,formalMixed_mono hW x.property.2⟩
-    have hrep : projectedFormalRepresentative htwo pi q hq (e.symm x')=x.val :=
+    have hrep : projectedFormalRepresentative pi q hq (e.symm x')=x.val :=
       congrArg Subtype.val (e.apply_symm_apply x')
     refine ⟨⟨e.symm x',?_⟩,?_⟩
-    · change projectedFormalRepresentative htwo pi q hq (e.symm x') ∈ formalMixed W
+    · change projectedFormalRepresentative pi q hq (e.symm x') ∈ formalMixed W
       rw [hrep]
       exact x.property.2
     · apply Subtype.ext
       exact hrep
 
-theorem projectedRetainedHomology_finrank (htwo : (2 : K) ≠ 0)
-    (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
+theorem projectedRetainedHomology_finrank (pi : Forms K n (2*d) →ₗ[K] Z) (q : Fin r → Forms K n d) (hq : LinearIndependent K q)
     (W : Submodule K (Forms K n d)) (hW : W ≤ Submodule.span K (Set.range q)) :
-    finrank K (projectedRetainedHomology htwo pi q hq W)=
+    finrank K (projectedRetainedHomology pi q hq W)=
       finrank K ((pi.comp formalPolynomialMultiplication).ker ⊓ formalMixed W :
         Submodule K (SymmetricSquare K (Forms K n d))) :=
-  (projectedRetainedHomologyEquivFormal htwo pi q hq W hW).finrank_eq
+  (projectedRetainedHomologyEquivFormal pi q hq W hW).finrank_eq
 
 end Froberg

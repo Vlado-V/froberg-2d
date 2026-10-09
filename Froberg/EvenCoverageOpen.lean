@@ -1,6 +1,10 @@
-import Froberg.ProjectedOddTarget
-import Froberg.ParityRangeQuotient
-import Froberg.UpperTargetOpen
+module
+
+public import Froberg.ProjectedOddTarget
+public import Froberg.ParityRangeQuotient
+public import Froberg.UpperTargetOpen
+
+@[expose] public section
 
 /-! Actual even-target coverage modulo a fixed even deletion is open in
 the polynomial generator family. This remains applicable after a scalar

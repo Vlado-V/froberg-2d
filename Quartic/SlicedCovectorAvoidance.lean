@@ -1,5 +1,9 @@
-import Quartic.SharedCovectorPolynomial
-import Quartic.PolynomialSubspaceCovectorCharts
+module
+
+public import Quartic.SharedCovectorPolynomial
+public import Quartic.PolynomialSubspaceCovectorCharts
+
+@[expose] public section
 
 /-!
 # Empty sliced covector strata from actual polynomial charts

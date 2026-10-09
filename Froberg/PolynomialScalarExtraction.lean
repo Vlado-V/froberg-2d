@@ -1,5 +1,9 @@
-import Mathlib.Algebra.MvPolynomial.CommRing
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.MvPolynomial.CommRing
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Recovering polynomial scalar factors from polynomial families

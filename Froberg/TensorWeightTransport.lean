@@ -1,4 +1,8 @@
-import Froberg.PairedScalarSeparation
+module
+
+public import Froberg.PairedScalarSeparation
+
+@[expose] public section
 
 /-! Output half-degree is preserved when adjoining arbitrary scalar
 variables. This supplies the distinct-degree tags in Lemma B.4. -/

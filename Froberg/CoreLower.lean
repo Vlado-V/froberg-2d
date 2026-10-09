@@ -1,4 +1,8 @@
-import Froberg.CoreCounts
+module
+
+public import Froberg.CoreCounts
+
+@[expose] public section
 
 /-! A positive lower bound for the proportion of core variables. -/
 noncomputable section

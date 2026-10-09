@@ -1,5 +1,9 @@
-import Froberg.MixedPrefix
-import Froberg.ExceptionalFamilies
+module
+
+public import Froberg.MixedPrefix
+public import Froberg.ExceptionalFamilies
+
+@[expose] public section
 
 /-! Uniform bounds on pairwise disjoint defective added-relation blocks. -/
 noncomputable section

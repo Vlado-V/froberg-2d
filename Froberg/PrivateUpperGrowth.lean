@@ -1,5 +1,9 @@
-import Froberg.PrivateQuotientDimensions
-import Froberg.QuotientUpperGrowth
+module
+
+public import Froberg.PrivateQuotientDimensions
+public import Froberg.QuotientUpperGrowth
+
+@[expose] public section
 
 /-! Upper-half expansion after adding the fixed private columns. -/
 noncomputable section

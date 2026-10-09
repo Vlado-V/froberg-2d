@@ -1,5 +1,9 @@
-import Froberg.PreparedActualReduction
-import Froberg.EvenRestorationSpace
+module
+
+public import Froberg.PreparedActualReduction
+public import Froberg.EvenRestorationSpace
+
+@[expose] public section
 
 /-! Restore the omitted pure generators in the actual even prepared family.
 The finite complex is built from literal homogeneous polynomial coefficients. -/

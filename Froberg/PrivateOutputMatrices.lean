@@ -1,4 +1,8 @@
-import Froberg.PrivateOutputTransport
+module
+
+public import Froberg.PrivateOutputTransport
+
+@[expose] public section
 
 /-! Actual multiplication by a nonzero linear output form gives the
 coordinate maps used in private-row separation. -/

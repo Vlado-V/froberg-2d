@@ -1,6 +1,10 @@
-import Froberg.RestoredThinProperty
-import Froberg.EndpointThinProperty
-import Froberg.ActualEndpointReplacement
+module
+
+public import Froberg.RestoredThinProperty
+public import Froberg.EndpointThinProperty
+public import Froberg.ActualEndpointReplacement
+
+@[expose] public section
 
 /-! The thinness produced by restored scalar selection is the literal
 background thinness required by the concrete comparison theorem. -/

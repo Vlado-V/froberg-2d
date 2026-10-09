@@ -1,4 +1,8 @@
-import Froberg.AffineSharedCovectors
+module
+
+public import Froberg.AffineSharedCovectors
+
+@[expose] public section
 
 /-! Polynomial dependence of the literal affine common-scalar equations. -/
 noncomputable section

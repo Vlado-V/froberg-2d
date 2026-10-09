@@ -1,5 +1,9 @@
-import Froberg.BiformActionPolynomial
-import Froberg.EvenHomogeneousComponents
+module
+
+public import Froberg.BiformActionPolynomial
+public import Froberg.EvenHomogeneousComponents
+
+@[expose] public section
 
 /-! All even coefficients of an odd-degree form are its scalar coefficient
 and the actual positive even biforms in C.13. -/

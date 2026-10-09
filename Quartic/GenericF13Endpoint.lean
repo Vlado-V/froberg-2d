@@ -1,5 +1,9 @@
-import Quartic.GenericF13
-import Quartic.ConvolutionF13Endpoint
+module
+
+public import Quartic.GenericF13
+public import Quartic.ConvolutionF13Endpoint
+
+@[expose] public section
 
 /-!
 # Full mixed-and-child coefficient openness from the convolution witness

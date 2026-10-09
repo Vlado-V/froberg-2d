@@ -1,4 +1,8 @@
-import Quartic.ConvolutionMultiplication
+module
+
+public import Quartic.ConvolutionMultiplication
+
+@[expose] public section
 
 /-!
 # Evaluated contraction on the actual convolution dual

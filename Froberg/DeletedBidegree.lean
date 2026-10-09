@@ -1,5 +1,9 @@
-import Froberg.DeletedBidegreeRows
-import Froberg.RetainedSubspaceGrowth
+module
+
+public import Froberg.DeletedBidegreeRows
+public import Froberg.RetainedSubspaceGrowth
+
+@[expose] public section
 
 /-! Appendix C.1: deleting any one bidegree leaves a fixed positive fraction
 of the product dimension, uniformly over every homogeneous source subspace. -/

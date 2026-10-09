@@ -1,5 +1,9 @@
-import Quartic.ClosedCovectorMotionAvoidance
-import Quartic.MiddleCoordinates
+module
+
+public import Quartic.ClosedCovectorMotionAvoidance
+public import Quartic.MiddleCoordinates
+
+@[expose] public section
 
 /-!
 # One shared child tuple for every closed convolution threshold

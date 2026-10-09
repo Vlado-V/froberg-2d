@@ -1,6 +1,10 @@
-import Froberg.PolynomialVectorRows
-import Froberg.HomogeneousOutputCoordinates
-import Froberg.BiformScalarProjection
+module
+
+public import Froberg.PolynomialVectorRows
+public import Froberg.HomogeneousOutputCoordinates
+public import Froberg.BiformScalarProjection
+
+@[expose] public section
 
 /-! Exact coordinates for every homogeneous biform coefficient. -/
 noncomputable section

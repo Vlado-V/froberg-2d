@@ -1,6 +1,10 @@
-import Froberg.RestoredCommonSelection
-import Froberg.ScalarVectorIndependenceOpen
-import Froberg.RestoredJointSelection
+module
+
+public import Froberg.RestoredCommonSelection
+public import Froberg.ScalarVectorIndependenceOpen
+public import Froberg.RestoredJointSelection
+
+@[expose] public section
 
 /-! All restored certificates hold on a nonempty principal open of the
 full parameter space. This allows the generic child flag to be imposed

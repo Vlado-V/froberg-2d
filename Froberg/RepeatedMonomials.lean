@@ -1,4 +1,8 @@
-import Froberg.MonomialIncidence
+module
+
+public import Froberg.MonomialIncidence
+
+@[expose] public section
 
 /-! Counting the repeated-variable error between exact and squarefree
 coarse monomial capacities. -/

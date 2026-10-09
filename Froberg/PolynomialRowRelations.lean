@@ -1,5 +1,9 @@
-import Froberg.BiformCoordinates
-import Froberg.PolynomialOutputImage
+module
+
+public import Froberg.BiformCoordinates
+public import Froberg.PolynomialOutputImage
+
+@[expose] public section
 
 /-! Unpacked scalar coefficients of the exact polynomial row kernel. -/
 noncomputable section

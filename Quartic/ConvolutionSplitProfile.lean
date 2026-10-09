@@ -1,6 +1,10 @@
-import Quartic.ConvolutionProfileRanks
-import Quartic.ConvolutionProfileDimension
-import Quartic.UniformSurplus
+module
+
+public import Quartic.ConvolutionProfileRanks
+public import Quartic.ConvolutionProfileDimension
+public import Quartic.UniformSurplus
+
+@[expose] public section
 
 /-!
 # The sharp profile bound for actual split subspaces

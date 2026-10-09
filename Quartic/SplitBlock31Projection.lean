@@ -1,4 +1,8 @@
-import Quartic.SplitBlock31Boundaries
+module
+
+public import Quartic.SplitBlock31Boundaries
+
+@[expose] public section
 
 /-!
 # Projection of full boundaries onto the actual (3,1) block

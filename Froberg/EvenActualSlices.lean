@@ -1,6 +1,10 @@
-import Froberg.EvenAffineRelations
-import Froberg.PositiveIntrinsicLayeredSlices
-import Froberg.LayeredTargetDimension
+module
+
+public import Froberg.EvenAffineRelations
+public import Froberg.PositiveIntrinsicLayeredSlices
+public import Froberg.LayeredTargetDimension
+
+@[expose] public section
 
 /-! The finite C.4 scalar-open statement for the even-degree background.
 All kernel and higher-image hypotheses are derived from actual graded actions. -/

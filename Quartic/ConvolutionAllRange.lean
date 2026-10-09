@@ -1,5 +1,9 @@
-import Quartic.ConvolutionSmallOuter
-import Quartic.ConvolutionCubicGeneric
+module
+
+public import Quartic.ConvolutionSmallOuter
+public import Quartic.ConvolutionCubicGeneric
+
+@[expose] public section
 
 /-!
 # The common actual cubic and outer conditions throughout m≥28

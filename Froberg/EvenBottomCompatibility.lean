@@ -1,5 +1,9 @@
-import Froberg.EvenHigherGrowth
-import Froberg.BottomVectorSlices
+module
+
+public import Froberg.EvenHigherGrowth
+public import Froberg.BottomVectorSlices
+
+@[expose] public section
 
 /-! The even-case bottom row is exactly the checked B.3 vector quotient,
 including its actual scalar multiplication. -/

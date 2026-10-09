@@ -1,7 +1,11 @@
-import Quartic.PolynomialSubspaceCovectorCharts
-import Quartic.SlicedCovectorAvoidance
-import Froberg.BilinearScalarFamily
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import Quartic.PolynomialSubspaceCovectorCharts
+public import Quartic.SlicedCovectorAvoidance
+public import Froberg.BilinearScalarFamily
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+
+@[expose] public section
 
 /-! Actual covector strata for scalar multiplication: full Grassmannian charts,
 exact shared-coefficient equations, and their negative-incidence consequences. -/

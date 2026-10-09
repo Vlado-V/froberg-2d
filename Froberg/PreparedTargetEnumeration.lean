@@ -1,6 +1,10 @@
-import Froberg.PreparedUpperTargetOpen
-import Froberg.PreparedPrivateComponents
-import Froberg.PreparedTargetRestrictions
+module
+
+public import Froberg.PreparedUpperTargetOpen
+public import Froberg.PreparedPrivateComponents
+public import Froberg.PreparedTargetRestrictions
+
+@[expose] public section
 
 /-! Enumeration preserves the actual generated product space. This turns
 the literal prepared-family witness into a polynomial rank-open certificate. -/

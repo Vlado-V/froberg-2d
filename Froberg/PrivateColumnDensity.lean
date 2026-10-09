@@ -1,5 +1,9 @@
-import Froberg.CoreLimit
-import Mathlib.Analysis.Complex.ExponentialBounds
+module
+
+public import Froberg.CoreLimit
+public import Mathlib.Analysis.Complex.ExponentialBounds
+
+@[expose] public section
 
 /-! The strict private-column probability margin for the B.2 extension. -/
 noncomputable section

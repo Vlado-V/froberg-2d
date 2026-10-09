@@ -1,4 +1,8 @@
-import Froberg.AllTargetElimination
+module
+
+public import Froberg.AllTargetElimination
+
+@[expose] public section
 
 /-! The low, middle and pure rows cover the entire positive target range. -/
 noncomputable section

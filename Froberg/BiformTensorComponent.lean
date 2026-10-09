@@ -1,4 +1,8 @@
-import Froberg.OddBackgroundBlocks
+module
+
+public import Froberg.OddBackgroundBlocks
+
+@[expose] public section
 
 /-! Tensor coordinates for one literal output-degree component, in any
 parity. The coordinate map is onto precisely when the output degree has

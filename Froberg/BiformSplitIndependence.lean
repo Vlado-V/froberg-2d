@@ -1,6 +1,10 @@
-import Froberg.BiformSplitEndpoint
-import Froberg.FilteredFamilyIndependence
-import Froberg.PreparedIndependenceOpen
+module
+
+public import Froberg.BiformSplitEndpoint
+public import Froberg.FilteredFamilyIndependence
+public import Froberg.PreparedIndependenceOpen
+
+@[expose] public section
 
 /-! Independence of a split endpoint is detected by its scalar and
 linear components. -/

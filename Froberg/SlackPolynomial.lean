@@ -1,4 +1,8 @@
-import Froberg.PolynomialCoefficients
+module
+
+public import Froberg.PolynomialCoefficients
+
+@[expose] public section
 
 /-! The exact polynomial whose positivity supplies the dimension margin
 `T - q A` in the outer-module construction. -/

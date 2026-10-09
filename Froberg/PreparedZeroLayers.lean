@@ -1,4 +1,8 @@
-import Froberg.PreparedTargetSurjectivity
+module
+
+public import Froberg.PreparedTargetSurjectivity
+
+@[expose] public section
 
 /-! Adding zero-count layers changes no generator. This identifies the
 active-layer witness with the full even-layer parameter convention. -/
