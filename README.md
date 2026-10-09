@@ -31,11 +31,12 @@ are reconstructed from the included generator coefficients and monomial
 metadata by Lean's elaboration-time code. The existing proof-producing checker
 then checks the inverse equations and their polynomial interpretation. No
 network access or separate certificate generator is needed during compilation.
-The row-check modules form two dependency chains and start after the large
-arithmetic checks, which run in sequence. Each compiler process uses one thread
-and elaborates theorem proofs sequentially. The profile check is divided into
-728 smaller kernel checks with the same 26 public conclusions. These choices
-limit memory use during a fresh build.
+The row-check modules form eight dependency chains and start after the large
+arithmetic stages. The profile and sharp arithmetic stages each use eight
+parallel modules. Each compiler process uses one thread and elaborates theorem
+proofs sequentially. The profile stage contains 728 smaller kernel checks with
+the same 26 public conclusions. These choices balance parallel compilation
+with memory use during a fresh build.
 If certificate inputs change, rebuild from a fresh project `.lake/build`
 directory because Lake does not track the elaborators' binary file reads.
 

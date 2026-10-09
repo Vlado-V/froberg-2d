@@ -123,12 +123,15 @@ review:
     and standard cached axiom reports. The complete development theorem compiled
     and its standard axiom audit reported only the three listed axioms. The
     independently stated conclusion was reviewed against Theorem 1.1. The
-    complete development was built and audited locally. The finite profile
+    complete development was previously built and audited locally. The finite profile
     checks were subsequently partitioned into 728 kernel-checked slices,
     preserving all 26 configuration statements; all 754 declarations passed
-    a standard axiom audit. Build scheduling limits concurrent certificate
-    checks and uses sequential theorem elaboration. The resource-adjusted full
-    rebuild and mandatory Palomar mechanical verification remain pending.
+    a standard axiom audit. The profile and sharp arithmetic stages and the row
+    certificates now use eight parallel module groups, with sequential theorem
+    elaboration inside each compiler. Both parallel arithmetic stages passed
+    targeted builds and standard axiom audits. The complete build of this
+    scheduling revision is assigned to the mandatory Palomar mechanical
+    verification and remains pending.
     No independent human peer review is recorded.
 
 alignment:
