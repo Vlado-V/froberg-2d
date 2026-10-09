@@ -1,0 +1,152 @@
+# Schema: formalization.yaml v0.4.
+version: "v0.4"
+
+project:
+  name: "Fröberg's conjecture through degree 2d in sufficiently many variables"
+  description: >-
+    For every positive generating degree d, there is a variable threshold
+    depending only on d such that, over every infinite field and for every
+    number of general degree-d generators, the quotient polynomial ring has
+    Fröberg's predicted Hilbert function through degree 2d. The threshold is
+    independent of both the field and the number of generators. The prediction
+    uses positive truncation at the first nonpositive coefficient of
+    (1-t^d)^r/(1-t)^n. The development includes a direct construction for
+    d at least three and a separate quadratic argument in arbitrary characteristic.
+  authors:
+    - "Vlado Vojdanovski"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Vlado Vojdanovski"
+
+# This repository contains the substantive proof development.
+
+classification:
+  arxiv: ["math.AC"]
+  msc2020: ["13D40", "13F20", "13D02", "68V15"]
+
+sources:
+  - title: "Fröberg's conjecture through degree 2d in sufficiently many variables"
+    authors: ["Vlado Vojdanovski"]
+    id: "https://github.com/Vlado-V/froberg-2d/blob/aa15b6236a3ca6508c17d506a229676e67c2b1f4/Froberg_through_degree_2d.pdf"
+    location: "Theorem 1.1"
+    type: "manuscript"
+    relationship: "formalizes"
+    license: "unknown"
+    note: >-
+      The manuscript author supplied and revised the paper during the
+      formalization and requested that the current PDF be published with the
+      proof. Theorem 1.1 is the formalized conclusion. The supplied version is
+      included as Froberg_through_degree_2d.pdf.
+
+related_formalizations:
+  - id: "OAI.Geometry.PeriodicTiling"
+    relationship: "builds-on"
+    note: >-
+      Five polynomial equidistribution/Weyl modules were vendored from the
+      user-provided math-main Lean library. OAI/PROVENANCE.txt records the module
+      names, original and target toolchains, and original file hashes;
+      OAI/LICENSE retains their Apache-2.0 license. These are reused
+      supporting results, not a prior proof of the stated Fröberg theorem.
+
+status:
+  scope: >-
+    The advertised result is FrobergPaper.main_result in Solution, corresponding
+    to Froberg.paperStatement and Froberg.uniformMainStatement. The independent
+    statement specifies actual homogeneous polynomial quotients and a nonempty
+    principal open subset of each generator coefficient space, with one variable
+    threshold for all infinite fields and all generator counts. The project
+    does not assert Fröberg's conjecture in degrees above 2d, does not include
+    finite coefficient fields, and does not advertise an explicit optimal
+    threshold. The complete packaged build and standard axiom audit passed;
+    Palomar verification remains pending.
+  # Deliberate holes in Challenge.lean are excluded from these counts.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "OpenAI GPT-6 family; exact per-agent model identifiers and revisions not fully tracked"
+      framework: "OpenAI Codex desktop with cooperating agents"
+      tool_setup: >-
+        Agents read the supplied manuscript and existing Lean developments,
+        wrote Lean proofs and supporting data/code, ran local Lean checks,
+        repaired elaboration failures, and performed cross-agent source and
+        standard axiom reviews. Lean 4.35.0-rc3 and pinned Mathlib were used.
+        Finite quadratic certificate data are reified as literals and verified
+        by proof-producing Lean code; numerical generation alone is not accepted
+        as a rank proof. Sparse certificate reconstruction and inverse chunk
+        loading are data IO only, followed by the same proof checks.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local macOS machine with 48 GiB RAM; model inference infrastructure not tracked"
+      prompting_notes: >-
+        The user requested an end-to-end Lean formalization with no remaining
+        proof gaps and supplied revised manuscript versions. Tasks were divided
+        across agents for algebra, geometry, arithmetic, counts, and assembly.
+        Human steering and manuscript updates are not represented as an
+        independent human review of all proofs or the final statement.
+  spend_usd: "not tracked"
+  notes: >-
+    The development is substantially agent-produced and uses existing Mathlib
+    and vendored OAI proofs. It also extends earlier local Quartic and
+    characteristic-zero Fröberg work from the same workspace; the exact public
+    revisions of those intermediate developments are not recorded here.
+    No estimate of human hours, aggregate model runtime, token cost, or billing
+    total is inferred from elapsed calendar time.
+
+fidelity:
+  divergences: >-
+    The theorem's intended field and quantifier scope matches revised Theorem 1.1:
+    every infinite field, with a threshold independent of the field and r.
+    The formal proof replaces portions of geometric prose with explicit finite
+    dimensional linear algebra, polynomial rank conditions, and closed-kernel
+    slice constructions. For d at least three it uses direct constructions,
+    rather than induction on generating degree. The characteristic-two quadratic
+    proof uses a three-variable induction with checked base certificates in
+    dimensions 28, 29, and 30. The arithmetic argument uses three pairwise
+    coprime moduli and prime-to-characteristic divisibility to obtain a common
+    field-independent vanishing threshold. The registry statement is written
+    independently using Mathlib definitions and is compared to the proved
+    solution. The final packaged build and standard axiom audit passed; Palomar
+    mechanical verification is pending;
+    no assertion of line-by-line formalization of every manuscript sentence is made.
+
+review:
+  status: "agent-reviewed; packaged build and standard axiom audit passed; no independent human review recorded"
+  reviewers: []
+  notes: >-
+    Cooperating agents inspected statement scope, interfaces, source proofs,
+    and standard cached axiom reports. The complete development theorem compiled
+    and its standard axiom audit reported only the three listed axioms. The
+    independently stated conclusion was reviewed against Theorem 1.1. The
+    complete packaged rebuild passed 10,727 Lake jobs. The standard audit
+    checked 342,805 local theorem and axiom-interface declarations, including
+    the submitted result, and found only the three listed axioms. Mandatory
+    Palomar full mechanical verification remains pending.
+    No independent human peer review is recorded.
+
+alignment:
+  namespace: "Froberg and FrobergPaper"
+  statements:
+    - source: "Theorem 1.1 of the revised manuscript"
+      lean: "FrobergPaper.main_result"
+      module: "Solution"
+      status: "proved; packaged build and standard axiom audit passed"
+      note: >-
+        The independent FrobergPaper.Statement puts the variable threshold
+        before the field and generator-count quantifiers. Solution obtains it
+        from Froberg.paperStatement in Froberg.UniformMain.
+    - source: "Theorem 1.1, complete internal theorem"
+      lean: "Froberg.uniformMainStatement"
+      module: "Froberg.UniformMain"
+      status: "proved; packaged build and standard axiom audit passed"
+      note: "Uniform result for every d at least one, every infinite field, and every generator count."
+
+acknowledgements: >-
+  Lean and Mathlib contributors; the authors of the reused OAI modules, whose
+  attribution and Apache-2.0 license are retained in OAI/; and OpenAI Codex
+  tooling.

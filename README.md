@@ -51,8 +51,7 @@ statement definitions for comparison.
 - `Quartic/`: the quadratic argument and checked finite certificates.
 - `OAI/`: the reused polynomial equidistribution lemmas, with source attribution.
 - `certificates/finite/`: data for the three initial characteristic-two dimensions.
-
-Palomar metadata, including the code license and maintainer credit, is being finalized.
+- `formalization.yaml`: mathematical scope, provenance, and automation disclosure.
 
 The general-degree construction does not induct on generating degree.
 The characteristic-two quadratic case uses a three-variable induction from
@@ -62,3 +61,12 @@ The complete packaged development passes `lake build` and the standard axiom
 audit in `Audit.lean`, including the submitted `FrobergPaper.main_result`.
 The audit checked 342,805 local theorem and axiom-interface declarations and
 reported only the three permitted Lean axioms. Palomar verification is pending.
+
+## License and credit
+
+The proof code and certificate data are licensed under Apache-2.0; see `LICENSE`.
+Vlado Vojdanovski is the project author and responsible maintainer. The
+formalization was substantially produced using OpenAI Codex agents, as disclosed
+in `formalization.yaml`. Reused OAI source attribution and its original license
+are retained in `OAI/`. The accompanying manuscript is distributed with the
+author's permission and is not covered by the code license.
