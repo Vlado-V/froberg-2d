@@ -1,0 +1,297 @@
+name: Palomar custom 64GB 12-hour full preflight
+run-name: Palomar custom 64GB 12-hour full preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Public submission repository
+        type: string
+        default: Vlado-V/froberg-2d
+      commit:
+        description: Full public source commit
+        required: true
+        type: string
+        default: 079783ddb3b10c8e423e4c3bff4405104c2e2401
+      pipeline_commit:
+        type: string
+        default: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+      request_id:
+        type: string
+        default: froberg64g01
+      mode:
+        type: string
+        default: full
+      execution_profile:
+        type: string
+        default: palomar-namespace-32x64-12h-v1
+      execution_attempt:
+        type: string
+        default: ""
+      options:
+        type: string
+        default: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'
+
+jobs:
+  profile:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      labels: ${{ steps.resolve.outputs.labels }}
+      timeout: ${{ steps.resolve.outputs.timeout }}
+      budget: ${{ steps.resolve.outputs.budget }}
+      inputs_json: ${{ steps.validate.outputs.inputs_json }}
+    steps:
+      - name: Checkout extended preflight controller
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          path: controller
+          sparse-checkout: .github
+
+      - name: Require the exact pinned verifier revision
+        env:
+          PIPELINE_COMMIT: ${{ inputs.pipeline_commit }}
+        run: test "$PIPELINE_COMMIT" = d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: PalomarRegistry/PalomarSubmission
+          ref: ${{ inputs.pipeline_commit || github.workflow_sha }}
+          persist-credentials: false
+          path: pipeline
+      - name: Apply requested twelve-hour preflight limits
+        run: python3 controller/.github/scripts/palomar_extended_profile.py pipeline
+      - name: Set up Python for early pinned-parser validation
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.11.10"
+      - name: Install pinned intake dependency
+        run: python -m pip install --disable-pip-version-check --require-hashes --no-deps -r pipeline/requirements.txt
+      - name: Validate IDs, full mode, checker scope and resource profile before allocation
+        id: validate
+        env:
+          PALOMAR_INPUTS: ${{ toJSON(inputs) }}
+        run: python controller/.github/scripts/palomar_extended_profile.py pipeline --validate-inputs --github-output "$GITHUB_OUTPUT"
+      - name: Resolve extended preflight execution profile
+        id: resolve
+        env:
+          PALOMAR_EXECUTION_PROFILE: ${{ inputs.execution_profile }}
+        run: python3 pipeline/scripts/verification_profile.py --resolve
+  verify:
+    needs: profile
+    runs-on: ${{ fromJSON(needs.profile.outputs.labels) }}
+    env:
+      PALOMAR_EXECUTION_PROFILE: ${{ inputs.execution_profile }}
+    timeout-minutes: ${{ fromJSON(needs.profile.outputs.timeout) }}
+    permissions:
+      contents: read
+    # Dispatches queue per admitted request; admission concurrency belongs to
+    # the submission server. Reusable callers choose their own request ids,
+    # so scope their groups to the caller run and attempt as well. Independent
+    # CI runs must not cancel each other while pending behind a slow job.
+    concurrency:
+      group: palomar-verify-${{ inputs.pipeline_commit && format('call-{0}-{1}-', github.run_id, github.run_attempt) || '' }}${{ inputs.mode }}-${{ inputs.request_id }}
+      cancel-in-progress: false
+    steps:
+      - name: Checkout extended preflight controller
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          path: controller
+          sparse-checkout: .github
+
+      - name: Record verification deadline origin
+        run: echo "PALOMAR_JOB_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Validate pinned pipeline revision
+        env:
+          PIPELINE_COMMIT: ${{ inputs.pipeline_commit || github.workflow_sha }}
+        run: |
+          test "$PIPELINE_COMMIT" = d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+
+      - name: Checkout submission pipeline
+        id: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: PalomarRegistry/PalomarSubmission
+          ref: ${{ inputs.pipeline_commit || github.workflow_sha }}
+          path: pipeline
+          persist-credentials: false
+
+      - name: Apply requested twelve-hour preflight limits
+        run: python3 controller/.github/scripts/palomar_extended_profile.py pipeline
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        id: python
+        with:
+          python-version: "3.11.10"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
+        id: ruby
+        with:
+          ruby-version: "3.3.12"
+          bundler-cache: true
+          working-directory: pipeline
+
+      - name: Install verifier dependencies
+        id: dependencies
+        run: python -m pip install --disable-pip-version-check --require-hashes --no-deps -r pipeline/requirements.txt
+
+      - name: Revalidate normalized identifiers with the pinned parsers
+        env:
+          PALOMAR_INPUTS: ${{ needs.profile.outputs.inputs_json }}
+        run: python controller/.github/scripts/palomar_extended_profile.py pipeline --validate-inputs
+
+      - name: Parse and fetch immutable source
+        id: prepare
+        env:
+          BUNDLE_GEMFILE: ${{ github.workspace }}/pipeline/Gemfile
+          PALOMAR_INPUTS: ${{ needs.profile.outputs.inputs_json }}
+        run: |
+          python - <<'PYTHON'
+          import json, os, pathlib
+          path = pathlib.Path(os.environ["RUNNER_TEMP"], "submission-inputs.json")
+          path.write_text(json.dumps({"inputs": json.loads(os.environ["PALOMAR_INPUTS"])}))
+          PYTHON
+          python pipeline/scripts/verify_submission.py prepare \
+            --event "$RUNNER_TEMP/submission-inputs.json" \
+            --work-dir "$RUNNER_TEMP/palomar" \
+            --output "$RUNNER_TEMP/mechanical-report.json" \
+            --licensee "$(command -v bundle)"
+
+      - name: Free disk space
+        id: disk
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: true
+          swap-storage: false
+
+      - name: Require the authorized 32CPU 64GB host and record custom provenance
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        run: python controller/.github/scripts/palomar_extended_profile.py pipeline --check-runner "$RUNNER_TEMP" --provenance-output "$RUNNER_TEMP/custom-preflight-provenance.json"
+
+      - name: Check extended preflight runner capacity
+        id: capacity
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        run: >-
+          python controller/.github/scripts/palomar_extended_profile.py pipeline --run-capped python pipeline/scripts/verify_submission.py check-capacity
+          --disk-path "$RUNNER_TEMP" --output "$RUNNER_TEMP/mechanical-report.json"
+
+      - name: Install pinned elan
+        id: elan
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        run: |
+          python3 pipeline/scripts/trusted_download.py \
+            --url https://github.com/leanprover/elan/releases/download/v4.2.3/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output "$RUNNER_TEMP/elan.tar.gz" \
+            --sha256 df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2
+          mkdir "$RUNNER_TEMP/elan"
+          tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan"
+          "$RUNNER_TEMP/elan/elan-init" -y --no-modify-path --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      # The submitted toolchain judges the submission: its `lake comparator`,
+      # `leanexport`, `leanchecker` and bundled kernels. Nothing else is built.
+      - name: Install the submitted Lean toolchain
+        id: toolchain
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        env:
+          SUBMISSION_TOOLCHAIN: ${{ steps.prepare.outputs.lean_toolchain }}
+        run: elan toolchain install "$SUBMISSION_TOOLCHAIN"
+
+      - name: Build pinned bubblewrap
+        id: bwrap
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        run: |
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq meson ninja-build libcap-dev pkg-config >/dev/null
+          echo "PALOMAR_BWRAP=$(pipeline/scripts/install_bwrap.sh "$RUNNER_TEMP/bwrap-bin")" >> "$GITHUB_ENV"
+
+      - name: Run lake comparator and challenge provenance audit
+        id: execute
+        if: inputs.mode == 'full' && steps.prepare.outputs.ready == 'true'
+        run: |
+          python controller/.github/scripts/palomar_extended_profile.py pipeline --run-capped python pipeline/scripts/verify_submission.py execute \
+            --work-dir "$RUNNER_TEMP/palomar" \
+            --output "$RUNNER_TEMP/mechanical-report.json" \
+            --bwrap "$PALOMAR_BWRAP" \
+            --bwrap-source-tag v0.12.0 \
+            --execution-budget-seconds "${{ needs.profile.outputs.budget }}" \
+            --workflow-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Finalize interrupted mechanical report
+        if: always()
+        env:
+          PALOMAR_INPUTS: ${{ needs.profile.outputs.inputs_json }}
+          PALOMAR_STEPS: ${{ toJSON(steps) }}
+          PALOMAR_WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python3 pipeline/scripts/workflow_report.py finalize --report "$RUNNER_TEMP/mechanical-report.json"
+
+      - name: Upload custom preflight resource provenance
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: custom-64gb-preflight-provenance-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/custom-preflight-provenance.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload bounded mechanical report
+        id: upload1
+        continue-on-error: true
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ inputs.mode == 'preflight' && 'preflight-report' || inputs.mode == 'correction' && 'correction-report' || 'mechanical-report' }}-${{ inputs.request_id }}
+          path: ${{ runner.temp }}/mechanical-report.json
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Wait before report upload retry 2
+        if: always() && steps.upload1.outcome == 'failure'
+        run: sleep 5
+
+      - name: Retry bounded mechanical report upload 2
+        id: upload2
+        continue-on-error: true
+        if: always() && steps.upload1.outcome == 'failure'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ inputs.mode == 'preflight' && 'preflight-report' || inputs.mode == 'correction' && 'correction-report' || 'mechanical-report' }}-${{ inputs.request_id }}
+          path: ${{ runner.temp }}/mechanical-report.json
+          if-no-files-found: error
+          retention-days: 90
+          overwrite: true
+
+      - name: Wait before report upload retry 3
+        if: always() && steps.upload1.outcome == 'failure' && steps.upload2.outcome == 'failure'
+        run: sleep 20
+
+      - name: Retry bounded mechanical report upload 3
+        id: upload3
+        continue-on-error: true
+        if: always() && steps.upload1.outcome == 'failure' && steps.upload2.outcome == 'failure'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ inputs.mode == 'preflight' && 'preflight-report' || inputs.mode == 'correction' && 'correction-report' || 'mechanical-report' }}-${{ inputs.request_id }}
+          path: ${{ runner.temp }}/mechanical-report.json
+          if-no-files-found: error
+          retention-days: 90
+          overwrite: true
+
+      - name: Fail the run when verification did not pass
+        if: always()
+        env:
+          PALOMAR_INPUTS: ${{ needs.profile.outputs.inputs_json }}
+          PALOMAR_STEPS: ${{ toJSON(steps) }}
+        run: python3 pipeline/scripts/workflow_report.py gate --report "$RUNNER_TEMP/mechanical-report.json"
