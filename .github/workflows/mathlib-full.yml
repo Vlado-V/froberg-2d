@@ -1,0 +1,104 @@
+name: Fröberg Mathlib full build
+run-name: Fröberg — complete Mathlib verification
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full Vlado-V/mathlib4 commit to check
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: froberg-mathlib-cache-rc4
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on:
+      - nscloud-ubuntu-24.04-amd64-32x64-with-cache-with-features
+      - namespace-features:container.privileged=true
+      - nscloud-cache-tag-froberg-mathlib-rc4
+      - nscloud-cache-size-50gb
+    timeout-minutes: 295
+    env:
+      LAKE_NO_CACHE: 'true'
+      LEAN_NUM_THREADS: '16'
+      SOURCE_COMMIT: ${{ inputs.commit }}
+    steps:
+      - name: Record deadline origin and validate commit
+        env:
+          SOURCE_COMMIT: ${{ inputs.commit }}
+        shell: bash
+        run: |
+          [[ "$SOURCE_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          echo "BUILD_JOB_STARTED=$(date +%s)" >> "$GITHUB_ENV"
+      - name: Checkout build controller
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          path: controller
+          sparse-checkout: .github
+      - name: Checkout fixed formalization
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: Vlado-V/mathlib4
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+          path: mathlib
+      - name: Checkout exact official Mathlib baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: leanprover-community/mathlib4
+          ref: aa4180fd65f90dd50307a354941dfbee635cf9d2
+          persist-credentials: false
+          path: upstream
+      - name: Checkout pinned resource supervisor only
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: PalomarRegistry/PalomarSubmission
+          ref: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+          persist-credentials: false
+          path: resource-guard
+          sparse-checkout: |
+            scripts/cgroup_delegate.py
+            scripts/supervise_cgroup.py
+          sparse-checkout-cone-mode: false
+      - name: Bind persistent build cache after checkouts
+        uses: namespacelabs/nscloud-cache-action@1124a6f3ce44e5cf84cc22111530961f4d2a15f9
+        with:
+          path: |
+            ${{ github.workspace }}/mathlib/.lake
+            ${{ github.workspace }}/ci-logs
+            ~/.elan
+            ~/.cache/mathlib
+      - name: Set log directory
+        run: |
+          echo "BUILD_LOGS=$GITHUB_WORKSPACE/ci-logs/${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_ENV"
+          mkdir -p "$GITHUB_WORKSPACE/ci-logs/${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Install pinned elan and declared toolchain
+        shell: bash
+        run: |
+          curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.2.3/elan-x86_64-unknown-linux-gnu.tar.gz --output "$RUNNER_TEMP/elan.tar.gz"
+          echo "df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2  $RUNNER_TEMP/elan.tar.gz" | sha256sum --check
+          mkdir -p "$RUNNER_TEMP/elan-installer"
+          tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan-installer"
+          "$RUNNER_TEMP/elan-installer/elan-init" -y --no-modify-path --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install "$(cat mathlib/lean-toolchain)"
+      - name: Probe delegated resource control before cache acquisition
+        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --preflight
+      - name: Check all external certificate inputs
+        working-directory: mathlib
+        run: python3 scripts/froberg_certificate_manifest.py --root . --data-relative Archive/Froberg/certificates/finite --namespace Quartic.CertificateManifest --json Archive/Froberg/CertificateManifest.json --lean Archive/Froberg/Quartic/CertificateManifest.lean --check
+      - name: Fetch official cache and seed unchanged Mathlib artifacts
+        run: python3 controller/.github/scripts/ci_mathlib_seed.py --root mathlib --upstream upstream --logs "$BUILD_LOGS"
+      - name: Build complete formalization with live stage and memory logs
+        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED"
+      - name: Upload logs and measured result
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: froberg-mathlib-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.BUILD_LOGS }}
+          if-no-files-found: warn
+          retention-days: 14
