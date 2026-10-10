@@ -90,6 +90,8 @@ stages=[
  ('inverse-lookups',base+[q+f'FiniteEndpointInverseMemo{n}' for n in [28,29,30]]),
  ('certificate-rows',base+[q+f'FiniteEndpointRows{n}' for n in [28,29,30]]),
  ('full-theorem',base+['Archive.Froberg']),
+ ('archive-integration',base+['Archive']),
+ ('archive-warnings',['lake','--no-ansi','build','--no-build','--wfail','Archive']),
 ]
 # The final audit uses the compiled theorem and ordinary Lean axiom reporting.
 audit=root/'FrobergAxiomAudit.lean'
