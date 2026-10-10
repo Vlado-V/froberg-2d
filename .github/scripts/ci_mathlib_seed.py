@@ -60,5 +60,8 @@ with (a.logs/'official-cache.log').open('w') as out:
 # Keep full traces, IR, and oleans. Never copy the compiled lakefile/config.
 for source,target in [(upstream/'.lake/packages',root/'.lake/packages'),(upstream/'.lake/build',root/'.lake/build')]:
  target.mkdir(parents=True,exist_ok=True)
- subprocess.run(['cp','-a','--reflink=auto',str(source)+'/.',str(target)+'/'],check=True)
+ # Git pack files are read-only. A warm cache requires replacing their directory
+ # entries rather than opening the existing files for writing.
+ subprocess.run(['cp','-a','--remove-destination','--reflink=auto',
+                 str(source)+'/.',str(target)+'/'],check=True)
 (a.logs/'seed.json').write_text(json.dumps({'official_upstream':head,'candidate_commit':candidate,'cache_roots':cache_roots,'method':'standard official cache plus intact artifact copy; normal Lake rehash follows','existing_mathlib_sources_identical':True,'existing_archive_sources_identical':True,'mathlib_options_identical':True},indent=2)+'\n')
