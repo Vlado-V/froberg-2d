@@ -108,7 +108,11 @@ stages=[
    'Mathlib.RingTheory.MvPolynomial.HomogeneousIdeal',
    'Mathlib.RingTheory.MvPolynomial.LinearFamily']),
  ('api-declaration-lint',['lake','env','lean','-j1',str(api_lint)]),
- ('theory',foundation_base+theory_targets),
+ # Let every warning-bearing dependency compile so downstream diagnostics are
+ # collected in the same run. Both replay gates must pass before certificates.
+ ('theory',['lake','--rehash','--no-ansi','build']+theory_targets),
+ ('theory-warnings',['lake','--no-ansi','build','--no-build','--wfail']+theory_targets),
+ ('theory-output',['lake','--no-ansi','build','--no-build','-q','--iofail']+theory_targets),
  ('large-certificates',base+[q+x+'.Data' for x in ['ProfileCertificate','SharpCertificate','HullCertificate']]),
  ('metadata-products',base+[q+f'FiniteEndpointMetadata{n}Checks' for n in [28,29,30]]+[q+f'FiniteEndpointProductMemo{n}' for n in [28,29,30]]),
  ('inverse-lookups',base+[q+f'FiniteEndpointInverseMemo{n}' for n in [28,29,30]]),
