@@ -92,6 +92,7 @@ stages=[
  ('full-theorem',base+['Archive.Froberg']),
  ('archive-integration',base+['Archive']),
  ('archive-warnings',['lake','--no-ansi','build','--no-build','--wfail','Archive']),
+ ('archive-output',['lake','--no-ansi','build','--no-build','-q','--iofail','Archive']),
 ]
 # The final audit uses the compiled theorem and ordinary Lean axiom reporting.
 audit=root/'FrobergAxiomAudit.lean'
