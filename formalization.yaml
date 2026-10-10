@@ -136,7 +136,11 @@ review:
     and read inverse bytes only for missing lookup facts. Independent data
     comparisons covered all 108345 rows and 1694 command ranges, and source
     review confirmed that the kernel proof construction remains unchanged.
-    This loader revision awaits the full cloud compilation and verification.
+    Repeated list congruence proof applications were subsequently specialized
+    once per row and constructed with explicit arguments. Independent source
+    reviews confirmed argument order and the list-equality invariant; every
+    lookup, shape, and final-row kernel declaration check remains in place.
+    These performance revisions await full cloud compilation and verification.
     No independent human peer review is recorded.
 
 alignment:

@@ -1766,7 +1766,7 @@
     "Froberg.IndependentStatementBridge",
     "Froberg.UniformMain"
   ],
-  "source_bytes": 13571154,
+  "source_bytes": 13571684,
   "certificate_references": [
     "certificates/finite/n28/coefficients.bin",
     "certificates/finite/n28/inverse.bin",

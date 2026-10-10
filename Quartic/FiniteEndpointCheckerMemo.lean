@@ -52,10 +52,21 @@ def certifyRow (stem invFn rowFn : Name) (loadInvBytes : IO ByteArray)
   let nat := mkConst ``Nat
   let nil := mkApp (mkConst ``List.nil [.zero]) nat
   let cons := mkApp (mkConst ``List.cons [.zero]) nat
+  -- Specialize the fixed function/type arguments once. The remaining arguments
+  -- are {x x' : Nat} {y y' : List Nat}, followed by the two equality proofs.
+  let consCongr ← mkAppM ``congrArg₂ #[cons]
+  let inv := mkConst invFn
+  let mut left := nil
+  let mut right := nil
   let mut listEq ← mkEqRefl nil
   for j in indices.reverse do
-    let (_,hj) ← ensureLookup stem invFn loadInvBytes nw j
-    listEq ← mkAppM ``congrArg₂ #[cons,hj,listEq]
+    let (value,hj) ← ensureLookup stem invFn loadInvBytes nw j
+    let head := mkApp inv (mkNatLit j)
+    -- Invariant: listEq proves left = right. This is the same congrArg₂
+    -- application as before, with its implicit arguments supplied directly.
+    listEq := mkApp6 consCongr head value left right hj listEq
+    left := mkApp2 cons head left
+    right := mkApp2 cons value right
   let source := mkApp (mkConst rowFn) (mkNatLit i)
   let literalList ← mkListLit nat (indices.toList.map mkNatLit)
   let shapeName := stem ++ Name.mkSimple ("shape_" ++ toString i)
@@ -71,7 +82,7 @@ def certifyRow (stem invFn rowFn : Name) (loadInvBytes : IO ByteArray)
   let hx ← mkAppM ``congrArg #[xor,mappedEq]
   let rhs := mkNatLit (2^i)
   let proof ← mkAppM ``Eq.trans #[hx,← mkEqRefl rhs]
-  let mapped ← mkAppM ``List.map #[mkConst invFn,source]
+  let mapped := mkApp mapFn source
   let type ← mkEq (mkApp xor mapped) rhs
   let name := stem ++ Name.mkSimple ("row_" ++ toString i)
   addDecl <| .thmDecl {name,levelParams := [], type,value := proof}

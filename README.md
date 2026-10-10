@@ -34,6 +34,8 @@ network access or separate certificate generator is needed during compilation.
 Each row compiler caches the small decoded metadata and prepares only the row
 ranges it checks. Imported, checked inverse lookup facts are reused without
 reading the inverse bytes again unless a lookup must actually be created.
+Repeated list congruence proofs use explicit applications of the same theorem,
+avoiding repeated elaborator type inference while retaining kernel verification.
 The row-check modules form eight dependency chains and start after the large
 arithmetic stages. The profile and sharp arithmetic stages each use eight
 parallel modules. Each compiler process uses one thread and elaborates theorem
