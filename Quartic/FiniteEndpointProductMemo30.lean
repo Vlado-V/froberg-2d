@@ -1,0 +1,10 @@
+module
+
+public import Quartic.FiniteEndpointProductMemo30.Chunk00
+public import Quartic.FiniteEndpointProductMemo30.Chunk01
+public import Quartic.FiniteEndpointProductMemo30.Chunk02
+public import Quartic.FiniteEndpointProductMemo30.Chunk03
+public import Quartic.FiniteEndpointProductMemo30.Chunk04
+public import Quartic.FiniteEndpointProductMemo30.Chunk05
+public import Quartic.FiniteEndpointProductMemo30.Chunk06
+public import Quartic.FiniteEndpointProductMemo30.Chunk07

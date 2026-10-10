@@ -1,6 +1,8 @@
 module
 
 public import Quartic.FiniteEndpointInverse29
+public import Quartic.FiniteEndpointMetadata29Data
+public import Quartic.FiniteEndpointProductMemo29
 import Quartic.HullCertificate.Data
 public import Quartic.FiniteEndpointCheckerMemo
 
@@ -16,4 +18,5 @@ set_option Elab.async false
 set_option maxRecDepth 1000000
 set_option maxHeartbeats 32000000
 certify_inverse_lookups certificate from "certificates/finite/n29/inverse.bin" inverse_fn Quartic.FiniteEndpointInverse29.binaryInverse nrows 35960 nwords 562
+certify_support_lookups certificate from "certificates/finite/n29" support_fn Quartic.FiniteEndpointMetadata29Data.quadSupport
 end Quartic.FiniteEndpointRows29

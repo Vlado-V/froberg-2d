@@ -34,8 +34,13 @@ network access or separate certificate generator is needed during compilation.
 Each row compiler caches the small decoded metadata and prepares only the row
 ranges it checks. Imported, checked inverse lookup facts are reused without
 reading the inverse bytes again unless a lookup must actually be created.
-Repeated list congruence proofs use explicit applications of the same theorem,
-avoiding repeated elaborator type inference while retaining kernel verification.
+Generator supports and product-table entries have shared, kernel-checked lookup
+lemmas. Each row combines these with the inverse lookups in one scalar XOR proof,
+avoiding two separate list-equality proofs. The final row equation remains
+kernel-checked, including its selector, support, product, and inverse data.
+Product-table preparation uses eight independent modules per dimension. A local
+test of the 1,024-row heavy module took 54 seconds, versus 171 seconds previously;
+this is a module benchmark, not a timing for the full verification.
 The row-check modules form eight dependency chains and start after the large
 arithmetic stages. The profile and sharp arithmetic stages each use eight
 parallel modules. Each compiler process uses one thread and elaborates theorem

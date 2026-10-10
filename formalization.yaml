@@ -140,7 +140,16 @@ review:
     once per row and constructed with explicit arguments. Independent source
     reviews confirmed argument order and the list-equality invariant; every
     lookup, shape, and final-row kernel declaration check remains in place.
-    These performance revisions await full cloud compilation and verification.
+    The current row checker instead combines shared support and product lookup
+    equalities with inverse lookups in one scalar XOR proof. The separate
+    intermediate shape declarations are omitted; their mathematical obligations
+    are checked in the final row declaration. Product tables are checked in
+    eight independent modules per dimension. All 216225 product lookups for
+    dimension 30 and a complete 1024-row module passed local kernel checks, as
+    did the first and last rows for dimensions 28 and 29. The heavy module took
+    approximately 54 seconds locally, compared with 171 seconds previously.
+    This is not a complete build timing. The current revision still awaits
+    full cloud compilation and verification.
     No independent human peer review is recorded.
 
 alignment:

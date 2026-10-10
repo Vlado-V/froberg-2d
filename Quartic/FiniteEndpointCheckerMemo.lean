@@ -3,12 +3,52 @@ module
 public import Quartic.CertificateBinaryIO
 
 public import Quartic.FiniteEndpointCheckerLoad
+public import Quartic.FiniteEndpointShapeMemo
 
 @[expose] public section
 
-/-! A proof-producing sparse-row elaborator. Every generated equality is submitted
+/-! A proof-producing sparse-row elaborator using one scalar XOR fold. Every generated equality is submitted
 as an ordinary theorem to `addDecl`; no evaluator result is trusted as a proof. -/
 namespace Quartic.FiniteEndpointCheckerMemo
+open Quartic.FiniteEndpointChecker
+open Quartic.FiniteEndpointShapeMemo
+
+/-- Keep one scalar function head throughout the checked fold. -/
+def RowTerm {d : Nat} (inv : Nat → Nat) (product : Nat → Nat → Nat)
+    (b j : Fin d) : Nat := inv (mappedProduct product b j)
+
+/-- Keep the scalar function head identical to xorMapStep's premise, so the
+kernel need not unfold an inverse lookup while matching that premise. -/
+theorem rowTermEq {d : Nat} (inv : Nat → Nat) (product : Nat → Nat → Nat)
+    (b j : Fin d) (productIndex value : Nat)
+    (hproduct : mappedProduct product b j = productIndex)
+    (hinverse : inv productIndex = value) :
+    RowTerm inv product b j = value := by
+  unfold RowTerm
+  exact (congrArg inv hproduct).trans hinverse
+
+universe u
+
+/-- The proof state has one support tail and one scalar XOR expression. -/
+theorem xorMapStep {α : Type u} (f : α → Nat) (j : α) (xs : List α) (x t : Nat)
+    (hx : f j = x) (ht : xorSum (xs.map f) = t) :
+    xorSum ((j :: xs).map f) = Nat.xor x t := by
+  change Nat.xor (f j) (xorSum (xs.map f)) = Nat.xor x t
+  exact congrArg₂ Nat.xor hx ht
+
+/-- Transport the fused fold to the actual selected-generator row. All selector
+and support substitutions remain proved equalities. -/
+theorem rowEquation {g d : Nat}
+    (select : Nat → Fin g × Fin d) (support : Fin g → List (Fin d))
+    (product : Nat → Nat → Nat) (inv : Nat → Nat) (i : Nat)
+    (a : Fin g) (b : Fin d) (xs : List (Fin d)) (rhs : Nat)
+    (hselect : select i = (a, b)) (hsupport : support a = xs)
+    (hfold : xorSum (xs.map (RowTerm inv product b)) = rhs) :
+    xorSum (((support (select i).1).map
+      (fun j => product j.val (select i).2.val)).map inv) = rhs := by
+  rw [hselect, hsupport, List.map_map]
+  exact hfold
+
 open Lean Meta Elab Command
 meta section
 
@@ -47,45 +87,81 @@ def ensureLookup (stem fn : Name) (loadBytes : IO ByteArray) (nw j : Nat) : Meta
       value := ← mkEqRefl rhs }
   return (mkConst valName,mkConst eqName)
 
+/-- Nat transitivity with explicit arguments, so constructing the certificate
+never asks Meta to normalize the giant packed scalar expression. -/
+def scalarTransNat (a b c hab hbc : Expr) : Expr :=
+  mkApp6 (mkConst ``Eq.trans [.succ .zero]) (mkConst ``Nat) a b c hab hbc
+
+/-- Fused proof of the SAME row_i theorem. No mapped Nat lists, cons-congruence
+chain, or separate shape_i declaration is built. All untrusted data is checked
+through the existing product/support/inverse equalities and final addDecl. -/
 def certifyRow (stem invFn rowFn : Name) (loadInvBytes : IO ByteArray)
-    (nw i : Nat) (indices : Array Nat) : MetaM Unit := do
+    (nw i : Nat) (indices : Array Nat)
+    (metadata : Quartic.CertificateBinaryIO.SparseMetadata) : MetaM Unit := do
+  if i >= metadata.rows.size then throwError "selector index outside metadata"
+  let (g, m) := metadata.rows[i]!
+  if g >= metadata.supports.size then throwError "support index outside metadata"
+  let supportIndices := metadata.supports[g]!
+  if supportIndices.size != indices.size then
+    throwError "sparse row differs from metadata support length"
+  let d := metadata.dimension
+  let dExpr := mkNatLit d
+  let gExpr := mkNatLit metadata.supports.size
   let nat := mkConst ``Nat
-  let nil := mkApp (mkConst ``List.nil [.zero]) nat
-  let cons := mkApp (mkConst ``List.cons [.zero]) nat
-  -- Specialize the fixed function/type arguments once. The remaining arguments
-  -- are {x x' : Nat} {y y' : List Nat}, followed by the two equality proofs.
-  let consCongr ← mkAppM ``congrArg₂ #[cons]
+  let finType := mkApp (mkConst ``Fin) dExpr
+  let owner := rowFn.getPrefix
+  let select := mkConst (owner ++ `selectedRaw)
+  let support := mkConst (owner ++ `quadSupport)
+  let productName := owner ++ `naturalProduct
+  let product := mkConst productName
   let inv := mkConst invFn
-  let mut left := nil
-  let mut right := nil
-  let mut listEq ← mkEqRefl nil
-  for j in indices.reverse do
-    let (value,hj) ← ensureLookup stem invFn loadInvBytes nw j
-    let head := mkApp inv (mkNatLit j)
-    -- Invariant: listEq proves left = right. This is the same congrArg₂
-    -- application as before, with its implicit arguments supplied directly.
-    listEq := mkApp6 consCongr head value left right hj listEq
-    left := mkApp2 cons head left
-    right := mkApp2 cons value right
+  let (a, _, hsupport) ← Quartic.FiniteEndpointShapeMemo.ensureSupport
+    stem (owner ++ `quadSupport) metadata g
+  let b ← Quartic.FiniteEndpointShapeMemo.finLiteral d m
+  let termFn := mkApp4 (mkConst ``RowTerm) dExpr inv product b
+  -- xorMapStep's fixed α/f arguments are supplied once. Every loop iteration
+  -- supplies j, xs, x, t, hx, ht directly, with no mkAppM/unification.
+  let step := mkApp2 (mkConst ``xorMapStep [.zero]) finType termFn
+  let nil := mkApp (mkConst ``List.nil [.zero]) finType
+  let cons := mkApp (mkConst ``List.cons [.zero]) finType
+  let mut supportTail := nil
+  let mut scalar := mkNatLit 0
+  let mut hfold ← mkEqRefl scalar
+  for rev in [:supportIndices.size] do
+    let offset := supportIndices.size - 1 - rev
+    let j := supportIndices[offset]!
+    let jFin ← Quartic.FiniteEndpointShapeMemo.finLiteral d j
+    let (productIndex, hproduct, _actualProduct) ←
+      Quartic.FiniteEndpointShapeMemo.ensureProduct stem productName metadata j m
+    let k := (metadata.productIndices[j * d + m]!).toNat
+    -- This is a consistency guard for the existing sparse-data input. It is
+    -- not trusted as a theorem: product/inverse declarations still check it.
+    if k != indices[offset]! then throwError "sparse row differs from product metadata"
+    let (value, hinverse) ← ensureLookup stem invFn loadInvBytes nw k
+    let hterm := mkAppN (mkConst ``rowTermEq)
+      #[dExpr, inv, product, b, jFin, productIndex, value, hproduct, hinverse]
+    hfold := mkApp6 step jFin supportTail value scalar hterm hfold
+    supportTail := mkApp2 cons jFin supportTail
+    scalar := mkApp2 (mkConst ``Nat.xor) value scalar
+  let mapTerm ← mkAppM ``List.map #[termFn]
+  let foldLhs := mkApp (mkConst ``Quartic.FiniteEndpointChecker.xorSum)
+    (mkApp mapTerm supportTail)
+  -- Keep the power symbolic. The final kernel equality checks its value; the
+  -- elaborator does not manufacture a gigantic numeral in the theorem type.
+  let expected := mkApp2 (mkConst ``Nat.pow) (mkNatLit 2) (mkNatLit i)
+  let hfoldExpected := scalarTransNat foldLhs scalar expected hfold (← mkEqRefl expected)
+  let gType := mkApp (mkConst ``Fin) gExpr
+  let pair := mkApp4 (mkConst ``Prod.mk [.zero, .zero]) gType finType a b
+  let hselect ← mkEqRefl pair
+  let proof := mkAppN (mkConst ``rowEquation)
+    #[gExpr, dExpr, select, support, product, inv, mkNatLit i, a, b,
+      supportTail, expected, hselect, hsupport, hfoldExpected]
   let source := mkApp (mkConst rowFn) (mkNatLit i)
-  let literalList ← mkListLit nat (indices.toList.map mkNatLit)
-  let shapeName := stem ++ Name.mkSimple ("shape_" ++ toString i)
-  addDecl <| .thmDecl {
-    name := shapeName
-    levelParams := []
-    type := ← mkEq source literalList
-    value := ← mkEqRefl literalList }
-  let mapFn ← mkAppM ``List.map #[mkConst invFn]
-  let shapeMap ← mkAppM ``congrArg #[mapFn,mkConst shapeName]
-  let mappedEq ← mkAppM ``Eq.trans #[shapeMap,listEq]
-  let xor := mkConst ``Quartic.FiniteEndpointChecker.xorSum
-  let hx ← mkAppM ``congrArg #[xor,mappedEq]
-  let rhs := mkNatLit (2^i)
-  let proof ← mkAppM ``Eq.trans #[hx,← mkEqRefl rhs]
-  let mapped := mkApp mapFn source
-  let type ← mkEq (mkApp xor mapped) rhs
+  let mapInv ← mkAppM ``List.map #[inv]
+  let lhs := mkApp (mkConst ``Quartic.FiniteEndpointChecker.xorSum) (mkApp mapInv source)
+  let type ← mkEq lhs expected
   let name := stem ++ Name.mkSimple ("row_" ++ toString i)
-  addDecl <| .thmDecl {name,levelParams := [], type,value := proof}
+  addDecl <| .thmDecl {name, levelParams := [], type, value := proof}
 
 syntax (name := memoLookups) "certify_inverse_lookups " ident " from " str
   " inverse_fn " ident " nrows " num " nwords " num : command
@@ -110,13 +186,15 @@ syntax (name := memoRows) "certify_sparse_rows " ident " from " str
       nwords $nw:num start_index $start:num row_count $count:num) := stx | throwUnsupportedSyntax
   let rows ← Quartic.CertificateBinaryIO.readSparseRowsCached
     sparsePath.getString start.getNat count.getNat
+  let metadata ← Quartic.CertificateBinaryIO.readSparseMetadataCached
+    ((System.FilePath.mk sparsePath.getString).parent.getD ".")
   let loadInvBytes := Quartic.CertificateBinaryIO.readBinaryOrPartsCached invPath.getString
   let stem := (← getCurrNamespace) ++ pref.getId
   for offset in [:count.getNat] do
     let i := start.getNat + offset
     let values := rows[offset]!
     liftTermElabM do
-      certifyRow stem invFn.getId rowFn.getId loadInvBytes nw.getNat i values
+      certifyRow stem invFn.getId rowFn.getId loadInvBytes nw.getNat i values metadata
   logInfo m!"Kernel checked {count.getNat} sparse rows from index {start.getNat}, with memoized lookup equalities."
 
 end
