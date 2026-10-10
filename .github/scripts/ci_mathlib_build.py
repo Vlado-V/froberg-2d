@@ -81,7 +81,7 @@ def choose_bootstrap():
 
 bootstrap=choose_bootstrap()
 if a.preflight:raise SystemExit(0)
-base=['lake','--rehash','--no-ansi','--fail-fast','build']
+base=['lake','--rehash','--no-ansi','--fail-fast','build','--iofail']
 q='Archive.Froberg.Quartic.'
 stages=[
  ('foundations',base+['Mathlib.RingTheory.MvPolynomial.HomogeneousBasis','Mathlib.RingTheory.MvPolynomial.HomogeneousIdeal','Mathlib.RingTheory.MvPolynomial.LinearFamily','Archive.Froberg.Generic',q+'RankOpen','Archive.Froberg.IndependentStatement',q+'FreeMonomialCounts',q+'ThreeBlock','Archive.Froberg.GenericFlagOpen',q+'PolynomialRank',q+'FiniteEndpointCheckerPolynomial']),
