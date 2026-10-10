@@ -260,7 +260,7 @@ def source_snapshot(root):
 
 
 def run_repair(root, logs, source, targets, execute, resource_finished, remaining,
-               max_iterations=20):
+               max_iterations=20, standalone=True):
     """Run guarded normal builds/replays; always publish a diagnostic-only result."""
     if not 1 <= max_iterations <= 20:
         raise RepairError("Repair iteration bound must be between 1 and 20")
@@ -276,7 +276,8 @@ def run_repair(root, logs, source, targets, execute, resource_finished, remainin
         (logs / "source.diff").write_bytes(diff)
         report["source_changed"] = bool(diff)
         atomic_json(logs / "theory-repair.json", report)
-        atomic_json(logs / "report.json", report)
+        if standalone:
+            atomic_json(logs / "report.json", report)
 
     code = 1
     try:
@@ -338,6 +339,55 @@ def run_repair(root, logs, source, targets, execute, resource_finished, remainin
         code = exc.code if isinstance(exc.code, int) and exc.code else 1
     finally:
         publish()
-    print("DIAGNOSTIC ONLY: " + report["status"] +
-          "; review source.diff and run full immutable-source verification.", flush=True)
+    if standalone:
+        print("DIAGNOSTIC ONLY: " + report["status"] +
+              "; review source.diff and run full immutable-source verification.", flush=True)
+    else:
+        print("PRELIMINARY REPAIR: " + report["status"] +
+              "; full verification follows only if this phase succeeded.", flush=True)
     return code
+
+
+def candidate_identity(root, baseline):
+    """Identify the exact tracked candidate as baseline plus a retained patch."""
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    if head != baseline["commit"]:
+        raise RepairError("Candidate baseline commit changed")
+    untracked = subprocess.check_output(
+        ["git", "ls-files", "--others", "--", "Archive/Froberg"], cwd=root).decode().splitlines()
+    if any(path.endswith(".lean") for path in untracked):
+        raise RepairError("Untracked Archive Lean source changed the candidate")
+    diff = subprocess.check_output(
+        ["git", "diff", "--no-ext-diff", "--no-color", "HEAD", "--"], cwd=root)
+    archive_diff = subprocess.check_output(
+        ["git", "diff", "--no-ext-diff", "--no-color", "HEAD", "--", "Archive/Froberg"],
+        cwd=root)
+    if diff != archive_diff:
+        raise RepairError("Candidate has tracked changes outside Archive/Froberg")
+    snapshot = source_snapshot(root)
+    metadata = {key: value for key, value in baseline.items() if key != "commit"}
+    metadata["baseline_commit"] = baseline["commit"]
+    if not diff:
+        metadata["commit"] = baseline["commit"]
+    metadata["candidate"] = {
+        "kind": "baseline-plus-patch" if diff else "immutable-commit",
+        "committed": not bool(diff),
+        "patch_artifact": "source.diff",
+        "patch_sha256": hashlib.sha256(diff).hexdigest(),
+        "archive_source_snapshot_sha256": hashlib.sha256(
+            json.dumps(snapshot, sort_keys=True).encode()).hexdigest(),
+    }
+    return metadata, diff
+
+
+def record_candidate(root, logs, baseline):
+    metadata, diff = candidate_identity(root, baseline)
+    (logs / "source.diff").write_bytes(diff)
+    atomic_json(logs / "candidate-source.json", metadata)
+    return metadata
+
+
+def verify_candidate_unchanged(root, baseline, expected):
+    metadata, _ = candidate_identity(root, baseline)
+    if metadata != expected:
+        raise RepairError("Candidate source changed during the full verification stages")

@@ -1,5 +1,5 @@
 name: Fröberg Mathlib full build
-run-name: Fröberg — ${{ inputs.scope == 'theory-repair' && 'diagnostic theory repair (not verification)' || 'complete Mathlib verification' }}
+run-name: Fröberg — ${{ inputs.scope == 'full-repair' && 'full verification with preliminary repair' || inputs.scope == 'theory-repair' && 'diagnostic theory repair (not verification)' || 'complete Mathlib verification' }}
 on:
   workflow_dispatch:
     inputs:
@@ -8,12 +8,13 @@ on:
         required: true
         type: string
       scope:
-        description: Full verification or diagnostic-only theory source repair
+        description: Full verification, full verification with repair, or theory diagnostics
         required: true
         default: full
         type: choice
         options:
           - full
+          - full-repair
           - theory-repair
 permissions:
   contents: read
@@ -36,9 +37,14 @@ jobs:
       - name: Record deadline origin and validate commit
         env:
           SOURCE_COMMIT: ${{ inputs.commit }}
+          VERIFY_SCOPE: ${{ inputs.scope }}
         shell: bash
         run: |
           [[ "$SOURCE_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          case "${VERIFY_SCOPE:-full}" in
+            full|full-repair|theory-repair) ;;
+            *) echo "Invalid verification scope" >&2; exit 1 ;;
+          esac
           echo "BUILD_JOB_STARTED=$(date +%s)" >> "$GITHUB_ENV"
       - name: Checkout build controller
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -101,8 +107,11 @@ jobs:
       - name: Fetch official cache and seed unchanged Mathlib artifacts
         run: python3 controller/.github/scripts/ci_mathlib_seed.py --root mathlib --upstream upstream --logs "$BUILD_LOGS"
       - name: Build complete formalization with live stage and memory logs
-        if: inputs.scope != 'theory-repair'
+        if: inputs.scope == 'full' || inputs.scope == ''
         run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED"
+      - name: Repair unused assumptions then run every full verification stage
+        if: inputs.scope == 'full-repair'
+        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope full-repair
       - name: Diagnose and repair unused Infinite assumptions (not verification)
         if: inputs.scope == 'theory-repair'
         run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope theory-repair

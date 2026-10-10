@@ -18,11 +18,15 @@ p.add_argument('--guard',type=Path,required=True)
 p.add_argument('--logs',type=Path,required=True)
 p.add_argument('--job-start',type=float,required=True)
 p.add_argument('--preflight',action='store_true')
-p.add_argument('--scope',choices=['full','theory-repair'],default='full')
+p.add_argument('--scope',choices=['full','full-repair','theory-repair'],default='full')
 a=p.parse_args(); root=a.root.resolve(); guard=a.guard.resolve(); logs=a.logs.resolve(); logs.mkdir(parents=True,exist_ok=True)
 candidate=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
 assert candidate==os.environ['SOURCE_COMMIT'],'candidate source differs from requested commit'
 source_metadata={'repository':'Vlado-V/mathlib4','commit':candidate,'toolchain':(root/'lean-toolchain').read_text().strip()}
+baseline_source=dict(source_metadata)
+if a.scope=='full-repair':
+ source_metadata.pop('commit')
+ source_metadata['baseline_commit']=candidate
 # Leave time for final reporting before the provider's five-hour job limit.
 end=a.job_start+270*60
 mem=int(re.search(r'^MemTotal:\s+(\d+)',Path('/proc/meminfo').read_text(),re.M).group(1))*1024
@@ -104,7 +108,7 @@ theory_targets=list(dict.fromkeys(theory_targets+[
  'Archive.Froberg.MixedQuotientExactness','Archive.Froberg.PrefixCharts',
  q+'QuotientBilinearImage','Archive.Froberg.QuotientUpperGrowth',
  'Archive.Froberg.RetainedMonomials','Archive.Froberg.SurjectiveImage']))
-records=[]; active=None; interrupted=False
+records=[]; active=None; interrupted=False; repair_report=None
 
 def stop(signum,frame):
  global interrupted
@@ -155,14 +159,25 @@ def run_stage(stage,command):
  records.append(state)
  report={'source':source_metadata,'stages':records,'all_pass':False}
  if a.scope=='theory-repair':report.update(mode='theory-repair',diagnostic_only=True,full_verification_performed=False,full_verification_required=True)
+ if a.scope=='full-repair':report.update(mode='full-repair',candidate_full_pass=False,full_verification_performed=False,preliminary_repair=repair_report)
  atomic(logs/'report.json',report)
  print('::endgroup::',flush=True)
  return state
 
-if a.scope=='theory-repair':
- from froberg_theory_repair import run_repair
- raise SystemExit(run_repair(root,logs,source_metadata,theory_targets,run_stage,
-                            resource_finished,lambda:0 if interrupted else end-time.time()))
+if a.scope in {'theory-repair','full-repair'}:
+ from froberg_theory_repair import run_repair, record_candidate, verify_candidate_unchanged
+ repair_code=run_repair(root,logs,source_metadata,theory_targets,run_stage,
+                        resource_finished,lambda:0 if interrupted else end-time.time(),
+                        standalone=a.scope=='theory-repair')
+ if a.scope=='theory-repair':raise SystemExit(repair_code)
+ repair_report=json.loads((logs/'theory-repair.json').read_text())
+ source_metadata=record_candidate(root,logs,baseline_source)
+ if repair_code:
+  atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':False,
+   'mode':'full-repair','candidate_full_pass':False,'full_verification_performed':False,
+   'status':'preliminary_repair_failed','preliminary_repair':repair_report})
+  raise SystemExit(repair_code)
+ print('Preliminary repair complete; starting every normal full verification stage.',flush=True)
 
 api_lint=root/'FrobergApiDeclarationLint.lean'
 shutil.copyfile(Path(__file__).with_name('froberg_api_lint.lean'),api_lint)
@@ -219,10 +234,12 @@ elab "#audit_main_dependencies" : command => do
 shutil.copyfile(audit,logs/'AxiomAudit.lean')
 stages.append(('axiom-audit',['lake','env','lean',str(audit)]))
 for stage,command in stages:
+ if a.scope=='full-repair':verify_candidate_unchanged(root,baseline_source,source_metadata)
  state=run_stage(stage,command)
  if state['returncode']!=0 or not successful_resource(state['resource']):
   raise SystemExit(state['returncode'] or 1)
  if interrupted:raise SystemExit(143)
+if a.scope=='full-repair':verify_candidate_unchanged(root,baseline_source,source_metadata)
 text=(logs/'axiom-audit.log').read_text()
 if 'PASS: main theorem dependencies use only propext, Classical.choice, Quot.sound' not in text:
  raise SystemExit('Axiom audit did not report its dependency check')
@@ -234,5 +251,13 @@ for theorem in ['Froberg.paperStatement','Froberg.uniformMainStatement']:
  else:raise SystemExit('Missing axiom report for '+theorem)
  if not used<={'propext','Classical.choice','Quot.sound'}:raise SystemExit('Unexpected axioms: '+str(sorted(used)))
  axioms[theorem]=sorted(used)
-atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':True,'axioms':axioms})
-print('PASS: complete Archive.Froberg build and main dependency axiom audit.',flush=True)
+if a.scope=='full-repair':
+ changed=not source_metadata['candidate']['committed']
+ atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':not changed,
+  'mode':'full-repair','candidate_full_pass':True,'full_verification_performed':True,
+  'immutable_source_followup_required':changed,'preliminary_repair':repair_report,'axioms':axioms})
+ print('PASS: all full verification gates passed for the recorded candidate.'+
+       (' Commit the retained patch and verify the immutable source next.' if changed else ''),flush=True)
+else:
+ atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':True,'axioms':axioms})
+ print('PASS: complete Archive.Froberg build and main dependency axiom audit.',flush=True)
