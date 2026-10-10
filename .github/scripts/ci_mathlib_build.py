@@ -82,7 +82,7 @@ def choose_bootstrap():
 bootstrap=choose_bootstrap()
 if a.preflight:raise SystemExit(0)
 base=['lake','--rehash','--no-ansi','--fail-fast','build','--iofail']
-foundation_base=['lake','--rehash','--no-ansi','build','--iofail']
+foundation_base=['lake','--rehash','--no-ansi','build','--wfail','--iofail']
 q='Archive.Froberg.Quartic.'
 theory_targets=Path(__file__).with_name('froberg_theory_targets.txt').read_text().splitlines()
 theory_targets=[target.strip() for target in theory_targets if target.strip()]
@@ -90,20 +90,23 @@ assert theory_targets, 'The certificate-independent theory target list is empty'
 assert len(theory_targets)==len(set(theory_targets)), 'Duplicate theory targets'
 assert all(re.fullmatch(r'Archive\.Froberg(?:\.[A-Za-z_][A-Za-z0-9_]*)+',target)
            for target in theory_targets), 'Invalid theory module target'
+# Collect all inexpensive compatibility diagnostics in one stage, including
+# checker definitions whose imports stop before the large certificate data.
+theory_targets=list(dict.fromkeys(theory_targets+[
+ 'Archive.Froberg.Generic',q+'RankOpen','Archive.Froberg.IndependentStatement',
+ q+'FreeMonomialCounts',q+'ThreeBlock','Archive.Froberg.GenericFlagOpen',
+ q+'PolynomialRank',q+'FiniteEndpointCheckerPolynomial',
+ 'Archive.Froberg.DeletedBidegreeQuotient','Archive.Froberg.InitialSubspace',
+ 'Archive.Froberg.MixedQuotientExactness','Archive.Froberg.PrefixCharts',
+ q+'QuotientBilinearImage','Archive.Froberg.QuotientUpperGrowth',
+ 'Archive.Froberg.RetainedMonomials','Archive.Froberg.SurjectiveImage']))
 api_lint=root/'FrobergApiDeclarationLint.lean'
 shutil.copyfile(Path(__file__).with_name('froberg_api_lint.lean'),api_lint)
 stages=[
  ('foundations',foundation_base+[
    'Mathlib.RingTheory.MvPolynomial.HomogeneousBasis',
    'Mathlib.RingTheory.MvPolynomial.HomogeneousIdeal',
-   'Mathlib.RingTheory.MvPolynomial.LinearFamily',
-   'Archive.Froberg.Generic',q+'RankOpen','Archive.Froberg.IndependentStatement',
-   q+'FreeMonomialCounts',q+'ThreeBlock','Archive.Froberg.GenericFlagOpen',
-   q+'PolynomialRank',q+'FiniteEndpointCheckerPolynomial',
-   'Archive.Froberg.DeletedBidegreeQuotient','Archive.Froberg.InitialSubspace',
-   'Archive.Froberg.MixedQuotientExactness','Archive.Froberg.PrefixCharts',
-   q+'QuotientBilinearImage','Archive.Froberg.QuotientUpperGrowth',
-   'Archive.Froberg.RetainedMonomials','Archive.Froberg.SurjectiveImage']),
+   'Mathlib.RingTheory.MvPolynomial.LinearFamily']),
  ('api-declaration-lint',['lake','env','lean','-j1',str(api_lint)]),
  ('theory',foundation_base+theory_targets),
  ('large-certificates',base+[q+x+'.Data' for x in ['ProfileCertificate','SharpCertificate','HullCertificate']]),
