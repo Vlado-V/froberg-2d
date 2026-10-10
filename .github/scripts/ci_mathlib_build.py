@@ -18,6 +18,7 @@ p.add_argument('--guard',type=Path,required=True)
 p.add_argument('--logs',type=Path,required=True)
 p.add_argument('--job-start',type=float,required=True)
 p.add_argument('--preflight',action='store_true')
+p.add_argument('--scope',choices=['full','theory-repair'],default='full')
 a=p.parse_args(); root=a.root.resolve(); guard=a.guard.resolve(); logs=a.logs.resolve(); logs.mkdir(parents=True,exist_ok=True)
 candidate=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
 assert candidate==os.environ['SOURCE_COMMIT'],'candidate source differs from requested commit'
@@ -49,12 +50,15 @@ def guarded_command(bootstrap, command, status, seconds):
  if executable is None:raise RuntimeError('Executable is unavailable: '+command[0])
  return [*wrapped,'--',executable,*command[1:]]
 
-def successful_resource(info):
- return (info.get('state')=='finished' and info.get('exit_status')==0
+def resource_finished(info,exit_status=0):
+ return (info.get('state')=='finished' and info.get('exit_status')==exit_status
          and info.get('placement_ok') is True and not info.get('launch_error')
          and not info.get('term_signal') and not info.get('deadline_fired')
          and not info.get('liveness_lost') and not info.get('populated_after_kill')
          and all(info.get('limits_applied',{}).get(key) is True for key in limits))
+
+def successful_resource(info):
+ return resource_finished(info,0)
 
 def choose_bootstrap():
  if os.getuid()==0:
@@ -100,6 +104,66 @@ theory_targets=list(dict.fromkeys(theory_targets+[
  'Archive.Froberg.MixedQuotientExactness','Archive.Froberg.PrefixCharts',
  q+'QuotientBilinearImage','Archive.Froberg.QuotientUpperGrowth',
  'Archive.Froberg.RetainedMonomials','Archive.Froberg.SurjectiveImage']))
+records=[]; active=None; interrupted=False
+
+def stop(signum,frame):
+ global interrupted
+ interrupted=True
+ if active is not None and active.poll() is None:active.terminate()
+for sig in [signal.SIGTERM,signal.SIGINT]:signal.signal(sig,stop)
+
+def atomic(path,obj):
+ tmp=path.with_suffix(path.suffix+'.tmp');tmp.write_text(json.dumps(obj,indent=2)+'\n');tmp.replace(path)
+
+def run_stage(stage,command):
+ global active
+ remaining=int(end-time.time())
+ if interrupted or remaining<=30:raise SystemExit(124)
+ status=logs/(stage+'-resource.json')
+ wrapped=guarded_command(bootstrap,command,status,remaining)
+ print(f'::group::{stage}',flush=True)
+ print('Running '+' '.join(command),flush=True)
+ start=time.monotonic(); state={'stage':stage,'command':command,'started_epoch':time.time()}
+ with (logs/(stage+'.log')).open('w') as out:
+  active=subprocess.Popen(wrapped,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
+  def consume():
+   for line in active.stdout:
+    out.write(line);out.flush();print(line,end='',flush=True)
+  reader=threading.Thread(target=consume,daemon=True);reader.start()
+  while active.poll() is None:
+   state['elapsed_seconds']=round(time.monotonic()-start,1)
+   try:
+    info=json.loads(status.read_text());cg=Path(info.get('cgroup','/no-such-cgroup'))
+    state['memory_current']=int((cg/'memory.current').read_text())
+    state['memory_peak']=int((cg/'memory.peak').read_text())
+   except (OSError,ValueError):pass
+   disk=shutil.disk_usage(root)
+   state['disk_free_bytes']=disk.free
+   state['disk_total_bytes']=disk.total
+   cache_disk=shutil.disk_usage(root/'.lake')
+   state['cache_free_bytes']=cache_disk.free
+   state['cache_total_bytes']=cache_disk.total
+   atomic(logs/'progress.json',state)
+   with (logs/'progress.jsonl').open('a') as f:f.write(json.dumps(state)+'\n')
+   print('Progress '+json.dumps(state),flush=True)
+   try:active.wait(timeout=30)
+   except subprocess.TimeoutExpired:pass
+  reader.join(timeout=10);code=active.returncode
+ state.update(returncode=code,elapsed_seconds=round(time.monotonic()-start,1))
+ try:state['resource']=json.loads(status.read_text())
+ except (OSError,ValueError):state['resource']={}
+ records.append(state)
+ report={'source':source_metadata,'stages':records,'all_pass':False}
+ if a.scope=='theory-repair':report.update(mode='theory-repair',diagnostic_only=True,full_verification_performed=False,full_verification_required=True)
+ atomic(logs/'report.json',report)
+ print('::endgroup::',flush=True)
+ return state
+
+if a.scope=='theory-repair':
+ from froberg_theory_repair import run_repair
+ raise SystemExit(run_repair(root,logs,source_metadata,theory_targets,run_stage,
+                            resource_finished,lambda:0 if interrupted else end-time.time()))
+
 api_lint=root/'FrobergApiDeclarationLint.lean'
 shutil.copyfile(Path(__file__).with_name('froberg_api_lint.lean'),api_lint)
 stages=[
@@ -154,57 +218,10 @@ elab "#audit_main_dependencies" : command => do
 """)
 shutil.copyfile(audit,logs/'AxiomAudit.lean')
 stages.append(('axiom-audit',['lake','env','lean',str(audit)]))
-records=[]; active=None; interrupted=False
-
-def stop(signum,frame):
- global interrupted
- interrupted=True
- if active is not None and active.poll() is None:active.terminate()
-for sig in [signal.SIGTERM,signal.SIGINT]:signal.signal(sig,stop)
-
-def atomic(path,obj):
- tmp=path.with_suffix(path.suffix+'.tmp');tmp.write_text(json.dumps(obj,indent=2)+'\n');tmp.replace(path)
-
 for stage,command in stages:
- remaining=int(end-time.time())
- if interrupted or remaining<=30:raise SystemExit(124)
- status=logs/(stage+'-resource.json')
- wrapped=guarded_command(bootstrap,command,status,remaining)
- print(f'::group::{stage}',flush=True)
- print('Running '+' '.join(command),flush=True)
- start=time.monotonic(); state={'stage':stage,'command':command,'started_epoch':time.time()}
- with (logs/(stage+'.log')).open('w') as out:
-  active=subprocess.Popen(wrapped,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
-  def consume():
-   for line in active.stdout:
-    out.write(line);out.flush();print(line,end='',flush=True)
-  reader=threading.Thread(target=consume,daemon=True);reader.start()
-  while active.poll() is None:
-   state['elapsed_seconds']=round(time.monotonic()-start,1)
-   try:
-    info=json.loads(status.read_text());cg=Path(info.get('cgroup','/no-such-cgroup'))
-    state['memory_current']=int((cg/'memory.current').read_text())
-    state['memory_peak']=int((cg/'memory.peak').read_text())
-   except (OSError,ValueError):pass
-   disk=shutil.disk_usage(root)
-   state['disk_free_bytes']=disk.free
-   state['disk_total_bytes']=disk.total
-   cache_disk=shutil.disk_usage(root/'.lake')
-   state['cache_free_bytes']=cache_disk.free
-   state['cache_total_bytes']=cache_disk.total
-   atomic(logs/'progress.json',state)
-   with (logs/'progress.jsonl').open('a') as f:f.write(json.dumps(state)+'\n')
-   print('Progress '+json.dumps(state),flush=True)
-   try:active.wait(timeout=30)
-   except subprocess.TimeoutExpired:pass
-  reader.join(timeout=10);code=active.returncode
- state.update(returncode=code,elapsed_seconds=round(time.monotonic()-start,1))
- try:state['resource']=json.loads(status.read_text())
- except (OSError,ValueError):state['resource']={}
- records.append(state);atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':False})
- print('::endgroup::',flush=True)
- if code!=0 or not successful_resource(state['resource']):
-  raise SystemExit(code or 1)
+ state=run_stage(stage,command)
+ if state['returncode']!=0 or not successful_resource(state['resource']):
+  raise SystemExit(state['returncode'] or 1)
  if interrupted:raise SystemExit(143)
 text=(logs/'axiom-audit.log').read_text()
 if 'PASS: main theorem dependencies use only propext, Classical.choice, Quot.sound' not in text:
