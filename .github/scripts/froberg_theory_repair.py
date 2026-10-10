@@ -181,6 +181,8 @@ def insertion(source, warning):
         if previous.value in {"private", "protected", "noncomputable", "unsafe", "partial", "public"}:
             index -= 1
         elif previous.kind == "comment":
+            if previous.value.startswith("/-!"):
+                break  # Module documentation is its own Lean command.
             start = source.rfind("\n", 0, previous.start) + 1
             if source[start:previous.start].strip():
                 break  # A trailing option comment belongs to the outer wrapper.
@@ -234,7 +236,10 @@ def apply_warnings(root, warnings):
             original = path.read_bytes()
             plans[path] = [relative, original, original.decode("utf-8"), {}]
         _, _, source, edits = plans[path]
-        offset, text = insertion(source, warning)
+        try:
+            offset, text = insertion(source, warning)
+        except RepairError as exc:
+            raise RepairError(f"{relative}:{warning.line} ({warning.declaration}): {exc}") from exc
         if offset in edits and edits[offset][0] != text:
             raise RepairError("Conflicting insertions")
         edits[offset] = (text, asdict(warning))

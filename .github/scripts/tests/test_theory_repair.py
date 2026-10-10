@@ -114,6 +114,15 @@ class InsertionTests(Repository):
         path, _ = self.apply(source, "αhelper")
         self.assertEqual(path.read_text().replace("omit [Infinite K] in\n", ""), source)
 
+    def test_module_documentation_is_a_separate_command(self):
+        source = ("variable {K : Type*} [Field K] [Infinite K]\n"
+                  "/-! Below the private endpoint, the separated private image has zero kernel. -/\n"
+                  "/-- This documentation belongs to the theorem. -/\n"
+                  "theorem helper : True := by trivial\n")
+        path, _ = self.apply(source)
+        self.assertIn("kernel. -/\nomit [Infinite K] in\n/--", path.read_text())
+        self.assertEqual(path.read_text().replace("omit [Infinite K] in\n", ""), source)
+
     def test_section_variable_brackets_are_not_an_attribute(self):
         source = "variable {K : Type*} [Field K] [Infinite K]\n/-- Identity. -/\ntheorem helper : True := by trivial\n"
         path, _ = self.apply(source)
