@@ -83,8 +83,11 @@ bootstrap=choose_bootstrap()
 if a.preflight:raise SystemExit(0)
 base=['lake','--rehash','--no-ansi','--fail-fast','build','--iofail']
 q='Archive.Froberg.Quartic.'
+api_lint=root/'FrobergApiDeclarationLint.lean'
+shutil.copyfile(Path(__file__).with_name('froberg_api_lint.lean'),api_lint)
 stages=[
  ('foundations',base+['Mathlib.RingTheory.MvPolynomial.HomogeneousBasis','Mathlib.RingTheory.MvPolynomial.HomogeneousIdeal','Mathlib.RingTheory.MvPolynomial.LinearFamily','Archive.Froberg.Generic',q+'RankOpen','Archive.Froberg.IndependentStatement',q+'FreeMonomialCounts',q+'ThreeBlock','Archive.Froberg.GenericFlagOpen',q+'PolynomialRank',q+'FiniteEndpointCheckerPolynomial']),
+ ('api-declaration-lint',['lake','env','lean','-j1',str(api_lint)]),
  ('large-certificates',base+[q+x+'.Data' for x in ['ProfileCertificate','SharpCertificate','HullCertificate']]),
  ('metadata-products',base+[q+f'FiniteEndpointMetadata{n}Checks' for n in [28,29,30]]+[q+f'FiniteEndpointProductMemo{n}' for n in [28,29,30]]),
  ('inverse-lookups',base+[q+f'FiniteEndpointInverseMemo{n}' for n in [28,29,30]]),
