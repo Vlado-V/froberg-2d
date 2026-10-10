@@ -42,10 +42,17 @@ def collect(path):
    elif (root/relative).is_file():collect(root/relative)
    else:raise RuntimeError('Missing Mathlib import '+name)
 for path in (root/'Archive/Froberg').rglob('*.lean'):collect(path)
+# The final integration gate also builds the existing Archive library. Reuse
+# its official artifacts and dependencies instead of rebuilding uncached Mathlib.
+for source in (upstream/'Archive').rglob('*.lean'):
+ relative=source.relative_to(upstream)
+ assert source.read_bytes()==(root/relative).read_bytes(),str(relative)
+ collect(source)
 assert imports,'No official cache roots were found'
-print(f'Fetching the unchanged official Mathlib cache for {len(imports)} direct import roots.',flush=True)
+cache_roots=[*sorted(imports),'Archive.lean']
+print(f'Fetching the unchanged official cache for {len(imports)} Mathlib import roots and the baseline Archive.',flush=True)
 with (a.logs/'official-cache.log').open('w') as out:
- proc=subprocess.Popen(['lake','exe','cache','get','--cache-from=master',*sorted(imports)],cwd=upstream,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+ proc=subprocess.Popen(['lake','exe','cache','get','--cache-from=master',*cache_roots],cwd=upstream,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
  for line in proc.stdout:
   out.write(line);out.flush();print(line,end='',flush=True)
  code=proc.wait()
@@ -54,4 +61,4 @@ with (a.logs/'official-cache.log').open('w') as out:
 for source,target in [(upstream/'.lake/packages',root/'.lake/packages'),(upstream/'.lake/build',root/'.lake/build')]:
  target.mkdir(parents=True,exist_ok=True)
  subprocess.run(['cp','-a','--reflink=auto',str(source)+'/.',str(target)+'/'],check=True)
-(a.logs/'seed.json').write_text(json.dumps({'official_upstream':head,'candidate_commit':candidate,'cache_roots':sorted(imports),'method':'standard official cache plus intact artifact copy; normal Lake rehash follows','existing_mathlib_sources_identical':True,'mathlib_options_identical':True},indent=2)+'\n')
+(a.logs/'seed.json').write_text(json.dumps({'official_upstream':head,'candidate_commit':candidate,'cache_roots':cache_roots,'method':'standard official cache plus intact artifact copy; normal Lake rehash follows','existing_mathlib_sources_identical':True,'existing_archive_sources_identical':True,'mathlib_options_identical':True},indent=2)+'\n')
