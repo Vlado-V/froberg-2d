@@ -23,6 +23,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
+    name: Build execution and cache retention (not verdict)
     runs-on:
       - nscloud-ubuntu-24.04-amd64-32x64-with-cache-with-features
       - namespace-features:container.privileged=true
@@ -108,13 +109,13 @@ jobs:
         run: python3 controller/.github/scripts/ci_mathlib_seed.py --root mathlib --upstream upstream --logs "$BUILD_LOGS"
       - name: Build complete formalization with live stage and memory logs
         if: inputs.scope == 'full' || inputs.scope == ''
-        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED"
+        run: python3 controller/.github/scripts/ci_mathlib_result.py capture --controller controller --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope full
       - name: Repair unused assumptions then run every full verification stage
         if: inputs.scope == 'full-repair'
-        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope full-repair
+        run: python3 controller/.github/scripts/ci_mathlib_result.py capture --controller controller --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope full-repair
       - name: Diagnose and repair unused Infinite assumptions (not verification)
         if: inputs.scope == 'theory-repair'
-        run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope theory-repair
+        run: python3 controller/.github/scripts/ci_mathlib_result.py capture --controller controller --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --scope theory-repair
       - name: Upload logs and measured result
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -123,3 +124,34 @@ jobs:
           path: ${{ env.BUILD_LOGS }}
           if-no-files-found: warn
           retention-days: 14
+  verdict:
+    name: Mandatory full verification verdict
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    env:
+      SOURCE_COMMIT: ${{ inputs.commit }}
+      VERIFY_SCOPE: ${{ inputs.scope }}
+    steps:
+      - name: Require completed build execution and artifact publication
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+        run: test "$BUILD_RESULT" = success
+      - name: Checkout exact verdict controller
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+          path: controller
+          sparse-checkout: .github
+      - name: Download this run's measured verification result
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: froberg-mathlib-${{ github.run_id }}-${{ github.run_attempt }}
+          path: result
+      - name: Require all immutable-source proof and resource gates
+        run: python3 controller/.github/scripts/ci_mathlib_result.py verdict --controller controller --logs result

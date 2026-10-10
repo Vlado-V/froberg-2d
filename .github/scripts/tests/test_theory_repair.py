@@ -290,8 +290,19 @@ class FullModeRegression(unittest.TestCase):
             return next(n.value for n in ast.walk(tree) if isinstance(n, ast.Assign)
                         and any(isinstance(t, ast.Name) and t.id == name for t in n.targets))
 
-        for name in ["stages", "base", "foundation_base", "limits", "end"]:
+        for name in ["base", "foundation_base", "limits", "end"]:
             self.assertEqual(ast.dump(assignment(before, name)), ast.dump(assignment(after, name)))
+        old_stages, new_stages = assignment(before, "stages").elts, assignment(after, "stages").elts
+        self.assertEqual(len(old_stages), len(new_stages))
+        collect = {"full-theorem": "Archive.Froberg", "archive-integration": "Archive"}
+        for old_stage, new_stage in zip(old_stages, new_stages):
+            name = ast.literal_eval(old_stage.elts[0])
+            self.assertEqual(name, ast.literal_eval(new_stage.elts[0]))
+            if name in collect:
+                self.assertEqual(ast.literal_eval(new_stage.elts[1]),
+                                 ["lake", "--rehash", "--no-ansi", "build", collect[name]])
+            else:
+                self.assertEqual(ast.dump(old_stage), ast.dump(new_stage))
         for name in ["guarded_command", "choose_bootstrap"]:
             old = next(n for n in ast.walk(before) if isinstance(n, ast.FunctionDef) and n.name == name)
             new = next(n for n in ast.walk(after) if isinstance(n, ast.FunctionDef) and n.name == name)
@@ -426,6 +437,39 @@ class FullRepairFlow(Repository):
         self.assertTrue(report["all_pass"])
         self.assertNotIn("candidate_full_pass", report)
         self.assertEqual(report["source"], ns["baseline_source"])
+
+    def test_integration_collects_but_final_warning_gate_still_rejects(self):
+        ns, calls, report, error = self.flow(scope="full", needs_repair=False,
+                                            failing_stage="archive-warnings")
+        commands = dict(ns["stages"])
+        self.assertIn("full-theorem", calls)
+        self.assertIn("archive-integration", calls)
+        self.assertEqual(calls[-1], "archive-warnings")
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(report["all_pass"])
+        self.assertNotIn("axiom-audit", calls)
+        for name in ["full-theorem", "archive-integration"]:
+            self.assertFalse(set(commands[name]) & {"--fail-fast", "--wfail", "--iofail"})
+        self.assertEqual(commands["archive-warnings"],
+                         ["lake", "--no-ansi", "build", "--no-build", "--wfail", "Archive"])
+
+    def test_final_information_gate_still_rejects(self):
+        ns, calls, report, error = self.flow(scope="full", needs_repair=False,
+                                            failing_stage="archive-output")
+        self.assertEqual(calls[-2:], ["archive-warnings", "archive-output"])
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(report["all_pass"])
+        self.assertNotIn("axiom-audit", calls)
+        self.assertEqual(dict(ns["stages"])["archive-output"],
+                         ["lake", "--no-ansi", "build", "--no-build", "-q", "--iofail", "Archive"])
+
+    def test_integration_compiler_failure_still_rejects(self):
+        _, calls, report, error = self.flow(scope="full", needs_repair=False,
+                                           failing_stage="full-theorem")
+        self.assertEqual(calls[-1], "full-theorem")
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(report["all_pass"])
+        self.assertNotIn("axiom-audit", calls)
 
     def test_missing_axiom_report_never_reports_candidate_pass(self):
         _, calls, report, error = self.flow(needs_repair=False, audit_text="")

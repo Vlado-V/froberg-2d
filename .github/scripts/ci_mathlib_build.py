@@ -197,8 +197,11 @@ stages=[
  ('metadata-products',base+[q+f'FiniteEndpointMetadata{n}Checks' for n in [28,29,30]]+[q+f'FiniteEndpointProductMemo{n}' for n in [28,29,30]]),
  ('inverse-lookups',base+[q+f'FiniteEndpointInverseMemo{n}' for n in [28,29,30]]),
  ('certificate-rows',base+[q+f'FiniteEndpointRows{n}' for n in [28,29,30]]),
- ('full-theorem',base+['Archive.Froberg']),
- ('archive-integration',base+['Archive']),
+ # Complete both integration builds so independent helper diagnostics are
+ # collected. The mandatory Archive replay gates below still reject any
+ # warning or informational output before the final axiom audit.
+ ('full-theorem',['lake','--rehash','--no-ansi','build','Archive.Froberg']),
+ ('archive-integration',['lake','--rehash','--no-ansi','build','Archive']),
  ('archive-warnings',['lake','--no-ansi','build','--no-build','--wfail','Archive']),
  ('archive-output',['lake','--no-ansi','build','--no-build','-q','--iofail','Archive']),
 ]

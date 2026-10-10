@@ -66,3 +66,28 @@ commands, candidate provenance, and failure gates (no proof-project build):
 ```sh
 python3 -m unittest discover -s .github/scripts/tests -v
 ```
+
+## Recorded execution and mandatory workflow verdict
+
+The build job records the controller's actual exit code, source identity and
+checksummed result artifacts. It may finish cleanly after recording a failed
+verification so its cache has an opportunity to persist. This job is explicitly
+named as execution/cache retention, not a verification verdict. Cache generation
+loss has not been confirmed: consecutive cold mounts motivated this attempt,
+but node-local misses and cache lineage are also possible causes. Successful
+cache reuse is not assumed or claimed.
+
+The separate mandatory verdict job runs even when the build job fails. It rejects
+missing, partial, crashed, corrupt or mismatched reports, failed resources,
+missing full stages, incorrect commands and missing or unexpected axioms. It
+also checks the recorded source for tracked edits and unexpected Lean files.
+There is no workflow-level or job-level `continue-on-error`.
+
+For `full`, the overall workflow passes only for the expected immutable commit
+after all 14 full stages and the axiom audit pass. For `full-repair`, a changed
+candidate may have passed every gate, but its overall verdict remains failed
+until the patch is committed and its immutable-source follow-up passes. An
+unchanged full-repair candidate may pass the normal immutable verdict.
+`theory-repair` remains diagnostic-only and cannot satisfy a full-verification
+verdict. If branch protection is used, require the mandatory verdict job rather
+than the cache-execution job alone.
