@@ -108,7 +108,7 @@ theory_targets=list(dict.fromkeys(theory_targets+[
  'Archive.Froberg.MixedQuotientExactness','Archive.Froberg.PrefixCharts',
  q+'QuotientBilinearImage','Archive.Froberg.QuotientUpperGrowth',
  'Archive.Froberg.RetainedMonomials','Archive.Froberg.SurjectiveImage']))
-records=[]; active=None; interrupted=False; repair_report=None
+records=[]; active=None; interrupted=False; repair_report=None; archive_repair_report=None
 
 def stop(signum,frame):
  global interrupted
@@ -159,13 +159,14 @@ def run_stage(stage,command):
  records.append(state)
  report={'source':source_metadata,'stages':records,'all_pass':False}
  if a.scope=='theory-repair':report.update(mode='theory-repair',diagnostic_only=True,full_verification_performed=False,full_verification_required=True)
- if a.scope=='full-repair':report.update(mode='full-repair',candidate_full_pass=False,full_verification_performed=False,preliminary_repair=repair_report)
+ if a.scope=='full-repair':report.update(mode='full-repair',candidate_full_pass=False,full_verification_performed=False,preliminary_repair=repair_report,archive_repair=archive_repair_report)
  atomic(logs/'report.json',report)
  print('::endgroup::',flush=True)
  return state
 
 if a.scope in {'theory-repair','full-repair'}:
- from froberg_theory_repair import run_repair, record_candidate, verify_candidate_unchanged
+ from froberg_theory_repair import (run_repair, record_candidate, verify_candidate_unchanged,
+                                   parse_warnings, only_supported_warnings)
  repair_code=run_repair(root,logs,source_metadata,theory_targets,run_stage,
                         resource_finished,lambda:0 if interrupted else end-time.time(),
                         standalone=a.scope=='theory-repair')
@@ -233,14 +234,43 @@ elab "#audit_main_dependencies" : command => do
 """)
 shutil.copyfile(audit,logs/'AxiomAudit.lean')
 stages.append(('axiom-audit',['lake','env','lean',str(audit)]))
-for stage,command in stages:
- if a.scope=='full-repair':verify_candidate_unchanged(root,baseline_source,source_metadata)
- state=run_stage(stage,command)
- if state['returncode']!=0 or not successful_resource(state['resource']):
-  raise SystemExit(state['returncode'] or 1)
- if interrupted:raise SystemExit(143)
+full_pass=1
+while True:
+ restart_full_pass=False
+ for stage,command in stages:
+  if a.scope=='full-repair':verify_candidate_unchanged(root,baseline_source,source_metadata)
+  execution_stage=stage if full_pass==1 else f'final-{full_pass}-{stage}'
+  state=run_stage(execution_stage,command)
+  if state['returncode']!=0 or not successful_resource(state['resource']):
+   eligible=(a.scope=='full-repair' and full_pass==1 and stage=='archive-warnings'
+             and state['returncode']==1 and resource_finished(state['resource'],1))
+   failed_log=(logs/(execution_stage+'.log')).read_text() if eligible else ''
+   targets,unsupported,_=parse_warnings(failed_log) if eligible else ([],[],0)
+   if not eligible or not targets or unsupported or not only_supported_warnings(failed_log):
+    raise SystemExit(state['returncode'] or 1)
+   verify_candidate_unchanged(root,baseline_source,source_metadata)
+   before_archive_repair=source_metadata
+   source_metadata={key:value for key,value in baseline_source.items() if key!='commit'}
+   source_metadata['baseline_commit']=baseline_source['commit']
+   archive_code=run_repair(root,logs,source_metadata,['Archive'],run_stage,
+      resource_finished,lambda:0 if interrupted else end-time.time(),standalone=False,
+      phase='archive-repair',initial_candidate=before_archive_repair,baseline=baseline_source,
+      strict_other_warnings=True)
+   archive_repair_report=json.loads((logs/'archive-repair.json').read_text())
+   source_metadata=record_candidate(root,logs,baseline_source)
+   atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':False,
+    'mode':'full-repair','candidate_full_pass':False,'full_verification_performed':False,
+    'preliminary_repair':repair_report,'archive_repair':archive_repair_report})
+   if archive_code:raise SystemExit(archive_code)
+   print('Archive repair complete; rerunning every normal full gate for the final snapshot.',flush=True)
+   full_pass+=1
+   restart_full_pass=True
+   break
+  if interrupted:raise SystemExit(143)
+  if stage=='axiom-audit':final_axiom_log=logs/(execution_stage+'.log')
+ if not restart_full_pass:break
 if a.scope=='full-repair':verify_candidate_unchanged(root,baseline_source,source_metadata)
-text=(logs/'axiom-audit.log').read_text()
+text=final_axiom_log.read_text()
 if 'PASS: main theorem dependencies use only propext, Classical.choice, Quot.sound' not in text:
  raise SystemExit('Axiom audit did not report its dependency check')
 axioms={}
@@ -255,7 +285,8 @@ if a.scope=='full-repair':
  changed=not source_metadata['candidate']['committed']
  atomic(logs/'report.json',{'source':source_metadata,'stages':records,'all_pass':not changed,
   'mode':'full-repair','candidate_full_pass':True,'full_verification_performed':True,
-  'immutable_source_followup_required':changed,'preliminary_repair':repair_report,'axioms':axioms})
+  'immutable_source_followup_required':changed,'preliminary_repair':repair_report,
+  'archive_repair':archive_repair_report,'full_passes':full_pass,'axioms':axioms})
  print('PASS: all full verification gates passed for the recorded candidate.'+
        (' Commit the retained patch and verify the immutable source next.' if changed else ''),flush=True)
 else:

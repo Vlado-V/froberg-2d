@@ -21,6 +21,21 @@ When a patch exists, `all_pass` remains false and
 an immutable-source run is completed. The report still records that all gates
 passed for the exact patched candidate.
 
+If the first full pass reaches the final Archive warning replay and fails only
+on exact supported unused-`Infinite K` warnings, full-repair can perform a second
+bounded repair phase over the `Archive` target. The full theorem and Archive
+normal builds must already have succeeded. Other warnings, compiler errors,
+resource failures, or protected-source cases still fail the job.
+
+After successful Archive repair, **every normal full stage is rerun**, starting
+with foundations and finishing with the strict Archive warning/output gates and
+the public-theorem axiom audit. Those logs use the `final-2-` prefix, preserving
+the first-pass diagnostics. The final report identifies the final patched
+snapshot and only its final axiom report can produce `candidate_full_pass`.
+The Archive repair phase runs at most 20 build/replay passes under the same job
+deadline and resource limits; it cannot start a third full pass or suppress a
+subsequent failure. Its records are saved separately as `archive-repair.json`.
+
 `theory-repair` is a separate diagnostic operation. It runs the same 134 theory
 targets with ordinary `lake --rehash build`, then retrieves all cached warning
 logs through `--no-build --wfail`. Both commands use the existing resource guard,

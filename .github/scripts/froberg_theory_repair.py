@@ -65,6 +65,25 @@ def parse_warnings(log):
     return list(dict.fromkeys(targets)), unsupported, len(headers)
 
 
+def only_supported_warnings(log):
+    """Require every warning block, including duplicate blocks, to be supported."""
+    errors = re.findall(r"^error(?:\([^\n)]*\))?: (.*)$", log, re.M)
+    if any(error != "build failed" for error in errors) or re.search(
+            r"^.+\.lean:\d+:\d+: error(?:\([^\n)]*\))?:", log, re.M):
+        return False
+    headers = list(HEADER.finditer(log))
+    known_starts = {header.start() for header in headers}
+    raw_warnings = re.finditer(r"^(?:warning:|[^\n]*\.lean:\d+:\d+: warning:)", log, re.M)
+    if any(match.start() not in known_starts for match in raw_warnings):
+        return False
+    for index, header in enumerate(headers):
+        stop = headers[index + 1].start() if index + 1 < len(headers) else len(log)
+        targets, unsupported, _ = parse_warnings(log[header.start():stop])
+        if not targets or unsupported:
+            return False
+    return True
+
+
 @dataclass(frozen=True)
 class Token:
     kind: str
@@ -260,13 +279,19 @@ def source_snapshot(root):
 
 
 def run_repair(root, logs, source, targets, execute, resource_finished, remaining,
-               max_iterations=20, standalone=True):
+               max_iterations=20, standalone=True, phase="theory-repair",
+               initial_candidate=None, baseline=None, strict_other_warnings=False):
     """Run guarded normal builds/replays; always publish a diagnostic-only result."""
     if not 1 <= max_iterations <= 20:
         raise RepairError("Repair iteration bound must be between 1 and 20")
-    report = {"mode": "theory-repair", "diagnostic_only": True, "all_pass": False,
+    if phase not in {"theory-repair", "archive-repair"}:
+        raise RepairError("Unsupported repair phase")
+    if initial_candidate is not None and (baseline is None or standalone):
+        raise RepairError("An existing candidate requires its baseline and full-run context")
+    report = {"mode": phase, "diagnostic_only": True, "all_pass": False,
               "full_verification_performed": False, "full_verification_required": True,
               "source": source, "theory_target_count": len(targets),
+              "repair_targets": list(targets),
               "max_iterations": max_iterations, "iterations": [], "status": "running"}
 
     def publish():
@@ -275,13 +300,16 @@ def run_repair(root, logs, source, targets, execute, resource_finished, remainin
             cwd=root)
         (logs / "source.diff").write_bytes(diff)
         report["source_changed"] = bool(diff)
-        atomic_json(logs / "theory-repair.json", report)
+        atomic_json(logs / (phase + ".json"), report)
         if standalone:
             atomic_json(logs / "report.json", report)
 
     code = 1
     try:
-        subprocess.run(["git", "diff", "--quiet", "HEAD", "--"], cwd=root, check=True)
+        if initial_candidate is None:
+            subprocess.run(["git", "diff", "--quiet", "HEAD", "--"], cwd=root, check=True)
+        else:
+            verify_candidate_unchanged(root, baseline, initial_candidate)
         untracked = subprocess.check_output(
             ["git", "ls-files", "--others", "--exclude-standard", "--", "Archive/Froberg"],
             cwd=root).decode().splitlines()
@@ -296,14 +324,14 @@ def run_repair(root, logs, source, targets, execute, resource_finished, remainin
             entry["source_snapshot_sha256"] = hashlib.sha256(
                 json.dumps(snapshot, sort_keys=True).encode()).hexdigest()
             report["iterations"].append(entry)
-            build = execute(f"theory-repair-{iteration:02}-build",
+            build = execute(f"{phase}-{iteration:02}-build",
                             ["lake", "--rehash", "--no-ansi", "build", *targets])
             entry["build"] = build
             if build["returncode"] != 0 or not resource_finished(build["resource"], 0):
-                raise RepairError("Normal theory build or its resource guard failed")
+                raise RepairError("Normal repair-target build or its resource guard failed")
             # --wfail forces all cached warning logs to be replayed. Its warning
             # exit is diagnostic data here, never a verification acceptance.
-            replay = execute(f"theory-repair-{iteration:02}-warnings",
+            replay = execute(f"{phase}-{iteration:02}-warnings",
                              ["lake", "--no-ansi", "build", "--no-build", "--wfail", *targets])
             entry["replay"] = replay
             rc = replay["returncode"]
@@ -323,6 +351,8 @@ def run_repair(root, logs, source, targets, execute, resource_finished, remainin
                 raise RepairError("Warning replay failed without recognized warnings")
             if unsupported:
                 raise RepairError("Unsupported Infinite warning; no speculative repair performed")
+            if strict_other_warnings and not only_supported_warnings(log):
+                raise RepairError("Archive replay contains warnings outside the exact repair scope")
             if not warnings:
                 report["status"], code = "no_targeted_warnings", 0
                 break

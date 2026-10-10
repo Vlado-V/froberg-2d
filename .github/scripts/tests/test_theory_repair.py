@@ -1,5 +1,6 @@
 import ast
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -80,6 +81,17 @@ class ParseTests(unittest.TestCase):
         text = warning("a.lean", 1)
         result, _, _ = repair.parse_warnings(text + text)
         self.assertEqual(len(result), 1)
+
+    def test_strict_warning_gate_accepts_only_exact_blocks(self):
+        text = warning("Archive/Froberg/Helper.lean", 1)
+        self.assertTrue(repair.only_supported_warnings(text + text + "error: build failed\n"))
+        self.assertFalse(repair.only_supported_warnings(text + "warning: unknown global warning\n"))
+        self.assertFalse(repair.only_supported_warnings(text + "warning: a.lean:1:0: unused variable\n"))
+
+    def test_strict_warning_gate_rejects_compiler_errors(self):
+        text = warning("Archive/Froberg/Helper.lean", 1)
+        self.assertFalse(repair.only_supported_warnings(text + "error: compiler failed\n"))
+        self.assertFalse(repair.only_supported_warnings(text + "a.lean:1:0: error(lean.typeMismatch): bad\n"))
 
 
 class InsertionTests(Repository):
@@ -269,7 +281,9 @@ class FullModeRegression(unittest.TestCase):
     def test_full_stage_commands_and_guard_are_unchanged(self):
         path = ".github/scripts/ci_mathlib_build.py"
         root = SCRIPTS.parents[1]
-        before = ast.parse(subprocess.check_output(["git", "show", "HEAD:" + path], cwd=root, text=True))
+        baseline = os.environ.get("FROBERG_CONTROLLER_BASE")
+        before = ast.parse(Path(baseline).read_text() if baseline else subprocess.check_output(
+            ["git", "show", "HEAD:" + path], cwd=root, text=True))
         after = ast.parse((root / path).read_text())
 
         def assignment(tree, name):
@@ -288,8 +302,11 @@ class FullRepairFlow(Repository):
     """Execute the actual controller scheduling/reporting suffix with tiny stubs."""
 
     def flow(self, scope="full-repair", needs_repair=True, failing_stage=None,
-             mutate_stage=None, audit_text=None):
+             mutate_stage=None, audit_text=None, archive_warning=False,
+             archive_extra_warning=False, archive_compiler_error=False,
+             archive_build_failure_after_edit=False):
         first = self.source("theorem helper : True := by trivial\n", "First")
+        late = self.source("theorem later : True := by trivial\n", "Late")
         self.commit()
         logs = self.root / "logs"
         logs.mkdir()
@@ -304,7 +321,8 @@ class FullRepairFlow(Repository):
               "baseline_source": baseline, "source_metadata": metadata,
               "theory_targets": ["Archive.Froberg.First"], "resource_finished": lambda *_: True,
               "successful_resource": lambda resource: resource["exit_status"] == 0,
-              "records": [], "repair_report": None, "interrupted": False,
+              "records": [], "repair_report": None, "archive_repair_report": None,
+              "interrupted": False,
               "end": 10000, "time": SimpleNamespace(time=lambda: 0),
               "Path": Path, "shutil": shutil, "json": json, "re": re,
               "__file__": str(SCRIPTS / "ci_mathlib_build.py"),
@@ -317,17 +335,30 @@ class FullRepairFlow(Repository):
 
         def execute(stage, command):
             calls.append(stage)
+            logical_stage = re.sub(r"^final-\d+-", "", stage)
             text = ""
             if stage.endswith("warnings") and stage.startswith("theory-repair-"):
                 if needs_repair and "omit" not in first.read_text():
                     text = warning(str(first), 1)
-            if stage == "axiom-audit":
+            if archive_warning and "omit" not in late.read_text() and (
+                    logical_stage == "archive-warnings" or stage.startswith("archive-repair-")
+                    and stage.endswith("warnings")):
+                text = warning(str(late), 1, "Froberg.later")
+                if archive_extra_warning:
+                    text += f"warning: {late}:1:0: unused variable `x`\n"
+                if archive_compiler_error:
+                    text += f"error: {late}:1:0: type mismatch\n"
+            if logical_stage == "axiom-audit":
                 text = ("PASS: main theorem dependencies use only propext, Classical.choice, Quot.sound\n"
                         "Froberg.paperStatement depends on axioms: [propext]\n"
                         "Froberg.uniformMainStatement depends on axioms: [propext]\n")
                 if audit_text is not None:
                     text = audit_text
-            code = 1 if stage == failing_stage or (text and stage.startswith("theory-repair-")) else 0
+            warning_exit = bool(text) and (stage.startswith(("theory-repair-", "archive-repair-"))
+                                          or logical_stage == "archive-warnings")
+            late_build_failure = (archive_build_failure_after_edit and stage.startswith("archive-repair-")
+                                  and stage.endswith("build") and "omit" in late.read_text())
+            code = 1 if stage == failing_stage or warning_exit or late_build_failure else 0
             (logs / (stage + ".log")).write_text(text)
             state = {"stage": stage, "command": command, "returncode": code,
                      "resource": {"exit_status": code}, "source": ns["source_metadata"]}
@@ -409,6 +440,41 @@ class FullRepairFlow(Repository):
         _, _, report, error = self.flow(needs_repair=False, audit_text=text)
         self.assertIsInstance(error, SystemExit)
         self.assertFalse(report["candidate_full_pass"])
+
+    def test_archive_repair_replays_every_full_gate_on_the_final_snapshot(self):
+        ns, calls, report, error = self.flow(archive_warning=True)
+        self.assertIsNone(error)
+        full_stages = [stage for stage, _ in ns["stages"]]
+        replay = [name for name in calls if name.startswith("final-2-")]
+        self.assertEqual(replay, ["final-2-" + stage for stage in full_stages])
+        self.assertIn("archive-repair-02-warnings", calls)
+        self.assertTrue(report["candidate_full_pass"])
+        self.assertEqual(report["full_passes"], 2)
+        self.assertFalse(report["all_pass"])
+        self.assertEqual(report["archive_repair"]["status"], "no_targeted_warnings")
+        self.assertNotIn("commit", report["source"])
+        self.assertIn("omit [Infinite K] in", (self.root / "Archive/Froberg/Late.lean").read_text())
+
+    def test_other_archive_warning_refuses_repair(self):
+        _, calls, report, error = self.flow(archive_warning=True, archive_extra_warning=True)
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(any(stage.startswith("archive-repair-") for stage in calls))
+        self.assertFalse(report["candidate_full_pass"])
+        self.assertNotIn("omit", (self.root / "Archive/Froberg/Late.lean").read_text())
+
+    def test_archive_compiler_error_refuses_repair(self):
+        _, calls, report, error = self.flow(archive_warning=True, archive_compiler_error=True)
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(any(stage.startswith("archive-repair-") for stage in calls))
+        self.assertFalse(report["candidate_full_pass"])
+
+    def test_partial_archive_repair_failure_preserves_candidate_identity(self):
+        _, calls, report, error = self.flow(archive_warning=True, archive_build_failure_after_edit=True)
+        self.assertIsInstance(error, SystemExit)
+        self.assertFalse(any(stage.startswith("final-2-") for stage in calls))
+        self.assertFalse(report["candidate_full_pass"])
+        self.assertNotIn("commit", report["source"])
+        self.assertIn("omit [Infinite K] in", (self.root / "Archive/Froberg/Late.lean").read_text())
 
 
 class CandidateIdentityTests(Repository):
