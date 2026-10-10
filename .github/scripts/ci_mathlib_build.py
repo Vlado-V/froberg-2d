@@ -67,7 +67,7 @@ def choose_bootstrap():
  attempts=[]
  for mode,bootstrap in candidates:
   status=logs/(mode+'-probe.json')
-  result=subprocess.run(guarded_command(bootstrap,['/usr/bin/true'],status,20),capture_output=True,text=True,timeout=45)
+  result=subprocess.run(guarded_command(bootstrap,['lake','--version'],status,20),capture_output=True,text=True,timeout=45)
   (logs/(mode+'-probe.log')).write_text(result.stdout+result.stderr)
   try:info=json.loads(status.read_text())
   except (OSError,ValueError):info={}
