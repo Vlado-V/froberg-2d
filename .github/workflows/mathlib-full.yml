@@ -99,7 +99,7 @@ jobs:
           tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan-installer"
           "$RUNNER_TEMP/elan-installer/elan-init" -y --no-modify-path --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-          "$HOME/.elan/bin/elan" toolchain install "$(cat mathlib/lean-toolchain)"
+          "$HOME/.elan/bin/elan" run --install "$(cat mathlib/lean-toolchain)" lean --version
       - name: Probe delegated resource control before cache acquisition
         run: python3 controller/.github/scripts/ci_mathlib_build.py --root mathlib --guard resource-guard --logs "$BUILD_LOGS" --job-start "$BUILD_JOB_STARTED" --preflight
       - name: Check all external certificate inputs
