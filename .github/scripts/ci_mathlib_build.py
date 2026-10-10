@@ -45,7 +45,9 @@ def guarded_command(bootstrap, command, status, seconds):
  child_env={'PATH':os.environ['PATH'],'HOME':os.environ['HOME'],'LEAN_NUM_THREADS':'16','LAKE_NO_CACHE':'true','CI':'true','TERM':'dumb'}
  if 'ELAN_HOME' in os.environ:child_env['ELAN_HOME']=os.environ['ELAN_HOME']
  for key,value in child_env.items():wrapped+=['--setenv',f'{key}={value}']
- return [*wrapped,'--',*command]
+ executable=shutil.which(command[0],path=child_env['PATH'])
+ if executable is None:raise RuntimeError('Executable is unavailable: '+command[0])
+ return [*wrapped,'--',executable,*command[1:]]
 
 def successful_resource(info):
  return (info.get('state')=='finished' and info.get('exit_status')==0
