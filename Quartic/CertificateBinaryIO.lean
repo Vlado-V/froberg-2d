@@ -27,6 +27,103 @@ def pushU32 (bytes : ByteArray) (value : UInt32) : ByteArray :=
   (((bytes.push value.toUInt8).push (value >>> 8).toUInt8).push
     (value >>> 16).toUInt8).push (value >>> 24).toUInt8
 
+def readU32 (bytes : ByteArray) (offset : Nat) : Nat :=
+  (bytes.get! offset).toNat + 256 * (bytes.get! (offset + 1)).toNat +
+    65536 * (bytes.get! (offset + 2)).toNat +
+    16777216 * (bytes.get! (offset + 3)).toNat
+
+/-- Decoded metadata shared by all requested row ranges in one process. No
+expanded sparse rows or inverse bytes are stored here. -/
+structure SparseMetadata where
+  dimension : Nat
+  supports : Array (Array Nat)
+  productIndices : Array UInt32
+  rows : Array (Nat × Nat)
+  deriving Inhabited
+
+/-- The same validation, bit order, truncation and modulo conventions as
+`reconstructSparseBytes`, without constructing the full sparse byte stream. -/
+def decodeSparseMetadata (quadCodes coefficients products selected : ByteArray) :
+    Except String SparseMetadata := do
+  if quadCodes.size % 8 != 0 then throw "quadCodes.bin is not a sequence of 64-bit words"
+  let dimension := quadCodes.size / 8
+  if dimension == 0 then throw "empty quadratic basis"
+  let width := ((dimension + 63) / 64) * 8
+  if coefficients.size % width != 0 then throw "invalid coefficient dimensions"
+  let generatorCount := coefficients.size / width
+  if generatorCount == 0 then throw "empty coefficient family"
+  if products.size != dimension * dimension * 8 then
+    throw "invalid multiplication table dimensions"
+  if selected.size % 8 != 0 then throw "selected.bin is not a sequence of 64-bit words"
+  let mut supports : Array (Array Nat) := Array.emptyWithCapacity generatorCount
+  for i in [:generatorCount] do
+    let mut support : Array Nat := #[]
+    for j in [:dimension] do
+      let word := readU64 coefficients (i * width + (j / 64) * 8)
+      if word &&& ((1 : UInt64) <<< (j % 64).toUInt64) != 0 then
+        support := support.push j
+    if support.size >= 2^32 then throw "sparse row length exceeds 32-bit format"
+    supports := supports.push support
+  let mut productIndices : Array UInt32 := Array.emptyWithCapacity (dimension * dimension)
+  for j in [:dimension * dimension] do
+    let value := readU64 products (j * 8)
+    if value.toNat >= 2^32 then throw "product index exceeds 32-bit sparse format"
+    productIndices := productIndices.push value.toUInt32
+  let rowCount := selected.size / 8
+  let mut rows : Array (Nat × Nat) := Array.emptyWithCapacity rowCount
+  for i in [:rowCount] do
+    let code := readU64 selected (i * 8)
+    let generator := (code &&& 0xffffffff).toNat % generatorCount
+    let multiplier := (code >>> 32).toNat % dimension
+    rows := rows.push (generator, multiplier)
+  return { dimension, supports, productIndices, rows }
+
+/-- Materialize exactly the requested rows, preserving support order and repeated
+product indices. Bounds match the old sparse-byte prefix parser. -/
+def SparseMetadata.range (data : SparseMetadata) (start count : Nat) :
+    Except String (Array (Array Nat)) := do
+  if start + count > data.rows.size then throw "sparse file too short"
+  let mut result := Array.emptyWithCapacity count
+  for i in [start:start + count] do
+    let (generator, multiplier) := data.rows[i]!
+    let support := data.supports[generator]!
+    let mut values := Array.emptyWithCapacity support.size
+    for j in support do
+      values := values.push ((data.productIndices[j * data.dimension + multiplier]!).toNat)
+    result := result.push values
+  return result
+
+/-- Row boundaries of a real sparse file, extended only as far as requested. This
+preserves the previous treatment of unused trailing bytes and malformed tails. -/
+structure SparseFileIndex where
+  bytes : ByteArray
+  offsets : Array Nat
+  deriving Inhabited
+
+def SparseFileIndex.extend (index : SparseFileIndex) (stop : Nat) :
+    Except String SparseFileIndex := do
+  let mut offsets := index.offsets
+  for _ in [offsets.size - 1:stop] do
+    let offset := offsets.back!
+    if offset + 4 > index.bytes.size then throw "sparse file too short"
+    let len := readU32 index.bytes offset
+    if offset + 4 + 4 * len > index.bytes.size then throw "sparse file too short"
+    offsets := offsets.push (offset + 4 + 4 * len)
+  return { index with offsets }
+
+def SparseFileIndex.range (index : SparseFileIndex) (start count : Nat) :
+    Except String (Array (Array Nat)) := do
+  if start + count >= index.offsets.size then throw "sparse file too short"
+  let mut result := Array.emptyWithCapacity count
+  for i in [start:start + count] do
+    let offset := index.offsets[i]!
+    let len := readU32 index.bytes offset
+    let mut values := Array.emptyWithCapacity len
+    for j in [:len] do
+      values := values.push (readU32 index.bytes (offset + 4 + 4 * j))
+    result := result.push values
+  return result
+
 /-- Reconstruct the exact little-endian sparse-row format from polynomial
 metadata. Supports stay in increasing quadratic-monomial order, with no sorting
 or deduplication of the resulting product indices. Packed selected indices use
@@ -124,6 +221,8 @@ def readSparseOrReconstruct (path : System.FilePath) : IO ByteArray := do
 
 initialize binaryCache : IO.Ref (Array (System.FilePath × ByteArray)) ← IO.mkRef #[]
 initialize sparseCache : IO.Ref (Array (System.FilePath × ByteArray)) ← IO.mkRef #[]
+initialize sparseMetadataCache : IO.Ref (Array (System.FilePath × SparseMetadata)) ← IO.mkRef #[]
+initialize sparseFileIndexCache : IO.Ref (Array (System.FilePath × SparseFileIndex)) ← IO.mkRef #[]
 
 def readCached (cache : IO.Ref (Array (System.FilePath × ByteArray)))
     (reader : System.FilePath → IO ByteArray) (path : System.FilePath) : IO ByteArray := do
@@ -143,10 +242,57 @@ def readBinaryOrPartsCached (path : System.FilePath) : IO ByteArray :=
 def readSparseOrReconstructCached (path : System.FilePath) : IO ByteArray :=
   readCached sparseCache readSparseOrReconstruct path
 
-/-- Discard both process-local caches, for tests or explicitly changed inputs. -/
+/-- Load the four compact metadata files once per process. -/
+def readSparseMetadataCached (directory : System.FilePath) : IO SparseMetadata := do
+  for (cachedPath, data) in ← sparseMetadataCache.get do
+    if cachedPath == directory then return data
+  let quadCodes ← IO.FS.readBinFile (directory / "quadCodes.bin")
+  let coefficients ← IO.FS.readBinFile (directory / "coefficients.bin")
+  let products ← IO.FS.readBinFile (directory / "products.bin")
+  let selected ← IO.FS.readBinFile (directory / "selected.bin")
+  match decodeSparseMetadata quadCodes coefficients products selected with
+  | .ok data =>
+    sparseMetadataCache.modify (·.push (directory, data))
+    return data
+  | .error message => throw <| IO.userError s!"{directory}: {message}"
+
+/-- Read only a requested sparse-row range. Real files use a cached incremental
+offset index; compact inputs use cached metadata and expand only this range.
+All outputs remain untrusted inputs to the unchanged kernel row checks. -/
+def readSparseRowsCached (path : System.FilePath) (start count : Nat) :
+    IO (Array (Array Nat)) := do
+  if ← path.pathExists then
+    let entries ← sparseFileIndexCache.get
+    let mut found : Option SparseFileIndex := none
+    for (cachedPath, index) in entries do
+      if cachedPath == path then found := some index
+    let index : SparseFileIndex ← match found with
+      | some index => pure index
+      | none => do
+        let bytes ← readCached sparseCache IO.FS.readBinFile path
+        pure { bytes, offsets := #[0] }
+    let index ← match index.extend (start + count) with
+      | .ok index => pure index
+      | .error message => throw <| IO.userError s!"{path}: {message}"
+    match index.range start count with
+    | .ok rows =>
+      let entries := entries.filter (fun entry => entry.1 != path)
+      sparseFileIndexCache.set (entries.push (path, index))
+      return rows
+    | .error message => throw <| IO.userError s!"{path}: {message}"
+  if path.fileName != some "sparse.bin" then
+    throw <| IO.userError s!"cannot reconstruct non-sparse certificate path {path}"
+  let data ← readSparseMetadataCached (path.parent.getD ".")
+  match data.range start count with
+  | .ok rows => return rows
+  | .error message => throw <| IO.userError s!"{path}: {message}"
+
+/-- Discard every process-local cache after explicitly changing inputs. -/
 def clearCaches : IO Unit := do
   binaryCache.set #[]
   sparseCache.set #[]
+  sparseMetadataCache.set #[]
+  sparseFileIndexCache.set #[]
 
 end
 end Quartic.CertificateBinaryIO

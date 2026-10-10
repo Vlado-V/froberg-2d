@@ -21,10 +21,11 @@ def u32 (a : ByteArray) (o : Nat) : Nat :=
   (a.get! o).toNat + 256*(a.get! (o+1)).toNat +
   65536*(a.get! (o+2)).toNat + 16777216*(a.get! (o+3)).toNat
 
-def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : MetaM (Expr × Expr) := do
+def ensureLookup (stem fn : Name) (loadBytes : IO ByteArray) (nw j : Nat) : MetaM (Expr × Expr) := do
   let valName := stem ++ Name.mkSimple ("value_" ++ toString j)
   let eqName := stem ++ Name.mkSimple ("lookup_" ++ toString j)
   if !(← getEnv).contains valName then
+    let bytes ← loadBytes
     if (j+1)*nw*8 > bytes.size then throwError "inverse index outside binary file"
     let mut val : Nat := 0
     for rev in [:nw] do
@@ -46,14 +47,14 @@ def ensureLookup (stem fn : Name) (bytes : ByteArray) (nw j : Nat) : MetaM (Expr
       value := ← mkEqRefl rhs }
   return (mkConst valName,mkConst eqName)
 
-def certifyRow (stem invFn rowFn : Name) (invBytes : ByteArray)
+def certifyRow (stem invFn rowFn : Name) (loadInvBytes : IO ByteArray)
     (nw i : Nat) (indices : Array Nat) : MetaM Unit := do
   let nat := mkConst ``Nat
   let nil := mkApp (mkConst ``List.nil [.zero]) nat
   let cons := mkApp (mkConst ``List.cons [.zero]) nat
   let mut listEq ← mkEqRefl nil
   for j in indices.reverse do
-    let (_,hj) ← ensureLookup stem invFn invBytes nw j
+    let (_,hj) ← ensureLookup stem invFn loadInvBytes nw j
     listEq ← mkAppM ``congrArg₂ #[cons,hj,listEq]
   let source := mkApp (mkConst rowFn) (mkNatLit i)
   let literalList ← mkListLit nat (indices.toList.map mkNatLit)
@@ -85,7 +86,7 @@ syntax (name := memoLookups) "certify_inverse_lookups " ident " from " str
   let stem := (← getCurrNamespace) ++ pref.getId
   for j in [:nr.getNat] do
     liftTermElabM do
-      let _ ← ensureLookup stem fn.getId bytes nw.getNat j
+      let _ ← ensureLookup stem fn.getId (pure bytes) nw.getNat j
   logInfo m!"Kernel checked {nr.getNat} inverse lookup equalities."
 
 syntax (name := memoRows) "certify_sparse_rows " ident " from " str
@@ -96,21 +97,15 @@ syntax (name := memoRows) "certify_sparse_rows " ident " from " str
   let `(certify_sparse_rows $pref:ident from $sparsePath:str
       inverse_file $invPath:str inverse_fn $invFn:ident row_fn $rowFn:ident
       nwords $nw:num start_index $start:num row_count $count:num) := stx | throwUnsupportedSyntax
-  let sparseBytes ← Quartic.CertificateBinaryIO.readSparseOrReconstructCached sparsePath.getString
-  let invBytes ← Quartic.CertificateBinaryIO.readBinaryOrPartsCached invPath.getString
+  let rows ← Quartic.CertificateBinaryIO.readSparseRowsCached
+    sparsePath.getString start.getNat count.getNat
+  let loadInvBytes := Quartic.CertificateBinaryIO.readBinaryOrPartsCached invPath.getString
   let stem := (← getCurrNamespace) ++ pref.getId
-  let mut offset := 0
-  for i in [:start.getNat+count.getNat] do
-    if offset+4 > sparseBytes.size then throwError "sparse file too short"
-    let len := u32 sparseBytes offset
-    offset := offset+4
-    if offset+4*len > sparseBytes.size then throwError "sparse file too short"
-    if start.getNat ≤ i then
-      let mut values : Array Nat := #[]
-      for j in [:len] do values := values.push (u32 sparseBytes (offset+4*j))
-      liftTermElabM do
-        certifyRow stem invFn.getId rowFn.getId invBytes nw.getNat i values
-    offset := offset+4*len
+  for offset in [:count.getNat] do
+    let i := start.getNat + offset
+    let values := rows[offset]!
+    liftTermElabM do
+      certifyRow stem invFn.getId rowFn.getId loadInvBytes nw.getNat i values
   logInfo m!"Kernel checked {count.getNat} sparse rows from index {start.getNat}, with memoized lookup equalities."
 
 end

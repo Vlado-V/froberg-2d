@@ -31,6 +31,9 @@ are reconstructed from the included generator coefficients and monomial
 metadata by Lean's elaboration-time code. The existing proof-producing checker
 then checks the inverse equations and their polynomial interpretation. No
 network access or separate certificate generator is needed during compilation.
+Each row compiler caches the small decoded metadata and prepares only the row
+ranges it checks. Imported, checked inverse lookup facts are reused without
+reading the inverse bytes again unless a lookup must actually be created.
 The row-check modules form eight dependency chains and start after the large
 arithmetic stages. The profile and sharp arithmetic stages each use eight
 parallel modules. Each compiler process uses one thread and elaborates theorem
