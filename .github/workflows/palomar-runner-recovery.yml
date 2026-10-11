@@ -1,0 +1,41 @@
+name: Palomar runner failure recovery evidence
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provider-evidence:
+    runs-on: nscloud-ubuntu-24.04-amd64-2x4
+    timeout-minutes: 10
+    steps:
+      - name: Read provider records for the interrupted verification
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p "$RUNNER_TEMP/recovery-evidence"
+          evidence="$RUNNER_TEMP/recovery-evidence"
+          nsc version > "$evidence/nsc-version.txt" 2>&1
+          timeout 60 nsc github job describe 114301859519 -o json > "$evidence/job.json" 2> "$evidence/job.stderr"
+          timeout 60 nsc describe 8b6scsvr97j8i -o json > "$evidence/instance.json" 2> "$evidence/instance.stderr"
+          timeout 60 nsc instance report --start 2026-10-10T20:05:00Z --end 2026-10-11T01:17:00Z --repository Vlado-V/froberg-2d --out "$evidence/resources.csv" > "$evidence/report.stdout" 2> "$evidence/report.stderr"
+          timeout 60 nsc logs 8b6scsvr97j8i --source containerd --kind system --after 2026-10-11T00:30:00Z --before 2026-10-11T01:17:00Z --limit 300 -o json > "$evidence/system-logs.jsonl" 2> "$evidence/system-logs.stderr"
+          timeout 60 nsc logs 8b6scsvr97j8i --source containerd --after 2026-10-11T00:50:00Z --before 2026-10-11T01:17:00Z --limit 100 -o json > "$evidence/container-logs.jsonl" 2> "$evidence/container-logs.stderr"
+          python3 - "$evidence" <<'PY'
+          import pathlib, sys
+          root = pathlib.Path(sys.argv[1])
+          for path in sorted(root.glob('*.stderr')):
+              if path.stat().st_size:
+                  print(path.name + ': ' + path.read_text()[-1500:])
+          print('Provider evidence collection finished; no proof build was launched.')
+          PY
+      - name: Preserve provider evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: palomar-runner-recovery-38082386935
+          path: ${{ runner.temp }}/recovery-evidence
+          if-no-files-found: error
+          retention-days: 30
