@@ -75,10 +75,9 @@ automation:
         wrote Lean proofs and supporting data/code, ran local Lean checks,
         repaired elaboration failures, and performed cross-agent source and
         standard axiom reviews. Lean 4.35.0-rc3 and pinned Mathlib were used.
-        Finite quadratic certificate data are reified as literals and verified
-        by proof-producing Lean code; numerical generation alone is not accepted
-        as a rank proof. Sparse certificate reconstruction and inverse chunk
-        loading are data IO only, followed by the same proof checks.
+        The quadratic argument uses a uniform defect recurrence in arbitrary
+        characteristic, including a fourth-order correction when the marked
+        square vanishes. It requires no finite base-case rank certificates.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -100,56 +99,20 @@ automation:
 
 fidelity:
   divergences: >-
-    The theorem's intended field and quantifier scope matches revised Theorem 1.1:
-    every infinite field, with a threshold independent of the field and r.
-    The formal proof replaces portions of geometric prose with explicit finite
-    dimensional linear algebra, polynomial rank conditions, and closed-kernel
-    slice constructions. For d at least three it uses direct constructions,
-    rather than induction on generating degree. The characteristic-two quadratic
-    proof uses a three-variable induction with checked base certificates in
-    dimensions 28, 29, and 30. The arithmetic argument uses three pairwise
-    coprime moduli and prime-to-characteristic divisibility to obtain a common
-    field-independent vanishing threshold. The registry statement is written
-    independently using Mathlib definitions and is compared to the proved
-    solution. Local proof checks and standard axiom audits passed; Palomar
-    mechanical verification is pending;
-    no assertion of line-by-line formalization of every manuscript sentence is made.
+    The top-level conclusion matches Theorem 1.1: every positive generating
+    degree, every infinite field, every generator count, and one variable
+    threshold depending only on the generating degree. The independent
+    statement specifies actual quotient dimensions through degree 2d on one
+    nonempty principal open. Comparator checks the statement definitions and
+    the proved theorem against the independent Challenge.
 
 review:
-  status: "agent-reviewed; local proof checks and standard axiom audits passed; no independent human review recorded"
+  status: "agent-reviewed; local Lean checks passed; full Palomar verification pending"
   reviewers: []
   notes: >-
-    Cooperating agents inspected statement scope, interfaces, source proofs,
-    and standard cached axiom reports. The complete development theorem compiled
-    and its standard axiom audit reported only the three listed axioms. The
-    independently stated conclusion was reviewed against Theorem 1.1. The
-    complete development was previously built and audited locally. The finite profile
-    checks were subsequently partitioned into 728 kernel-checked slices,
-    preserving all 26 configuration statements; all 754 declarations passed
-    a standard axiom audit. The profile and sharp arithmetic stages and the row
-    certificates now use eight parallel module groups, with sequential theorem
-    elaboration inside each compiler. Both parallel arithmetic stages passed
-    targeted builds and standard axiom audits. The complete build of this
-    scheduling revision is assigned to the mandatory Palomar mechanical
-    verification and remains pending.
-    The row-data loader was subsequently changed to prepare requested ranges
-    and read inverse bytes only for missing lookup facts. Independent data
-    comparisons covered all 108345 rows and 1694 command ranges, and source
-    review confirmed that the kernel proof construction remains unchanged.
-    Repeated list congruence proof applications were subsequently specialized
-    once per row and constructed with explicit arguments. Independent source
-    reviews confirmed argument order and the list-equality invariant; every
-    lookup, shape, and final-row kernel declaration check remains in place.
-    The current row checker instead combines shared support and product lookup
-    equalities with inverse lookups in one scalar XOR proof. The separate
-    intermediate shape declarations are omitted; their mathematical obligations
-    are checked in the final row declaration. Product tables are checked in
-    eight independent modules per dimension. All 216225 product lookups for
-    dimension 30 and a complete 1024-row module passed local kernel checks, as
-    did the first and last rows for dimensions 28 and 29. The heavy module took
-    approximately 54 seconds locally, compared with 171 seconds previously.
-    This is not a complete build timing. The current revision still awaits
-    full cloud compilation and verification.
+    The replacement quadratic transfer and recurrence passed local Lean checks
+    with only propext, Classical.choice, and Quot.sound. The full submitted
+    development is assigned to Palomar's complete mechanical verification.
     No independent human peer review is recorded.
 
 alignment:
