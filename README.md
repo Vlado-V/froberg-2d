@@ -38,20 +38,20 @@ statement definitions for comparison.
 - `Froberg/`: the general-degree construction, uniform arithmetic, and conclusion.
 - `Quartic/`: the quadratic argument in arbitrary characteristic.
 - `OAI/`: the reused polynomial equidistribution lemmas, with source attribution.
-- `formalization.yaml`: mathematical scope, provenance, and automation disclosure.
+- `formalization.yaml`: required submission metadata and source attribution.
 
 The general-degree construction does not induct on generating degree.
 The quadratic case uses a uniform defect recurrence in every characteristic.
 
 `Audit.lean` checks the axiom dependencies of the submitted
 `FrobergPaper.main_result` and the loaded local theorem interfaces, allowing only
-the three permitted Lean axioms. Palomar verification is pending.
+the three permitted Lean axioms. The verified result is registered at
+[Palomar](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-11-000018&version=1).
 
 ## License and credit
 
 The proof code is licensed under Apache-2.0; see `LICENSE`.
-Vlado Vojdanovski is the project author and responsible maintainer. The
-formalization was substantially produced using OpenAI Codex agents, as disclosed
-in `formalization.yaml`. Reused OAI source attribution and its original license
-are retained in `OAI/`. The accompanying manuscript is distributed with the
-author's permission and is not covered by the code license.
+Vlado Vojdanovski is the project author and responsible maintainer. Reused OAI
+source attribution and its original license are retained in `OAI/`. The
+accompanying manuscript is distributed with the author's permission and is not
+covered by the code license.
